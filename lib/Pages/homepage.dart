@@ -45,12 +45,30 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: const Color.fromARGB(255, 235, 230, 230),
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Center(
-          child: Image.asset(
-            './assets/fudi.png',
-            height: 150,
-            width: 150,
-          ),
+        title: Row(
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.white,
+              child: Image.asset("./assets/fudi.png"),
+            ),
+            Spacer(),
+            Row(
+              children: [
+                Icon(
+                  Icons.location_pin,
+                  size: 20,
+                ),
+                Text(
+                  "Jenny Wilson",
+                  style: TextStyle(fontSize: 16),
+                ),
+                Icon(
+                  Icons.arrow_drop_down,
+                  size: 20,
+                )
+              ],
+            )
+          ],
         ),
       ),
       body: Center(
