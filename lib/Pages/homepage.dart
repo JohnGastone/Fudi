@@ -229,7 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 15, right: 10),
+                                  const EdgeInsets.only(left: 18, right: 10),
                               child: Row(
                                 children: [
                                   Text(
@@ -291,7 +291,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 15, right: 10),
+                                        left: 18, right: 10),
                                     child: Row(
                                       children: [
                                         Text(
@@ -352,7 +352,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 15, right: 10),
+                                  const EdgeInsets.only(left: 18, right: 10),
                               child: Row(
                                 children: [
                                   Text(
@@ -414,7 +414,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 15, right: 10),
+                                        left: 18, right: 10),
                                     child: Row(
                                       children: [
                                         Text(
