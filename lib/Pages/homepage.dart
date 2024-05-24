@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 20,
             ),
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: EdgeInsets.only(right: 135),
               child: Column(
                 children: [
                   Text(
@@ -88,19 +88,44 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
-                      ))
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: Text(
+                      "Categories",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 25, fontWeight: FontWeight.w200),
+                    ),
+                  ),
                 ],
               ),
             ),
-            Text(
-              "Categories",
-              style: GoogleFonts.spaceMono(fontSize: 26),
-            ),
-            Container(
-              height: 160,
-              width: 130,
-              decoration: BoxDecoration(
-                  color: Colors.green, borderRadius: BorderRadius.circular(30)),
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Row(
+                children: [
+                  Container(
+                    height: 160,
+                    width: 130,
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    height: 160,
+                    width: 130,
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(30)),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
