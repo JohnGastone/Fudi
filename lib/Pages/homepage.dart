@@ -67,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: SingleChildScrollView(
+        // backgroundColor: Color.fromARGB(255,255, 255),
         child: Column(
           children: [
             SizedBox(
@@ -108,31 +109,35 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 children: [
                   Container(
-                    height: 160,
-                    width: 130,
+                    height: 170,
+                    width: 150,
                     decoration: BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(30)),
                     child: Column(
                       children: [
                         Image.asset(
-                          './assets/pizza.jpg',
-                          height: 60,
-                          width: 60,
+                          './assets/pizza.png',
+                          height: 90,
+                          width: 90,
                         ),
                         Text(
                           "Pizza",
                           style: GoogleFonts.mulish(
-                            fontSize: 20,
+                            fontSize: 17,
                           ),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 5,
                         ),
                         CircleAvatar(
                           backgroundColor:
                               const Color.fromARGB(255, 238, 235, 235),
-                          child: Icon(Icons.arrow_forward_ios),
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                            size: 10,
+                            color: Colors.green,
+                          ),
                         ),
                       ],
                     ),
@@ -141,8 +146,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 20,
                   ),
                   Container(
-                    height: 160,
-                    width: 130,
+                    height: 170,
+                    width: 150,
                     decoration: BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(30)),
