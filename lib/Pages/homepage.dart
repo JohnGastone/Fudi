@@ -367,7 +367,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Text(
                               "\$ 12.5",
                               style: GoogleFonts.spaceMono(
-                                  fontSize: 15, color: Colors.green),
+                                  fontSize: 20, color: Colors.green),
                             ),
                           ],
                         ),
@@ -420,7 +420,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Text(
                               "\$ 9.5",
                               style: GoogleFonts.spaceMono(
-                                  fontSize: 15, color: Colors.green),
+                                  fontSize: 20, color: Colors.green),
                             ),
                           ],
                         ),
