@@ -206,14 +206,15 @@ class FudiDescription extends StatelessWidget {
                 ])),
             Padding(
               padding: const EdgeInsets.only(right: 150),
-              child: Column(
-                children: [
-                  Text("Details",
-                      style: GoogleFonts.spaceMono(
-                          fontSize: 35, fontWeight: FontWeight.bold)),
-                  Text("", style: GoogleFonts.spaceMono(fontSize: 20))
-                ],
-              ),
+              child: Text("Details",
+                  style: GoogleFonts.spaceMono(
+                      fontSize: 35, fontWeight: FontWeight.bold)),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                  "Roasted Biryani is a tantalizing twist on the classic biryani, featuring succulent pieces of marinated meat roasted to perfection. Each bite bursts with a rich blend of aromatic spices and tender grains of basmati rice, slow-cooked to absorb every flavorful note. The dish is garnished with crispy fried onions, fresh coriander, and a squeeze of lemon for a refreshing finish. Perfectly paired with a side of cooling raita, this roasted biryani promises a delightful culinary experience that is both hearty and satisfying. Indulge in the symphony of spices and textures that make our roasted biryani a favorite among food enthusiasts.",
+                  style: GoogleFonts.spaceMono(fontSize: 20)),
             )
           ],
         ),
