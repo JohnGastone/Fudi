@@ -204,7 +204,102 @@ class _MyHomePageState extends State<MyHomePage> {
                     ]))
                   ],
                 ),
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 200,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            './assets/pizza.png',
+                            height: 90,
+                            width: 90,
+                          ),
+                          Text(
+                            "Margeritha Pizza",
+                            style: GoogleFonts.mulish(
+                              fontSize: 17,
+                            ),
+                          ),
+                          Center(
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Cheesy Pizza",
+                                  style: GoogleFonts.mulish(
+                                      fontSize: 17,
+                                      color: const Color.fromARGB(
+                                          255, 194, 184, 184)),
+                                ),
+                                Image.asset(
+                                  "./assets/fire.png",
+                                  height: 40,
+                                  width: 40,
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CircleAvatar(
+                            backgroundColor:
+                                const Color.fromARGB(255, 238, 235, 235),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 10,
+                              color: Colors.green,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      height: 170,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            './assets/bugger.png',
+                            height: 90,
+                            width: 90,
+                          ),
+                          Text(
+                            "Bugger",
+                            style: GoogleFonts.mulish(
+                              fontSize: 17,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CircleAvatar(
+                            backgroundColor: Colors.green,
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 10,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
