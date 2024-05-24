@@ -39,7 +39,7 @@ class FudiDescription extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 30),
                   child: Column(
                     children: [
                       Text(
@@ -83,6 +83,62 @@ class FudiDescription extends StatelessWidget {
                               fontSize: 20, fontWeight: FontWeight.w300),
                         ),
                       ),
+                      Text(
+                        "Quantity",
+                        style: GoogleFonts.spaceMono(
+                            fontSize: 20, color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 214, 212, 212),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "-",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            "3",
+                            style: GoogleFonts.spaceMono(fontSize: 15),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "+",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
