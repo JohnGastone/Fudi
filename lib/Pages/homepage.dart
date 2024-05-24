@@ -274,7 +274,130 @@ class _MyHomePageState extends State<MyHomePage> {
                               height: 200,
                               width: 150,
                               decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 207, 219, 207),
+                                  color: Color.fromARGB(255, 213, 214, 213),
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    './assets/bugger.png',
+                                    height: 90,
+                                    width: 90,
+                                  ),
+                                  Text(
+                                    "Hamburger",
+                                    style: GoogleFonts.mulish(
+                                      fontSize: 19,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 15, right: 10),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Double patty",
+                                          style: GoogleFonts.mulish(
+                                              fontSize: 15,
+                                              color: const Color.fromARGB(
+                                                  255, 194, 184, 184)),
+                                        ),
+                                        Image.asset(
+                                          "./assets/fire.png",
+                                          height: 40,
+                                          width: 40,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                    backgroundColor: const Color.fromARGB(
+                                        255, 238, 235, 235),
+                                    child: Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 10,
+                                      color: Colors.green,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 200,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 207, 219, 207),
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              './assets/pizza.png',
+                              height: 90,
+                              width: 90,
+                            ),
+                            Text(
+                              "Margeritha Pizza",
+                              style: GoogleFonts.mulish(
+                                fontSize: 19,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 15, right: 10),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Cheesy Pizza",
+                                    style: GoogleFonts.mulish(
+                                        fontSize: 15,
+                                        color: const Color.fromARGB(
+                                            255, 194, 184, 184)),
+                                  ),
+                                  Image.asset(
+                                    "./assets/fire.png",
+                                    height: 40,
+                                    width: 40,
+                                  )
+                                ],
+                              ),
+                            ),
+                            CircleAvatar(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 238, 235, 235),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 10,
+                                color: Colors.green,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        height: 200,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 200,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 213, 214, 213),
                                   borderRadius: BorderRadius.circular(30)),
                               child: Column(
                                 children: [
