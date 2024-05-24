@@ -121,12 +121,20 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             Text(
                               "Pizza",
-                              style: GoogleFonts.mulish(
+                              style: GoogleFonts.spaceMono(
                                 fontSize: 17,
                               ),
                             ),
                             SizedBox(
                               height: 5,
+                            ),
+                            CircleAvatar(
+                              backgroundColor: Colors.white,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 10,
+                                color: Colors.green,
+                              ),
                             ),
                           ],
                         ),
@@ -149,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             Text(
                               "Bugger",
-                              style: GoogleFonts.mulish(
+                              style: GoogleFonts.spaceMono(
                                 fontSize: 17,
                               ),
                             ),
@@ -171,20 +179,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(18.0),
+                  padding: const EdgeInsets.all(25.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text.rich(TextSpan(children: <TextSpan>[
                         TextSpan(
                             text: "Popular Now",
-                            style: GoogleFonts.mulish(
+                            style: GoogleFonts.spaceMono(
                                 fontSize: 20, fontWeight: FontWeight.bold)),
                       ])),
                       Text.rich(TextSpan(children: <TextSpan>[
                         TextSpan(
                             text: "View all",
-                            style: GoogleFonts.mulish(
+                            style: GoogleFonts.spaceMono(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w100,
                                 color: Colors.green))
@@ -215,33 +223,33 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               Text(
                                 "Roast Biryan",
-                                style: GoogleFonts.mulish(
+                                style: GoogleFonts.spaceMono(
                                   fontSize: 19,
                                 ),
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 18, right: 10),
+                                    const EdgeInsets.only(left: 30, right: 10),
                                 child: Row(
                                   children: [
                                     Text(
-                                      "Roast biryan",
-                                      style: GoogleFonts.mulish(
+                                      "Biryan",
+                                      style: GoogleFonts.spaceMono(
                                           fontSize: 15,
                                           color: const Color.fromARGB(
                                               255, 194, 184, 184)),
                                     ),
                                     Image.asset(
                                       "./assets/fire.png",
-                                      height: 40,
-                                      width: 40,
+                                      height: 30,
+                                      width: 30,
                                     )
                                   ],
                                 ),
                               ),
                               Text(
                                 "\$ 12.5",
-                                style: GoogleFonts.mulish(
+                                style: GoogleFonts.spaceMono(
                                     fontSize: 15, color: Colors.green),
                               ),
                             ],
@@ -272,33 +280,33 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             Text(
                               "Rice Mzuzu",
-                              style: GoogleFonts.mulish(
+                              style: GoogleFonts.spaceMono(
                                 fontSize: 19,
                               ),
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 18, right: 10),
+                                  const EdgeInsets.only(left: 10, right: 8),
                               child: Row(
                                 children: [
                                   Text(
                                     "Double patty",
-                                    style: GoogleFonts.mulish(
+                                    style: GoogleFonts.spaceMono(
                                         fontSize: 15,
                                         color: const Color.fromARGB(
                                             255, 194, 184, 184)),
                                   ),
                                   Image.asset(
                                     "./assets/fire.png",
-                                    height: 40,
-                                    width: 40,
+                                    height: 35,
+                                    width: 35,
                                   )
                                 ],
                               ),
                             ),
                             Text(
                               "\$ 7.4",
-                              style: GoogleFonts.mulish(
+                              style: GoogleFonts.spaceMono(
                                   fontSize: 15, color: Colors.green),
                             ),
                           ],
@@ -326,33 +334,33 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             Text(
                               "Margeritha Pizza",
-                              style: GoogleFonts.mulish(
-                                fontSize: 19,
+                              style: GoogleFonts.spaceMono(
+                                fontSize: 17,
                               ),
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 18, right: 10),
+                                  const EdgeInsets.only(left: 10, right: 8),
                               child: Row(
                                 children: [
                                   Text(
                                     "Cheesy Pizza",
-                                    style: GoogleFonts.mulish(
+                                    style: GoogleFonts.spaceMono(
                                         fontSize: 15,
                                         color: const Color.fromARGB(
                                             255, 194, 184, 184)),
                                   ),
                                   Image.asset(
                                     "./assets/fire.png",
-                                    height: 40,
-                                    width: 40,
+                                    height: 30,
+                                    width: 30,
                                   ),
                                 ],
                               ),
                             ),
                             Text(
                               "\$ 12.5",
-                              style: GoogleFonts.mulish(
+                              style: GoogleFonts.spaceMono(
                                   fontSize: 15, color: Colors.green),
                             ),
                           ],
@@ -376,33 +384,33 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                             Text(
                               "Hamburger",
-                              style: GoogleFonts.mulish(
+                              style: GoogleFonts.spaceMono(
                                 fontSize: 19,
                               ),
                             ),
                             Padding(
                               padding:
-                                  const EdgeInsets.only(left: 18, right: 10),
+                                  const EdgeInsets.only(left: 10, right: 8),
                               child: Row(
                                 children: [
                                   Text(
                                     "Double patty",
-                                    style: GoogleFonts.mulish(
+                                    style: GoogleFonts.spaceMono(
                                         fontSize: 15,
                                         color: const Color.fromARGB(
                                             255, 194, 184, 184)),
                                   ),
                                   Image.asset(
                                     "./assets/fire.png",
-                                    height: 40,
-                                    width: 40,
+                                    height: 30,
+                                    width: 30,
                                   )
                                 ],
                               ),
                             ),
                             Text(
                               "\$ 9.5",
-                              style: GoogleFonts.mulish(
+                              style: GoogleFonts.spaceMono(
                                   fontSize: 15, color: Colors.green),
                             ),
                           ],
