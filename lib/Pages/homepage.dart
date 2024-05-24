@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -57,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               width: 60,
             ),
-            const Row(
+            Row(
               children: [
                 Icon(
                   Icons.location_pin,
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Text(
                   "Jenny Wilson",
-                  style: TextStyle(fontSize: 16),
+                  style: GoogleFonts.spaceMono(fontSize: 16),
                 ),
                 Icon(
                   Icons.arrow_drop_down,
@@ -74,7 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.green,
                 )
               ],
-            )
+            ),
+            SizedBox(
+              width: 40,
+            ),
+            CircleAvatar(
+              backgroundColor: Color.fromARGB(255, 224, 219, 219),
+              child: Icon(Icons.menu_sharp),
+            ),
           ],
         ),
       ),
