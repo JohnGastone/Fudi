@@ -91,16 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            Column(
-              children: [
-                Text(
-                  "Categories",
-                  style: GoogleFonts.spaceMono(fontSize: 26),
-                ),
-                Row(
-                  children: [ListTile()],
-                )
-              ],
+            Text(
+              "Categories",
+              style: GoogleFonts.spaceMono(fontSize: 26),
             ),
           ],
         ),
