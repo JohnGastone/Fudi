@@ -38,8 +38,53 @@ class FudiDescription extends StatelessWidget {
             ),
             Row(
               children: [
-                Column(
-                  children: [],
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Column(
+                    children: [
+                      Text(
+                        "\$ 12.50",
+                        style: GoogleFonts.spaceMono(
+                            fontSize: 30, color: Colors.green),
+                      ),
+                      Text(
+                        "Size",
+                        style: GoogleFonts.spaceMono(
+                            fontSize: 20, color: Colors.grey),
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Color.fromARGB(255, 209, 204, 204),
+                        child: Text(
+                          "S",
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 20, fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                      Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "M",
+                            style: GoogleFonts.spaceMono(
+                                fontSize: 20, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      CircleAvatar(
+                        backgroundColor: Color.fromARGB(255, 209, 204, 204),
+                        child: Text(
+                          "L",
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 20, fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Column(children: [
                   Image.asset(
