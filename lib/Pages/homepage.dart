@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 235, 230, 230),
+        backgroundColor: Color.fromARGB(255, 221, 206, 206),
         title: Row(
           children: [
             CircleAvatar(
@@ -60,124 +60,127 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 40,
             ),
             CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 224, 219, 219),
+              backgroundColor: Color.fromARGB(255, 244, 232, 232),
               child: Icon(Icons.menu_sharp),
             ),
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        // backgroundColor: Color.fromARGB(255,255, 255),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.only(right: 135),
-              child: Column(
-                children: [
-                  Text(
-                    "Get your food",
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 22,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w400),
-                  ),
-                  Text("Delivered!",
-                      style: GoogleFonts.spaceMono(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      )),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 30),
-                    child: Text(
-                      "Categories",
-                      style: GoogleFonts.spaceMono(
-                          fontSize: 25, fontWeight: FontWeight.w100),
-                    ),
-                  ),
-                ],
+      body: Scaffold(
+        backgroundColor: Color.fromARGB(255, 221, 206, 206),
+        body: SingleChildScrollView(
+          // backgroundColor: Color.fromARGB(255,255, 255),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Row(
-                children: [
-                  Container(
-                    height: 170,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          './assets/pizza.png',
-                          height: 90,
-                          width: 90,
-                        ),
-                        Text(
-                          "Pizza",
+              Padding(
+                padding: EdgeInsets.only(right: 135),
+                child: Column(
+                  children: [
+                    Text(
+                      "Get your food",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 22,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    Text("Delivered!",
+                        style: GoogleFonts.spaceMono(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        )),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 30),
+                      child: Text(
+                        "Categories",
+                        style: GoogleFonts.spaceMono(
+                            fontSize: 25, fontWeight: FontWeight.w100),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 170,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            './assets/pizza.png',
+                            height: 90,
+                            width: 90,
+                          ),
+                          Text(
+                            "Pizza",
+                            style: GoogleFonts.mulish(
+                              fontSize: 17,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CircleAvatar(
+                            backgroundColor:
+                                const Color.fromARGB(255, 238, 235, 235),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 10,
+                              color: Colors.green,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      height: 170,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30)),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text.rich(TextSpan(children: <TextSpan>[
+                      TextSpan(
+                          text: "Popular Now",
                           style: GoogleFonts.mulish(
-                            fontSize: 17,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        CircleAvatar(
-                          backgroundColor:
-                              const Color.fromARGB(255, 238, 235, 235),
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 10,
-                            color: Colors.green,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Container(
-                    height: 170,
-                    width: 150,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(30)),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text.rich(TextSpan(children: <TextSpan>[
-                    TextSpan(
-                        text: "Popular Now",
-                        style: GoogleFonts.mulish(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
-                  ])),
-                  Text.rich(TextSpan(children: <TextSpan>[
-                    TextSpan(
-                        text: "View all",
-                        style: GoogleFonts.mulish(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w100,
-                            color: Colors.green))
-                  ]))
-                ],
-              ),
-            )
-          ],
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                    ])),
+                    Text.rich(TextSpan(children: <TextSpan>[
+                      TextSpan(
+                          text: "View all",
+                          style: GoogleFonts.mulish(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w100,
+                              color: Colors.green))
+                    ]))
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
