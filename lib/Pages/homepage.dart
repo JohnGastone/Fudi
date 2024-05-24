@@ -209,20 +209,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     children: [
                       Container(
-                        height: 200,
+                        height: 225,
                         width: 150,
                         decoration: BoxDecoration(
                             color: Color.fromARGB(233, 207, 219, 207),
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
+                            SizedBox(
+                              height: 5,
+                            ),
                             Image.asset(
-                              './assets/pizza.png',
+                              './assets/biryani.png',
                               height: 90,
                               width: 90,
                             ),
                             Text(
-                              "Margeritha Pizza",
+                              "Roast Biryan",
                               style: GoogleFonts.mulish(
                                 fontSize: 19,
                               ),
@@ -233,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Row(
                                 children: [
                                   Text(
-                                    "Cheesy Pizza",
+                                    "Roast biryan",
                                     style: GoogleFonts.mulish(
                                         fontSize: 15,
                                         color: const Color.fromARGB(
@@ -246,6 +249,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                   )
                                 ],
                               ),
+                            ),
+                            Text(
+                              "\$ 12.5",
+                              style: GoogleFonts.mulish(
+                                  fontSize: 15, color: Colors.green),
                             ),
                             CircleAvatar(
                               backgroundColor:
@@ -263,7 +271,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 20,
                       ),
                       Container(
-                        height: 200,
+                        height: 215,
                         width: 150,
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -271,7 +279,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           children: [
                             Container(
-                              height: 200,
+                              height: 215,
                               width: 150,
                               decoration: BoxDecoration(
                                   color: Color.fromARGB(255, 213, 214, 213),
@@ -309,6 +317,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                       ],
                                     ),
                                   ),
+                                  Text(
+                                    "\$ 7.4",
+                                    style: GoogleFonts.mulish(
+                                        fontSize: 15, color: Colors.green),
+                                  ),
                                   CircleAvatar(
                                     backgroundColor: const Color.fromARGB(
                                         255, 238, 235, 235),
@@ -332,7 +345,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Row(
                     children: [
                       Container(
-                        height: 200,
+                        height: 215,
                         width: 150,
                         decoration: BoxDecoration(
                             color: Color.fromARGB(255, 207, 219, 207),
@@ -366,9 +379,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                     "./assets/fire.png",
                                     height: 40,
                                     width: 40,
-                                  )
+                                  ),
                                 ],
                               ),
+                            ),
+                            Text(
+                              "\$ 12.5",
+                              style: GoogleFonts.mulish(
+                                  fontSize: 15, color: Colors.green),
                             ),
                             CircleAvatar(
                               backgroundColor:
@@ -386,7 +404,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 20,
                       ),
                       Container(
-                        height: 200,
+                        height: 215,
                         width: 150,
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -394,7 +412,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           children: [
                             Container(
-                              height: 200,
+                              height: 215,
                               width: 150,
                               decoration: BoxDecoration(
                                   color: Color.fromARGB(255, 213, 214, 213),
@@ -431,6 +449,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                         )
                                       ],
                                     ),
+                                  ),
+                                  Text(
+                                    "\$ 9.5",
+                                    style: GoogleFonts.mulish(
+                                        fontSize: 15, color: Colors.green),
                                   ),
                                   CircleAvatar(
                                     backgroundColor: const Color.fromARGB(
