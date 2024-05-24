@@ -214,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Column(
                             children: [
                               SizedBox(
-                                height: 5,
+                                height: 15,
                               ),
                               Image.asset(
                                 './assets/biryani.png',
@@ -250,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               Text(
                                 "\$ 12.5",
                                 style: GoogleFonts.spaceMono(
-                                    fontSize: 15, color: Colors.green),
+                                    fontSize: 20, color: Colors.green),
                               ),
                             ],
                           ),
@@ -273,6 +273,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
+                            SizedBox(
+                              height: 15,
+                            ),
                             Image.asset(
                               './assets/mzuzu.png',
                               height: 90,
@@ -307,7 +310,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Text(
                               "\$ 7.4",
                               style: GoogleFonts.spaceMono(
-                                  fontSize: 15, color: Colors.green),
+                                  fontSize: 20, color: Colors.green),
                             ),
                           ],
                         ),
@@ -327,6 +330,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
+                            SizedBox(
+                              height: 15,
+                            ),
                             Image.asset(
                               './assets/margeritha.png',
                               height: 90,
@@ -377,6 +383,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
+                            SizedBox(
+                              height: 15,
+                            ),
                             Image.asset(
                               './assets/hamburger.png',
                               height: 90,
