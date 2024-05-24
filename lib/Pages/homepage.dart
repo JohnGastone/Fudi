@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/foodDescription.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -66,7 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Scaffold(
             backgroundColor: Color.fromARGB(255, 221, 206, 206),
             body: SingleChildScrollView(
-              // backgroundColor: Color.fromARGB(255,255, 255),
               child: Column(children: [
                 SizedBox(
                   height: 20,
@@ -196,55 +196,63 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.all(18.0),
                   child: Row(
                     children: [
-                      Container(
-                        height: 225,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(233, 207, 219, 207),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Image.asset(
-                              './assets/biryani.png',
-                              height: 90,
-                              width: 90,
-                            ),
-                            Text(
-                              "Roast Biryan",
-                              style: GoogleFonts.mulish(
-                                fontSize: 19,
+                      InkWell(
+                        child: Container(
+                          height: 225,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(233, 207, 219, 207),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 5,
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 18, right: 10),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Roast biryan",
-                                    style: GoogleFonts.mulish(
-                                        fontSize: 15,
-                                        color: const Color.fromARGB(
-                                            255, 194, 184, 184)),
-                                  ),
-                                  Image.asset(
-                                    "./assets/fire.png",
-                                    height: 40,
-                                    width: 40,
-                                  )
-                                ],
+                              Image.asset(
+                                './assets/biryani.png',
+                                height: 90,
+                                width: 90,
                               ),
-                            ),
-                            Text(
-                              "\$ 12.5",
-                              style: GoogleFonts.mulish(
-                                  fontSize: 15, color: Colors.green),
-                            ),
-                          ],
+                              Text(
+                                "Roast Biryan",
+                                style: GoogleFonts.mulish(
+                                  fontSize: 19,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 18, right: 10),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "Roast biryan",
+                                      style: GoogleFonts.mulish(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              255, 194, 184, 184)),
+                                    ),
+                                    Image.asset(
+                                      "./assets/fire.png",
+                                      height: 40,
+                                      width: 40,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Text(
+                                "\$ 12.5",
+                                style: GoogleFonts.mulish(
+                                    fontSize: 15, color: Colors.green),
+                              ),
+                            ],
+                          ),
                         ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FudiDescription()));
+                        },
                       ),
                       SizedBox(
                         width: 20,
