@@ -27,14 +27,28 @@ class FudiDescription extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 15),
+              padding: const EdgeInsets.only(left: 1),
               child: RichText(
                   text: TextSpan(
-                      text: "Margherita Pizza",
+                      text: "Roasted Biryani",
                       style: GoogleFonts.spaceMono(
                           fontWeight: FontWeight.bold,
                           fontSize: 32,
                           color: Colors.black))),
+            ),
+            Row(
+              children: [
+                Column(
+                  children: [],
+                ),
+                Column(children: [
+                  Image.asset(
+                    "./assets/biryani.png",
+                    height: 350,
+                    width: 200,
+                  ),
+                ])
+              ],
             )
           ],
         ),
