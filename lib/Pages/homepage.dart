@@ -113,6 +113,29 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(30)),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          './assets/pizza.jpg',
+                          height: 60,
+                          width: 60,
+                        ),
+                        Text(
+                          "Pizza",
+                          style: GoogleFonts.mulish(
+                            fontSize: 20,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        CircleAvatar(
+                          backgroundColor:
+                              const Color.fromARGB(255, 238, 235, 235),
+                          child: Icon(Icons.arrow_forward_ios),
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     width: 20,
