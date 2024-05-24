@@ -203,7 +203,10 @@ class FudiDescription extends StatelessWidget {
                       )
                     ],
                   ),
-                ]))
+                ])),
+            Text("Details",
+                style: GoogleFonts.spaceMono(
+                    fontSize: 35, fontWeight: FontWeight.bold))
           ],
         ),
       ),
