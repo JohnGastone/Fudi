@@ -57,6 +57,9 @@ class FudiDescription extends StatelessWidget {
                               fontSize: 20, fontWeight: FontWeight.w300),
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Container(
                         height: 30,
                         width: 30,
@@ -71,6 +74,9 @@ class FudiDescription extends StatelessWidget {
                                 fontSize: 20, color: Colors.white),
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        height: 10,
                       ),
                       CircleAvatar(
                         backgroundColor: Color.fromARGB(255, 209, 204, 204),
@@ -108,14 +114,14 @@ class FudiDescription extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            width: 5,
+                            width: 10,
                           ),
                           Text(
                             "3",
                             style: GoogleFonts.spaceMono(fontSize: 15),
                           ),
                           SizedBox(
-                            width: 5,
+                            width: 10,
                           ),
                           Container(
                             height: 30,
