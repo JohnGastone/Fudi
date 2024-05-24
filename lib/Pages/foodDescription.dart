@@ -204,9 +204,17 @@ class FudiDescription extends StatelessWidget {
                     ],
                   ),
                 ])),
-            Text("Details",
-                style: GoogleFonts.spaceMono(
-                    fontSize: 35, fontWeight: FontWeight.bold))
+            Padding(
+              padding: const EdgeInsets.only(right: 150),
+              child: Column(
+                children: [
+                  Text("Details",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 35, fontWeight: FontWeight.bold)),
+                  Text("", style: GoogleFonts.spaceMono(fontSize: 20))
+                ],
+              ),
+            )
           ],
         ),
       ),
