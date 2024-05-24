@@ -148,6 +148,62 @@ class FudiDescription extends StatelessWidget {
                 ])
               ],
             ),
+            Padding(
+                padding: const EdgeInsets.only(left: 25),
+                child: Row(children: [
+                  Row(
+                    children: [
+                      Icon(
+                        CupertinoIcons.star_fill,
+                        color: Colors.amberAccent,
+                      ),
+                      SizedBox(
+                        width: 2,
+                      ),
+                      Text(
+                        "4.9",
+                        style: GoogleFonts.spaceMono(fontSize: 15),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 25,
+                  ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        './assets/fire.png',
+                        height: 30,
+                        width: 30,
+                      ),
+                      SizedBox(
+                        width: 2,
+                      ),
+                      Text(
+                        "145 cal",
+                        style: GoogleFonts.spaceMono(fontSize: 15),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    width: 25,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        CupertinoIcons.clock,
+                        color: const Color.fromARGB(255, 148, 138, 104),
+                      ),
+                      SizedBox(
+                        width: 3,
+                      ),
+                      Text(
+                        "30 minutes",
+                        style: GoogleFonts.spaceMono(fontSize: 15),
+                      )
+                    ],
+                  ),
+                ]))
           ],
         ),
       ),
