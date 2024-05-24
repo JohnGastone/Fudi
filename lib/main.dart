@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'Pages/homepage.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Set the app to fullscreen mode (hides the status bar and navigation bar)
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const MyApp());
 }
 
