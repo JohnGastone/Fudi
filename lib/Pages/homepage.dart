@@ -1,8 +1,5 @@
 // ignore_for_file: prefer_const_constructors
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -131,15 +128,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             SizedBox(
                               height: 5,
                             ),
-                            CircleAvatar(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 238, 235, 235),
-                              child: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 10,
-                                color: Colors.green,
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -255,15 +243,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               style: GoogleFonts.mulish(
                                   fontSize: 15, color: Colors.green),
                             ),
-                            CircleAvatar(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 238, 235, 235),
-                              child: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 10,
-                                color: Colors.green,
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -314,15 +293,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               style: GoogleFonts.mulish(
                                   fontSize: 15, color: Colors.green),
                             ),
-                            CircleAvatar(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 238, 235, 235),
-                              child: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 10,
-                                color: Colors.green,
-                              ),
-                            ),
                           ],
                         ),
                       ),
@@ -342,7 +312,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           children: [
                             Image.asset(
-                              './assets/pizza.png',
+                              './assets/margeritha.png',
                               height: 90,
                               width: 90,
                             ),
@@ -376,15 +346,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               "\$ 12.5",
                               style: GoogleFonts.mulish(
                                   fontSize: 15, color: Colors.green),
-                            ),
-                            CircleAvatar(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 238, 235, 235),
-                              child: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 10,
-                                color: Colors.green,
-                              ),
                             ),
                           ],
                         ),
@@ -435,15 +396,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               "\$ 9.5",
                               style: GoogleFonts.mulish(
                                   fontSize: 15, color: Colors.green),
-                            ),
-                            CircleAvatar(
-                              backgroundColor:
-                                  const Color.fromARGB(255, 238, 235, 235),
-                              child: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 10,
-                                color: Colors.green,
-                              ),
                             ),
                           ],
                         ),
