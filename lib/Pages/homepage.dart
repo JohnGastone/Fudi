@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -94,6 +95,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               "Categories",
               style: GoogleFonts.spaceMono(fontSize: 26),
+            ),
+            Container(
+              height: 160,
+              width: 130,
+              decoration: BoxDecoration(
+                  color: Colors.green, borderRadius: BorderRadius.circular(30)),
             ),
           ],
         ),
