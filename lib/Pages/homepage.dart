@@ -153,6 +153,32 @@ class _MyHomePageState extends State<MyHomePage> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(30)),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            './assets/bugger.png',
+                            height: 90,
+                            width: 90,
+                          ),
+                          Text(
+                            "Bugger",
+                            style: GoogleFonts.mulish(
+                              fontSize: 17,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CircleAvatar(
+                            backgroundColor: Colors.green,
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 10,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
