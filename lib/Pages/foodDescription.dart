@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FudiDescription extends StatelessWidget {
   const FudiDescription({super.key});
@@ -24,7 +25,12 @@ class FudiDescription extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [],
+          children: [
+            RichText(
+                text: TextSpan(
+                    text: "Margareta Pizza",
+                    style: GoogleFonts.spaceMono(fontSize: 32)))
+          ],
         ),
       ),
     );
