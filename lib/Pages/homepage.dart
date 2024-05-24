@@ -42,10 +42,16 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromARGB(255, 235, 230, 230),
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Image.asset('./assets/fudi.png'),
+        title: Center(
+          child: Image.asset(
+            './assets/fudi.png',
+            height: 150,
+            width: 150,
+          ),
+        ),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
