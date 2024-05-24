@@ -279,12 +279,12 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           children: [
                             Image.asset(
-                              './assets/hamburger.png',
+                              './assets/mzuzu.png',
                               height: 90,
                               width: 90,
                             ),
                             Text(
-                              "Hamburger",
+                              "Rice Mzuzu",
                               style: GoogleFonts.mulish(
                                 fontSize: 19,
                               ),
@@ -401,7 +401,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           children: [
                             Image.asset(
-                              './assets/bugger.png',
+                              './assets/hamburger.png',
                               height: 90,
                               width: 90,
                             ),
