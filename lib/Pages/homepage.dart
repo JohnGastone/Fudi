@@ -212,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 200,
                         width: 150,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 207, 219, 207),
+                            color: Color.fromARGB(233, 207, 219, 207),
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
