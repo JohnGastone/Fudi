@@ -65,6 +65,35 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Column(
+                children: [
+                  Text(
+                    "Get your food",
+                    style: GoogleFonts.spaceMono(
+                        fontSize: 22,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w400),
+                  ),
+                  Text("Delivered!",
+                      style: GoogleFonts.spaceMono(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ))
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
