@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Text(
                       "Categories",
                       style: GoogleFonts.spaceMono(
-                          fontSize: 25, fontWeight: FontWeight.w200),
+                          fontSize: 25, fontWeight: FontWeight.w100),
                     ),
                   ),
                 ],
@@ -127,6 +127,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text.rich(TextSpan(children: <TextSpan>[
+                    TextSpan(
+                        text: "Popular Now",
+                        style: GoogleFonts.mulish(
+                            fontSize: 20, fontWeight: FontWeight.bold)),
+                  ])),
+                  Text.rich(TextSpan(children: <TextSpan>[
+                    TextSpan(
+                        text: "View all",
+                        style: GoogleFonts.mulish(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w100,
+                            color: Colors.green))
+                  ]))
+                ],
+              ),
+            )
           ],
         ),
       ),
