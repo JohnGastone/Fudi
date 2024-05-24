@@ -209,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           height: 225,
                           width: 150,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(233, 207, 219, 207),
+                              color: Color.fromARGB(255, 224, 216, 216),
                               borderRadius: BorderRadius.circular(30)),
                           child: Column(
                             children: [
@@ -269,7 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 215,
                         width: 150,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 213, 214, 213),
+                            color: Color.fromARGB(255, 224, 216, 216),
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
@@ -323,7 +323,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 215,
                         width: 150,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 207, 219, 207),
+                            color: Color.fromARGB(255, 224, 216, 216),
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
@@ -373,7 +373,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 215,
                         width: 150,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 213, 214, 213),
+                            color: Color.fromARGB(255, 224, 216, 216),
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
