@@ -26,10 +26,16 @@ class FudiDescription extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            RichText(
-                text: TextSpan(
-                    text: "Margareta Pizza",
-                    style: GoogleFonts.spaceMono(fontSize: 32)))
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: RichText(
+                  text: TextSpan(
+                      text: "Margherita Pizza",
+                      style: GoogleFonts.spaceMono(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 32,
+                          color: Colors.black))),
+            )
           ],
         ),
       ),
