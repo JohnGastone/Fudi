@@ -274,64 +274,53 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 215,
                         width: 150,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 213, 214, 213),
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
-                            Container(
-                              height: 215,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 213, 214, 213),
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Column(
+                            Image.asset(
+                              './assets/hamburger.png',
+                              height: 90,
+                              width: 90,
+                            ),
+                            Text(
+                              "Hamburger",
+                              style: GoogleFonts.mulish(
+                                fontSize: 19,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 18, right: 10),
+                              child: Row(
                                 children: [
+                                  Text(
+                                    "Double patty",
+                                    style: GoogleFonts.mulish(
+                                        fontSize: 15,
+                                        color: const Color.fromARGB(
+                                            255, 194, 184, 184)),
+                                  ),
                                   Image.asset(
-                                    './assets/bugger.png',
-                                    height: 90,
-                                    width: 90,
-                                  ),
-                                  Text(
-                                    "Hamburger",
-                                    style: GoogleFonts.mulish(
-                                      fontSize: 19,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 18, right: 10),
-                                    child: Row(
-                                      children: [
-                                        Text(
-                                          "Double patty",
-                                          style: GoogleFonts.mulish(
-                                              fontSize: 15,
-                                              color: const Color.fromARGB(
-                                                  255, 194, 184, 184)),
-                                        ),
-                                        Image.asset(
-                                          "./assets/fire.png",
-                                          height: 40,
-                                          width: 40,
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  Text(
-                                    "\$ 7.4",
-                                    style: GoogleFonts.mulish(
-                                        fontSize: 15, color: Colors.green),
-                                  ),
-                                  CircleAvatar(
-                                    backgroundColor: const Color.fromARGB(
-                                        255, 238, 235, 235),
-                                    child: Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: 10,
-                                      color: Colors.green,
-                                    ),
-                                  ),
+                                    "./assets/fire.png",
+                                    height: 40,
+                                    width: 40,
+                                  )
                                 ],
+                              ),
+                            ),
+                            Text(
+                              "\$ 7.4",
+                              style: GoogleFonts.mulish(
+                                  fontSize: 15, color: Colors.green),
+                            ),
+                            CircleAvatar(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 238, 235, 235),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 10,
+                                color: Colors.green,
                               ),
                             ),
                           ],
@@ -407,64 +396,53 @@ class _MyHomePageState extends State<MyHomePage> {
                         height: 215,
                         width: 150,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 213, 214, 213),
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
-                            Container(
-                              height: 215,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 213, 214, 213),
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Column(
+                            Image.asset(
+                              './assets/bugger.png',
+                              height: 90,
+                              width: 90,
+                            ),
+                            Text(
+                              "Hamburger",
+                              style: GoogleFonts.mulish(
+                                fontSize: 19,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 18, right: 10),
+                              child: Row(
                                 children: [
+                                  Text(
+                                    "Double patty",
+                                    style: GoogleFonts.mulish(
+                                        fontSize: 15,
+                                        color: const Color.fromARGB(
+                                            255, 194, 184, 184)),
+                                  ),
                                   Image.asset(
-                                    './assets/bugger.png',
-                                    height: 90,
-                                    width: 90,
-                                  ),
-                                  Text(
-                                    "Hamburger",
-                                    style: GoogleFonts.mulish(
-                                      fontSize: 19,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 18, right: 10),
-                                    child: Row(
-                                      children: [
-                                        Text(
-                                          "Double patty",
-                                          style: GoogleFonts.mulish(
-                                              fontSize: 15,
-                                              color: const Color.fromARGB(
-                                                  255, 194, 184, 184)),
-                                        ),
-                                        Image.asset(
-                                          "./assets/fire.png",
-                                          height: 40,
-                                          width: 40,
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                  Text(
-                                    "\$ 9.5",
-                                    style: GoogleFonts.mulish(
-                                        fontSize: 15, color: Colors.green),
-                                  ),
-                                  CircleAvatar(
-                                    backgroundColor: const Color.fromARGB(
-                                        255, 238, 235, 235),
-                                    child: Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: 10,
-                                      color: Colors.green,
-                                    ),
-                                  ),
+                                    "./assets/fire.png",
+                                    height: 40,
+                                    width: 40,
+                                  )
                                 ],
+                              ),
+                            ),
+                            Text(
+                              "\$ 9.5",
+                              style: GoogleFonts.mulish(
+                                  fontSize: 15, color: Colors.green),
+                            ),
+                            CircleAvatar(
+                              backgroundColor:
+                                  const Color.fromARGB(255, 238, 235, 235),
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 10,
+                                color: Colors.green,
                               ),
                             ),
                           ],
