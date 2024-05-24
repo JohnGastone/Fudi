@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -51,12 +54,15 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.white,
               child: Image.asset("./assets/fudi.png"),
             ),
-            Spacer(),
-            Row(
+            SizedBox(
+              width: 60,
+            ),
+            const Row(
               children: [
                 Icon(
                   Icons.location_pin,
                   size: 20,
+                  color: Colors.green,
                 ),
                 Text(
                   "Jenny Wilson",
@@ -65,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Icon(
                   Icons.arrow_drop_down,
                   size: 20,
+                  color: Colors.green,
                 )
               ],
             )
