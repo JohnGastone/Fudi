@@ -65,6 +65,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  SizedBox(
+                                    width: 200,
+                                    child: FloatingActionButton(
+                                        backgroundColor: Colors.green,
+                                        child: Text("Pick from the map",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16)),
+                                        onPressed: () {
+                                          // Integration to google maps
+                                        }),
+                                  )
                                 ],
                               ),
                               actions: [
