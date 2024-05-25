@@ -114,13 +114,17 @@ class _MyHomePageState extends State<MyHomePage> {
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  TextField(
-                                    decoration: InputDecoration(
-                                        border: OutlineInputBorder(),
-                                        hintText: "Enter your location"),
-                                    style: GoogleFonts.spaceMono(
-                                        fontSize: 16, color: Colors.black),
-                                  ),
+                                  FloatingActionButton(
+                                    backgroundColor: Colors.green,
+                                    child: Text(
+                                      "Click here to logout",
+                                      style:
+                                          GoogleFonts.spaceMono(fontSize: 16),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  )
                                 ],
                               ),
                             );
