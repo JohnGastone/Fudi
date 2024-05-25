@@ -18,8 +18,9 @@ class _CartPageState extends State<CartPage> {
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
+        automaticallyImplyLeading: false,
         title: Padding(
-          padding: EdgeInsets.only(left: 120),
+          padding: EdgeInsets.only(left: 70),
           child: SizedBox(
             width: 160,
             height: 40,
