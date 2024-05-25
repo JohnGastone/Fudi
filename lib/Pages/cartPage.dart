@@ -355,7 +355,7 @@ class _CartPageState extends State<CartPage> {
             backgroundColor: Colors.green,
             onPressed: () {},
             child: Text(
-              "Check",
+              "Check Out",
               style: GoogleFonts.spaceMono(fontSize: 20, color: Colors.white),
             ),
           ),
