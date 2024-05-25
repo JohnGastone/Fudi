@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: Row(
           children: [
             CircleAvatar(
-              backgroundColor: Colors.white,
+              backgroundColor: Color.fromARGB(255, 221, 206, 206),
               child: Image.asset("./assets/fudi.png"),
             ),
             SizedBox(
@@ -132,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   },
                 ),
                 SizedBox(
-                  width: 8,
+                  width: 10,
                 ),
                 Text(
                   "Nathan John",
@@ -187,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             ),
             InkWell(
               child: CircleAvatar(
-                backgroundColor: Color.fromARGB(255, 244, 232, 232),
+                backgroundColor: Color.fromARGB(255, 221, 206, 206),
                 child: Icon(
                   Icons.shopping_cart,
                   color: Colors.green,
