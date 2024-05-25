@@ -39,10 +39,49 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Row(
                 children: [
-                  Icon(
-                    Icons.location_pin,
-                    size: 20,
-                    color: Colors.green,
+                  InkWell(
+                    child: Icon(
+                      Icons.location_pin,
+                      size: 20,
+                      color: Colors.green,
+                    ),
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text(
+                                "Location",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        hintText: "Enter your location"),
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("Cancel")),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("OK"))
+                              ],
+                            );
+                          });
+                    },
                   ),
                   Text(
                     "Nathan John",
@@ -54,7 +93,43 @@ class _MyHomePageState extends State<MyHomePage> {
                       size: 20,
                       color: Colors.green,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text(
+                                "Location",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        hintText: "Enter your location"),
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("Cancel")),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text("OK"))
+                              ],
+                            );
+                          });
+                    },
                   )
                 ],
               ),
