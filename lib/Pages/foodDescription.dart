@@ -1,11 +1,24 @@
-// ignore_for_file: file_names, prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: file_names, prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FudiDescription extends StatelessWidget {
-  const FudiDescription({super.key});
+class FudiDescription extends StatefulWidget {
+  FudiDescription({super.key});
+
+  @override
+  _FudiDescriptionState createState() => _FudiDescriptionState();
+}
+
+class _FudiDescriptionState extends State<FudiDescription> {
+  int _counter = 0;
+
+  void _plateCounter() {
+    setState((() {
+      _counter++;
+    }));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +49,7 @@ class FudiDescription extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 30),
+                  padding: const EdgeInsets.only(left: 20),
                   child: Column(
                     children: [
                       Text(
@@ -117,29 +130,22 @@ class FudiDescription extends StatelessWidget {
                             width: 10,
                           ),
                           Text(
-                            "3",
+                            "$_counter",
                             style: GoogleFonts.spaceMono(fontSize: 15),
                           ),
                           SizedBox(
                             width: 10,
                           ),
-                          Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(10),
+                          SizedBox(
+                            height: 40,
+                            width: 40,
+                            child: FloatingActionButton(
+                              backgroundColor: Colors.green,
+                              onPressed: _plateCounter,
+                              tooltip: "Increment",
+                              child: Icon(Icons.add),
                             ),
-                            child: Center(
-                              child: Text(
-                                "+",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
+                          )
                         ],
                       )
                     ],
