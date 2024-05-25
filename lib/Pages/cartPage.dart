@@ -93,7 +93,7 @@ class _CartPageState extends State<CartPage> {
                         width: 30,
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 240, 234, 234),
+                              color: Color.fromARGB(255, 215, 211, 211),
                               borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             children: [
