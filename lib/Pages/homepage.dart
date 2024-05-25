@@ -74,8 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     },
                                     child: Text(
                                       "Cancel",
-                                      style:
-                                          GoogleFonts.spaceMono(fontSize: 16),
+                                      style: GoogleFonts.spaceMono(
+                                          fontSize: 16, color: Colors.black),
                                     )),
                                 TextButton(
                                     onPressed: () {
@@ -83,8 +83,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     },
                                     child: Text(
                                       "OK",
-                                      style:
-                                          GoogleFonts.spaceMono(fontSize: 16),
+                                      style: GoogleFonts.spaceMono(
+                                          fontSize: 16, color: Colors.black),
                                     ))
                               ],
                             );
@@ -107,23 +107,26 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (BuildContext context) {
                             return AlertDialog(
                               title: Text(
-                                "Log Out",
+                                "Click the button to logout",
                                 style: GoogleFonts.spaceMono(
                                     fontSize: 16, color: Colors.black),
                               ),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  FloatingActionButton(
-                                    backgroundColor: Colors.green,
-                                    child: Text(
-                                      "Click here to logout",
-                                      style:
-                                          GoogleFonts.spaceMono(fontSize: 16),
+                                  SizedBox(
+                                    width: 150,
+                                    child: FloatingActionButton(
+                                      backgroundColor: Colors.green,
+                                      child: Text(
+                                        "Log Out",
+                                        style:
+                                            GoogleFonts.spaceMono(fontSize: 16),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
                                     ),
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
                                   )
                                 ],
                               ),
