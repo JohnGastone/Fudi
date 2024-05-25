@@ -278,13 +278,16 @@ class _MyHomePageState extends State<MyHomePage> {
                               borderRadius: BorderRadius.circular(30)),
                           child: Column(
                             children: [
+                              SizedBox(
+                                height: 5,
+                              ),
                               Image.asset(
-                                './assets/pizza.png',
+                                './assets/pilau.png',
                                 height: 60,
                                 width: 60,
                               ),
                               Text(
-                                "Pizza",
+                                "Pilau",
                                 style: GoogleFonts.spaceMono(
                                   fontSize: 17,
                                 ),
