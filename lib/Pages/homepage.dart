@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -65,7 +66,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.green,
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CartPage()));
+                },
               ),
             ],
           ),
