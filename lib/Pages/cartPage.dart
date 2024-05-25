@@ -40,7 +40,54 @@ class _CartPageState extends State<CartPage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [],
+          children: [
+            Text(
+              "Swipe an item left to delete it",
+              style: GoogleFonts.spaceMono(fontSize: 18),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Container(
+                width: 350,
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white54),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        "./assets/bugger.png",
+                        height: 70,
+                        width: 70,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Chicken Bugger",
+                            style: GoogleFonts.spaceMono(fontSize: 18),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "\$ 9.5",
+                            style: GoogleFonts.spaceMono(
+                                fontSize: 18, color: Colors.green),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
