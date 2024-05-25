@@ -238,9 +238,9 @@ class _FudiDescriptionState extends State<FudiDescription> {
           ),
           Positioned(
             bottom: 15.0,
-            right: 15.0,
+            right: 30.0,
             child: SizedBox(
-              width: 100,
+              width: 300,
               child: FloatingActionButton(
                 backgroundColor: Colors.green,
                 onPressed: () {},
