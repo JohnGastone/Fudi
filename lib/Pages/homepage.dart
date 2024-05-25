@@ -195,12 +195,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(18.0),
+                    padding: const EdgeInsets.all(15.0),
                     child: Row(
                       children: [
                         Container(
-                          height: 170,
-                          width: 150,
+                          height: 140,
+                          width: 90,
                           decoration: BoxDecoration(
                               color: Colors.green,
                               borderRadius: BorderRadius.circular(30)),
@@ -208,8 +208,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Image.asset(
                                 './assets/pizza.png',
-                                height: 90,
-                                width: 90,
+                                height: 60,
+                                width: 60,
                               ),
                               Text(
                                 "Pizza",
@@ -232,11 +232,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         SizedBox(
-                          width: 20,
+                          width: 10,
                         ),
                         Container(
                           height: 170,
-                          width: 150,
+                          width: 125,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(30)),
@@ -262,6 +262,42 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Icons.arrow_forward_ios,
                                   size: 10,
                                   color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          height: 140,
+                          width: 90,
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                './assets/pizza.png',
+                                height: 60,
+                                width: 60,
+                              ),
+                              Text(
+                                "Pizza",
+                                style: GoogleFonts.spaceMono(
+                                  fontSize: 17,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              CircleAvatar(
+                                backgroundColor: Colors.white,
+                                child: Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 10,
+                                  color: Colors.green,
                                 ),
                               ),
                             ],
