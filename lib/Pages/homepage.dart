@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Image.asset("./assets/fudi.png"),
               ),
               SizedBox(
-                width: 60,
+                width: 50,
               ),
               Row(
                 children: [
@@ -91,9 +91,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           });
                     },
                   ),
+                  SizedBox(
+                    width: 8,
+                  ),
                   Text(
                     "Nathan John",
                     style: GoogleFonts.spaceMono(fontSize: 16),
+                  ),
+                  SizedBox(
+                    width: 10,
                   ),
                   InkWell(
                     child: Icon(
@@ -137,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               SizedBox(
-                width: 40,
+                width: 30,
               ),
               InkWell(
                 child: CircleAvatar(
