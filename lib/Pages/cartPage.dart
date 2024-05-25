@@ -346,13 +346,21 @@ class _CartPageState extends State<CartPage> {
           ),
         ),
       ),
-      FloatingActionButton(
-          backgroundColor: Colors.green,
-          child: Text(
-            "Check Out and Continue to payment",
-            style: GoogleFonts.spaceMono(fontSize: 18),
+      Positioned(
+        bottom: 15.0,
+        right: 30.0,
+        child: SizedBox(
+          width: 300,
+          child: FloatingActionButton(
+            backgroundColor: Colors.green,
+            onPressed: () {},
+            child: Text(
+              "Chec",
+              style: GoogleFonts.spaceMono(fontSize: 20, color: Colors.white),
+            ),
           ),
-          onPressed: () {})
+        ),
+      )
     ]);
   }
 }
