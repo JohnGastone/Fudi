@@ -33,6 +33,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
         title: Padding(
             padding: const EdgeInsets.only(left: 200),
