@@ -44,195 +44,216 @@ class _FudiDescriptionState extends State<FudiDescription> {
               ),
             )),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            RichText(
-                text: TextSpan(
-                    text: "Roasted Biryani",
-                    style: GoogleFonts.spaceMono(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 32,
-                        color: Colors.black))),
-            Row(
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: Column(
-                    children: [
-                      Text(
-                        "\$ 12.50",
+                RichText(
+                    text: TextSpan(
+                        text: "Roasted Biryani",
                         style: GoogleFonts.spaceMono(
-                            fontSize: 35, color: Colors.green),
-                      ),
-                      Text(
-                        "Size",
-                        style: GoogleFonts.spaceMono(
-                            fontSize: 20, color: Colors.grey),
-                      ),
-                      CircleAvatar(
-                        backgroundColor: Color.fromARGB(255, 209, 204, 204),
-                        child: Text(
-                          "S",
-                          style: GoogleFonts.spaceMono(
-                              fontSize: 20, fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        height: 30,
-                        width: 30,
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "M",
-                            style: GoogleFonts.spaceMono(
-                                fontSize: 20, color: Colors.white),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      CircleAvatar(
-                        backgroundColor: Color.fromARGB(255, 209, 204, 204),
-                        child: Text(
-                          "L",
-                          style: GoogleFonts.spaceMono(
-                              fontSize: 20, fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                      Text(
-                        "Quantity",
-                        style: GoogleFonts.spaceMono(
-                            fontSize: 20, color: Colors.grey),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Row(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 32,
+                            color: Colors.black))),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Column(
                         children: [
+                          Text(
+                            "\$ 12.50",
+                            style: GoogleFonts.spaceMono(
+                                fontSize: 35, color: Colors.green),
+                          ),
+                          Text(
+                            "Size",
+                            style: GoogleFonts.spaceMono(
+                                fontSize: 20, color: Colors.grey),
+                          ),
+                          CircleAvatar(
+                            backgroundColor: Color.fromARGB(255, 209, 204, 204),
+                            child: Text(
+                              "S",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 20, fontWeight: FontWeight.w300),
+                            ),
+                          ),
                           SizedBox(
-                            width: 40,
-                            height: 40,
-                            child: FloatingActionButton(
-                              onPressed: _plateDecrement,
-                              tooltip: "Decrement",
-                              child: Icon(
-                                CupertinoIcons.minus,
-                                size: 20,
+                            height: 10,
+                          ),
+                          Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "M",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 20, color: Colors.white),
                               ),
                             ),
                           ),
                           SizedBox(
-                            width: 10,
+                            height: 10,
+                          ),
+                          CircleAvatar(
+                            backgroundColor: Color.fromARGB(255, 209, 204, 204),
+                            child: Text(
+                              "L",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 20, fontWeight: FontWeight.w300),
+                            ),
                           ),
                           Text(
-                            "$_counter",
-                            style: GoogleFonts.spaceMono(fontSize: 15),
+                            "Quantity",
+                            style: GoogleFonts.spaceMono(
+                                fontSize: 20, color: Colors.grey),
                           ),
                           SizedBox(
-                            width: 10,
+                            height: 8,
                           ),
-                          SizedBox(
-                            height: 40,
-                            width: 40,
-                            child: FloatingActionButton(
-                              backgroundColor: Colors.green,
-                              onPressed: _plateCounter,
-                              tooltip: "Increment",
-                              child: Icon(Icons.add),
-                            ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 40,
+                                height: 40,
+                                child: FloatingActionButton(
+                                  onPressed: _plateDecrement,
+                                  tooltip: "Decrement",
+                                  child: Icon(
+                                    CupertinoIcons.minus,
+                                    size: 20,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "$_counter",
+                                style: GoogleFonts.spaceMono(fontSize: 15),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              SizedBox(
+                                height: 40,
+                                width: 40,
+                                child: FloatingActionButton(
+                                  backgroundColor: Colors.green,
+                                  onPressed: _plateCounter,
+                                  tooltip: "Increment",
+                                  child: Icon(Icons.add),
+                                ),
+                              )
+                            ],
                           )
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                    ),
+                    Column(children: [
+                      Image.asset(
+                        "./assets/biryani.png",
+                        height: 350,
+                        width: 200,
+                      ),
+                    ])
+                  ],
                 ),
-                Column(children: [
-                  Image.asset(
-                    "./assets/biryani.png",
-                    height: 350,
-                    width: 200,
-                  ),
-                ])
+                Padding(
+                    padding: const EdgeInsets.only(left: 25),
+                    child: Row(children: [
+                      Row(
+                        children: [
+                          Icon(
+                            CupertinoIcons.star_fill,
+                            color: Colors.amberAccent,
+                          ),
+                          SizedBox(
+                            width: 2,
+                          ),
+                          Text(
+                            "4.9",
+                            style: GoogleFonts.spaceMono(fontSize: 15),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            './assets/fire.png',
+                            height: 30,
+                            width: 30,
+                          ),
+                          SizedBox(
+                            width: 2,
+                          ),
+                          Text(
+                            "145 cal",
+                            style: GoogleFonts.spaceMono(fontSize: 15),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            CupertinoIcons.clock,
+                            color: const Color.fromARGB(255, 148, 138, 104),
+                          ),
+                          SizedBox(
+                            width: 3,
+                          ),
+                          Text(
+                            "30 minutes",
+                            style: GoogleFonts.spaceMono(fontSize: 15),
+                          )
+                        ],
+                      ),
+                    ])),
+                Padding(
+                  padding: const EdgeInsets.only(right: 180),
+                  child: Text("Details",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 35, fontWeight: FontWeight.bold)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Text(
+                      "Roasted Biryani features succulent, marinated meat roasted to perfection, combined with aromatic spices and tender basmati rice. Garnished with crispy fried onions, fresh coriander, and a squeeze of lemon, it offers a delightful culinary experience. Perfectly paired with cooling raita, this dish promises a hearty and satisfying meal.",
+                      style: GoogleFonts.spaceMono(fontSize: 18)),
+                )
               ],
             ),
-            Padding(
-                padding: const EdgeInsets.only(left: 25),
-                child: Row(children: [
-                  Row(
-                    children: [
-                      Icon(
-                        CupertinoIcons.star_fill,
-                        color: Colors.amberAccent,
-                      ),
-                      SizedBox(
-                        width: 2,
-                      ),
-                      Text(
-                        "4.9",
-                        style: GoogleFonts.spaceMono(fontSize: 15),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: 25,
-                  ),
-                  Row(
-                    children: [
-                      Image.asset(
-                        './assets/fire.png',
-                        height: 30,
-                        width: 30,
-                      ),
-                      SizedBox(
-                        width: 2,
-                      ),
-                      Text(
-                        "145 cal",
-                        style: GoogleFonts.spaceMono(fontSize: 15),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: 25,
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        CupertinoIcons.clock,
-                        color: const Color.fromARGB(255, 148, 138, 104),
-                      ),
-                      SizedBox(
-                        width: 3,
-                      ),
-                      Text(
-                        "30 minutes",
-                        style: GoogleFonts.spaceMono(fontSize: 15),
-                      )
-                    ],
-                  ),
-                ])),
-            Padding(
-              padding: const EdgeInsets.only(right: 180),
-              child: Text("Details",
+          ),
+          Positioned(
+            bottom: 15.0,
+            right: 15.0,
+            child: SizedBox(
+              width: 100,
+              child: FloatingActionButton(
+                backgroundColor: Colors.green,
+                onPressed: () {},
+                child: Text(
+                  "Add to cart",
                   style: GoogleFonts.spaceMono(
-                      fontSize: 35, fontWeight: FontWeight.bold)),
+                    fontSize: 15,
+                  ),
+                ),
+              ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: Text(
-                  "Roasted Biryani features succulent, marinated meat roasted to perfection, combined with aromatic spices and tender basmati rice. Garnished with crispy fried onions, fresh coriander, and a squeeze of lemon, it offers a delightful culinary experience. Perfectly paired with cooling raita, this dish promises a hearty and satisfying meal.",
-                  style: GoogleFonts.spaceMono(fontSize: 18)),
-            )
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
