@@ -122,7 +122,7 @@ class _CartPageState extends State<CartPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(18.0),
                 child: Container(
                   width: 350,
                   height: 130,
@@ -130,7 +130,7 @@ class _CartPageState extends State<CartPage> {
                       borderRadius: BorderRadius.circular(30),
                       color: Colors.white54),
                   child: Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Row(
                       children: [
                         Image.asset(
