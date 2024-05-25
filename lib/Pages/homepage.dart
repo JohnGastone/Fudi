@@ -56,16 +56,13 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
         title: Row(
           children: [
-            CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 221, 206, 206),
-              child: Image.asset(
-                "./assets/fudi.png",
-                height: 50,
-                width: 50,
-              ),
+            Image.asset(
+              "./assets/fudi.png",
+              height: 60,
+              width: 60,
             ),
             SizedBox(
-              width: 50,
+              width: 35,
             ),
             Row(
               children: [
