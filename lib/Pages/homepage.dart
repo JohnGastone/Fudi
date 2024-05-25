@@ -59,7 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               CircleAvatar(
                 backgroundColor: Color.fromARGB(255, 244, 232, 232),
-                child: Icon(Icons.menu_sharp),
+                child: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.green,
+                ),
               ),
             ],
           ),

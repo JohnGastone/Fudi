@@ -246,9 +246,8 @@ class _FudiDescriptionState extends State<FudiDescription> {
                 onPressed: () {},
                 child: Text(
                   "Add to cart",
-                  style: GoogleFonts.spaceMono(
-                    fontSize: 15,
-                  ),
+                  style:
+                      GoogleFonts.spaceMono(fontSize: 20, color: Colors.white),
                 ),
               ),
             ),
