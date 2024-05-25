@@ -22,7 +22,9 @@ class _FudiDescriptionState extends State<FudiDescription> {
 
   void _plateDecrement() {
     setState(() {
-      _counter--;
+      if (_counter > 0) {
+        _counter--;
+      }
     });
   }
 
@@ -121,6 +123,10 @@ class _FudiDescriptionState extends State<FudiDescription> {
                             child: FloatingActionButton(
                               onPressed: _plateDecrement,
                               tooltip: "Decrement",
+                              child: Icon(
+                                CupertinoIcons.minus,
+                                size: 20,
+                              ),
                             ),
                           ),
                           SizedBox(
