@@ -12,7 +12,7 @@ class FudiDescription extends StatefulWidget {
 }
 
 class _FudiDescriptionState extends State<FudiDescription> {
-  int _counter = 0;
+  int _counter = 1;
 
   void _plateCounter() {
     setState((() {
@@ -22,7 +22,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
 
   void _plateDecrement() {
     setState(() {
-      if (_counter > 0) {
+      if (_counter > 1) {
         _counter--;
       }
     });
