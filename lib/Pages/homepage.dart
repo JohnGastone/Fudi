@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.green,
                   ),
                   Text(
-                    "Jenny Wilson",
+                    "Nathan John",
                     style: GoogleFonts.spaceMono(fontSize: 16),
                   ),
                   Icon(
@@ -265,55 +265,63 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        height: 215,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 224, 216, 216),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Image.asset(
-                              './assets/mzuzu.png',
-                              height: 90,
-                              width: 90,
-                            ),
-                            Text(
-                              "Rice Mzuzu",
-                              style: GoogleFonts.spaceMono(
-                                fontSize: 19,
+                      InkWell(
+                        child: Container(
+                          height: 215,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 224, 216, 216),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 15,
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10, right: 8),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Double patty",
-                                    style: GoogleFonts.spaceMono(
-                                        fontSize: 15,
-                                        color: const Color.fromARGB(
-                                            255, 194, 184, 184)),
-                                  ),
-                                  Image.asset(
-                                    "./assets/fire.png",
-                                    height: 35,
-                                    width: 35,
-                                  )
-                                ],
+                              Image.asset(
+                                './assets/mzuzu.png',
+                                height: 90,
+                                width: 90,
                               ),
-                            ),
-                            Text(
-                              "\$ 7.4",
-                              style: GoogleFonts.spaceMono(
-                                  fontSize: 20, color: Colors.green),
-                            ),
-                          ],
+                              Text(
+                                "Rice Mzuzu",
+                                style: GoogleFonts.spaceMono(
+                                  fontSize: 19,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 8),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "Double patty",
+                                      style: GoogleFonts.spaceMono(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              255, 194, 184, 184)),
+                                    ),
+                                    Image.asset(
+                                      "./assets/fire.png",
+                                      height: 35,
+                                      width: 35,
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Text(
+                                "\$ 7.4",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 20, color: Colors.green),
+                              ),
+                            ],
+                          ),
                         ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FudiDescription()));
+                        },
                       ),
                     ],
                   ),
@@ -322,55 +330,63 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.all(18.0),
                   child: Row(
                     children: [
-                      Container(
-                        height: 215,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 224, 216, 216),
-                            borderRadius: BorderRadius.circular(30)),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Image.asset(
-                              './assets/margeritha.png',
-                              height: 90,
-                              width: 90,
-                            ),
-                            Text(
-                              "Margeritha Pizza",
-                              style: GoogleFonts.spaceMono(
-                                fontSize: 17,
+                      InkWell(
+                        child: Container(
+                          height: 215,
+                          width: 150,
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 224, 216, 216),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 15,
                               ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10, right: 8),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "Cheesy Pizza",
-                                    style: GoogleFonts.spaceMono(
-                                        fontSize: 15,
-                                        color: const Color.fromARGB(
-                                            255, 194, 184, 184)),
-                                  ),
-                                  Image.asset(
-                                    "./assets/fire.png",
-                                    height: 30,
-                                    width: 30,
-                                  ),
-                                ],
+                              Image.asset(
+                                './assets/margeritha.png',
+                                height: 90,
+                                width: 90,
                               ),
-                            ),
-                            Text(
-                              "\$ 12.5",
-                              style: GoogleFonts.spaceMono(
-                                  fontSize: 20, color: Colors.green),
-                            ),
-                          ],
+                              Text(
+                                "Margeritha Pizza",
+                                style: GoogleFonts.spaceMono(
+                                  fontSize: 17,
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 8),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "Cheesy Pizza",
+                                      style: GoogleFonts.spaceMono(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              255, 194, 184, 184)),
+                                    ),
+                                    Image.asset(
+                                      "./assets/fire.png",
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Text(
+                                "\$ 12.5",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 20, color: Colors.green),
+                              ),
+                            ],
+                          ),
                         ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FudiDescription()));
+                        },
                       ),
                       SizedBox(
                         width: 20,
