@@ -57,12 +57,15 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(
                 width: 40,
               ),
-              CircleAvatar(
-                backgroundColor: Color.fromARGB(255, 244, 232, 232),
-                child: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.green,
+              InkWell(
+                child: CircleAvatar(
+                  backgroundColor: Color.fromARGB(255, 244, 232, 232),
+                  child: Icon(
+                    Icons.shopping_cart,
+                    color: Colors.green,
+                  ),
                 ),
+                onTap: () {},
               ),
             ],
           ),
