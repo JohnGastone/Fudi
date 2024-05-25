@@ -49,7 +49,7 @@ class _CartPageState extends State<CartPage> {
               padding: const EdgeInsets.all(30.0),
               child: Container(
                 width: 350,
-                height: 100,
+                height: 130,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Colors.white54),
@@ -65,22 +65,54 @@ class _CartPageState extends State<CartPage> {
                       SizedBox(
                         width: 20,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Chicken Bugger",
-                            style: GoogleFonts.spaceMono(fontSize: 18),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Chicken Bugger",
+                              style: GoogleFonts.spaceMono(fontSize: 18),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "\$ 9.5",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 18, color: Colors.green),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      SizedBox(
+                        height: 140,
+                        width: 30,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 240, 234, 234),
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(
+                            children: [
+                              Text(
+                                "+",
+                                style: GoogleFonts.spaceMono(fontSize: 30),
+                              ),
+                              Text(
+                                "1",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 20, color: Colors.green),
+                              ),
+                              Text(
+                                "-",
+                                style: GoogleFonts.spaceMono(fontSize: 30),
+                              )
+                            ],
                           ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "\$ 9.5",
-                            style: GoogleFonts.spaceMono(
-                                fontSize: 18, color: Colors.green),
-                          ),
-                        ],
+                        ),
                       )
                     ],
                   ),
