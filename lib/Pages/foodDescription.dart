@@ -36,14 +36,32 @@ class _FudiDescriptionState extends State<FudiDescription> {
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
         title: Padding(
-            padding: const EdgeInsets.only(left: 200),
-            child: CircleAvatar(
+          padding: const EdgeInsets.all(10),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            SizedBox(
+              width: 70,
+              height: 30,
+              child: FloatingActionButton(
+                  backgroundColor: Colors.green,
+                  child: Text(
+                    "Back",
+                    style: GoogleFonts.spaceMono(
+                        fontSize: 16, color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+            ),
+            CircleAvatar(
               backgroundColor: Colors.green,
               child: Icon(
                 CupertinoIcons.heart,
                 color: Colors.white,
               ),
-            )),
+            ),
+          ]),
+        ),
       ),
       body: Stack(
         children: [
