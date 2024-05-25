@@ -48,10 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     "Nathan John",
                     style: GoogleFonts.spaceMono(fontSize: 16),
                   ),
-                  Icon(
-                    Icons.arrow_drop_down,
-                    size: 20,
-                    color: Colors.green,
+                  InkWell(
+                    child: Icon(
+                      Icons.arrow_drop_down,
+                      size: 20,
+                      color: Colors.green,
+                    ),
+                    onTap: () {},
                   )
                 ],
               ),
