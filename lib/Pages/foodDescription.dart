@@ -1,11 +1,11 @@
-// ignore_for_file: file_names, prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable
+// ignore_for_file: file_names, prefer_const_literals_to_create_immutables, prefer_const_constructors, must_be_immutable, library_private_types_in_public_api
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FudiDescription extends StatefulWidget {
-  FudiDescription({super.key});
+  const FudiDescription({super.key});
 
   @override
   _FudiDescriptionState createState() => _FudiDescriptionState();
@@ -18,6 +18,12 @@ class _FudiDescriptionState extends State<FudiDescription> {
     setState((() {
       _counter++;
     }));
+  }
+
+  void _plateDecrement() {
+    setState(() {
+      _counter--;
+    });
   }
 
   @override
@@ -109,21 +115,12 @@ class _FudiDescriptionState extends State<FudiDescription> {
                       ),
                       Row(
                         children: [
-                          Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 214, 212, 212),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "-",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 20,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: FloatingActionButton(
+                              onPressed: _plateDecrement,
+                              tooltip: "Decrement",
                             ),
                           ),
                           SizedBox(
