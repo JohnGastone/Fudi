@@ -70,7 +70,9 @@ class _FudiDescriptionState extends State<FudiDescription> {
                           Text(
                             "Size",
                             style: GoogleFonts.spaceMono(
-                                fontSize: 20, color: Colors.grey),
+                              fontSize: 20,
+                              color: const Color.fromARGB(255, 99, 98, 98),
+                            ),
                           ),
                           CircleAvatar(
                             backgroundColor: Color.fromARGB(255, 209, 204, 204),
@@ -112,7 +114,9 @@ class _FudiDescriptionState extends State<FudiDescription> {
                           Text(
                             "Quantity",
                             style: GoogleFonts.spaceMono(
-                                fontSize: 20, color: Colors.grey),
+                              fontSize: 20,
+                              color: const Color.fromARGB(255, 99, 98, 98),
+                            ),
                           ),
                           SizedBox(
                             height: 8,

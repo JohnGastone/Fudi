@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           "Get your food",
                           style: GoogleFonts.spaceMono(
                               fontSize: 22,
-                              color: Colors.grey,
+                              color: const Color.fromARGB(255, 99, 98, 98),
                               fontWeight: FontWeight.w400),
                         ),
                         Text("Delivered!",
@@ -246,9 +246,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Text(
                                         "Biryan",
                                         style: GoogleFonts.spaceMono(
-                                            fontSize: 15,
-                                            color: const Color.fromARGB(
-                                                255, 194, 184, 184)),
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              255, 99, 98, 98),
+                                        ),
                                       ),
                                       Image.asset(
                                         "./assets/fire.png",
@@ -307,9 +308,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Text(
                                         "Double patty",
                                         style: GoogleFonts.spaceMono(
-                                            fontSize: 15,
-                                            color: const Color.fromARGB(
-                                                255, 194, 184, 184)),
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              255, 99, 98, 98),
+                                        ),
                                       ),
                                       Image.asset(
                                         "./assets/fire.png",
@@ -372,9 +374,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Text(
                                         "Cheesy Pizza",
                                         style: GoogleFonts.spaceMono(
-                                            fontSize: 15,
-                                            color: const Color.fromARGB(
-                                                255, 194, 184, 184)),
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              255, 99, 98, 98),
+                                        ),
                                       ),
                                       Image.asset(
                                         "./assets/fire.png",
@@ -433,9 +436,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                       Text(
                                         "Double patty",
                                         style: GoogleFonts.spaceMono(
-                                            fontSize: 15,
-                                            color: const Color.fromARGB(
-                                                255, 194, 184, 184)),
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              255, 99, 98, 98),
+                                        ),
                                       ),
                                       Image.asset(
                                         "./assets/fire.png",
