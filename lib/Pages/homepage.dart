@@ -72,12 +72,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
-                                    child: Text("Cancel")),
+                                    child: Text(
+                                      "Cancel",
+                                      style:
+                                          GoogleFonts.spaceMono(fontSize: 16),
+                                    )),
                                 TextButton(
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
-                                    child: Text("OK"))
+                                    child: Text(
+                                      "OK",
+                                      style:
+                                          GoogleFonts.spaceMono(fontSize: 16),
+                                    ))
                               ],
                             );
                           });
@@ -90,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   InkWell(
                     child: Icon(
                       Icons.arrow_drop_down,
-                      size: 20,
+                      size: 30,
                       color: Colors.green,
                     ),
                     onTap: () {
@@ -99,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (BuildContext context) {
                             return AlertDialog(
                               title: Text(
-                                "Location",
+                                "Log Out",
                                 style: GoogleFonts.spaceMono(
                                     fontSize: 16, color: Colors.black),
                               ),
@@ -115,18 +123,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ],
                               ),
-                              actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text("Cancel")),
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text("OK"))
-                              ],
                             );
                           });
                     },
