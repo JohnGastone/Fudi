@@ -12,6 +12,22 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
+  int _counter = 1;
+
+  void _plateCounter() {
+    setState((() {
+      _counter++;
+    }));
+  }
+
+  void _plateDecrement() {
+    setState(() {
+      if (_counter > 1) {
+        _counter--;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
@@ -99,18 +115,28 @@ class _CartPageState extends State<CartPage> {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Column(
                               children: [
-                                Text(
-                                  "+",
-                                  style: GoogleFonts.spaceMono(fontSize: 30),
+                                InkWell(
+                                  child: Text(
+                                    "+",
+                                    style: GoogleFonts.spaceMono(fontSize: 30),
+                                  ),
+                                  onTap: () {
+                                    _plateCounter();
+                                  },
                                 ),
                                 Text(
-                                  "1",
+                                  "$_counter",
                                   style: GoogleFonts.spaceMono(
                                       fontSize: 20, color: Colors.green),
                                 ),
-                                Text(
-                                  "-",
-                                  style: GoogleFonts.spaceMono(fontSize: 30),
+                                InkWell(
+                                  child: Text(
+                                    "-",
+                                    style: GoogleFonts.spaceMono(fontSize: 30),
+                                  ),
+                                  onTap: () {
+                                    _plateDecrement();
+                                  },
                                 )
                               ],
                             ),
@@ -173,18 +199,28 @@ class _CartPageState extends State<CartPage> {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Column(
                               children: [
-                                Text(
-                                  "+",
-                                  style: GoogleFonts.spaceMono(fontSize: 30),
+                                InkWell(
+                                  child: Text(
+                                    "+",
+                                    style: GoogleFonts.spaceMono(fontSize: 30),
+                                  ),
+                                  onTap: () {
+                                    _plateCounter();
+                                  },
                                 ),
                                 Text(
-                                  "1",
+                                  "$_counter",
                                   style: GoogleFonts.spaceMono(
                                       fontSize: 20, color: Colors.green),
                                 ),
-                                Text(
-                                  "-",
-                                  style: GoogleFonts.spaceMono(fontSize: 30),
+                                InkWell(
+                                  child: Text(
+                                    "-",
+                                    style: GoogleFonts.spaceMono(fontSize: 30),
+                                  ),
+                                  onTap: () {
+                                    _plateDecrement();
+                                  },
                                 )
                               ],
                             ),
@@ -247,18 +283,28 @@ class _CartPageState extends State<CartPage> {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Column(
                               children: [
-                                Text(
-                                  "+",
-                                  style: GoogleFonts.spaceMono(fontSize: 30),
+                                InkWell(
+                                  child: Text(
+                                    "+",
+                                    style: GoogleFonts.spaceMono(fontSize: 30),
+                                  ),
+                                  onTap: () {
+                                    _plateCounter();
+                                  },
                                 ),
                                 Text(
-                                  "1",
+                                  "$_counter",
                                   style: GoogleFonts.spaceMono(
                                       fontSize: 20, color: Colors.green),
                                 ),
-                                Text(
-                                  "-",
-                                  style: GoogleFonts.spaceMono(fontSize: 30),
+                                InkWell(
+                                  child: Text(
+                                    "-",
+                                    style: GoogleFonts.spaceMono(fontSize: 30),
+                                  ),
+                                  onTap: () {
+                                    _plateDecrement();
+                                  },
                                 )
                               ],
                             ),
@@ -321,18 +367,28 @@ class _CartPageState extends State<CartPage> {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Column(
                               children: [
-                                Text(
-                                  "+",
-                                  style: GoogleFonts.spaceMono(fontSize: 30),
+                                InkWell(
+                                  child: Text(
+                                    "+",
+                                    style: GoogleFonts.spaceMono(fontSize: 30),
+                                  ),
+                                  onTap: () {
+                                    _plateCounter();
+                                  },
                                 ),
                                 Text(
-                                  "1",
+                                  "$_counter",
                                   style: GoogleFonts.spaceMono(
                                       fontSize: 20, color: Colors.green),
                                 ),
-                                Text(
-                                  "-",
-                                  style: GoogleFonts.spaceMono(fontSize: 30),
+                                InkWell(
+                                  child: Text(
+                                    "-",
+                                    style: GoogleFonts.spaceMono(fontSize: 30),
+                                  ),
+                                  onTap: () {
+                                    _plateDecrement();
+                                  },
                                 )
                               ],
                             ),
