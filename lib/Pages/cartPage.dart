@@ -14,6 +14,9 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 221, 206, 206),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [],
