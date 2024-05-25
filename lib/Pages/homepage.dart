@@ -58,7 +58,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           children: [
             CircleAvatar(
               backgroundColor: Color.fromARGB(255, 221, 206, 206),
-              child: Image.asset("./assets/fudi.png"),
+              child: Image.asset(
+                "./assets/fudi.png",
+                height: 50,
+                width: 50,
+              ),
             ),
             SizedBox(
               width: 50,
