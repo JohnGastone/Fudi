@@ -33,7 +33,8 @@ class _CartPageState extends State<CartPage> {
                 backgroundColor: Colors.green,
                 child: Text(
                   "Add more plates",
-                  style: GoogleFonts.spaceMono(fontSize: 18),
+                  style:
+                      GoogleFonts.spaceMono(fontSize: 18, color: Colors.white),
                 ),
               ),
             ),
