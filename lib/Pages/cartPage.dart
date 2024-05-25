@@ -25,7 +25,7 @@ class _CartPageState extends State<CartPage> {
             height: 40,
             child: FloatingActionButton(
               onPressed: () {
-                Navigator.push(context,
+                Navigator.pop(context,
                     MaterialPageRoute(builder: (context) => MyHomePage()));
               },
               backgroundColor: Colors.green,
