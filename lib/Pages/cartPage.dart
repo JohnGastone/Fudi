@@ -347,6 +347,7 @@ class _CartPageState extends State<CartPage> {
         ),
       ),
       FloatingActionButton(
+          backgroundColor: Colors.green,
           child: Text(
             "Check Out and Continue to payment",
             style: GoogleFonts.spaceMono(fontSize: 18),
