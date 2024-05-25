@@ -132,7 +132,7 @@ class _CartPageState extends State<CartPage> {
                   child: Row(
                     children: [
                       Image.asset(
-                        "./assets/bugger.png",
+                        "./assets/margeritha.png",
                         height: 70,
                         width: 70,
                       ),
@@ -145,14 +145,14 @@ class _CartPageState extends State<CartPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Chicken Bugger",
+                              "Margeritha Pizza",
                               style: GoogleFonts.spaceMono(fontSize: 18),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              "\$ 9.5",
+                              "\$ 10.0",
                               style: GoogleFonts.spaceMono(
                                   fontSize: 18, color: Colors.green),
                             ),
@@ -206,7 +206,7 @@ class _CartPageState extends State<CartPage> {
                   child: Row(
                     children: [
                       Image.asset(
-                        "./assets/bugger.png",
+                        "./assets/pilau.png",
                         height: 70,
                         width: 70,
                       ),
@@ -219,14 +219,14 @@ class _CartPageState extends State<CartPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Chicken Bugger",
+                              "Pilau Vuruga",
                               style: GoogleFonts.spaceMono(fontSize: 18),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              "\$ 9.5",
+                              "\$ 15.0",
                               style: GoogleFonts.spaceMono(
                                   fontSize: 18, color: Colors.green),
                             ),
