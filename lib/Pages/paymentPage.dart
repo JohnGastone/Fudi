@@ -40,7 +40,7 @@ class _paymentPageState extends State<paymentPage> {
                   width: 50,
                 ),
                 Image.asset(
-                  "./assets/Halopesa.png",
+                  "./assets/Mpesa.png",
                   height: 50,
                   width: 50,
                 ),
