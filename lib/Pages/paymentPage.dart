@@ -413,7 +413,7 @@ class _paymentPageState extends State<paymentPage> {
                         }),
                     InkWell(
                         child: Image.asset(
-                          "./assets/Mpesa.png",
+                          "./assets/nmb.png",
                           height: 50,
                           width: 50,
                         ),
@@ -473,7 +473,7 @@ class _paymentPageState extends State<paymentPage> {
                         }),
                     InkWell(
                         child: Image.asset(
-                          "./assets/Tigopesa.png",
+                          "./assets/nbc.png",
                           height: 50,
                           width: 50,
                         ),
@@ -532,7 +532,7 @@ class _paymentPageState extends State<paymentPage> {
                         }),
                     InkWell(
                         child: Image.asset(
-                          "./assets/Airtelmoney.png",
+                          "./assets/sc.png",
                           height: 50,
                           width: 50,
                         ),
