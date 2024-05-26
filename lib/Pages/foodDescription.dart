@@ -268,6 +268,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
             child: SizedBox(
               width: 300,
               child: FloatingActionButton(
+                heroTag: "continue_to_payment", // To avoid conflicting heros
                 backgroundColor: Colors.green,
                 onPressed: () {},
                 child: Text(
