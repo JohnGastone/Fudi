@@ -101,6 +101,11 @@ class _paymentPageState extends State<paymentPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       TextField(
+                                        keyboardType: TextInputType.number,
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter.allow(
+                                              RegExp("[0-9]")),
+                                        ],
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText:
