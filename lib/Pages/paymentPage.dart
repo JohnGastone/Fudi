@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
 
@@ -46,7 +47,7 @@ class _paymentPageState extends State<paymentPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -291,6 +292,28 @@ class _paymentPageState extends State<paymentPage> {
                               });
                         })
                   ],
+                ),
+                SizedBox(
+                  height: 60,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        "./assets/card.png",
+                        height: 30,
+                        width: 30,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Local and international banks",
+                        style: GoogleFonts.spaceMono(fontSize: 17),
+                      )
+                    ],
+                  ),
                 ),
               ],
             )
