@@ -12,19 +12,18 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  int _counter = 1;
-  // int _price = price;
+  List<int> _counters = [1, 1, 1, 1]; // Initialize counters for each item
 
-  void _plateCounter() {
-    setState((() {
-      _counter++;
-    }));
+  void _plateCounter(int index) {
+    setState(() {
+      _counters[index]++;
+    });
   }
 
-  void _plateDecrement() {
+  void _plateDecrement(int index) {
     setState(() {
-      if (_counter > 1) {
-        _counter--;
+      if (_counters[index] > 1) {
+        _counters[index]--;
       }
     });
   }
@@ -64,345 +63,12 @@ class _CartPageState extends State<CartPage> {
                 "Swipe an item left to delete it",
                 style: GoogleFonts.spaceMono(fontSize: 18),
               ),
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Container(
-                  width: 350,
-                  height: 130,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white54),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "./assets/bugger.png",
-                          height: 70,
-                          width: 70,
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Chicken Bugger",
-                                style: GoogleFonts.spaceMono(fontSize: 18),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "\$ 9.5",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 18, color: Colors.green),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SizedBox(
-                          height: 140,
-                          width: 30,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 215, 211, 211),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Column(
-                              children: [
-                                InkWell(
-                                  child: Text(
-                                    "+",
-                                    style: GoogleFonts.spaceMono(fontSize: 30),
-                                  ),
-                                  onTap: () {
-                                    _plateCounter();
-                                  },
-                                ),
-                                Text(
-                                  "$_counter",
-                                  style: GoogleFonts.spaceMono(
-                                      fontSize: 20, color: Colors.green),
-                                ),
-                                InkWell(
-                                  child: Text(
-                                    "-",
-                                    style: GoogleFonts.spaceMono(fontSize: 30),
-                                  ),
-                                  onTap: () {
-                                    _plateDecrement();
-                                  },
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Container(
-                  width: 350,
-                  height: 130,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white54),
-                  child: Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "./assets/margeritha.png",
-                          height: 70,
-                          width: 70,
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Margeritha Pizza",
-                                style: GoogleFonts.spaceMono(fontSize: 18),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "\$ 10.0",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 18, color: Colors.green),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SizedBox(
-                          height: 140,
-                          width: 30,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 215, 211, 211),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Column(
-                              children: [
-                                InkWell(
-                                  child: Text(
-                                    "+",
-                                    style: GoogleFonts.spaceMono(fontSize: 30),
-                                  ),
-                                  onTap: () {
-                                    _plateCounter();
-                                  },
-                                ),
-                                Text(
-                                  "$_counter",
-                                  style: GoogleFonts.spaceMono(
-                                      fontSize: 20, color: Colors.green),
-                                ),
-                                InkWell(
-                                  child: Text(
-                                    "-",
-                                    style: GoogleFonts.spaceMono(fontSize: 30),
-                                  ),
-                                  onTap: () {
-                                    _plateDecrement();
-                                  },
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Container(
-                  width: 350,
-                  height: 130,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white54),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "./assets/pilau.png",
-                          height: 70,
-                          width: 70,
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Pilau Vuruga",
-                                style: GoogleFonts.spaceMono(fontSize: 18),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "\$ 15.0",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 18, color: Colors.green),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SizedBox(
-                          height: 140,
-                          width: 30,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 215, 211, 211),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Column(
-                              children: [
-                                InkWell(
-                                  child: Text(
-                                    "+",
-                                    style: GoogleFonts.spaceMono(fontSize: 30),
-                                  ),
-                                  onTap: () {
-                                    _plateCounter();
-                                  },
-                                ),
-                                Text(
-                                  "$_counter",
-                                  style: GoogleFonts.spaceMono(
-                                      fontSize: 20, color: Colors.green),
-                                ),
-                                InkWell(
-                                  child: Text(
-                                    "-",
-                                    style: GoogleFonts.spaceMono(fontSize: 30),
-                                  ),
-                                  onTap: () {
-                                    _plateDecrement();
-                                  },
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Container(
-                  width: 350,
-                  height: 130,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white54),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          "./assets/hamburger.png",
-                          height: 70,
-                          width: 70,
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Beef Bugger",
-                                style: GoogleFonts.spaceMono(fontSize: 18),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "\$ 12.5",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 18, color: Colors.green),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SizedBox(
-                          height: 140,
-                          width: 30,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 215, 211, 211),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Column(
-                              children: [
-                                InkWell(
-                                  child: Text(
-                                    "+",
-                                    style: GoogleFonts.spaceMono(fontSize: 30),
-                                  ),
-                                  onTap: () {
-                                    _plateCounter();
-                                  },
-                                ),
-                                Text(
-                                  "$_counter",
-                                  style: GoogleFonts.spaceMono(
-                                      fontSize: 20, color: Colors.green),
-                                ),
-                                InkWell(
-                                  child: Text(
-                                    "-",
-                                    style: GoogleFonts.spaceMono(fontSize: 30),
-                                  ),
-                                  onTap: () {
-                                    _plateDecrement();
-                                  },
-                                )
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 50,
-              )
+              _buildCartItem(0, "./assets/bugger.png", "Chicken Bugger", 9.5),
+              _buildCartItem(
+                  1, "./assets/margeritha.png", "Latino Pizza", 10.0),
+              _buildCartItem(2, "./assets/pilau.png", "Pilau Vuruga", 15.0),
+              _buildCartItem(3, "./assets/hamburger.png", "Beef Bugger", 12.5),
+              SizedBox(height: 50)
             ],
           ),
         ),
@@ -423,5 +89,89 @@ class _CartPageState extends State<CartPage> {
         ),
       )
     ]);
+  }
+
+  Widget _buildCartItem(
+      int index, String imagePath, String title, double price) {
+    return Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: Container(
+        width: 350,
+        height: 130,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: Colors.white54,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            children: [
+              Image.asset(
+                imagePath,
+                height: 70,
+                width: 70,
+              ),
+              SizedBox(width: 20),
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: GoogleFonts.spaceMono(fontSize: 18),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "\$ $price",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 18, color: Colors.green),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 20),
+              SizedBox(
+                height: 140,
+                width: 30,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 215, 211, 211),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+                      InkWell(
+                        child: Text(
+                          "+",
+                          style: GoogleFonts.spaceMono(fontSize: 30),
+                        ),
+                        onTap: () {
+                          _plateCounter(index);
+                        },
+                      ),
+                      Text(
+                        "${_counters[index]}",
+                        style: GoogleFonts.spaceMono(
+                            fontSize: 20, color: Colors.green),
+                      ),
+                      InkWell(
+                        child: Text(
+                          "-",
+                          style: GoogleFonts.spaceMono(fontSize: 30),
+                        ),
+                        onTap: () {
+                          _plateDecrement(index);
+                        },
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
