@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/homepage.dart';
+import 'package:fudi/Pages/paymentPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CartPage extends StatefulWidget {
@@ -80,7 +81,10 @@ class _CartPageState extends State<CartPage> {
           width: 300,
           child: FloatingActionButton(
             backgroundColor: Colors.green,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context,
+                  MaterialPageRoute(builder: (context) => paymentPage()));
+            },
             child: Text(
               "Continue to Payment",
               style: GoogleFonts.spaceMono(fontSize: 17, color: Colors.white),
