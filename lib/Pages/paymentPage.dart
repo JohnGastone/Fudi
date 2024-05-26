@@ -321,6 +321,250 @@ class _paymentPageState extends State<paymentPage> {
                     ],
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    InkWell(
+                        child: Image.asset(
+                          "./assets/Halopesa.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "Pay via Halopesa",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter your Halotel number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        width: 100,
+                                        child: FloatingActionButton(
+                                            backgroundColor: Colors.green,
+                                            child: Text("Pay",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16)),
+                                            onPressed: () {
+                                              // Integration to google maps
+                                            }),
+                                      )
+                                    ],
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Center(
+                                          child: Text(
+                                            "Cancel",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16,
+                                                color: Colors.black),
+                                          ),
+                                        )),
+                                  ],
+                                );
+                              });
+                        }),
+                    InkWell(
+                        child: Image.asset(
+                          "./assets/Mpesa.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "Pay via M-pesa",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter your Vodacom number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        width: 100,
+                                        child: FloatingActionButton(
+                                            backgroundColor: Colors.green,
+                                            child: Text("Pay",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16)),
+                                            onPressed: () {
+                                              // Integration to google maps
+                                            }),
+                                      )
+                                    ],
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Center(
+                                          child: Text(
+                                            "Cancel",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16,
+                                                color: Colors.black),
+                                          ),
+                                        )),
+                                  ],
+                                );
+                              });
+                        }),
+                    InkWell(
+                        child: Image.asset(
+                          "./assets/Tigopesa.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "Pay via Tigopesa",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText: "Enter your Tigo number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        width: 100,
+                                        child: FloatingActionButton(
+                                            backgroundColor: Colors.green,
+                                            child: Text("Pay",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16)),
+                                            onPressed: () {
+                                              // Integration to google maps
+                                            }),
+                                      )
+                                    ],
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Center(
+                                          child: Text(
+                                            "Cancel",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16,
+                                                color: Colors.black),
+                                          ),
+                                        )),
+                                  ],
+                                );
+                              });
+                        }),
+                    InkWell(
+                        child: Image.asset(
+                          "./assets/Airtelmoney.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "Pay via Airtel money",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter your Airtel number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        width: 100,
+                                        child: FloatingActionButton(
+                                            backgroundColor: Colors.green,
+                                            child: Text("Pay",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16)),
+                                            onPressed: () {
+                                              // Integration to google maps
+                                            }),
+                                      )
+                                    ],
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Center(
+                                          child: Text(
+                                            "Cancel",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16,
+                                                color: Colors.black),
+                                          ),
+                                        )),
+                                  ],
+                                );
+                              });
+                        })
+                  ],
+                ),
               ],
             )
           ],
