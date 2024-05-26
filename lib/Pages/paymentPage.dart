@@ -330,8 +330,8 @@ class _paymentPageState extends State<paymentPage> {
                     InkWell(
                         child: Image.asset(
                           "./assets/crdb.png",
-                          height: 50,
-                          width: 50,
+                          height: 65,
+                          width: 65,
                         ),
                         onTap: () {
                           showDialog(
@@ -413,8 +413,8 @@ class _paymentPageState extends State<paymentPage> {
                     InkWell(
                         child: Image.asset(
                           "./assets/nmb.png",
-                          height: 50,
-                          width: 50,
+                          height: 65,
+                          width: 65,
                         ),
                         onTap: () {
                           showDialog(
@@ -496,8 +496,8 @@ class _paymentPageState extends State<paymentPage> {
                     InkWell(
                         child: Image.asset(
                           "./assets/nbc.png",
-                          height: 50,
-                          width: 50,
+                          height: 65,
+                          width: 65,
                         ),
                         onTap: () {
                           showDialog(
@@ -579,8 +579,8 @@ class _paymentPageState extends State<paymentPage> {
                     InkWell(
                         child: Image.asset(
                           "./assets/sc.png",
-                          height: 50,
-                          width: 50,
+                          height: 65,
+                          width: 65,
                         ),
                         onTap: () {
                           showDialog(
@@ -661,17 +661,14 @@ class _paymentPageState extends State<paymentPage> {
                         })
                   ],
                 ),
-                SizedBox(
-                  height: 20,
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     InkWell(
                         child: Image.asset(
-                          "./assets/crdb.png",
-                          height: 50,
-                          width: 50,
+                          "./assets/equity.png",
+                          height: 65,
+                          width: 65,
                         ),
                         onTap: () {
                           showDialog(
@@ -679,7 +676,7 @@ class _paymentPageState extends State<paymentPage> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text(
-                                    "Pay via CRDB Bank",
+                                    "Pay via Equity Bank",
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
@@ -753,8 +750,8 @@ class _paymentPageState extends State<paymentPage> {
                     InkWell(
                         child: Image.asset(
                           "./assets/nmb.png",
-                          height: 50,
-                          width: 50,
+                          height: 65,
+                          width: 65,
                         ),
                         onTap: () {
                           showDialog(
@@ -836,8 +833,8 @@ class _paymentPageState extends State<paymentPage> {
                     InkWell(
                         child: Image.asset(
                           "./assets/nbc.png",
-                          height: 50,
-                          width: 50,
+                          height: 65,
+                          width: 65,
                         ),
                         onTap: () {
                           showDialog(
@@ -919,8 +916,8 @@ class _paymentPageState extends State<paymentPage> {
                     InkWell(
                         child: Image.asset(
                           "./assets/sc.png",
-                          height: 50,
-                          width: 50,
+                          height: 65,
+                          width: 65,
                         ),
                         onTap: () {
                           showDialog(
