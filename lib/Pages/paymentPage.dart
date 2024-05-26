@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, prefer_const_constructors
 
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
@@ -25,9 +25,38 @@ class _paymentPageState extends State<paymentPage> {
           ),
         ),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
-          children: [],
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Image.asset(
+                  "./assets/Halopesa.png",
+                  height: 50,
+                  width: 50,
+                ),
+                Image.asset(
+                  "./assets/Halopesa.png",
+                  height: 50,
+                  width: 50,
+                ),
+                Image.asset(
+                  "./assets/Halopesa.png",
+                  height: 50,
+                  width: 50,
+                ),
+                Image.asset(
+                  "./assets/Halopesa.png",
+                  height: 50,
+                  width: 50,
+                )
+              ],
+            )
+          ],
         ),
       ),
     );
