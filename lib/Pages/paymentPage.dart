@@ -17,13 +17,35 @@ class _paymentPageState extends State<paymentPage> {
       backgroundColor: const Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.green,
+        backgroundColor: Color.fromARGB(255, 198, 189, 189),
         title: Center(
-          child: Text(
-            "Choose a payment method",
-            style: GoogleFonts.spaceMono(fontSize: 20),
-          ),
-        ),
+            child: Row(
+          children: [
+            SizedBox(
+              width: 70,
+              height: 30,
+              child: FloatingActionButton(
+                  heroTag: "back_to_home_page", // To avoid conflicting heros
+
+                  backgroundColor: Colors.green,
+                  child: Text(
+                    "Back",
+                    style: GoogleFonts.spaceMono(
+                        fontSize: 16, color: Colors.white),
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              "Choose a payment method",
+              style: GoogleFonts.spaceMono(fontSize: 20),
+            ),
+          ],
+        )),
       ),
       body: SingleChildScrollView(
         child: Column(
