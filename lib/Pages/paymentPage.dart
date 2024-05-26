@@ -314,9 +314,12 @@ class _paymentPageState extends State<paymentPage> {
                       SizedBox(
                         width: 5,
                       ),
-                      Text(
-                        "Local and international banks",
-                        style: GoogleFonts.spaceMono(fontSize: 17),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Pay via VISA or MASTERCARD ",
+                          style: GoogleFonts.spaceMono(fontSize: 17),
+                        ),
                       )
                     ],
                   ),
