@@ -80,9 +80,10 @@ class _CartPageState extends State<CartPage> {
         child: SizedBox(
           width: 300,
           child: FloatingActionButton(
+            heroTag: "continue_to_payment", // To avoid conflicting heros
             backgroundColor: Colors.green,
             onPressed: () {
-              Navigator.pop(context,
+              Navigator.push(context,
                   MaterialPageRoute(builder: (context) => paymentPage()));
             },
             child: Text(
