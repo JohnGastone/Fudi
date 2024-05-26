@@ -67,7 +67,7 @@ class _CartPageState extends State<CartPage> {
               _buildCartItem(
                   1, "./assets/margeritha.png", "Latino Pizza", 10.0),
               _buildCartItem(2, "./assets/pilau.png", "Pilau Vuruga", 15.0),
-              _buildCartItem(3, "./assets/hamburger.png", "Beef Bugger", 12.5),
+              _buildCartItem(3, "./assets/hamburger.png", "Beef Bugger ", 12.5),
               SizedBox(height: 50)
             ],
           ),
