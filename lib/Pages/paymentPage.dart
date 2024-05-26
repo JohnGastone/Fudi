@@ -12,8 +12,12 @@ class paymentPage extends StatefulWidget {
 class _paymentPageState extends State<paymentPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 221, 206, 206),
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 221, 206, 206),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: const Color.fromARGB(255, 221, 206, 206),
+      ),
     );
   }
 }
