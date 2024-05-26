@@ -38,7 +38,14 @@ class _paymentPageState extends State<paymentPage> {
                   padding: const EdgeInsets.only(left: 50),
                   child: Row(
                     children: [
-                      Image.asset("./assets/smartphone.png"),
+                      Image.asset(
+                        "./assets/smartphone.png",
+                        width: 30,
+                        height: 30,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
                       Text(
                         "Mobile Network Operators",
                         style: GoogleFonts.spaceMono(fontSize: 17),
