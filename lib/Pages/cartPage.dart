@@ -12,7 +12,7 @@ class CartPage extends StatefulWidget {
 }
 
 class _CartPageState extends State<CartPage> {
-  List<int> _counters = [1, 1, 1, 1]; // Initialize counters for each item
+  final List<int> _counters = [1, 1, 1, 1]; // Initialize counters for each item
 
   void _plateCounter(int index) {
     setState(() {
