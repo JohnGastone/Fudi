@@ -321,12 +321,15 @@ class _paymentPageState extends State<paymentPage> {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     InkWell(
                         child: Image.asset(
-                          "./assets/Halopesa.png",
+                          "./assets/crdb.png",
                           height: 50,
                           width: 50,
                         ),
@@ -336,7 +339,7 @@ class _paymentPageState extends State<paymentPage> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text(
-                                    "Pay via Halopesa",
+                                    "Pay via CRDB ",
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
