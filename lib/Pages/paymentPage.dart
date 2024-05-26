@@ -105,6 +105,7 @@ class _paymentPageState extends State<paymentPage> {
                                         inputFormatters: [
                                           FilteringTextInputFormatter.allow(
                                               RegExp("[0-9]")),
+                                          LengthLimitingTextInputFormatter(10)
                                         ],
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
