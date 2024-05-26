@@ -191,15 +191,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: BottomNavigationBar(
                   selectedLabelStyle: GoogleFonts.spaceMono(fontSize: 12),
                   unselectedLabelStyle: GoogleFonts.spaceMono(fontSize: 12),
-                  backgroundColor: Colors.white,
+                  backgroundColor: Color.fromARGB(255, 224, 216, 216),
                   items: const <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
                       icon: Icon(Icons.explore),
                       label: 'Explore',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.shopping_cart),
-                      label: 'Cart',
+                      icon: Icon(Icons.restaurant),
+                      label: 'Restaurants',
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.person),
