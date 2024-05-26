@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors
+// ignore_for_file: camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
@@ -17,7 +17,7 @@ class _paymentPageState extends State<paymentPage> {
       backgroundColor: const Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: const Color.fromARGB(255, 221, 206, 206),
+        backgroundColor: Colors.green,
         title: Center(
           child: Text(
             "Choose a payment method",
@@ -31,29 +31,158 @@ class _paymentPageState extends State<paymentPage> {
             SizedBox(
               height: 40,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            Column(
               children: [
-                Image.asset(
-                  "./assets/Halopesa.png",
-                  height: 50,
-                  width: 50,
+                Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Row(
+                    children: [
+                      Icon(Icons.smartphone),
+                      Text(
+                        "Mobile Network Operators",
+                        style: GoogleFonts.spaceMono(fontSize: 17),
+                      )
+                    ],
+                  ),
                 ),
-                Image.asset(
-                  "./assets/Mpesa.png",
-                  height: 50,
-                  width: 50,
+                SizedBox(
+                  height: 20,
                 ),
-                Image.asset(
-                  "./assets/Tigopesa.png",
-                  height: 50,
-                  width: 50,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    InkWell(
+                        child: Image.asset(
+                          "./assets/Halopesa.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "Pay via Halopesa",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter your Halotel number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        width: 100,
+                                        child: FloatingActionButton(
+                                            backgroundColor: Colors.green,
+                                            child: Text("Pay",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16)),
+                                            onPressed: () {
+                                              // Integration to google maps
+                                            }),
+                                      )
+                                    ],
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Center(
+                                          child: Text(
+                                            "Cancel",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16,
+                                                color: Colors.black),
+                                          ),
+                                        )),
+                                  ],
+                                );
+                              });
+                        }),
+                    InkWell(
+                        child: Image.asset(
+                          "./assets/Mpesa.png",
+                          height: 50,
+                          width: 50,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "Pay via Halopesa",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter your Halotel number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        width: 100,
+                                        child: FloatingActionButton(
+                                            backgroundColor: Colors.green,
+                                            child: Text("Pay",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16)),
+                                            onPressed: () {
+                                              // Integration to google maps
+                                            }),
+                                      )
+                                    ],
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Center(
+                                          child: Text(
+                                            "Cancel",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16,
+                                                color: Colors.black),
+                                          ),
+                                        )),
+                                  ],
+                                );
+                              });
+                        }),
+                    Image.asset(
+                      "./assets/Tigopesa.png",
+                      height: 50,
+                      width: 50,
+                    ),
+                    Image.asset(
+                      "./assets/Airtelmoney.png",
+                      height: 50,
+                      width: 50,
+                    )
+                  ],
                 ),
-                Image.asset(
-                  "./assets/Airtelmoney.png",
-                  height: 50,
-                  width: 50,
-                )
               ],
             )
           ],
