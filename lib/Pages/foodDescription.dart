@@ -43,6 +43,8 @@ class _FudiDescriptionState extends State<FudiDescription> {
               width: 70,
               height: 30,
               child: FloatingActionButton(
+                  heroTag: "back_to_home_page", // To avoid conflicting heros
+
                   backgroundColor: Colors.green,
                   child: Text(
                     "Back",
@@ -268,7 +270,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
             child: SizedBox(
               width: 300,
               child: FloatingActionButton(
-                heroTag: "continue_to_payment", // To avoid conflicting heros
+                heroTag: "add_to_cart", // To avoid conflicting heros
                 backgroundColor: Colors.green,
                 onPressed: () {},
                 child: Text(
