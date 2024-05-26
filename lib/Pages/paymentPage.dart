@@ -339,7 +339,7 @@ class _paymentPageState extends State<paymentPage> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text(
-                                    "Pay via CRDB ",
+                                    "Pay via CRDB Bank",
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
@@ -423,7 +423,7 @@ class _paymentPageState extends State<paymentPage> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text(
-                                    "Pay via M-pesa",
+                                    "Pay via NMB Bank",
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
@@ -431,10 +431,34 @@ class _paymentPageState extends State<paymentPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       TextField(
+                                        keyboardType: TextInputType.number,
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText:
-                                                "Enter your Vodacom number"),
+                                                "Enter your Account Number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      TextField(
+                                        keyboardType: TextInputType.datetime,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter Account expiration date"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      TextField(
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText: "Enter Account CVV "),
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 15, color: Colors.black),
                                       ),
@@ -483,7 +507,7 @@ class _paymentPageState extends State<paymentPage> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text(
-                                    "Pay via Tigopesa",
+                                    "Pay via NBC Bank",
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
@@ -491,9 +515,34 @@ class _paymentPageState extends State<paymentPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       TextField(
+                                        keyboardType: TextInputType.number,
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
-                                            hintText: "Enter your Tigo number"),
+                                            hintText:
+                                                "Enter your Account Number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      TextField(
+                                        keyboardType: TextInputType.datetime,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter Account expiration date"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      TextField(
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText: "Enter Account CVV "),
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 15, color: Colors.black),
                                       ),
@@ -542,7 +591,7 @@ class _paymentPageState extends State<paymentPage> {
                               builder: (BuildContext context) {
                                 return AlertDialog(
                                   title: Text(
-                                    "Pay via Airtel money",
+                                    "Pay via Standard Chartered Bank",
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
@@ -550,10 +599,34 @@ class _paymentPageState extends State<paymentPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       TextField(
+                                        keyboardType: TextInputType.number,
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText:
-                                                "Enter your Airtel number"),
+                                                "Enter your Account Number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      TextField(
+                                        keyboardType: TextInputType.datetime,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter Account expiration date"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      TextField(
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText: "Enter Account CVV "),
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 15, color: Colors.black),
                                       ),
