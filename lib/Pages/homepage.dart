@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fudi/Pages/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:motion_tab_bar/MotionTabBar.dart';
+// import 'package:motion_tab_bar/MotionTabBar.dart';
 import 'package:motion_tab_bar/MotionTabBarController.dart';
 
 class MyHomePage extends StatefulWidget {
