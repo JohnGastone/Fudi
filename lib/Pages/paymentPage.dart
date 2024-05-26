@@ -167,6 +167,12 @@ class _paymentPageState extends State<paymentPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       TextField(
+                                        keyboardType: TextInputType.number,
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter.allow(
+                                              RegExp("[0-9]")),
+                                          LengthLimitingTextInputFormatter(10)
+                                        ],
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText:
@@ -227,6 +233,12 @@ class _paymentPageState extends State<paymentPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       TextField(
+                                        keyboardType: TextInputType.number,
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter.allow(
+                                              RegExp("[0-9]")),
+                                          LengthLimitingTextInputFormatter(10)
+                                        ],
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText: "Enter your Tigo number"),
@@ -286,6 +298,12 @@ class _paymentPageState extends State<paymentPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       TextField(
+                                        keyboardType: TextInputType.number,
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter.allow(
+                                              RegExp("[0-9]")),
+                                          LengthLimitingTextInputFormatter(10)
+                                        ],
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText:
