@@ -347,10 +347,34 @@ class _paymentPageState extends State<paymentPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       TextField(
+                                        keyboardType: TextInputType.number,
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText:
-                                                "Enter your Halotel number"),
+                                                "Enter your Account Number"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      TextField(
+                                        keyboardType: TextInputType.datetime,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText:
+                                                "Enter Account expiration date"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 15, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      TextField(
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText: "Enter Account CVV "),
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 15, color: Colors.black),
                                       ),
