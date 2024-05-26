@@ -350,8 +350,7 @@ class _paymentPageState extends State<paymentPage> {
                                         keyboardType: TextInputType.number,
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
-                                            hintText:
-                                                "Enter your Account Number"),
+                                            hintText: "Account Number"),
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 15, color: Colors.black),
                                       ),
@@ -363,7 +362,7 @@ class _paymentPageState extends State<paymentPage> {
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText:
-                                                "Enter Account expiration date"),
+                                                "Account expiration date"),
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 15, color: Colors.black),
                                       ),
@@ -374,7 +373,7 @@ class _paymentPageState extends State<paymentPage> {
                                         keyboardType: TextInputType.number,
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
-                                            hintText: "Enter Account CVV "),
+                                            hintText: "Account's CVV "),
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 15, color: Colors.black),
                                       ),
@@ -389,7 +388,7 @@ class _paymentPageState extends State<paymentPage> {
                                                 style: GoogleFonts.spaceMono(
                                                     fontSize: 16)),
                                             onPressed: () {
-                                              // Integration to google maps
+                                              // Integration to CRDB payment API
                                             }),
                                       )
                                     ],
