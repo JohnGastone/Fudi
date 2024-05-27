@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, prefer_final_fields, unused_field
 
 import 'package:flutter/material.dart';
 import 'package:fudi/models/restaurants_model.dart';
@@ -12,8 +12,7 @@ class RestaurantsPage extends StatefulWidget {
 }
 
 class _RestaurantsPageState extends State<RestaurantsPage> {
-  List<RestaurantModel> _restaurantsList =
-      List.from(RestaurantList.getRestaurants);
+  List<RestaurantModel> displayList = List.from(RestaurantList.displayList);
 
   @override
   Widget build(BuildContext context) {
