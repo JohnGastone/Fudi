@@ -134,16 +134,19 @@ class RestaurantsPage extends StatelessWidget {
                       Column(
                         children: [
                           Container(
-                            child: Image.asset(
-                              "./assets/hamburger.png",
-                              height: 80,
-                              width: 80,
+                            decoration: BoxDecoration(
+                              color: Colors.blueGrey,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10)),
                             ),
-                          ),
-                          Card(
-                            color: const Color.fromARGB(255, 155, 173, 183),
                             child: Column(
                               children: [
+                                Image.asset(
+                                  "./assets/hamburger.png",
+                                  height: 80,
+                                  width: 80,
+                                ),
                                 Row(
                                   children: [
                                     Icon(Icons.food_bank, color: Colors.green),
@@ -170,7 +173,7 @@ class RestaurantsPage extends StatelessWidget {
                                 )
                               ],
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ]))
