@@ -239,24 +239,27 @@ class ExplorePage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "Get your food",
+                    "Get your food,",
                     style: GoogleFonts.spaceMono(
                         fontSize: 22,
                         color: const Color.fromARGB(255, 99, 98, 98),
                         fontWeight: FontWeight.w400),
                   ),
-                  Text("Delivered!",
+                  Text("Delivered,",
                       style: GoogleFonts.spaceMono(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       )),
-                  Text(
-                    "at your doorstep",
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 22,
-                        color: const Color.fromARGB(255, 99, 98, 98),
-                        fontWeight: FontWeight.w400),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: Text(
+                      "At your doorstep.",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 22,
+                          color: const Color.fromARGB(255, 99, 98, 98),
+                          fontWeight: FontWeight.w400),
+                    ),
                   ),
                   SizedBox(
                     height: 20,
