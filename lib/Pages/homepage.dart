@@ -284,41 +284,57 @@ class _ExplorePageState extends State<ExplorePage> {
             SizedBox(
               height: 250,
               child: ListView.builder(
+                scrollDirection: Axis.horizontal,
                 itemCount: displayList.length,
                 itemBuilder: (context, index) => InkWell(
                   onTap: () {},
-                  child: Container(
-                    height: 140,
-                    width: 90,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          displayList[index].categoryImage!,
-                          height: 60,
-                          width: 60,
-                        ),
-                        Text(
-                          displayList[index].categoryImage!,
-                          style: GoogleFonts.spaceMono(
-                            fontSize: 17,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Container(
+                          height: 160,
+                          width: 110,
+                          margin: EdgeInsets.only(
+                              right: 10), // Add space between items
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Image.asset(
+                                displayList[index].categoryImage!,
+                                height: 60,
+                                width: 60,
+                              ),
+                              SizedBox(
+                                height: 6,
+                              ),
+                              Text(
+                                displayList[index].categoryName!,
+                                style: GoogleFonts.spaceMono(
+                                  fontSize: 17,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              CircleAvatar(
+                                backgroundColor: Colors.white,
+                                child: Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 10,
+                                  color: Colors.green,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 10,
-                            color: Colors.green,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
