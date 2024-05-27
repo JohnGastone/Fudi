@@ -9,8 +9,8 @@ class RestaurantModel {
 class RestaurantList {
   static List<RestaurantModel> getRestaurants = [
     RestaurantModel("Seafood Lovers", 5.0, "./assets/hamburger.png"),
-    RestaurantModel("Shishi", 5.0, "./assets/biryani.png"),
-    RestaurantModel("Shangazi Cafe", 4.5, "./assets/pilau.png")
+    RestaurantModel("Shishi Food   ", 5.0, "./assets/biryani.png"),
+    RestaurantModel("Shangazi Cafe ", 4.5, "./assets/pilau.png")
   ];
   static List<RestaurantModel> displayList = List.from(getRestaurants);
 }
