@@ -141,7 +141,7 @@ class RestaurantsPage extends StatelessWidget {
                             ),
                           ),
                           Card(
-                            color: Colors.blueGrey,
+                            color: const Color.fromARGB(255, 155, 173, 183),
                             child: Column(
                               children: [
                                 Row(
