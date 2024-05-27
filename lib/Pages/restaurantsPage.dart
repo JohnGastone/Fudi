@@ -134,81 +134,86 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                     fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
-            ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: displayList.length,
-              itemBuilder: (context, index) => InkWell(
-                onTap: () {},
-                child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                            child: Column(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white24,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(10),
-                                        topRight: Radius.circular(10)),
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      Image.asset(
-                                        displayList[index].coverImage!,
-                                        height: 80,
-                                        width: 80,
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: const Color.fromARGB(
-                                              255, 110, 142, 168),
-                                          borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(10),
-                                              bottomRight: Radius.circular(10)),
+            SizedBox(
+              height: 170,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: displayList.length,
+                itemBuilder: (context, index) => InkWell(
+                  onTap: () {},
+                  child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white24,
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10),
+                                          topRight: Radius.circular(10)),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          displayList[index].coverImage!,
+                                          height: 80,
+                                          width: 80,
                                         ),
-                                        child: Column(
-                                          children: [
-                                            Row(
-                                              children: [
-                                                Icon(Icons.food_bank,
-                                                    color: Colors.green),
-                                                Text(
-                                                  displayList[index]
-                                                      .restaurantName!,
-                                                  style: GoogleFonts.spaceMono(
-                                                      fontSize: 15),
-                                                )
-                                              ],
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 90),
-                                              child: Row(
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            color: const Color.fromARGB(
+                                                255, 110, 142, 168),
+                                            borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(10),
+                                                bottomRight:
+                                                    Radius.circular(10)),
+                                          ),
+                                          child: Column(
+                                            children: [
+                                              Row(
                                                 children: [
-                                                  Icon(Icons.star_outline,
+                                                  Icon(Icons.food_bank,
                                                       color: Colors.green),
                                                   Text(
-                                                    "${displayList[index].restaurantRating!}",
+                                                    displayList[index]
+                                                        .restaurantName!,
                                                     style:
                                                         GoogleFonts.spaceMono(
                                                             fontSize: 15),
                                                   )
                                                 ],
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                    ],
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 90),
+                                                child: Row(
+                                                  children: [
+                                                    Icon(Icons.star_outline,
+                                                        color: Colors.green),
+                                                    Text(
+                                                      "${displayList[index].restaurantRating!}",
+                                                      style:
+                                                          GoogleFonts.spaceMono(
+                                                              fontSize: 15),
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ])),
+                          ])),
+                ),
               ),
             )
           ],
