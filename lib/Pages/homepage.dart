@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
+import 'package:fudi/Pages/restaurantsPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static List<Widget> _pages = <Widget>[
     ExplorePage(),
-    CartPage(),
+    RestaurantsPage(),
     ProfilePage(),
   ];
 
