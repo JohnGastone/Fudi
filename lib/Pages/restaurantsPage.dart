@@ -134,74 +134,78 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                     fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
-            Padding(
-                padding: const EdgeInsets.all(20),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        child: Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.white24,
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10)),
-                              ),
-                              child: Column(
-                                children: [
-                                  Image.asset(
-                                    "./assets/hamburger.png",
-                                    height: 80,
-                                    width: 80,
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: const Color.fromARGB(
-                                          255, 110, 142, 168),
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(10),
-                                          bottomRight: Radius.circular(10)),
+            ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => ,
+              child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white24,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      "./assets/hamburger.png",
+                                      height: 80,
+                                      width: 80,
                                     ),
-                                    child: Column(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Icon(Icons.food_bank,
-                                                color: Colors.green),
-                                            Text(
-                                              "Seafood Lovers",
-                                              style: GoogleFonts.spaceMono(
-                                                  fontSize: 15),
-                                            )
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 90),
-                                          child: Row(
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: const Color.fromARGB(
+                                            255, 110, 142, 168),
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(10),
+                                            bottomRight: Radius.circular(10)),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Row(
                                             children: [
-                                              Icon(Icons.star_outline,
+                                              Icon(Icons.food_bank,
                                                   color: Colors.green),
                                               Text(
-                                                "5.0",
+                                                "Seafood Lovers",
                                                 style: GoogleFonts.spaceMono(
                                                     fontSize: 15),
                                               )
                                             ],
                                           ),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(right: 90),
+                                            child: Row(
+                                              children: [
+                                                Icon(Icons.star_outline,
+                                                    color: Colors.green),
+                                                Text(
+                                                  "5.0",
+                                                  style: GoogleFonts.spaceMono(
+                                                      fontSize: 15),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ]))
+                      ])),
+            )
           ],
         ),
       ),
