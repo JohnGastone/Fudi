@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fudi/Pages/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
 import 'package:fudi/Pages/restaurantsPage.dart';
+import 'package:fudi/models/categories_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -26,6 +27,9 @@ class _MyHomePageState extends State<MyHomePage> {
       _selectedIndex = index;
     });
   }
+
+  static List<CategoriesModel> displayList =
+      List.from(CategoriesList.displayList);
 
   @override
   Widget build(BuildContext context) {
