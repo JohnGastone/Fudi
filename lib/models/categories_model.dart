@@ -7,13 +7,10 @@ class FoodCategories {
 
 class CategoriesList {
   static List<FoodCategories>? foodCategories = [
+    FoodCategories(categoryName: "Bugger", categoryImage: "assets/bugger.png"),
     FoodCategories(
-        categoryName: "Fruits", categoryImage: "assets/images/fruits.png"),
-    FoodCategories(
-        categoryName: "Vegetables",
-        categoryImage: "assets/images/vegetables.png"),
-    FoodCategories(
-        categoryName: "Meat", categoryImage: "assets/images/meat.png"),
+        categoryName: "Biryani", categoryImage: "assets/biryani.png"),
+    FoodCategories(categoryName: "Pilau", categoryImage: "assets/pilau.png"),
     FoodCategories(
         categoryName: "Dairy", categoryImage: "assets/images/dairy.png"),
     FoodCategories(
