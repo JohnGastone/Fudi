@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -118,14 +118,31 @@ class RestaurantsPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Text(
+              "Trending this week",
+              style: GoogleFonts.spaceMono(
+                  fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 15,
+            ),
             Padding(
-              padding: const EdgeInsets.all(20),
-              child: Text(
-                "Trending this week",
-                style: GoogleFonts.spaceMono(
-                    fontSize: 22, fontWeight: FontWeight.bold),
-              ),
-            )
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            child: Image.asset(
+                              "./assets/hamburger.png",
+                              height: 80,
+                              width: 80,
+                            ),
+                          )
+                        ],
+                      )
+                    ]))
           ],
         ),
       ),
