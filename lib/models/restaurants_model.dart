@@ -8,8 +8,8 @@ class RestaurantModel {
 
 class RestaurantList {
   static List<RestaurantModel> getRestaurants = [
-    RestaurantModel("Seafood Lovers", 5.0, "./assets/SeafoodLovers.png"),
-    RestaurantModel("Shishi", 5.0, "./assets/shishifood.png"),
-    RestaurantModel("Shangazi Cafe", 4.5, "./assets/shangazi.png")
+    RestaurantModel("Seafood Lovers", 5.0, "./assets/hamburger.png"),
+    RestaurantModel("Shishi", 5.0, "./assets/biryani.png"),
+    RestaurantModel("Shangazi Cafe", 4.5, "./assets/pilau.png")
   ];
 }
