@@ -16,102 +16,100 @@ class RestaurantsPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              width: 200,
+              width: 240,
               height: 38,
               child: Card(
                 color: Colors.green,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                  child: Row(
-                    children: [
-                      InkWell(
-                        child: Icon(
+                  padding: const EdgeInsets.only(left: 60.0, right: 10.0),
+                  child: InkWell(
+                    child: Row(
+                      children: [
+                        Icon(
                           Icons.location_pin,
                           size: 20,
                           color: Colors.white,
                         ),
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: Text(
-                                    "Location",
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Kinyerezi",
+                          style: GoogleFonts.spaceMono(fontSize: 16),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                      ],
+                    ),
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              title: Text(
+                                "Location",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 16, color: Colors.black),
+                              ),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  TextField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        hintText: "Enter your location"),
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
-                                  content: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      TextField(
-                                        decoration: InputDecoration(
-                                            border: OutlineInputBorder(),
-                                            hintText: "Enter your location"),
-                                        style: GoogleFonts.spaceMono(
-                                            fontSize: 16, color: Colors.black),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      SizedBox(
-                                        width: 200,
-                                        child: FloatingActionButton(
-                                            backgroundColor: Colors.green,
-                                            child: Text("Pick from the map",
-                                                style: GoogleFonts.spaceMono(
-                                                    fontSize: 16)),
-                                            onPressed: () {
-                                              // Integration to google maps
-                                            }),
-                                      )
-                                    ],
+                                  SizedBox(
+                                    height: 10,
                                   ),
-                                  actions: [
-                                    TextButton(
+                                  SizedBox(
+                                    width: 200,
+                                    child: FloatingActionButton(
+                                        backgroundColor: Colors.green,
+                                        child: Text("Pick from the map",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16)),
                                         onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text(
-                                          "Cancel",
-                                          style: GoogleFonts.spaceMono(
-                                              fontSize: 16,
-                                              color: Colors.black),
-                                        )),
-                                    TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text(
-                                          "OK",
-                                          style: GoogleFonts.spaceMono(
-                                              fontSize: 16,
-                                              color: Colors.black),
-                                        ))
-                                  ],
-                                );
-                              });
-                        },
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "Kinyerezi",
-                        style: GoogleFonts.spaceMono(fontSize: 16),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                    ],
+                                          // Integration to google maps
+                                        }),
+                                  )
+                                ],
+                              ),
+                              actions: [
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text(
+                                      "Cancel",
+                                      style: GoogleFonts.spaceMono(
+                                          fontSize: 16, color: Colors.black),
+                                    )),
+                                TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Text(
+                                      "OK",
+                                      style: GoogleFonts.spaceMono(
+                                          fontSize: 16, color: Colors.black),
+                                    ))
+                              ],
+                            );
+                          });
+                    },
                   ),
                 ),
               ),
             ),
             CircleAvatar(
-              backgroundColor: Colors.grey,
+              backgroundColor: const Color.fromARGB(255, 225, 222, 222),
               child: Icon(
                 Icons.search,
-                color: Colors.white,
+                color: Colors.green,
               ),
             )
           ],
