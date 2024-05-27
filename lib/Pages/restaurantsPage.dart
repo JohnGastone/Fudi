@@ -118,13 +118,13 @@ class RestaurantsPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Text(
-              "Trending this week",
-              style: GoogleFonts.spaceMono(
-                  fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 15,
+            Padding(
+              padding: const EdgeInsets.only(right: 110),
+              child: Text(
+                "Trending this week",
+                style: GoogleFonts.spaceMono(
+                    fontSize: 22, fontWeight: FontWeight.bold),
+              ),
             ),
             Padding(
                 padding: const EdgeInsets.all(20),
@@ -139,9 +139,40 @@ class RestaurantsPage extends StatelessWidget {
                               height: 80,
                               width: 80,
                             ),
+                          ),
+                          Card(
+                            color: Colors.blueGrey,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.food_bank, color: Colors.green),
+                                    Text(
+                                      "Seafood Lovers",
+                                      style:
+                                          GoogleFonts.spaceMono(fontSize: 15),
+                                    )
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 90),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.star_outline,
+                                          color: Colors.green),
+                                      Text(
+                                        "5.0",
+                                        style:
+                                            GoogleFonts.spaceMono(fontSize: 15),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           )
                         ],
-                      )
+                      ),
                     ]))
           ],
         ),
