@@ -282,7 +282,7 @@ class _ExplorePageState extends State<ExplorePage> {
               ),
             ),
             SizedBox(
-              height: 250,
+              height: 240,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: displayList.length,
