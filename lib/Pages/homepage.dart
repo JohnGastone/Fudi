@@ -252,7 +252,7 @@ class ExplorePage extends StatelessWidget {
                         color: Colors.black,
                       )),
                   Padding(
-                    padding: const EdgeInsets.only(left: 24),
+                    padding: const EdgeInsets.only(left: 25),
                     child: Text(
                       "At your doorstep.",
                       style: GoogleFonts.spaceMono(
@@ -275,120 +275,8 @@ class ExplorePage extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                children: [
-                  Container(
-                    height: 140,
-                    width: 90,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          './assets/pizza.png',
-                          height: 60,
-                          width: 60,
-                        ),
-                        Text(
-                          "Pizza",
-                          style: GoogleFonts.spaceMono(
-                            fontSize: 17,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 10,
-                            color: Colors.green,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    height: 170,
-                    width: 125,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          './assets/bugger.png',
-                          height: 90,
-                          width: 90,
-                        ),
-                        Text(
-                          "Bugger",
-                          style: GoogleFonts.spaceMono(
-                            fontSize: 17,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Colors.green,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 10,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    height: 140,
-                    width: 90,
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Image.asset(
-                          './assets/pilau.png',
-                          height: 60,
-                          width: 60,
-                        ),
-                        Text(
-                          "Pilau",
-                          style: GoogleFonts.spaceMono(
-                            fontSize: 17,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        CircleAvatar(
-                          backgroundColor: Colors.white,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 10,
-                            color: Colors.green,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+            ListView.builder(
+              itemBuilder: (context, index) => InkWell(),
             ),
             Padding(
               padding: const EdgeInsets.all(25.0),
