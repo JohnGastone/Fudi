@@ -251,6 +251,13 @@ class ExplorePage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       )),
+                  Text(
+                    "at your doorstep",
+                    style: GoogleFonts.spaceMono(
+                        fontSize: 22,
+                        color: const Color.fromARGB(255, 99, 98, 98),
+                        fontWeight: FontWeight.w400),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
