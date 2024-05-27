@@ -3,9 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RestaurantsPage extends StatelessWidget {
+class RestaurantsPage extends StatefulWidget {
   const RestaurantsPage({super.key});
 
+  @override
+  State<RestaurantsPage> createState() => _RestaurantsPageState();
+}
+
+class _RestaurantsPageState extends State<RestaurantsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
