@@ -119,7 +119,7 @@ class RestaurantsPage extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 110),
+              padding: const EdgeInsets.only(right: 80),
               child: Text(
                 "Trending this week",
                 style: GoogleFonts.spaceMono(
@@ -131,50 +131,67 @@ class RestaurantsPage extends StatelessWidget {
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.blueGrey,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  topRight: Radius.circular(10)),
-                            ),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  "./assets/hamburger.png",
-                                  height: 80,
-                                  width: 80,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(Icons.food_bank, color: Colors.green),
-                                    Text(
-                                      "Seafood Lovers",
-                                      style:
-                                          GoogleFonts.spaceMono(fontSize: 15),
-                                    )
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 90),
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.star_outline,
-                                          color: Colors.green),
-                                      Text(
-                                        "5.0",
-                                        style:
-                                            GoogleFonts.spaceMono(fontSize: 15),
-                                      )
-                                    ],
+                      SizedBox(
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white24,
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10)),
+                              ),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    "./assets/hamburger.png",
+                                    height: 80,
+                                    width: 80,
                                   ),
-                                )
-                              ],
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                          255, 110, 142, 168),
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10)),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(Icons.food_bank,
+                                                color: Colors.green),
+                                            Text(
+                                              "Seafood Lovers",
+                                              style: GoogleFonts.spaceMono(
+                                                  fontSize: 15),
+                                            )
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 90),
+                                          child: Row(
+                                            children: [
+                                              Icon(Icons.star_outline,
+                                                  color: Colors.green),
+                                              Text(
+                                                "5.0",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 15),
+                                              )
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ]))
           ],
