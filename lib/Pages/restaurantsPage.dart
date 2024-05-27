@@ -165,8 +165,8 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                         ),
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: const Color.fromARGB(
-                                                255, 110, 142, 168),
+                                            color: Color.fromARGB(
+                                                255, 158, 181, 199),
                                             borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(10),
                                                 bottomRight:
