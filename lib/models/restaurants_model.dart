@@ -12,4 +12,5 @@ class RestaurantList {
     RestaurantModel("Shishi", 5.0, "./assets/biryani.png"),
     RestaurantModel("Shangazi Cafe", 4.5, "./assets/pilau.png")
   ];
+  static List<RestaurantModel> displayList = List.from(getRestaurants);
 }
