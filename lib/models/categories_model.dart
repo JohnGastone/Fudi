@@ -12,8 +12,8 @@ class CategoriesList {
         categoryName: "Biryani", categoryImage: "assets/biryani.png"),
     FoodCategories(categoryName: "Pilau", categoryImage: "assets/pilau.png"),
     FoodCategories(
-        categoryName: "Dairy", categoryImage: "assets/images/dairy.png"),
+        categoryName: "Pizza", categoryImage: "assets/margeritha.png"),
     FoodCategories(
-        categoryName: "Others", categoryImage: "assets/images/others.png"),
+        categoryName: "Dairy", categoryImage: "assets/margeritha.png"),
   ];
 }
