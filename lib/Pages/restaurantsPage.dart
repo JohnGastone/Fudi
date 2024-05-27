@@ -122,7 +122,8 @@ class RestaurantsPage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Text(
                 "Trending this week",
-                style: GoogleFonts.spaceMono(fontSize: 22),
+                style: GoogleFonts.spaceMono(
+                    fontSize: 22, fontWeight: FontWeight.bold),
               ),
             )
           ],
