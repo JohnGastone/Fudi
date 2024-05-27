@@ -90,51 +90,12 @@ class RestaurantsPage extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      "Nathan John",
+                      "Kinyerezi",
                       style: GoogleFonts.spaceMono(fontSize: 16),
                     ),
                     SizedBox(
                       width: 10,
                     ),
-                    InkWell(
-                      child: Icon(
-                        Icons.arrow_drop_down,
-                        size: 30,
-                        color: Colors.white,
-                      ),
-                      onTap: () {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Text(
-                                  "Click the button to logout",
-                                  style: GoogleFonts.spaceMono(
-                                      fontSize: 16, color: Colors.black),
-                                ),
-                                content: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(
-                                      width: 150,
-                                      child: FloatingActionButton(
-                                        backgroundColor: Colors.green,
-                                        child: Text(
-                                          "Log Out",
-                                          style: GoogleFonts.spaceMono(
-                                              fontSize: 16),
-                                        ),
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
-                            });
-                      },
-                    )
                   ],
                 ),
               ),
