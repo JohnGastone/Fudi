@@ -265,45 +265,6 @@ class _ExplorePageState extends State<ExplorePage> {
                     ))
               ])),
             ),
-            // child: Column(
-            //   children: [
-            //     Text(
-            //       "Get your food,",
-            //       style: GoogleFonts.spaceMono(
-            //           fontSize: 22,
-            //           color: const Color.fromARGB(255, 99, 98, 98),
-            //           fontWeight: FontWeight.w400),
-            //     ),
-            //     Text("Delivered,",
-            //         style: GoogleFonts.spaceMono(
-            //           fontSize: 30,
-            //           fontWeight: FontWeight.bold,
-            //           color: Colors.black,
-            //         )),
-            //     Padding(
-            //       padding: const EdgeInsets.only(left: 25),
-            //       child: Text(
-            //         "At your doorstep.",
-            //         style: GoogleFonts.spaceMono(
-            //             fontSize: 22,
-            //             color: const Color.fromARGB(255, 99, 98, 98),
-            //             fontWeight: FontWeight.w400),
-            //       ),
-            //     ),
-            //     SizedBox(
-            //       height: 20,
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.only(right: 30),
-            //       child: Text(
-            //         "Categories",
-            //         style: GoogleFonts.spaceMono(
-            //             fontSize: 25, fontWeight: FontWeight.w100),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-
             SizedBox(
               height: 240,
               child: ListView.builder(
