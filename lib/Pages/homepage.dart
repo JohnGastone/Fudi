@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:fudi/Pages/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
 import 'package:fudi/Pages/restaurantsPage.dart';
@@ -27,9 +28,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _selectedIndex = index;
     });
   }
-
-  static List<CategoriesModel> displayList =
-      List.from(CategoriesList.displayList);
 
   @override
   Widget build(BuildContext context) {
@@ -223,7 +221,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class ExplorePage extends StatelessWidget {
+class ExplorePage extends StatefulWidget {
+  @override
+  State<ExplorePage> createState() => _ExplorePageState();
+}
+
+class _ExplorePageState extends State<ExplorePage> {
+  static List<CategoriesModel> displayList =
+      List.from(CategoriesList.displayList);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -275,8 +281,47 @@ class ExplorePage extends StatelessWidget {
                 ],
               ),
             ),
-            ListView.builder(
-              itemBuilder: (context, index) => InkWell(),
+            SizedBox(
+              height: 250,
+              child: ListView.builder(
+                itemCount: displayList.length,
+                itemBuilder: (context, index) => InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 140,
+                    width: 90,
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          displayList[index].categoryImage!,
+                          height: 60,
+                          width: 60,
+                        ),
+                        Text(
+                          displayList[index].categoryImage!,
+                          style: GoogleFonts.spaceMono(
+                            fontSize: 17,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        CircleAvatar(
+                          backgroundColor: Colors.white,
+                          child: Icon(
+                            Icons.arrow_forward_ios,
+                            size: 10,
+                            color: Colors.green,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(25.0),
