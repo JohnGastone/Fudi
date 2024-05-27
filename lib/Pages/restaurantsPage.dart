@@ -13,91 +13,105 @@ class RestaurantsPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Card(
-              color: Colors.green,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                child: Row(
-                  children: [
-                    InkWell(
-                      child: Icon(
-                        Icons.location_pin,
-                        size: 20,
-                        color: Colors.white,
-                      ),
-                      onTap: () {
-                        showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Text(
-                                  "Location",
-                                  style: GoogleFonts.spaceMono(
-                                      fontSize: 16, color: Colors.black),
-                                ),
-                                content: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    TextField(
-                                      decoration: InputDecoration(
-                                          border: OutlineInputBorder(),
-                                          hintText: "Enter your location"),
-                                      style: GoogleFonts.spaceMono(
-                                          fontSize: 16, color: Colors.black),
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    SizedBox(
-                                      width: 200,
-                                      child: FloatingActionButton(
-                                          backgroundColor: Colors.green,
-                                          child: Text("Pick from the map",
-                                              style: GoogleFonts.spaceMono(
-                                                  fontSize: 16)),
-                                          onPressed: () {
-                                            // Integration to google maps
-                                          }),
-                                    )
+            SizedBox(
+              width: 200,
+              height: 38,
+              child: Card(
+                color: Colors.green,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                  child: Row(
+                    children: [
+                      InkWell(
+                        child: Icon(
+                          Icons.location_pin,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "Location",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText: "Enter your location"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 16, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        width: 200,
+                                        child: FloatingActionButton(
+                                            backgroundColor: Colors.green,
+                                            child: Text("Pick from the map",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16)),
+                                            onPressed: () {
+                                              // Integration to google maps
+                                            }),
+                                      )
+                                    ],
+                                  ),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text(
+                                          "Cancel",
+                                          style: GoogleFonts.spaceMono(
+                                              fontSize: 16,
+                                              color: Colors.black),
+                                        )),
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text(
+                                          "OK",
+                                          style: GoogleFonts.spaceMono(
+                                              fontSize: 16,
+                                              color: Colors.black),
+                                        ))
                                   ],
-                                ),
-                                actions: [
-                                  TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text(
-                                        "Cancel",
-                                        style: GoogleFonts.spaceMono(
-                                            fontSize: 16, color: Colors.black),
-                                      )),
-                                  TextButton(
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text(
-                                        "OK",
-                                        style: GoogleFonts.spaceMono(
-                                            fontSize: 16, color: Colors.black),
-                                      ))
-                                ],
-                              );
-                            });
-                      },
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      "Kinyerezi",
-                      style: GoogleFonts.spaceMono(fontSize: 16),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                  ],
+                                );
+                              });
+                        },
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Kinyerezi",
+                        style: GoogleFonts.spaceMono(fontSize: 16),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                    ],
+                  ),
                 ),
+              ),
+            ),
+            CircleAvatar(
+              backgroundColor: Colors.grey,
+              child: Icon(
+                Icons.search,
+                color: Colors.white,
               ),
             )
           ],
