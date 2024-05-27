@@ -1,19 +1,20 @@
-class FoodCategories {
+class CategoriesModel {
   String? categoryName;
   String? categoryImage;
 
-  FoodCategories({this.categoryName, this.categoryImage});
+  CategoriesModel({this.categoryName, this.categoryImage});
 }
 
 class CategoriesList {
-  static List<FoodCategories>? foodCategories = [
-    FoodCategories(categoryName: "Bugger", categoryImage: "assets/bugger.png"),
-    FoodCategories(
+  static List<CategoriesModel> foodCategories = [
+    CategoriesModel(categoryName: "Bugger", categoryImage: "assets/bugger.png"),
+    CategoriesModel(
         categoryName: "Biryani", categoryImage: "assets/biryani.png"),
-    FoodCategories(categoryName: "Pilau", categoryImage: "assets/pilau.png"),
-    FoodCategories(
+    CategoriesModel(categoryName: "Pilau", categoryImage: "assets/pilau.png"),
+    CategoriesModel(
         categoryName: "Pizza", categoryImage: "assets/margeritha.png"),
-    FoodCategories(
+    CategoriesModel(
         categoryName: "Dairy", categoryImage: "assets/margeritha.png"),
   ];
+  static List<CategoriesModel> displayList = List.from(foodCategories);
 }
