@@ -117,7 +117,15 @@ class RestaurantsPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [],
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                "Trending this week",
+                style: GoogleFonts.spaceMono(fontSize: 22),
+              ),
+            )
+          ],
         ),
       ),
     );
