@@ -471,6 +471,18 @@ class _ExplorePageState extends State<ExplorePage> {
                 ],
               ),
             ),
+            // SizedBox(
+            //   height: 280,
+            //   child: GridView.builder(
+            //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //           crossAxisCount: 2,
+            //           mainAxisSpacing: 10,
+            //           crossAxisSpacing: 10),
+            //       itemCount: displayList.length,
+            //       itemBuilder: (context, index) => InkWell(
+            //             onTap: () {},
+            //           )),
+            // ),
             Padding(
               padding: const EdgeInsets.all(18.0),
               child: Row(
