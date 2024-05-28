@@ -237,79 +237,76 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                   child: Padding(
                       padding: const EdgeInsets.all(30),
                       child: Row(children: [
-                        SizedBox(
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 300,
-                                height: 250,
-                                decoration: BoxDecoration(
-                                  color: Colors.white24,
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10),
-                                      bottomLeft: Radius.circular(10),
-                                      bottomRight: Radius.circular(10)),
-                                ),
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 40,
+                        Column(
+                          children: [
+                            Container(
+                              width: 300,
+                              height: 250,
+                              decoration: BoxDecoration(
+                                color: Colors.white24,
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10),
+                                    bottomLeft: Radius.circular(10),
+                                    bottomRight: Radius.circular(10)),
+                              ),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 40,
+                                  ),
+                                  Image.asset(
+                                    displayList[index].coverImage!,
+                                    height: 80,
+                                    width: 80,
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  Container(
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 158, 181, 199),
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10)),
                                     ),
-                                    Image.asset(
-                                      displayList[index].coverImage!,
-                                      height: 80,
-                                      width: 80,
-                                    ),
-                                    SizedBox(
-                                      height: 30,
-                                    ),
-                                    Container(
-                                      height: 100,
-                                      decoration: BoxDecoration(
-                                        color:
-                                            Color.fromARGB(255, 158, 181, 199),
-                                        borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(10),
-                                            bottomRight: Radius.circular(10)),
-                                      ),
-                                      child: Column(
-                                        children: [
-                                          Row(
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(Icons.food_bank,
+                                                color: Colors.green),
+                                            Text(
+                                              displayList[index]
+                                                  .restaurantName!,
+                                              style: GoogleFonts.spaceMono(
+                                                  fontSize: 15),
+                                            )
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 90),
+                                          child: Row(
                                             children: [
-                                              Icon(Icons.food_bank,
+                                              Icon(Icons.star_outline,
                                                   color: Colors.green),
                                               Text(
-                                                displayList[index]
-                                                    .restaurantName!,
+                                                "${displayList[index].restaurantRating!}",
                                                 style: GoogleFonts.spaceMono(
                                                     fontSize: 15),
                                               )
                                             ],
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                right: 90),
-                                            child: Row(
-                                              children: [
-                                                Icon(Icons.star_outline,
-                                                    color: Colors.green),
-                                                Text(
-                                                  "${displayList[index].restaurantRating!}",
-                                                  style: GoogleFonts.spaceMono(
-                                                      fontSize: 15),
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ])),
                 ),
