@@ -11,10 +11,10 @@ class RestaurantList {
     RestaurantModel("Seafood Lovers", 5.0, "./assets/hamburger.png"),
     RestaurantModel("Shishi Food   ", 5.0, "./assets/biryani.png"),
     RestaurantModel("Shangazi Cafe ", 4.5, "./assets/pilau.png"),
-    RestaurantModel("Seafood Lovers", 5.0, "./assets/hamburger.png"),
-    RestaurantModel("Shishi Food   ", 5.0, "./assets/biryani.png"),
-    RestaurantModel("Shangazi Cafe ", 4.5, "./assets/pilau.png"),
-    RestaurantModel("Seafood Lovers", 5.0, "./assets/hamburger.png"),
+    RestaurantModel("External Cafe", 5.0, "./assets/hamburger.png"),
+    RestaurantModel("Mautamu Spices   ", 5.0, "./assets/biryani.png"),
+    RestaurantModel("Kazimoto Porks ", 4.5, "./assets/pilau.png"),
+    RestaurantModel("Mr Liverpool", 5.0, "./assets/hamburger.png"),
     RestaurantModel("Shishi Food   ", 5.0, "./assets/biryani.png"),
     RestaurantModel("Shangazi Cafe ", 4.5, "./assets/pilau.png")
   ];
