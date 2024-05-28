@@ -497,7 +497,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           height: 15,
                         ),
                         Image.asset(
-                          './assets/biryani.png',
+                          displayPopularFoods[index].foodCoverImage!,
                           height: 90,
                           width: 90,
                         ),
