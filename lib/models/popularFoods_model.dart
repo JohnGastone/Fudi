@@ -23,7 +23,7 @@ class PopularFoodsList {
     PopularFoodsModel("./assets/hamburger.png", "Makande", "Pizza", 15),
     PopularFoodsModel("./assets/hamburger.png", "Makange Nyama", "Pizza", 15),
     PopularFoodsModel("./assets/hamburger.png", "Makange Samaki", "Pizza", 15),
-    PopularFoodsModel("./assets/hamburger.png", "Pizza", "Pizza", 15),
+    PopularFoodsModel("./assets/hamburger.png", "Ugali", "Pizza", 15),
   ];
   static List<PopularFoodsModel> displayPopularFoods =
       List.from(getPopularFoods);
