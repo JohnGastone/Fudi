@@ -7,6 +7,8 @@ import 'package:fudi/Pages/restaurantsPage.dart';
 import 'package:fudi/models/categories_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../models/popularFoods_model.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -229,6 +231,9 @@ class ExplorePage extends StatefulWidget {
 class _ExplorePageState extends State<ExplorePage> {
   static List<CategoriesModel> displayList =
       List.from(CategoriesList.displayList);
+
+  static List<PopularFoodsModel> displayPopularFoods =
+      List.from(PopularFoodsList.displayPopularFoods);
 
   @override
   Widget build(BuildContext context) {
@@ -471,18 +476,73 @@ class _ExplorePageState extends State<ExplorePage> {
                 ],
               ),
             ),
-            // SizedBox(
-            //   height: 280,
-            //   child: GridView.builder(
-            //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            //           crossAxisCount: 2,
-            //           mainAxisSpacing: 10,
-            //           crossAxisSpacing: 10),
-            //       itemCount: displayList.length,
-            //       itemBuilder: (context, index) => InkWell(
-            //             onTap: () {},
-            //           )),
-            // ),
+            SizedBox(
+              height: 280,
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10),
+                itemCount: displayList.length,
+                itemBuilder: (context, index) => InkWell(
+                  child: Container(
+                    height: 225,
+                    width: 150,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 224, 216, 216),
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 15,
+                        ),
+                        Image.asset(
+                          './assets/biryani.png',
+                          height: 90,
+                          width: 90,
+                        ),
+                        Text(
+                          "Roast Biryan",
+                          style: GoogleFonts.spaceMono(
+                            fontSize: 19,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30, right: 10),
+                          child: Row(
+                            children: [
+                              Text(
+                                "Biryan",
+                                style: GoogleFonts.spaceMono(
+                                  fontSize: 15,
+                                  color: const Color.fromARGB(255, 99, 98, 98),
+                                ),
+                              ),
+                              Image.asset(
+                                "./assets/fire.png",
+                                height: 30,
+                                width: 30,
+                              )
+                            ],
+                          ),
+                        ),
+                        Text(
+                          "\$ 12.5",
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 20, color: Colors.green),
+                        ),
+                      ],
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FudiDescription()));
+                  },
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(18.0),
               child: Row(
