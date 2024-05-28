@@ -387,7 +387,7 @@ class _ExplorePageState extends State<ExplorePage> {
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      mainAxisSpacing: 10,
+                      mainAxisSpacing: 20,
                       crossAxisSpacing: 10),
                   itemCount: displayPopularFoods.length,
                   itemBuilder: (context, index) => InkWell(
