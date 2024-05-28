@@ -217,12 +217,21 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               ),
             ),
             SizedBox(
-              child: Text(
-                "Popular Restaurants/Cafe",
-                style: GoogleFonts.spaceMono(
-                    fontSize: 22, fontWeight: FontWeight.bold),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 25),
+                child: Text(
+                  "Popular Restaurants/Cafe",
+                  style: GoogleFonts.spaceMono(
+                      fontSize: 22, fontWeight: FontWeight.bold),
+                ),
               ),
-            )
+            ),
+            GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 1),
+                itemBuilder: (context, index) => InkWell(
+                      onTap: () {},
+                    ))
           ],
         ),
       ),
