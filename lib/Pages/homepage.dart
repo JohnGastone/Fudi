@@ -502,7 +502,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           width: 90,
                         ),
                         Text(
-                          "Roast Biryan",
+                          displayPopularFoods[index].foodName!,
                           style: GoogleFonts.spaceMono(
                             fontSize: 19,
                           ),
@@ -512,7 +512,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           child: Row(
                             children: [
                               Text(
-                                "Biryan",
+                                displayPopularFoods[index].foodTag!,
                                 style: GoogleFonts.spaceMono(
                                   fontSize: 15,
                                   color: const Color.fromARGB(255, 99, 98, 98),
