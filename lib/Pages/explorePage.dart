@@ -137,27 +137,53 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (BuildContext context) {
                             return AlertDialog(
                               title: Text(
-                                "Click the button to logout",
+                                "User Manager  ",
                                 style: GoogleFonts.spaceMono(
                                     fontSize: 16, color: Colors.black),
                               ),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
+                              content: Row(
                                 children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        width: 100,
+                                        child: FloatingActionButton(
+                                          backgroundColor: Colors.green,
+                                          child: Text(
+                                            "Log Out",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16),
+                                          ),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                   SizedBox(
-                                    width: 150,
-                                    child: FloatingActionButton(
-                                      backgroundColor: Colors.green,
-                                      child: Text(
-                                        "Log Out",
-                                        style:
-                                            GoogleFonts.spaceMono(fontSize: 16),
-                                      ),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                    ),
-                                  )
+                                    width: 26,
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        width: 100,
+                                        child: FloatingActionButton(
+                                          backgroundColor: Colors.green,
+                                          child: Text(
+                                            "Profile",
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 16),
+                                          ),
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ],
                               ),
                             );
