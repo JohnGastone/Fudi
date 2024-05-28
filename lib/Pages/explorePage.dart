@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:fudi/Pages/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
 import 'package:fudi/Pages/restaurantsPage.dart';
@@ -23,7 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static List<Widget> _pages = <Widget>[
     ExplorePage(),
     RestaurantsPage(),
-    ProfilePage(),
+    OrdersPage(),
   ];
 
   void _onItemTapped(int index) {
