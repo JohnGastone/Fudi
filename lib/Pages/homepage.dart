@@ -384,12 +384,14 @@ class _ExplorePageState extends State<ExplorePage> {
                             padding: const EdgeInsets.only(left: 30, right: 10),
                             child: Row(
                               children: [
-                                Text(
-                                  displayPopularFoods[index].foodTag!,
-                                  style: GoogleFonts.spaceMono(
-                                    fontSize: 15,
-                                    color:
-                                        const Color.fromARGB(255, 99, 98, 98),
+                                Center(
+                                  child: Text(
+                                    displayPopularFoods[index].foodTag!,
+                                    style: GoogleFonts.spaceMono(
+                                      fontSize: 15,
+                                      color:
+                                          const Color.fromARGB(255, 99, 98, 98),
+                                    ),
                                   ),
                                 ),
                                 Image.asset(
