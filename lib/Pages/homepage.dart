@@ -8,6 +8,7 @@ import 'package:fudi/models/categories_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../models/popularFoods_model.dart';
+import 'profilePage.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
