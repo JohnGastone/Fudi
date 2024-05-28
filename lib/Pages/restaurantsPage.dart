@@ -230,15 +230,12 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               height: 300,
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1,
-
-                    // mainAxisSpacing: 10,
-                    // crossAxisSpacing: 10,
-                    childAspectRatio: 0.8),
+                    crossAxisCount: 1, mainAxisSpacing: 1),
+                itemCount: displayList.length,
                 itemBuilder: (context, index) => InkWell(
                   onTap: () {},
                   child: Padding(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(30),
                       child: Row(children: [
                         SizedBox(
                           child: Column(
