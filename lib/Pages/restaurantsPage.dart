@@ -226,12 +226,83 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 ),
               ),
             ),
-            GridView.builder(
+            SizedBox(
+              height: 300,
+              child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1),
                 itemBuilder: (context, index) => InkWell(
-                      onTap: () {},
-                    ))
+                  onTap: () {},
+                  child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Row(children: [
+                        SizedBox(
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.white24,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Image.asset(
+                                      displayList[index].coverImage!,
+                                      height: 80,
+                                      width: 80,
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color:
+                                            Color.fromARGB(255, 158, 181, 199),
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(10),
+                                            bottomRight: Radius.circular(10)),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(Icons.food_bank,
+                                                  color: Colors.green),
+                                              Text(
+                                                displayList[index]
+                                                    .restaurantName!,
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 15),
+                                              )
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 90),
+                                            child: Row(
+                                              children: [
+                                                Icon(Icons.star_outline,
+                                                    color: Colors.green),
+                                                Text(
+                                                  "${displayList[index].restaurantRating!}",
+                                                  style: GoogleFonts.spaceMono(
+                                                      fontSize: 15),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ])),
+                ),
+              ),
+            )
           ],
         ),
       ),
