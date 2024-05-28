@@ -359,7 +359,7 @@ class _ExplorePageState extends State<ExplorePage> {
                       crossAxisCount: 2,
                       mainAxisSpacing: 10,
                       crossAxisSpacing: 10),
-                  itemCount: displayList.length,
+                  itemCount: displayPopularFoods.length,
                   itemBuilder: (context, index) => InkWell(
                     child: Container(
                       height: 245,
