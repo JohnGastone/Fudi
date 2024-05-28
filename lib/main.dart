@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'Pages/homepage.dart';
+import 'Pages/explorePage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
