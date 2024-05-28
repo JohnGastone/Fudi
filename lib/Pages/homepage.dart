@@ -426,15 +426,3 @@ class _ExplorePageState extends State<ExplorePage> {
     );
   }
 }
-
-class ProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Profile Page',
-        style: GoogleFonts.spaceMono(fontSize: 25),
-      ),
-    );
-  }
-}
