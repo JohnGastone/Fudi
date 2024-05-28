@@ -224,6 +224,8 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class ExplorePage extends StatefulWidget {
+  const ExplorePage({super.key});
+
   @override
   State<ExplorePage> createState() => _ExplorePageState();
 }
