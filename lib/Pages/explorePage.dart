@@ -220,8 +220,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50),
                 child: BottomNavigationBar(
-                  selectedLabelStyle: GoogleFonts.spaceMono(fontSize: 12),
-                  unselectedLabelStyle: GoogleFonts.spaceMono(fontSize: 12),
+                  selectedLabelStyle: GoogleFonts.spaceMono(
+                      fontSize: 15, fontWeight: FontWeight.bold),
+                  unselectedLabelStyle: GoogleFonts.spaceMono(
+                      fontSize: 15, fontWeight: FontWeight.bold),
                   backgroundColor: Colors.white24,
                   items: const <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
