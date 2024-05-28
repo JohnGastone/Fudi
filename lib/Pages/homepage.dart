@@ -527,7 +527,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           ),
                         ),
                         Text(
-                          "\$ 12.5",
+                          "${displayPopularFoods[index].foodPrice}",
                           style: GoogleFonts.spaceMono(
                               fontSize: 20, color: Colors.green),
                         ),
