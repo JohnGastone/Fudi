@@ -240,20 +240,31 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                           child: Column(
                             children: [
                               Container(
+                                width: 300,
+                                height: 250,
                                 decoration: BoxDecoration(
                                   color: Colors.white24,
                                   borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10)),
+                                      topRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
                                 ),
                                 child: Column(
                                   children: [
+                                    SizedBox(
+                                      height: 40,
+                                    ),
                                     Image.asset(
                                       displayList[index].coverImage!,
                                       height: 80,
                                       width: 80,
                                     ),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
                                     Container(
+                                      height: 100,
                                       decoration: BoxDecoration(
                                         color:
                                             Color.fromARGB(255, 158, 181, 199),
