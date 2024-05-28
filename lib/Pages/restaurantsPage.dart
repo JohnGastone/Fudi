@@ -215,6 +215,13 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                           ])),
                 ),
               ),
+            ),
+            SizedBox(
+              child: Text(
+                "Popular Restaurants/Cafe",
+                style: GoogleFonts.spaceMono(
+                    fontSize: 22, fontWeight: FontWeight.bold),
+              ),
             )
           ],
         ),
