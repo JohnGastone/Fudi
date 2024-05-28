@@ -2,11 +2,13 @@ class PopularFoodsModel {
   String? foodCoverImage;
   String? foodName;
   String? foodTag;
-  String? foodPrice;
+  int? foodPrice;
   PopularFoodsModel(
       this.foodCoverImage, this.foodName, this.foodTag, this.foodPrice);
 }
 
 class PopularFoodsList {
-  static List<PopularFoodsModel> getPopularFoods = [];
+  static List<PopularFoodsModel> getPopularFoods = [
+    PopularFoodsModel("./assets/hamburger.png", "Pizza", "Pizza", 15),
+  ];
 }
