@@ -6,3 +6,7 @@ class PopularFoodsModel {
   PopularFoodsModel(
       this.foodCoverImage, this.foodName, this.foodTag, this.foodPrice);
 }
+
+class PopularFoodsList {
+  static List<PopularFoodsModel> getPopularFoods = [];
+}
