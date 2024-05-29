@@ -177,6 +177,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                             height: 80,
                             width: 80,
                           ),
+                          Container(),
                           SizedBox(height: 10), // Add space between elements
                           Container(
                             decoration: BoxDecoration(
