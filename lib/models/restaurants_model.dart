@@ -12,9 +12,9 @@ class RestaurantModel {
 class RestaurantList {
   static List<RestaurantModel> getRestaurants = [
     RestaurantModel(
-        "Seafood Lovers", 5.0, "./assets/seafood.png", "Kinondoni B", 1),
+        "Seafood Lovers", 5.0, "./assets/Seafood.png", "Kinondoni B", 1),
     RestaurantModel(
-        "Shishi Food   ", 5.0, "./assets/biryani.png", "Kijitonyama", 2),
+        "Shishi Food   ", 5.0, "./assets/shishi.png", "Kijitonyama", 2),
     RestaurantModel(
         "Shangazi Cafe ", 4.5, "./assets/pilau.png", "Dumila Chini", 3),
     RestaurantModel(
