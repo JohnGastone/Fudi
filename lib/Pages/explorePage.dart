@@ -392,7 +392,7 @@ class _ExplorePageState extends State<ExplorePage> {
                   itemCount: displayPopularFoods.length,
                   itemBuilder: (context, index) => InkWell(
                     child: Container(
-                      height: 255,
+                      height: 265,
                       width: 150,
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 224, 216, 216),
@@ -435,7 +435,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           Text.rich(TextSpan(children: <TextSpan>[
                             TextSpan(
                                 text: "\$ ",
-                                style: GoogleFonts.spaceMono(fontSize: 18)),
+                                style: GoogleFonts.spaceMono(fontSize: 20)),
                             TextSpan(
                               text: "${displayPopularFoods[index].foodPrice} ",
                               style: GoogleFonts.spaceMono(
