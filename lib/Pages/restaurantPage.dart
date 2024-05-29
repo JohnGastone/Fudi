@@ -15,7 +15,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: [],
+          children: [Container()],
         ),
       ),
     );

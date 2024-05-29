@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, prefer_final_fields, unused_field
 
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/restaurantPage.dart';
 import 'package:fudi/models/restaurants_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -261,7 +262,12 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                     crossAxisCount: 1, mainAxisSpacing: 1),
                 itemCount: displayList.length,
                 itemBuilder: (context, index) => InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RestaurantPage()));
+                  },
                   child: Padding(
                       padding: const EdgeInsets.all(30),
                       child: Row(children: [
