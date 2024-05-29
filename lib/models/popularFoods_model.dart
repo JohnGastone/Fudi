@@ -20,12 +20,13 @@ class PopularFoodsList {
     PopularFoodsModel("./assets/nazi.png", "Wali Nazi", "Creamy", 15),
     PopularFoodsModel(
         "./assets/pilauzanzibar.png", "Zanzibar Pilau", "Aromatic", 15),
-    PopularFoodsModel("./assets/hamburger.png", "Matoke", "Savory", 15),
-    PopularFoodsModel("./assets/hamburger.png", "Makande", "Nutritious", 15),
-    PopularFoodsModel("./assets/hamburger.png", "Makange Nyama", "Hearty", 15),
+    PopularFoodsModel("./assets/matoke.png", "Matoke", "Savory", 15),
+    PopularFoodsModel("./assets/makande.png", "Makande", "Nutritious", 15),
     PopularFoodsModel(
-        "./assets/hamburger.png", "Makange Samaki", "Flavorful", 15),
-    PopularFoodsModel("./assets/hamburger.png", "Ugali", "Satisfying", 15),
+        "./assets/makangenyama.png", "Makange Nyama", "Hearty", 15),
+    PopularFoodsModel(
+        "./assets/makangesamaki.png", "Makange Samaki", "Flavorful", 15),
+    PopularFoodsModel("./assets/ugali.png", "Ugali", "Satisfying", 15),
   ];
   static List<PopularFoodsModel> displayPopularFoods =
       List.from(getPopularFoods);
