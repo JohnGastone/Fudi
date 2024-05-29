@@ -415,14 +415,14 @@ class _ExplorePageState extends State<ExplorePage> {
                             child: Row(
                               children: [
                                 Center(
-                                  child: Text(
-                                    displayPopularFoods[index].foodTag!,
-                                    style: GoogleFonts.spaceMono(
-                                      fontSize: 15,
-                                      color:
-                                          const Color.fromARGB(255, 99, 98, 98),
-                                    ),
-                                  ),
+                                  child:
+                                      Text(displayPopularFoods[index].foodTag!,
+                                          style: GoogleFonts.spaceMono(
+                                            fontSize: 15,
+                                            color: const Color.fromARGB(
+                                                255, 99, 98, 98),
+                                          ),
+                                          overflow: TextOverflow.ellipsis),
                                 ),
                                 Image.asset(
                                   "./assets/fire.png",
