@@ -15,7 +15,16 @@ class _RestaurantPageState extends State<RestaurantPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: [Container()],
+          children: [
+            Container(
+              height: 300,
+              width: 360,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("./assets/Seafood.png"),
+                      fit: BoxFit.cover)),
+            )
+          ],
         ),
       ),
     );
