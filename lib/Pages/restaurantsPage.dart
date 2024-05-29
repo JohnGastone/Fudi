@@ -163,8 +163,8 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                   ),
                                   fit: BoxFit.cover),
                             ),
-                            child: SizedBox(
-                              height: 20,
+                            child: Align(
+                              alignment: Alignment.topRight,
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 135),
                                 child: Container(
