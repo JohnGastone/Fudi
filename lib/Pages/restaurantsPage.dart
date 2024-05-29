@@ -135,7 +135,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               ),
             ),
             SizedBox(
-              height: 240,
+              height: 236,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: displayList.length > 11 ? 11 : displayList.length,
