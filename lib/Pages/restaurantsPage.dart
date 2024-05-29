@@ -214,7 +214,8 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                                       color: Colors.green,
                                                     ),
                                                     Text(
-                                                      "Kinondoni B",
+                                                      displayList[index]
+                                                          .restaurantLocation!,
                                                       style:
                                                           GoogleFonts.spaceMono(
                                                               fontSize: 15),
