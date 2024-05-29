@@ -153,6 +153,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                       child: Column(
                         children: [
                           Container(
+                            height: 100,
                             decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(
@@ -180,7 +181,6 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 10), // Add space between elements
                           Container(
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 158, 181, 199),
