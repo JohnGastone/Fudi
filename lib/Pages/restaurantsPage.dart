@@ -152,39 +152,34 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                       ),
                       child: Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 135),
-                            child: Container(
-                              height: 24,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(10),
-                                  bottomLeft: Radius.circular(10),
+                          Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                    displayList[index].coverImage!,
+                                  ),
+                                  fit: BoxFit.cover),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 135),
+                              child: Container(
+                                height: 24,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(10),
+                                    bottomLeft: Radius.circular(10),
+                                  ),
+                                  color: Colors.green,
                                 ),
-                                color: Colors.green,
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "${displayList[index].restaurantRanking!}",
-                                  style: GoogleFonts.spaceMono(fontSize: 14),
+                                child: Center(
+                                  child: Text(
+                                    "${displayList[index].restaurantRanking!}",
+                                    style: GoogleFonts.spaceMono(fontSize: 14),
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(height: 10), // Add space between elements
-                          Image.asset(
-                            displayList[index].coverImage!,
-                            height: 80,
-                            width: 80,
-                          ),
-                          Container(
-                              decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(
-                                  displayList[index].coverImage!,
-                                ),
-                                fit: BoxFit.cover),
-                          )),
                           SizedBox(height: 10), // Add space between elements
                           Container(
                             decoration: BoxDecoration(
