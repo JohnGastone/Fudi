@@ -16,10 +16,10 @@ class PopularFoodsList {
     PopularFoodsModel("./assets/biryani.png", "Pizza", "Fluffy", 15),
     PopularFoodsModel("./assets/mzuzu.png", "Wali Mzuzu", "Sweet", 15),
     PopularFoodsModel("./assets/margeritha.png", "Nyama Choma", "Spicy", 15),
-    PopularFoodsModel("./assets/hamburger.png", "Chips Mayai", "Sweet", 15),
-    PopularFoodsModel("./assets/hamburger.png", "Wali Nazi", "Creamy", 15),
+    PopularFoodsModel("./assets/chips.png", "Chips Mayai", "Sweet", 15),
+    PopularFoodsModel("./assets/nazi.png", "Wali Nazi", "Creamy", 15),
     PopularFoodsModel(
-        "./assets/hamburger.png", "Zanzibar Pilau", "Aromatic", 15),
+        "./assets/pilauzanzibar.png", "Zanzibar Pilau", "Aromatic", 15),
     PopularFoodsModel("./assets/hamburger.png", "Matoke", "Savory", 15),
     PopularFoodsModel("./assets/hamburger.png", "Makande", "Nutritious", 15),
     PopularFoodsModel("./assets/hamburger.png", "Makange Nyama", "Hearty", 15),
