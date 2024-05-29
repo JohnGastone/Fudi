@@ -138,7 +138,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               height: 200,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: displayList.length,
+                itemCount: displayList.length > 10 ? 10 : displayList.length,
                 itemBuilder: (context, index) => InkWell(
                   onTap: () {},
                   child: Padding(
