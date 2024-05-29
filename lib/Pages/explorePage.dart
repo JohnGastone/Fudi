@@ -341,13 +341,22 @@ class _ExplorePageState extends State<ExplorePage> {
                               SizedBox(
                                 height: 5,
                               ),
-                              CircleAvatar(
-                                backgroundColor: Colors.white,
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 10,
-                                  color: Colors.green,
+                              InkWell(
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 10,
+                                    color: Colors.green,
+                                  ),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              FudiDescription()));
+                                },
                               ),
                             ],
                           ),
