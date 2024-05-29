@@ -216,8 +216,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(
-                                      right: 50, left: 24),
+                                  padding: const EdgeInsets.only(right: 50),
                                   child: Row(
                                     children: [
                                       Icon(Icons.location_on_outlined,
