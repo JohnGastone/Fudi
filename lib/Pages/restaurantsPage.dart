@@ -295,16 +295,42 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                               ),
                               child: Column(
                                 children: [
-                                  SizedBox(
-                                    height: 40,
-                                  ),
-                                  Image.asset(
-                                    displayList[index].coverImage!,
-                                    height: 80,
-                                    width: 80,
-                                  ),
-                                  SizedBox(
-                                    height: 30,
+                                  Container(
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(20)),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                            displayList[index].coverImage!,
+                                          ),
+                                          fit: BoxFit.cover),
+                                    ),
+                                    child: Align(
+                                      alignment: Alignment.topRight,
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 135),
+                                        child: Container(
+                                          height: 24,
+                                          width: 50,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(10),
+                                              bottomLeft: Radius.circular(10),
+                                            ),
+                                            color: Colors.green,
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              "${displayList[index].restaurantRanking!}",
+                                              style: GoogleFonts.spaceMono(
+                                                  fontSize: 14),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                   Container(
                                     height: 100,
