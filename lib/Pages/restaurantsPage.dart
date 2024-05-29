@@ -177,7 +177,14 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                             height: 80,
                             width: 80,
                           ),
-                          Container(),
+                          Container(
+                              decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                  displayList[index].coverImage!,
+                                ),
+                                fit: BoxFit.cover),
+                          )),
                           SizedBox(height: 10), // Add space between elements
                           Container(
                             decoration: BoxDecoration(
