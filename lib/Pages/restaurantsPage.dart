@@ -14,6 +14,20 @@ class RestaurantsPage extends StatefulWidget {
 
 class _RestaurantsPageState extends State<RestaurantsPage> {
   List<RestaurantModel> displayList = List.from(RestaurantList.displayList);
+  List<RestaurantModel> searchList = List.from(RestaurantList.displayList);
+  TextEditingController _searchController = TextEditingController();
+  bool _isSearching = false;
+
+  void _filterRestaurants(String query) {
+    List<RestaurantModel> filteredList = displayList
+        .where((restaurant) => restaurant.restaurantName!
+            .toLowerCase()
+            .contains(query.toLowerCase()))
+        .toList();
+    setState(() {
+      searchList = filteredList;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -116,9 +130,18 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
             ),
             CircleAvatar(
               backgroundColor: const Color.fromARGB(255, 225, 222, 222),
-              child: Icon(
-                Icons.search,
-                color: Colors.green,
+              child: IconButton(
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.green,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _isSearching = !_isSearching;
+                    searchList = displayList;
+                    _searchController.clear();
+                  });
+                },
               ),
             )
           ],
