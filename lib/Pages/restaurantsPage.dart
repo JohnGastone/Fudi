@@ -202,6 +202,11 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                                     )
                                                   ],
                                                 ),
+                                              ),
+                                              Text(
+                                                "Kinondoni B",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 15),
                                               )
                                             ],
                                           ),
