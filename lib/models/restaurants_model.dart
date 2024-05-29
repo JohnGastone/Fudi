@@ -3,7 +3,7 @@ class RestaurantModel {
   double? restaurantRating;
   String? coverImage;
   String? restaurantLocation;
-  double? restaurantRanking;
+  int? restaurantRanking;
 
   RestaurantModel(this.restaurantName, this.restaurantRating, this.coverImage,
       this.restaurantLocation, this.restaurantRanking);
