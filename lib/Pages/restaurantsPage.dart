@@ -306,31 +306,6 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                           ),
                                           fit: BoxFit.cover),
                                     ),
-                                    child: Align(
-                                      alignment: Alignment.topRight,
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 135),
-                                        child: Container(
-                                          height: 24,
-                                          width: 50,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                              topRight: Radius.circular(10),
-                                              bottomLeft: Radius.circular(10),
-                                            ),
-                                            color: Colors.green,
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              "${displayList[index].restaurantRanking!}",
-                                              style: GoogleFonts.spaceMono(
-                                                  fontSize: 14),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
                                   ),
                                   Container(
                                     height: 100,
