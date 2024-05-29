@@ -22,8 +22,9 @@ class RestaurantList {
     RestaurantModel("Kazimoto Porks ", 4.5, "./assets/pilau.png", "Segerea"),
     RestaurantModel(
         "Mr Liverpool", 5.0, "./assets/hamburger.png", "Mpanda Mjini"),
-    RestaurantModel("Sossie Foods   ", 5.0, "./assets/biryani.png", ""),
-    RestaurantModel("Shangazi Cafe ", 4.5, "./assets/pilau.png", "")
+    RestaurantModel(
+        "Sossie Foods   ", 5.0, "./assets/biryani.png", "Kinyerezi"),
+    RestaurantModel("Shangazi Chichi ", 4.5, "./assets/pilau.png", "Msasani")
   ];
   static List<RestaurantModel> displayList = List.from(getRestaurants);
 }
