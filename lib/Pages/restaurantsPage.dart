@@ -169,7 +169,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                                         Radius.circular(10),
                                                     bottomLeft:
                                                         Radius.circular(10)),
-                                                color: Colors.greenAccent),
+                                                color: Colors.green),
                                             child: Text(
                                               "${displayList[index].restaurantRanking!}",
                                               style: GoogleFonts.spaceMono(
