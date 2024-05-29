@@ -317,7 +317,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           margin: EdgeInsets.only(
                               right: 10), // Add space between items
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 92, 148, 93),
+                              color: Colors.green,
                               borderRadius: BorderRadius.circular(30)),
                           child: Column(
                             children: [
