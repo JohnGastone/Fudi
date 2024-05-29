@@ -319,6 +319,24 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                               )
                                             ],
                                           ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              right: 50, left: 24),
+                                          child: Row(
+                                            children: [
+                                              Icon(
+                                                Icons.location_on_outlined,
+                                                color: Colors.green,
+                                              ),
+                                              Text(
+                                                displayList[index]
+                                                    .restaurantLocation!,
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 15),
+                                              ),
+                                            ],
+                                          ),
                                         )
                                       ],
                                     ),
