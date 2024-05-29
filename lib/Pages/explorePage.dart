@@ -383,7 +383,7 @@ class _ExplorePageState extends State<ExplorePage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                height: 290,
+                height: 300,
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -392,7 +392,7 @@ class _ExplorePageState extends State<ExplorePage> {
                   itemCount: displayPopularFoods.length,
                   itemBuilder: (context, index) => InkWell(
                     child: Container(
-                      height: 245,
+                      height: 255,
                       width: 150,
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 224, 216, 216),
@@ -432,11 +432,16 @@ class _ExplorePageState extends State<ExplorePage> {
                               ],
                             ),
                           ),
-                          Text(
-                            "${displayPopularFoods[index].foodPrice}",
-                            style: GoogleFonts.spaceMono(
-                                fontSize: 20, color: Colors.green),
-                          ),
+                          Text.rich(TextSpan(children: <TextSpan>[
+                            TextSpan(
+                                text: "\$ ",
+                                style: GoogleFonts.spaceMono(fontSize: 18)),
+                            TextSpan(
+                              text: "${displayPopularFoods[index].foodPrice} ",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 20, color: Colors.green),
+                            )
+                          ]))
                         ],
                       ),
                     ),
