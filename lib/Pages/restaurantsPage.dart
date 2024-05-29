@@ -153,15 +153,17 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                       child: Column(
                         children: [
                           Container(
-                            height: 100,
+                            height: 124,
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(20)),
                               image: DecorationImage(
                                   image: AssetImage(
                                     displayList[index].coverImage!,
                                   ),
                                   fit: BoxFit.cover),
                             ),
-                            child: Container(
+                            child: SizedBox(
                               height: 20,
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 135),
