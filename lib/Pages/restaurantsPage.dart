@@ -135,7 +135,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: 220,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: displayList.length > 11 ? 11 : displayList.length,
@@ -158,6 +158,25 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                     ),
                                     child: Column(
                                       children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 135),
+                                          child: Container(
+                                            height: 24,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.only(
+                                                    topRight:
+                                                        Radius.circular(10),
+                                                    bottomLeft:
+                                                        Radius.circular(10)),
+                                                color: Colors.greenAccent),
+                                            child: Text(
+                                              "Ranking",
+                                              style: GoogleFonts.spaceMono(
+                                                  fontSize: 14),
+                                            ),
+                                          ),
+                                        ),
                                         Image.asset(
                                           displayList[index].coverImage!,
                                           height: 80,
