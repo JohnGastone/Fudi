@@ -203,10 +203,24 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                                   ],
                                                 ),
                                               ),
-                                              Text(
-                                                "Kinondoni B",
-                                                style: GoogleFonts.spaceMono(
-                                                    fontSize: 15),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 50, left: 24),
+                                                child: Row(
+                                                  children: [
+                                                    Icon(
+                                                      Icons
+                                                          .location_on_outlined,
+                                                      color: Colors.green,
+                                                    ),
+                                                    Text(
+                                                      "Kinondoni B",
+                                                      style:
+                                                          GoogleFonts.spaceMono(
+                                                              fontSize: 15),
+                                                    ),
+                                                  ],
+                                                ),
                                               )
                                             ],
                                           ),
