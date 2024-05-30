@@ -108,6 +108,20 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         )
                       ],
                     ),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.green,
+                      ),
+                      Text(
+                        "5.0",
+                        style: GoogleFonts.spaceMono(
+                            fontSize: 15, color: Colors.white),
+                      ),
+                      Container()
+                    ],
                   )
                 ],
               ),
