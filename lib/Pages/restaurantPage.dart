@@ -40,21 +40,25 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       topRight: Radius.circular(30))),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        child: Image.asset(
-                          "./assets/food.png",
-                          height: 30,
-                          width: 30,
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          child: Image.asset(
+                            "./assets/food.png",
+                            height: 30,
+                            width: 30,
+                          ),
                         ),
-                      ),
-                      Text("Seafood Lovers",
-                          style: GoogleFonts.spaceMono(fontSize: 25))
-                    ],
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("Seafood Lovers",
+                            style: GoogleFonts.spaceMono(
+                                fontSize: 23, color: Colors.white))
+                      ],
+                    ),
                   )
                 ],
               ),
