@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import "package:flutter/material.dart";
+import "package:fudi/Pages/restaurantsPage.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class RestaurantPage extends StatefulWidget {
@@ -28,6 +29,25 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   image: DecorationImage(
                       image: AssetImage("./assets/Seafood.png"),
                       fit: BoxFit.cover)),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Align(
+                    alignment: Alignment.topLeft,
+                    child: InkWell(
+                      child: Image.asset(
+                        "./assets/arrow-left.png",
+                        color: Colors.green,
+                        height: 40,
+                        width: 40,
+                      ),
+                      onTap: () {
+                        Navigator.pop(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RestaurantsPage()));
+                      },
+                    )),
+              ),
             ),
             SizedBox(
               height: 20,
