@@ -169,6 +169,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     width: 250,
                     height: 50,
                     child: TextField(
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 15, color: Colors.white),
                       autocorrect: EditableText.debugDeterministicCursor,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
