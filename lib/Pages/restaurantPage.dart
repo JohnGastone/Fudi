@@ -32,17 +32,25 @@ class _RestaurantPageState extends State<RestaurantPage> {
               height: 20,
             ),
             Container(
+              height: double.infinity,
+              color: Color.fromARGB(255, 36, 48, 79),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30))),
               child: Column(
                 children: [
                   Row(
                     children: [
                       CircleAvatar(
                         child: Image.asset(
-                          "./assets/",
+                          "./assets/food.png",
                           height: 40,
                           width: 40,
                         ),
-                      )
+                      ),
+                      Text("Seafood Lovers",
+                          style: GoogleFonts.spaceMono(fontSize: 25))
                     ],
                   )
                 ],
