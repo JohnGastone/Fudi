@@ -152,7 +152,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         )
                       ],
                     ),
-                  )
+                  ),
+                  Padding(padding: EdgeInsets.all(8))
                 ],
               ),
             )
