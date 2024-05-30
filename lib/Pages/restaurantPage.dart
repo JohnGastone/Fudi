@@ -172,13 +172,15 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       autocorrect: EditableText.debugDeterministicCursor,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.green),
                           borderRadius: BorderRadius.circular(20),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.green),
                         ),
                         label: Text(
                           "Search food ",
                           style: GoogleFonts.spaceMono(
-                              fontSize: 12, color: Colors.white),
+                              fontSize: 15, color: Colors.white),
                         ),
                       ),
                     ),
