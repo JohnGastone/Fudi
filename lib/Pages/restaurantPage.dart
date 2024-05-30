@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
@@ -59,7 +59,33 @@ class _RestaurantPageState extends State<RestaurantPage> {
                             style: GoogleFonts.spaceMono(
                                 fontSize: 20,
                                 color: Colors.white,
-                                fontWeight: FontWeight.bold))
+                                fontWeight: FontWeight.bold)),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  (Icons.electric_bike),
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  "10-17",
+                                  style: GoogleFonts.spaceMono(
+                                      fontSize: 14, color: Colors.white),
+                                )
+                              ],
+                            ),
+                            Text("mins",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 14, color: Colors.grey))
+                          ],
+                        )
                       ],
                     ),
                   )
