@@ -161,6 +161,13 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       style: GoogleFonts.spaceMono(
                           fontSize: 15, color: Colors.white),
                     ),
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        label: Text(
+                      "Search food",
+                      style: GoogleFonts.spaceMono(fontSize: 12),
+                    )),
                   )
                 ],
               ),
