@@ -144,7 +144,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                   width: 10,
                                 ),
                                 Icon(
-                                  Icons.map,
+                                  Icons.location_on,
                                 )
                               ],
                             ),
