@@ -20,6 +20,9 @@ class _RestaurantPageState extends State<RestaurantPage> {
               height: 300,
               width: 360,
               decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(30),
+                      bottomRight: Radius.circular(30)),
                   image: DecorationImage(
                       image: AssetImage("./assets/Seafood.png"),
                       fit: BoxFit.cover)),
