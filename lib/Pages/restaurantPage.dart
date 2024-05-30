@@ -57,7 +57,9 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         ),
                         Text("Seafood Lovers",
                             style: GoogleFonts.spaceMono(
-                                fontSize: 23, color: Colors.white))
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold))
                       ],
                     ),
                   )
