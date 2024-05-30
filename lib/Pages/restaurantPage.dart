@@ -153,8 +153,9 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       ],
                     ),
                   ),
+                  SizedBox(height: 10),
                   Padding(
-                    padding: EdgeInsets.only(right: 100),
+                    padding: EdgeInsets.only(right: 225),
                     child: Text(
                       "Kinondoni B",
                       style: GoogleFonts.spaceMono(
