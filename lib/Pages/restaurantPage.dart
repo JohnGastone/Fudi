@@ -162,12 +162,26 @@ class _RestaurantPageState extends State<RestaurantPage> {
                           fontSize: 15, color: Colors.white),
                     ),
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    width: 250,
+                    height: 50,
+                    child: TextField(
+                      autocorrect: EditableText.debugDeterministicCursor,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.green),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                         label: Text(
-                      "Search food",
-                      style: GoogleFonts.spaceMono(fontSize: 12),
-                    )),
+                          "Search food ",
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 12, color: Colors.white),
+                        ),
+                      ),
+                    ),
                   )
                 ],
               ),
