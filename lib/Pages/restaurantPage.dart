@@ -27,6 +27,26 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   image: DecorationImage(
                       image: AssetImage("./assets/Seafood.png"),
                       fit: BoxFit.cover)),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        child: Image.asset(
+                          "./assets/",
+                          height: 40,
+                          width: 40,
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),
