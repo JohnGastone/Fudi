@@ -109,19 +109,49 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       ],
                     ),
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.green,
-                      ),
-                      Text(
-                        "5.0",
-                        style: GoogleFonts.spaceMono(
-                            fontSize: 15, color: Colors.white),
-                      ),
-                      Container()
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: Colors.green,
+                        ),
+                        Text(
+                          "5.0",
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 15, color: Colors.white),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Container(
+                          height: 35,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              color: Colors.orangeAccent,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8))),
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 15, left: 25),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Map",
+                                  style: GoogleFonts.spaceMono(fontSize: 15),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Icon(
+                                  Icons.map,
+                                )
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
