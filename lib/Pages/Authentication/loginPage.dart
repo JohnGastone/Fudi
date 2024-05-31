@@ -58,7 +58,7 @@ class _LoginpageState extends State<Loginpage> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 30,
+                    height: 40,
                   ),
                   Container(
                     height: 50,
@@ -69,7 +69,10 @@ class _LoginpageState extends State<Loginpage> {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        decoration: InputDecoration(border: InputBorder.none),
+                        decoration: InputDecoration(
+                            hintText: "Enter your email address",
+                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            border: InputBorder.none),
                       ),
                     ),
                   )
