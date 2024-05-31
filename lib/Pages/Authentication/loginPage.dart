@@ -75,7 +75,26 @@ class _LoginpageState extends State<Loginpage> {
                             border: InputBorder.none),
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 270,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(26),
+                        color: Colors.white),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Enter your password",
+                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            border: InputBorder.none),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )
