@@ -34,6 +34,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
