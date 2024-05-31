@@ -163,7 +163,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   SizedBox(
                     width: 250,
