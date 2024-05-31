@@ -14,16 +14,31 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightGreenAccent,
       body: SingleChildScrollView(
         child: Flexible(
-          child: Column(
-            children: [
-              Text(
-                "Hello",
-                style: GoogleFonts.spaceMono(
-                    fontSize: 30, fontWeight: FontWeight.bold),
-              )
-            ],
+          child: Center(
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                ),
+                SizedBox(
+                  height: 300,
+                ),
+                Text(
+                  "Hello",
+                  style: GoogleFonts.spaceMono(
+                      fontSize: 50, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "Let's get started",
+                  style: GoogleFonts.spaceMono(
+                      fontSize: 20, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
           ),
         ),
       ),
