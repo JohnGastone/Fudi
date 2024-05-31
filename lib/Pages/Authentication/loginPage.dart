@@ -54,6 +54,9 @@ class _LoginpageState extends State<Loginpage> {
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(30),
                       topLeft: Radius.circular(30))),
+              child: Column(
+                children: [],
+              ),
             )
           ],
         ),
