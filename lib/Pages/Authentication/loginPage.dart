@@ -39,7 +39,7 @@ class _LoginpageState extends State<Loginpage> {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.only(left: 35, right: 20),
               child: Text(
                 "Please enter your credentials below, there is a dish waiting for you",
                 style: GoogleFonts.spaceMono(fontSize: 18, color: Colors.white),
@@ -99,9 +99,11 @@ class _LoginpageState extends State<Loginpage> {
                   SizedBox(
                     height: 30,
                   ),
-                  SizedBox(
-                      height: 40,
-                      width: 100,
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(26)),
+                      height: 50,
+                      width: 270,
                       child: FloatingActionButton(
                           child: Text(
                             "Login",
