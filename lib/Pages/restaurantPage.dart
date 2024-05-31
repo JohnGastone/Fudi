@@ -195,12 +195,31 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   SizedBox(
                     height: 15,
                   ),
-                  Row(
-                    children: [
-                      Column(
-                        children: [Text("Kuku robo")],
-                      )
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25, right: 15),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              "Kuku robo",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 15, color: Colors.white),
+                            ),
+                            Text(
+                              "Kuku robo",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 15, color: Colors.white),
+                            ),
+                            Text(
+                              "Kuku robo",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 15, color: Colors.white),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   )
                 ],
               ),
