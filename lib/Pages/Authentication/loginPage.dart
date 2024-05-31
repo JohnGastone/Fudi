@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
@@ -62,6 +62,9 @@ class _LoginPageState extends State<LoginPage> {
                       style: GoogleFonts.spaceMono(fontSize: 30),
                     ),
                   ),
+                ),
+                Row(
+                  children: [Divider(), Text("Or"), Divider()],
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
