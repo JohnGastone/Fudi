@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fudi/Pages/Authentication/loginPage.dart';
+import 'package:fudi/Pages/Authentication/introductionPage.dart';
 
 import 'Pages/explorePage.dart';
 
