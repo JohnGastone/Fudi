@@ -2,6 +2,7 @@
 
 import "package:flutter/material.dart";
 import "package:fudi/Pages/restaurantsPage.dart";
+import "package:fudi/models/restaurantFoods_model.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class RestaurantPage extends StatefulWidget {
@@ -12,6 +13,9 @@ class RestaurantPage extends StatefulWidget {
 }
 
 class _RestaurantPageState extends State<RestaurantPage> {
+  List<RestaurantfoodsModel> getfoods() =>
+      List.from(RestaurantFoodlist.getRestaurantFood);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
