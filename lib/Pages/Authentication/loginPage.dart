@@ -43,6 +43,17 @@ class _LoginpageState extends State<Loginpage> {
                 "Please enter your credentials below, there is a dish waiting for you",
                 style: GoogleFonts.spaceMono(fontSize: 18, color: Colors.white),
               ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 500,
+              decoration: BoxDecoration(
+                  color: Colors.white24,
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(30),
+                      topLeft: Radius.circular(30))),
             )
           ],
         ),
