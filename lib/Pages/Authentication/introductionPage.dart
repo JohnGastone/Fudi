@@ -2,6 +2,7 @@
 
 import "package:flutter/material.dart";
 import "package:fudi/Pages/Authentication/loginPage.dart";
+import "package:fudi/Pages/Authentication/signUpPage.dart";
 import "package:fudi/Pages/explorePage.dart";
 import "package:google_fonts/google_fonts.dart";
 
@@ -114,19 +115,25 @@ class _IntroductionPageState extends State<IntroductionPage> {
                 SizedBox(
                   height: 20,
                 ),
-                Container(
-                  height: 50,
-                  width: 140,
-                  decoration: BoxDecoration(
-                      //boxShadow: ,
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white),
-                  child: Center(
-                    child: Text(
-                      "Sign Up",
-                      style: GoogleFonts.spaceMono(fontSize: 30),
+                InkWell(
+                  child: Container(
+                    height: 50,
+                    width: 140,
+                    decoration: BoxDecoration(
+                        //boxShadow: ,
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white),
+                    child: Center(
+                      child: Text(
+                        "Sign Up",
+                        style: GoogleFonts.spaceMono(fontSize: 30),
+                      ),
                     ),
                   ),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUpPage()));
+                  },
                 ),
                 SizedBox(
                   height: 80,

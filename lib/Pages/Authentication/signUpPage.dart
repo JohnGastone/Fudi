@@ -144,6 +144,7 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
+                        keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                             hintText: "Repeat your pasword",
                             hintStyle: GoogleFonts.spaceMono(fontSize: 15),
