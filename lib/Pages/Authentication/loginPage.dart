@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightGreenAccent,
+      backgroundColor: Color.fromARGB(255, 87, 145, 21),
       body: SingleChildScrollView(
         child: Flexible(
           child: Center(
@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 200,
                 ),
                 Text(
-                  "Hello",
+                  "Hello.",
                   style: GoogleFonts.spaceMono(
                       fontSize: 50, fontWeight: FontWeight.bold),
                 ),
