@@ -191,6 +191,16 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      Column(
+                        children: [Text("Kuku robo")],
+                      )
+                    ],
                   )
                 ],
               ),
