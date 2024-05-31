@@ -27,13 +27,13 @@ class _LoginPageState extends State<LoginPage> {
                     width: 140,
                     decoration: BoxDecoration(
                       borderRadius:
-                          BorderRadius.only(bottomRight: Radius.circular(40)),
+                          BorderRadius.only(bottomRight: Radius.circular(60)),
                       color: Colors.white24,
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 200,
+                  height: 100,
                 ),
                 Text(
                   "Hello.",
@@ -75,7 +75,10 @@ class _LoginPageState extends State<LoginPage> {
                           child: Divider(
                             color: Colors.white,
                           )),
-                      Text("  Or  "),
+                      Text(
+                        "  Or  ",
+                        style: GoogleFonts.spaceMono(fontSize: 20),
+                      ),
                       SizedBox(
                           width: 100,
                           child: Divider(
@@ -102,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 80,
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
@@ -111,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 140,
                     decoration: BoxDecoration(
                       borderRadius:
-                          BorderRadius.only(topLeft: Radius.circular(40)),
+                          BorderRadius.only(topLeft: Radius.circular(60)),
                       color: Colors.white24,
                     ),
                   ),
