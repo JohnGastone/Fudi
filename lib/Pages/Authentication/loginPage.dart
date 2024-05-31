@@ -23,15 +23,17 @@ class _LoginPageState extends State<LoginPage> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Container(
-                    height: 30,
-                    width: 50,
+                    height: 150,
+                    width: 140,
                     decoration: BoxDecoration(
+                      borderRadius:
+                          BorderRadius.only(bottomRight: Radius.circular(40)),
                       color: Colors.white24,
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 300,
+                  height: 200,
                 ),
                 Text(
                   "Hello",
@@ -43,7 +45,22 @@ class _LoginPageState extends State<LoginPage> {
                   "Let's get started",
                   style: GoogleFonts.spaceMono(
                       fontSize: 20, fontWeight: FontWeight.bold),
-                )
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    height: 150,
+                    width: 140,
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          BorderRadius.only(topLeft: Radius.circular(40)),
+                      color: Colors.white24,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
