@@ -95,6 +95,18 @@ class _LoginpageState extends State<Loginpage> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  SizedBox(
+                      height: 40,
+                      width: 100,
+                      child: FloatingActionButton(
+                          child: Text(
+                            "Login",
+                            style: GoogleFonts.spaceMono(fontSize: 18),
+                          ),
+                          onPressed: () {}))
                 ],
               ),
             )
