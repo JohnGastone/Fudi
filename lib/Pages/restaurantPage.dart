@@ -224,6 +224,9 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                   Icons.restaurant,
                                   color: Colors.grey,
                                 ),
+                                SizedBox(
+                                  height: 3,
+                                ),
                                 Text(
                                   "10-18 minutes",
                                   style: GoogleFonts.spaceMono(
