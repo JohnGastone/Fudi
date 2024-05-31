@@ -173,7 +173,10 @@ class _RestaurantPageState extends State<RestaurantPage> {
                           fontSize: 15, color: Colors.white),
                       autocorrect: EditableText.debugDeterministicCursor,
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.search),
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.white,
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
