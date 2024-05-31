@@ -38,13 +38,13 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Hello.",
                   style: GoogleFonts.spaceMono(
-                      fontSize: 50, fontWeight: FontWeight.bold),
+                      fontSize: 60, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20),
                 Text(
                   "Let's get started",
                   style: GoogleFonts.spaceMono(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 30, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 20,
@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 70, right: 20),
+                  padding: const EdgeInsets.only(left: 50, right: 20),
                   child: Row(
                     children: [
                       SizedBox(
