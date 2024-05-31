@@ -198,6 +198,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 25, right: 15),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           children: [
@@ -218,12 +219,9 @@ class _RestaurantPageState extends State<RestaurantPage> {
                             )
                           ],
                         ),
-                        Container(
-                          height: 150,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage("./assets/hamburger.png"))),
+                        Image.asset(
+                          "./assets/hamburger.png",
+                          height: 130,
                         )
                       ],
                     ),
