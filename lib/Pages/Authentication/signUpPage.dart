@@ -36,7 +36,9 @@ class SignUpPage extends StatelessWidget {
                   child: Text(
                     "Up",
                     style: GoogleFonts.spaceMono(
-                        fontSize: 40, color: Colors.white),
+                        fontSize: 40,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
                   ),
                 )
               ],
