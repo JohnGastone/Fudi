@@ -4,14 +4,14 @@ import "package:flutter/material.dart";
 import "package:fudi/Pages/explorePage.dart";
 import "package:google_fonts/google_fonts.dart";
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class IntroductionPage extends StatefulWidget {
+  const IntroductionPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<IntroductionPage> createState() => _IntroductionPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _IntroductionPageState extends State<IntroductionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
