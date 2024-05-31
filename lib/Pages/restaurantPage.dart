@@ -217,6 +217,11 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                   fontSize: 15, color: Colors.white),
                             )
                           ],
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage("./assets/hamburger.png"))),
                         )
                       ],
                     ),
