@@ -34,16 +34,6 @@ class SignUpPage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 35, right: 20),
-              child: Text(
-                "Please enter your credentials below, there is a dish waiting for you",
-                style: GoogleFonts.spaceMono(fontSize: 18, color: Colors.white),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
             Container(
               height: 500,
               width: double.maxFinite,
