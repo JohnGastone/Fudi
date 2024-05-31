@@ -43,12 +43,21 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.white),
                 ),
                 SizedBox(height: 20),
-                Text(
-                  "Let's get started",
-                  style: GoogleFonts.spaceMono(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                Row(
+                  children: [
+                    Text(
+                      "Let's get you a dish",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                    Image.asset(
+                      "./assets/blink.png",
+                      height: 40,
+                      width: 40,
+                    )
+                  ],
                 ),
                 SizedBox(
                   height: 20,
