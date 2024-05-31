@@ -1,7 +1,5 @@
 // ignore_for_file: file_names
 
-import 'package:fudi/models/restaurants_model.dart';
-
 class RestaurantfoodsModel {
   String? foodName;
   int? foodPrice;
@@ -13,8 +11,8 @@ class RestaurantfoodsModel {
 }
 
 class RestaurantFoodlist {
-  static List<RestaurantModel> getRestaurantFood = [
-    RestaurantModel(
+  static List<RestaurantfoodsModel> getRestaurantFood = [
+    RestaurantfoodsModel(
       "Kuku robo",
       3500,
       "10-20",
