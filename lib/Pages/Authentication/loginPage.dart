@@ -63,8 +63,23 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                Row(
-                  children: [Divider(), Text("Or"), Divider()],
+                Padding(
+                  padding: const EdgeInsets.only(left: 100, right: 20),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                          width: 100,
+                          child: Divider(
+                            color: Colors.white,
+                          )),
+                      Text("  Or  "),
+                      SizedBox(
+                          width: 100,
+                          child: Divider(
+                            color: Colors.white,
+                          )),
+                    ],
+                  ),
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
