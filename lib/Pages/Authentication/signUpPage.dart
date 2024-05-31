@@ -22,14 +22,24 @@ class SignUpPage extends StatelessWidget {
             SizedBox(
               height: 100,
             ),
-            Center(
-              child: Text(
-                'Welcome Back!',
-                style: GoogleFonts.spaceMono(
-                    fontSize: 30,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
+            Column(
+              children: [
+                Text(
+                  'Sign',
+                  style: GoogleFonts.spaceMono(
+                      fontSize: 40,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 82),
+                  child: Text(
+                    "Up",
+                    style: GoogleFonts.spaceMono(
+                        fontSize: 40, color: Colors.white),
+                  ),
+                )
+              ],
             ),
             SizedBox(
               height: 20,
