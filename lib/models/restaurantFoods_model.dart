@@ -55,4 +55,6 @@ class RestaurantFoodlist {
       "./assets/hamburger.png",
     ),
   ];
+
+  static List<RestaurantfoodsModel> displayFoods = List.from(getRestaurantFood);
 }
