@@ -13,5 +13,12 @@ class RestaurantfoodsModel {
 }
 
 class RestaurantFoodlist {
-  static List<RestaurantModel> getRestaurantFood = [];
+  static List<RestaurantModel> getRestaurantFood = [
+    RestaurantModel(
+      "Kuku robo",
+      3500,
+      "10-20",
+      "./assets/hamburger.png",
+    ),
+  ];
 }
