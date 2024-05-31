@@ -50,7 +50,7 @@ class _LoginpageState extends State<Loginpage> {
             Container(
               height: 500,
               decoration: BoxDecoration(
-                  color: Colors.white24,
+                  color: Colors.white,
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(30),
                       topLeft: Radius.circular(30))),
