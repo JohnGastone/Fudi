@@ -47,7 +47,21 @@ class _LoginPageState extends State<LoginPage> {
                       fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
+                  height: 20,
+                ),
+                Container(
                   height: 50,
+                  width: 140,
+                  decoration: BoxDecoration(
+                      //boxShadow: ,
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white),
+                  child: Center(
+                    child: Text(
+                      "Login",
+                      style: GoogleFonts.spaceMono(fontSize: 30),
+                    ),
+                  ),
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
