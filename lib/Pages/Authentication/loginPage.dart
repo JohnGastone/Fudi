@@ -27,7 +27,7 @@ class _LoginpageState extends State<Loginpage> {
             ),
             Center(
               child: Text(
-                'Welcome Back',
+                'Welcome Back!',
                 style: GoogleFonts.spaceMono(
                     fontSize: 30,
                     color: Colors.white,
@@ -37,6 +37,13 @@ class _LoginpageState extends State<Loginpage> {
             SizedBox(
               height: 20,
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Text(
+                "Please enter your credentials below, there is a dish waiting for you",
+                style: GoogleFonts.spaceMono(fontSize: 18, color: Colors.white),
+              ),
+            )
           ],
         ),
       ),
