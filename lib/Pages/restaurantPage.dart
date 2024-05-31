@@ -13,8 +13,8 @@ class RestaurantPage extends StatefulWidget {
 }
 
 class _RestaurantPageState extends State<RestaurantPage> {
-  List<RestaurantfoodsModel> getfoods() =>
-      List.from(RestaurantFoodlist.getRestaurantFood);
+  List<RestaurantfoodsModel> displayFoods =
+      List.from(RestaurantFoodlist.displayFoods);
 
   @override
   Widget build(BuildContext context) {
