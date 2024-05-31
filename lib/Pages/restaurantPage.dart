@@ -145,6 +145,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                 ),
                                 Icon(
                                   Icons.location_on,
+                                  color: Colors.green,
                                 )
                               ],
                             ),
