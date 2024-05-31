@@ -22,6 +22,13 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Align(
                   alignment: Alignment.topLeft,
+                  child: Container(
+                    height: 30,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.white24,
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 300,
