@@ -219,8 +219,10 @@ class _RestaurantPageState extends State<RestaurantPage> {
                           ],
                         ),
                         Container(
+                          height: 150,
                           decoration: BoxDecoration(
                               image: DecorationImage(
+                                  fit: BoxFit.cover,
                                   image: AssetImage("./assets/hamburger.png"))),
                         )
                       ],
