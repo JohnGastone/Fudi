@@ -193,7 +193,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     ),
                   ),
                   SizedBox(
-                    height: 15,
+                    height: 20,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 25, right: 15),
