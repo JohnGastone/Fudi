@@ -66,6 +66,9 @@ class _LoginpageState extends State<Loginpage> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(26),
                         color: Colors.white),
+                    child: TextField(
+                      decoration: InputDecoration(),
+                    ),
                   )
                 ],
               ),
