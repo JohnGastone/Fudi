@@ -205,17 +205,31 @@ class _RestaurantPageState extends State<RestaurantPage> {
                             Text(
                               "Kuku robo",
                               style: GoogleFonts.spaceMono(
-                                  fontSize: 15, color: Colors.white),
+                                  fontSize: 18, color: Colors.white),
+                            ),
+                            SizedBox(
+                              height: 5,
                             ),
                             Text(
-                              "Kuku robo",
+                              "Tsh 3500",
                               style: GoogleFonts.spaceMono(
-                                  fontSize: 15, color: Colors.white),
+                                  fontSize: 15, color: Colors.greenAccent),
                             ),
-                            Text(
-                              "Kuku robo",
-                              style: GoogleFonts.spaceMono(
-                                  fontSize: 15, color: Colors.white),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.restaurant,
+                                  color: Colors.grey,
+                                ),
+                                Text(
+                                  "10-18 minutes",
+                                  style: GoogleFonts.spaceMono(
+                                      fontSize: 15, color: Colors.white),
+                                ),
+                              ],
                             )
                           ],
                         ),
