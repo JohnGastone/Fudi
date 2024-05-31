@@ -32,7 +32,7 @@ class SignUpPage extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 82),
+                  padding: const EdgeInsets.only(left: 86),
                   child: Text(
                     "Up",
                     style: GoogleFonts.spaceMono(
@@ -164,7 +164,7 @@ class SignUpPage extends StatelessWidget {
                       width: 270,
                       child: FloatingActionButton(
                           child: Text(
-                            "Login",
+                            "Get started",
                             style: GoogleFonts.spaceMono(fontSize: 18),
                           ),
                           onPressed: () {
