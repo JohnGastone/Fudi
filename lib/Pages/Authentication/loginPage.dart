@@ -63,8 +63,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 20,
+                ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 100, right: 20),
+                  padding: const EdgeInsets.only(left: 70, right: 20),
                   child: Row(
                     children: [
                       SizedBox(
@@ -80,6 +83,26 @@ class _LoginPageState extends State<LoginPage> {
                           )),
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  height: 50,
+                  width: 140,
+                  decoration: BoxDecoration(
+                      //boxShadow: ,
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white),
+                  child: Center(
+                    child: Text(
+                      "Sign Up",
+                      style: GoogleFonts.spaceMono(fontSize: 30),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 Align(
                   alignment: Alignment.bottomRight,
