@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 140,
                     decoration: BoxDecoration(
                       borderRadius:
-                          BorderRadius.only(bottomRight: Radius.circular(60)),
+                          BorderRadius.only(bottomRight: Radius.circular(100)),
                       color: Colors.white24,
                     ),
                   ),
@@ -38,13 +38,17 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Hello.",
                   style: GoogleFonts.spaceMono(
-                      fontSize: 60, fontWeight: FontWeight.bold),
+                      fontSize: 60,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 SizedBox(height: 20),
                 Text(
                   "Let's get started",
                   style: GoogleFonts.spaceMono(
-                      fontSize: 30, fontWeight: FontWeight.bold),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 SizedBox(
                   height: 20,
@@ -114,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 140,
                     decoration: BoxDecoration(
                       borderRadius:
-                          BorderRadius.only(topLeft: Radius.circular(60)),
+                          BorderRadius.only(topLeft: Radius.circular(100)),
                       color: Colors.white24,
                     ),
                   ),
