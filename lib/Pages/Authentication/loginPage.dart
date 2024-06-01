@@ -108,7 +108,8 @@ class _LoginpageState extends State<Loginpage> {
                       child: TextButton(
                           child: Text(
                             "Login",
-                            style: GoogleFonts.spaceMono(fontSize: 18),
+                            style: GoogleFonts.spaceMono(
+                                fontSize: 18, color: Colors.white),
                           ),
                           onPressed: () {
                             Navigator.push(

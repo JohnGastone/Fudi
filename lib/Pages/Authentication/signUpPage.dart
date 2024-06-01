@@ -147,7 +147,7 @@ class SignUpPage extends StatelessWidget {
                           child: Text(
                             "Create account",
                             style: GoogleFonts.spaceMono(
-                                fontSize: 18, color: Colors.black),
+                                fontSize: 18, color: Colors.white),
                           ),
                           onPressed: () {
                             Navigator.push(
