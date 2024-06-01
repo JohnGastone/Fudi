@@ -121,7 +121,7 @@ class _LoginpageState extends State<Loginpage> {
                     height: 20,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 50),
+                    padding: const EdgeInsets.only(left: 70),
                     child: Row(
                       children: [
                         Text(
