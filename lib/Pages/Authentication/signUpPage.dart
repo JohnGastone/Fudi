@@ -142,7 +142,7 @@ class SignUpPage extends StatelessWidget {
                           color: Colors.white24,
                           borderRadius: BorderRadius.circular(26)),
                       height: 50,
-                      width: 270,
+                      width: 170,
                       child: TextButton(
                           child: Text(
                             "Create account",
