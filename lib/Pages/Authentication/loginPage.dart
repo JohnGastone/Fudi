@@ -71,19 +71,20 @@ class _LoginpageState extends State<Loginpage> {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        decoration: InputDecoration(
-                            floatingLabelAlignment:
-                                FloatingLabelAlignment.start,
-                            floatingLabelBehavior: FloatingLabelBehavior.auto,
-                            floatingLabelStyle: GoogleFonts.spaceMono(
-                              color: Colors.blue,
-                              fontSize: 20,
-                            ),
-                            labelText: "Email",
-                            hintText: "Enter your email address",
-                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
-                            border: InputBorder.none),
-                      ),
+                          decoration: InputDecoration(
+                        floatingLabelAlignment: FloatingLabelAlignment.start,
+                        floatingLabelBehavior: FloatingLabelBehavior.auto,
+                        floatingLabelStyle: GoogleFonts.spaceMono(
+                          color: Colors.grey,
+                          fontSize: 20,
+                        ),
+                        labelText: "Email",
+                        hintText: "Enter your email address",
+                        hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                        border: OutlineInputBorder(
+                            //borderRadius: BorderRadius.circular(20))
+                            borderSide: BorderSide.none),
+                      )),
                     ),
                   ),
                   SizedBox(
