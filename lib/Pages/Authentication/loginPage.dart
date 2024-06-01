@@ -101,9 +101,10 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                   Container(
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(26)),
+                          color: Colors.white24,
+                          borderRadius: BorderRadius.circular(16)),
                       height: 50,
-                      width: 270,
+                      width: 170,
                       child: TextButton(
                           child: Text(
                             "Login",

@@ -140,7 +140,7 @@ class SignUpPage extends StatelessWidget {
                   Container(
                       decoration: BoxDecoration(
                           color: Colors.white24,
-                          borderRadius: BorderRadius.circular(26)),
+                          borderRadius: BorderRadius.circular(16)),
                       height: 50,
                       width: 170,
                       child: TextButton(
