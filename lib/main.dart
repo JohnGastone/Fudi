@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fudi/Pages/Authentication/introductionPage.dart';
 
-import 'Pages/explorePage.dart';
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
