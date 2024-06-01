@@ -91,6 +91,7 @@ class _LoginpageState extends State<Loginpage> {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
+                        style: GoogleFonts.spaceMono(),
                         decoration: InputDecoration(
                             hintText: "Enter your password",
                             hintStyle: GoogleFonts.spaceMono(fontSize: 15),
