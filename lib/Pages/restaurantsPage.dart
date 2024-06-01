@@ -289,8 +289,9 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               ),
             ),
             SizedBox(
-              height: 300,
               child: GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1, mainAxisSpacing: 1),
                 itemCount: displayList.length,
