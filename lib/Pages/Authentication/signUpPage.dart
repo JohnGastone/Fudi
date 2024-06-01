@@ -72,6 +72,7 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
+                        style: GoogleFonts.spaceMono(),
                         decoration: InputDecoration(
                             hintText: "Enter your username i.e. Msambi Nungwa",
                             hintStyle: GoogleFonts.spaceMono(fontSize: 15),
@@ -91,6 +92,7 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
+                        style: GoogleFonts.spaceMono(),
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                             hintText: "Enter your email address",
@@ -111,6 +113,7 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
+                        style: GoogleFonts.spaceMono(),
                         decoration: InputDecoration(
                             hintText: "Enter your password",
                             hintStyle: GoogleFonts.spaceMono(fontSize: 15),
@@ -130,6 +133,7 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
+                        style: GoogleFonts.spaceMono(),
                         keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                             hintText: "Repeat your pasword",
