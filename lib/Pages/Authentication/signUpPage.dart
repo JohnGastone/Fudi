@@ -156,6 +156,9 @@ class SignUpPage extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => const MyHomePage()));
                           })),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(left: 50),
                     child: Row(
