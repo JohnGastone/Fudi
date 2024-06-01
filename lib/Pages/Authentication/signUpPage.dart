@@ -164,7 +164,7 @@ class SignUpPage extends StatelessWidget {
                       width: 270,
                       child: FloatingActionButton(
                           child: Text(
-                            "Get started",
+                            "Create account",
                             style: GoogleFonts.spaceMono(fontSize: 18),
                           ),
                           onPressed: () {
