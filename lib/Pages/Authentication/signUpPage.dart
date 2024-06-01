@@ -35,7 +35,7 @@ class SignUpPage extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 96),
+                    padding: const EdgeInsets.only(left: 105),
                     child: Text(
                       "Up",
                       style: GoogleFonts.spaceMono(
