@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/Authentication/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../explorePage.dart';
@@ -135,7 +136,7 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Container(
                       decoration: BoxDecoration(
@@ -154,7 +155,35 @@ class SignUpPage extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => const MyHomePage()));
-                          }))
+                          })),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Have an account?",
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 18, color: Colors.white),
+                        ),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        InkWell(
+                          child: Text("Sign In",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 18,
+                                  color: Color.fromARGB(255, 36, 48, 79),
+                                  fontWeight: FontWeight.bold)),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Loginpage()));
+                          },
+                        )
+                      ],
+                    ),
+                  )
                 ],
               ),
             )
