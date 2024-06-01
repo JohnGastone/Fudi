@@ -71,21 +71,25 @@ class _LoginpageState extends State<Loginpage> {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                          style: GoogleFonts.spaceMono(fontSize: 18),
-                          decoration: InputDecoration(
-                            floatingLabelAlignment:
-                                FloatingLabelAlignment.start,
-                            floatingLabelBehavior: FloatingLabelBehavior.auto,
-                            floatingLabelStyle: GoogleFonts.spaceMono(
-                              color: Colors.grey,
-                              fontSize: 20,
-                            ),
-                            labelText: "Enter your email address",
-                            labelStyle: GoogleFonts.spaceMono(fontSize: 15),
-                            border: OutlineInputBorder(
-                                //borderRadius: BorderRadius.circular(20))
-                                borderSide: BorderSide.none),
-                          )),
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.person),
+                          hintText: "naheed255@gmail.com",
+                          hintStyle: GoogleFonts.mulish(fontSize: 18),
+                          labelStyle: GoogleFonts.mulish(fontSize: 18),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
