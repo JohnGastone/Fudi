@@ -395,6 +395,8 @@ class _ExplorePageState extends State<ExplorePage> {
               child: SizedBox(
                 height: 300,
                 child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: 20,
