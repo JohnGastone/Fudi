@@ -104,7 +104,7 @@ class _LoginpageState extends State<Loginpage> {
                           borderRadius: BorderRadius.circular(26)),
                       height: 50,
                       width: 270,
-                      child: FloatingActionButton(
+                      child: TextButton(
                           child: Text(
                             "Login",
                             style: GoogleFonts.spaceMono(fontSize: 18),
