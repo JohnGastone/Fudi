@@ -393,7 +393,7 @@ class _ExplorePageState extends State<ExplorePage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                height: 300,
+                // height: 300,
                 child: GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
