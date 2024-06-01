@@ -121,18 +121,22 @@ class _LoginpageState extends State<Loginpage> {
                     height: 20,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 70),
+                    padding: const EdgeInsets.only(left: 78),
                     child: Row(
                       children: [
                         Text(
                           "New User?",
-                          style: GoogleFonts.spaceMono(fontSize: 18),
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 18, color: Colors.white),
                         ),
                         SizedBox(
                           width: 40,
                         ),
                         Text("Register",
-                            style: GoogleFonts.spaceMono(fontSize: 18))
+                            style: GoogleFonts.spaceMono(
+                                fontSize: 18,
+                                color: Color.fromARGB(255, 36, 48, 79),
+                                fontWeight: FontWeight.bold))
                       ],
                     ),
                   )
