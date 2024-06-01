@@ -159,10 +159,11 @@ class SignUpPage extends StatelessWidget {
                   ),
                   Container(
                       decoration: BoxDecoration(
+                          color: Colors.white24,
                           borderRadius: BorderRadius.circular(26)),
                       height: 50,
                       width: 270,
-                      child: FloatingActionButton(
+                      child: TextButton(
                           child: Text(
                             "Create account",
                             style: GoogleFonts.spaceMono(fontSize: 18),
