@@ -116,7 +116,26 @@ class _LoginpageState extends State<Loginpage> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => MyHomePage()));
-                          }))
+                          })),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
+                    child: Row(
+                      children: [
+                        Text(
+                          "New User?",
+                          style: GoogleFonts.spaceMono(fontSize: 18),
+                        ),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        Text("Register",
+                            style: GoogleFonts.spaceMono(fontSize: 18))
+                      ],
+                    ),
+                  )
                 ],
               ),
             )
