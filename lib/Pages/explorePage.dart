@@ -404,7 +404,7 @@ class _ExplorePageState extends State<ExplorePage> {
                   itemBuilder: (context, index) => InkWell(
                     child: Container(
                       height: 265,
-                      width: 150,
+                      width: 140,
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 224, 216, 216),
                           borderRadius: BorderRadius.circular(30)),
