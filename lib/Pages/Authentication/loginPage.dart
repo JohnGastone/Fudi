@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/Authentication/signUpPage.dart';
 import 'package:fudi/Pages/explorePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -132,11 +133,19 @@ class _LoginpageState extends State<Loginpage> {
                         SizedBox(
                           width: 40,
                         ),
-                        Text("Register",
-                            style: GoogleFonts.spaceMono(
-                                fontSize: 18,
-                                color: Color.fromARGB(255, 36, 48, 79),
-                                fontWeight: FontWeight.bold))
+                        InkWell(
+                          child: Text("Register",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 18,
+                                  color: Color.fromARGB(255, 36, 48, 79),
+                                  fontWeight: FontWeight.bold)),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUpPage()));
+                          },
+                        )
                       ],
                     ),
                   )
