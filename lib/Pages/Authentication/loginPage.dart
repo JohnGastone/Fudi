@@ -71,24 +71,10 @@ class _LoginpageState extends State<Loginpage> {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.person),
-                          hintText: "naheed255@gmail.com",
-                          hintStyle: GoogleFonts.mulish(fontSize: 18),
-                          labelStyle: GoogleFonts.mulish(fontSize: 18),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(color: Colors.grey),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: BorderSide(color: Colors.blue),
-                          ),
-                        ),
+                            hintText: "Enter your email address",
+                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            border: InputBorder.none),
                       ),
                     ),
                   ),
