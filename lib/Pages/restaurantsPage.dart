@@ -124,7 +124,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: TextField(
-                decoration: InputDecoration(),
+                decoration: InputDecoration(border: InputBorder.none),
               ),
             )
           ],
