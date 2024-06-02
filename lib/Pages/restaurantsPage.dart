@@ -34,12 +34,12 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               style: GoogleFonts.spaceMono(fontSize: 15),
             ),
             SizedBox(
-              height: 10,
+              height: 5,
             ),
             Center(
               child: Container(
-                height: 43,
-                width: 170,
+                height: 33,
+                width: 220,
                 decoration: BoxDecoration(
                   color: Colors.white24,
                   borderRadius: BorderRadius.circular(8),
@@ -57,6 +57,9 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 20,
             )
           ],
         ),
