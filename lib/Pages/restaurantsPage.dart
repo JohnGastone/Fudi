@@ -123,6 +123,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 color: Colors.white24,
                 borderRadius: BorderRadius.circular(10),
               ),
+              child: TextField(),
             )
           ],
         ),
