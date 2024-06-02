@@ -136,13 +136,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                   Icons.search,
                   color: Colors.green,
                 ),
-                onPressed: () {
-                  setState(() {
-                    _isSearching = !_isSearching;
-                    searchList = displayList;
-                    _searchController.clear();
-                  });
-                },
+                onPressed: () {},
               ),
             )
           ],
