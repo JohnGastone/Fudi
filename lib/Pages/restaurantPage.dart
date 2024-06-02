@@ -238,7 +238,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                     height: 3,
                                   ),
                                   Text(
-                                    "10-18 minutes",
+                                    displayFoods[index].preparationTime!,
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 15, color: Colors.white),
                                   ),
@@ -247,7 +247,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                             ],
                           ),
                           Image.asset(
-                            "./assets/hamburger.png",
+                            displayFoods[index].foodImage!,
                             height: 130,
                           )
                         ],
