@@ -16,7 +16,7 @@ class RestaurantFoodlist {
       "Kuku robo",
       3500,
       "10-20",
-      "assets/hamburger.png",
+      "./assets/hamburger.png",
     ),
     RestaurantfoodsModel(
       "Kuku nusu",
