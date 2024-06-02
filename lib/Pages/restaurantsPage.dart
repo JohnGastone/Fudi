@@ -26,111 +26,24 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(
-              width: 150,
-              height: 38,
-              child: Card(
-                color: Colors.green,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                  child: InkWell(
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.location_pin,
-                          size: 20,
-                          color: Colors.white,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          "Kinyerezi",
-                          style: GoogleFonts.spaceMono(fontSize: 16),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                      ],
-                    ),
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Text(
-                                "Location",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 16, color: Colors.black),
-                              ),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  TextField(
-                                    decoration: InputDecoration(
-                                        border: OutlineInputBorder(),
-                                        hintText: "Enter your location"),
-                                    style: GoogleFonts.spaceMono(
-                                        fontSize: 16, color: Colors.black),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  SizedBox(
-                                    width: 200,
-                                    child: FloatingActionButton(
-                                        backgroundColor: Colors.green,
-                                        child: Text("Pick from the map",
-                                            style: GoogleFonts.spaceMono(
-                                                fontSize: 16)),
-                                        onPressed: () {
-                                          // Integration to google maps
-                                        }),
-                                  )
-                                ],
-                              ),
-                              actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text(
-                                      "Cancel",
-                                      style: GoogleFonts.spaceMono(
-                                          fontSize: 16, color: Colors.black),
-                                    )),
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text(
-                                      "OK",
-                                      style: GoogleFonts.spaceMono(
-                                          fontSize: 16, color: Colors.black),
-                                    ))
-                              ],
-                            );
-                          });
-                    },
-                  ),
-                ),
-              ),
-            ),
             Container(
-              height: 30,
-              width: 140,
+              height: 43,
+              width: 170,
               decoration: BoxDecoration(
                 color: Colors.white24,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(8),
               ),
-              child: TextField(
-                style: GoogleFonts.spaceMono(fontSize: 14),
-                decoration: InputDecoration(
-                    suffixIcon: Icon(
-                      Icons.search,
-                      color: Colors.green,
-                    ),
-                    border: InputBorder.none),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  style: GoogleFonts.spaceMono(fontSize: 14),
+                  decoration: InputDecoration(
+                      suffixIcon: Icon(
+                        Icons.search,
+                        color: Colors.green,
+                      ),
+                      border: InputBorder.none),
+                ),
               ),
             )
           ],
