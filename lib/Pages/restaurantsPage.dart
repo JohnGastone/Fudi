@@ -15,6 +15,16 @@ class RestaurantsPage extends StatefulWidget {
 class _RestaurantsPageState extends State<RestaurantsPage> {
   List<RestaurantModel> displayList = List.from(RestaurantList.displayList);
 
+  void updateList(String value) {
+    setState(() {
+      displayList = RestaurantList.getRestaurants
+          .where((element) => element.restaurantName!
+              .toLowerCase()
+              .contains(value.toLowerCase()))
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
