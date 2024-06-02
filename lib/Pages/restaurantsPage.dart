@@ -23,26 +23,38 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
-        title: Row(
+        title: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              height: 43,
-              width: 170,
-              decoration: BoxDecoration(
-                color: Colors.white24,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  style: GoogleFonts.spaceMono(fontSize: 14),
-                  decoration: InputDecoration(
-                      suffixIcon: Icon(
-                        Icons.search,
-                        color: Colors.green,
-                      ),
-                      border: InputBorder.none),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Are you looking for a specific dish spot? ",
+              style: GoogleFonts.spaceMono(fontSize: 15),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+              child: Container(
+                height: 43,
+                width: 170,
+                decoration: BoxDecoration(
+                  color: Colors.white24,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    style: GoogleFonts.spaceMono(fontSize: 14),
+                    decoration: InputDecoration(
+                        suffixIcon: Icon(
+                          Icons.search,
+                          color: Colors.green,
+                        ),
+                        border: InputBorder.none),
+                  ),
                 ),
               ),
             )
