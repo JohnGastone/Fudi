@@ -240,7 +240,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                       height: 3,
                                     ),
                                     Text(
-                                      displayFoods[index].preparationTime!,
+                                      displayFoods[index].foodImage!,
                                       style: GoogleFonts.spaceMono(
                                           fontSize: 15, color: Colors.white),
                                     ),
@@ -248,11 +248,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                 )
                               ],
                             ),
-                            Text(displayFoods[index].foodImage!)
-                            // Image.asset(
-                            //   displayFoods[index].foodImage!,
-                            //   height: 40,
-                            // )
+                            Text(displayFoods[index].preparationTime!)
                           ],
                         ),
                       ),

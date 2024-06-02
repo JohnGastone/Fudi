@@ -16,13 +16,13 @@ class RestaurantFoodlist {
       "Kuku robo",
       3500,
       "10-20",
-      "./assets/hamburger.png",
+      "assets/hamburger.png",
     ),
     RestaurantfoodsModel(
       "Kuku nusu",
       3500,
       "10-20",
-      "./assets/pizza.png",
+      "assets/pizza.png",
     ),
     RestaurantfoodsModel(
       "Kuku robo",
