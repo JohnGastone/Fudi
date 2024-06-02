@@ -125,7 +125,11 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               ),
               child: TextField(
                 decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.search), border: InputBorder.none),
+                    suffixIcon: Icon(
+                      Icons.search,
+                      color: Colors.green,
+                    ),
+                    border: InputBorder.none),
               ),
             )
           ],
