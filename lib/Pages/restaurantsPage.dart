@@ -61,7 +61,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                     onChanged: (value) {},
                     decoration: InputDecoration(
                         hintText: "E.g Unyamani Cafe",
-                        hintStyle: GoogleFonts.spaceMono(fontSize: 12),
+                        hintStyle: GoogleFonts.spaceMono(fontSize: 13),
                         suffixIcon: Padding(
                           padding: const EdgeInsets.only(top: 5),
                           child: Icon(
