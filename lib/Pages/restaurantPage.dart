@@ -199,52 +199,57 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   SizedBox(
                     height: 20,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25, right: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              "Kuku robo",
-                              style: GoogleFonts.spaceMono(
-                                  fontSize: 18, color: Colors.white),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              "Tsh 3500",
-                              style: GoogleFonts.spaceMono(
-                                  fontSize: 15, color: Colors.greenAccent),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.restaurant,
-                                  color: Colors.grey,
-                                ),
-                                SizedBox(
-                                  height: 3,
-                                ),
-                                Text(
-                                  "10-18 minutes",
-                                  style: GoogleFonts.spaceMono(
-                                      fontSize: 15, color: Colors.white),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        Image.asset(
-                          "./assets/hamburger.png",
-                          height: 130,
-                        )
-                      ],
+                  GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 1, mainAxisSpacing: 1),
+                    itemCount: displayFoods.length,
+                    itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.only(left: 25, right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                "Kuku robo",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                "Tsh 3500",
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 15, color: Colors.greenAccent),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.restaurant,
+                                    color: Colors.grey,
+                                  ),
+                                  SizedBox(
+                                    height: 3,
+                                  ),
+                                  Text(
+                                    "10-18 minutes",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 15, color: Colors.white),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          Image.asset(
+                            "./assets/hamburger.png",
+                            height: 130,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(width: 310, child: Divider()),
