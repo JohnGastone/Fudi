@@ -117,11 +117,11 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               ),
             ),
             Container(
-              height: 40,
-              width: 120,
+              height: 30,
+              width: 140,
               decoration: BoxDecoration(
                 color: Colors.white24,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(16),
               ),
               child: TextField(
                 decoration: InputDecoration(),
