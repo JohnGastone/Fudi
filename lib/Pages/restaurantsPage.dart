@@ -31,7 +31,8 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
             ),
             Text(
               "Are you looking for a specific dish spot? ",
-              style: GoogleFonts.spaceMono(fontSize: 15),
+              style: GoogleFonts.spaceMono(
+                  fontSize: 15, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 5,
@@ -45,13 +46,16 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 10, bottom: 14),
                   child: TextField(
                     style: GoogleFonts.spaceMono(fontSize: 14),
                     decoration: InputDecoration(
-                        suffixIcon: Icon(
-                          Icons.search,
-                          color: Colors.green,
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: Icon(
+                            Icons.search,
+                            color: Colors.green,
+                          ),
                         ),
                         border: InputBorder.none),
                   ),
