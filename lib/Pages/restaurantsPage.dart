@@ -124,6 +124,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: TextField(
+                style: GoogleFonts.spaceMono(fontSize: 14),
                 decoration: InputDecoration(
                     suffixIcon: Icon(
                       Icons.search,
