@@ -40,12 +40,12 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              width: 240,
+              width: 150,
               height: 38,
               child: Card(
                 color: Colors.green,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 60.0, right: 10.0),
+                  padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                   child: InkWell(
                     child: Row(
                       children: [
