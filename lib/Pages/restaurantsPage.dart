@@ -49,6 +49,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                   padding: const EdgeInsets.only(left: 10, bottom: 14),
                   child: TextField(
                     style: GoogleFonts.spaceMono(fontSize: 14),
+                    onChanged: (value) {},
                     decoration: InputDecoration(
                         suffixIcon: Padding(
                           padding: const EdgeInsets.only(top: 5),
