@@ -116,15 +116,9 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 ),
               ),
             ),
-            CircleAvatar(
-              backgroundColor: const Color.fromARGB(255, 225, 222, 222),
-              child: IconButton(
-                icon: Icon(
-                  Icons.search,
-                  color: Colors.green,
-                ),
-                onPressed: () {},
-              ),
+            Container(
+              height: 40,
+              width: 120,
             )
           ],
         ),
