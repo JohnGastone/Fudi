@@ -200,6 +200,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     height: 20,
                   ),
                   GridView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1, mainAxisSpacing: 1),
                     itemCount: displayFoods.length,
