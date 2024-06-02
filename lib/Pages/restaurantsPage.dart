@@ -15,19 +15,6 @@ class RestaurantsPage extends StatefulWidget {
 class _RestaurantsPageState extends State<RestaurantsPage> {
   List<RestaurantModel> displayList = List.from(RestaurantList.displayList);
   List<RestaurantModel> searchList = List.from(RestaurantList.displayList);
-  TextEditingController _searchController = TextEditingController();
-  bool _isSearching = false;
-
-  void _filterRestaurants(String query) {
-    List<RestaurantModel> filteredList = displayList
-        .where((restaurant) => restaurant.restaurantName!
-            .toLowerCase()
-            .contains(query.toLowerCase()))
-        .toList();
-    setState(() {
-      searchList = filteredList;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
