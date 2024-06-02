@@ -213,7 +213,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                           Column(
                             children: [
                               Text(
-                                "Kuku robo",
+                                displayFoods[index].foodName!,
                                 style: GoogleFonts.spaceMono(
                                     fontSize: 18, color: Colors.white),
                               ),
@@ -221,7 +221,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                 height: 5,
                               ),
                               Text(
-                                "Tsh 3500",
+                                " ${displayFoods[index].foodPrice!}",
                                 style: GoogleFonts.spaceMono(
                                     fontSize: 15, color: Colors.greenAccent),
                               ),
