@@ -1,10 +1,19 @@
 // ignore_for_file: prefer_const_constructors, unused_import, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:fudi/models/orders_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OrdersPage extends StatelessWidget {
+class OrdersPage extends StatefulWidget {
   const OrdersPage({super.key});
+
+  @override
+  State<StatefulWidget> createState() => _OrdersPageState();
+}
+
+class _OrdersPageState extends State<OrdersPage> {
+  List<FoodOrdersModel> displayFoodOrders =
+      List.from(FoodOrdersList.displayOrders);
 
   @override
   Widget build(BuildContext context) {
