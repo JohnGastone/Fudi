@@ -8,6 +8,15 @@ class OrdersPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center();
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 221, 206, 206),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [],
+          ),
+        ),
+      ),
+    );
   }
 }
