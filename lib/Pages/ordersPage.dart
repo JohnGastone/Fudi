@@ -51,20 +51,23 @@ class OrdersPage extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.shopping_bag,
-                    color: Colors.green,
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    "Current Orders",
-                    style: GoogleFonts.spaceMono(fontSize: 20),
-                  )
-                ],
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.shopping_bag,
+                      color: Colors.green,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      "Current Orders",
+                      style: GoogleFonts.spaceMono(fontSize: 20),
+                    )
+                  ],
+                ),
               )
             ],
           ),
