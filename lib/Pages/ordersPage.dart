@@ -108,7 +108,7 @@ class _OrdersPageState extends State<OrdersPage> {
                             Align(
                               alignment: Alignment.topLeft,
                               child: Container(
-                                height: 24,
+                                height: 22,
                                 width: 100,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.only(
@@ -117,9 +117,13 @@ class _OrdersPageState extends State<OrdersPage> {
                                   color: Colors.green,
                                 ),
                                 child: Center(
-                                  child: Text(
-                                    "${displayFoodOrders[index].orderDate!}",
-                                    style: GoogleFonts.spaceMono(fontSize: 14),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 7),
+                                    child: Text(
+                                      "${displayFoodOrders[index].orderDate!}",
+                                      style:
+                                          GoogleFonts.spaceMono(fontSize: 14),
+                                    ),
                                   ),
                                 ),
                               ),
