@@ -10,26 +10,44 @@ class OrdersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 221, 206, 206),
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            SizedBox(
+              height: 30,
+              width: 70,
+              child: FloatingActionButton(
+                child: Text(
+                  "Back",
+                  style: GoogleFonts.spaceMono(fontSize: 20),
+                ),
+                onPressed: () {},
+              ),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(),
+              child: Text.rich(TextSpan(children: <TextSpan>[
+                TextSpan(
+                    text: "Thank you for trusting ",
+                    style: GoogleFonts.spaceMono(fontSize: 16)),
+                TextSpan(
+                    text: "Fudi ",
+                    style: GoogleFonts.spaceMono(
+                        fontSize: 21, color: Colors.green)),
+              ])),
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: Text.rich(TextSpan(children: <TextSpan>[
-                  TextSpan(
-                      text: "Thank you for trusting ",
-                      style: GoogleFonts.spaceMono(fontSize: 18)),
-                  TextSpan(
-                      text: "Fudi ",
-                      style: GoogleFonts.spaceMono(
-                          fontSize: 23, color: Colors.green)),
-                  TextSpan(
-                      text: "browse your order below",
-                      style: GoogleFonts.spaceMono(fontSize: 18)),
-                ])),
-              )
-            ],
+            children: [],
           ),
         ),
       ),
