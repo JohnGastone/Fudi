@@ -192,7 +192,16 @@ class OrdersPage extends StatelessWidget {
                         Text(
                           "-> Makange Samaki ",
                           style: GoogleFonts.spaceMono(fontSize: 18),
-                        )
+                        ),
+                        Text.rich(TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: "Total Amount: ",
+                              style: GoogleFonts.spaceMono(fontSize: 18)),
+                          TextSpan(
+                              text: "\$ 20",
+                              style: GoogleFonts.spaceMono(
+                                  fontSize: 17, color: Colors.white))
+                        ]))
                       ],
                     ),
                     Align(
