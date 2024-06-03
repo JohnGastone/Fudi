@@ -81,28 +81,49 @@ class OrdersPage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 135),
-                        child: Container(
-                          height: 24,
-                          width: 40,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10),
-                              bottomLeft: Radius.circular(10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Container(
+                            height: 24,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(10),
+                              ),
+                              color: Colors.green,
                             ),
-                            color: Colors.green,
-                          ),
-                          child: Center(
-                            child: Text(
-                              "001",
-                              style: GoogleFonts.spaceMono(fontSize: 14),
+                            child: Center(
+                              child: Text(
+                                "03-June-2024",
+                                style: GoogleFonts.spaceMono(fontSize: 14),
+                              ),
                             ),
                           ),
                         ),
-                      ),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            height: 24,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(10),
+                                bottomLeft: Radius.circular(10),
+                              ),
+                              color: Colors.green,
+                            ),
+                            child: Center(
+                              child: Text(
+                                "001",
+                                style: GoogleFonts.spaceMono(fontSize: 14),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     Row(
                       children: [
