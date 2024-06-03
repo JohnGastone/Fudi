@@ -86,6 +86,7 @@ class _OrdersPageState extends State<OrdersPage> {
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1, mainAxisSpacing: 1),
+                itemCount: displayFoodOrders.length,
                 itemBuilder: (context, index) => Container(
                   height: 230,
                   width: 310,
@@ -111,7 +112,7 @@ class _OrdersPageState extends State<OrdersPage> {
                               ),
                               child: Center(
                                 child: Text(
-                                  "03-June-2024",
+                                  "${displayFoodOrders[index].orderDate!}",
                                   style: GoogleFonts.spaceMono(fontSize: 14),
                                 ),
                               ),
@@ -131,7 +132,7 @@ class _OrdersPageState extends State<OrdersPage> {
                               ),
                               child: Center(
                                 child: Text(
-                                  "001",
+                                  "${displayFoodOrders[index].orderID}",
                                   style: GoogleFonts.spaceMono(fontSize: 14),
                                 ),
                               ),
@@ -239,7 +240,7 @@ class _OrdersPageState extends State<OrdersPage> {
                             ),
                             child: Center(
                               child: Text(
-                                "Delivered",
+                                displayFoodOrders[index].orderStatus!,
                                 style: GoogleFonts.spaceMono(fontSize: 14),
                               ),
                             ),
