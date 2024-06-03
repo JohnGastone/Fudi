@@ -47,7 +47,26 @@ class OrdersPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Column(
-            children: [],
+            children: [
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.shopping_bag,
+                    color: Colors.green,
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    "Current Orders",
+                    style: GoogleFonts.spaceMono(fontSize: 20),
+                  )
+                ],
+              )
+            ],
           ),
         ),
       ),
