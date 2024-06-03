@@ -68,7 +68,23 @@ class OrdersPage extends StatelessWidget {
                     )
                   ],
                 ),
-              )
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 120,
+                width: 250,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10)),
+                  color: Color.fromARGB(255, 158, 181, 199),
+                ),
+                child: Column(
+                  children: [],
+                ),
+              ),
             ],
           ),
         ),
