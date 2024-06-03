@@ -14,15 +14,21 @@ class OrdersPage extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Text.rich(TextSpan(children: <TextSpan>[
-                TextSpan(
-                    text: "Thank you for trusting",
-                    style: GoogleFonts.spaceMono(fontSize: 18)),
-                TextSpan(
-                    text: "FUDI",
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 20, color: Colors.green))
-              ]))
+              Padding(
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                child: Text.rich(TextSpan(children: <TextSpan>[
+                  TextSpan(
+                      text: "Thank you for trusting ",
+                      style: GoogleFonts.spaceMono(fontSize: 18)),
+                  TextSpan(
+                      text: "Fudi ",
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 23, color: Colors.green)),
+                  TextSpan(
+                      text: "browse your order below",
+                      style: GoogleFonts.spaceMono(fontSize: 18)),
+                ])),
+              )
             ],
           ),
         ),
