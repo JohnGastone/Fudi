@@ -111,7 +111,7 @@ class OrdersPage extends StatelessWidget {
                                       children: [
                                         Icon(
                                           (Icons.electric_bike),
-                                          color: Colors.white,
+                                          color: Colors.black,
                                         ),
                                         SizedBox(
                                           width: 5,
@@ -126,7 +126,8 @@ class OrdersPage extends StatelessWidget {
                                     ),
                                     Text("mins",
                                         style: GoogleFonts.spaceMono(
-                                            fontSize: 14, color: Colors.grey))
+                                            fontSize: 14,
+                                            color: Colors.blueGrey))
                                   ],
                                 )
                               ],
