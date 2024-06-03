@@ -179,6 +179,7 @@ class OrdersPage extends StatelessWidget {
                       ],
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "-> Makange Nyama ",
