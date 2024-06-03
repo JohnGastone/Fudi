@@ -91,8 +91,8 @@ class _OrdersPageState extends State<OrdersPage> {
                   padding:
                       const EdgeInsets.only(right: 15, left: 15, bottom: 15),
                   child: Container(
-                    height: 130,
-                    width: 260,
+                    height: 230,
+                    width: 310,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Color.fromARGB(255, 158, 181, 199),
