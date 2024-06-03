@@ -31,183 +31,245 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  static List<PopularFoodsModel> displayPopularFoods =
+      List.from(PopularFoodsList.displayPopularFoods);
+
+  void updateList(String value) {
+    setState(() {
+      displayPopularFoods = PopularFoodsList.displayPopularFoods
+          .where((element) =>
+              element.foodName!.toLowerCase().contains(value.toLowerCase()))
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Color.fromARGB(255, 221, 206, 206),
-          title: Row(
+          title: Column(
             children: [
-              Image.asset(
-                "./assets/fudi.png",
-                height: 60,
-                width: 60,
-              ),
-              SizedBox(
-                width: 35,
-              ),
               Row(
                 children: [
-                  InkWell(
-                    child: Icon(
-                      Icons.location_pin,
-                      size: 20,
-                      color: Colors.green,
-                    ),
-                    onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Text(
-                                "Location",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 16, color: Colors.black),
-                              ),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  TextField(
-                                    decoration: InputDecoration(
-                                        border: OutlineInputBorder(),
-                                        hintText: "Enter your location"),
+                  Image.asset(
+                    "./assets/fudi.png",
+                    height: 60,
+                    width: 60,
+                  ),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  Row(
+                    children: [
+                      InkWell(
+                        child: Icon(
+                          Icons.location_pin,
+                          size: 20,
+                          color: Colors.green,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "Location",
                                     style: GoogleFonts.spaceMono(
                                         fontSize: 16, color: Colors.black),
                                   ),
-                                  SizedBox(
-                                    height: 10,
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextField(
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            hintText: "Enter your location"),
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 16, color: Colors.black),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      SizedBox(
+                                        width: 200,
+                                        child: FloatingActionButton(
+                                            backgroundColor: Colors.green,
+                                            child: Text("Pick from the map",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16)),
+                                            onPressed: () {
+                                              // Integration to google maps
+                                            }),
+                                      )
+                                    ],
                                   ),
-                                  SizedBox(
-                                    width: 200,
-                                    child: FloatingActionButton(
-                                        backgroundColor: Colors.green,
-                                        child: Text("Pick from the map",
-                                            style: GoogleFonts.spaceMono(
-                                                fontSize: 16)),
+                                  actions: [
+                                    TextButton(
                                         onPressed: () {
-                                          // Integration to google maps
-                                        }),
-                                  )
-                                ],
-                              ),
-                              actions: [
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text(
-                                      "Cancel",
-                                      style: GoogleFonts.spaceMono(
-                                          fontSize: 16, color: Colors.black),
-                                    )),
-                                TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: Text(
-                                      "OK",
-                                      style: GoogleFonts.spaceMono(
-                                          fontSize: 16, color: Colors.black),
-                                    ))
-                              ],
-                            );
-                          });
-                    },
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text(
+                                          "Cancel",
+                                          style: GoogleFonts.spaceMono(
+                                              fontSize: 16,
+                                              color: Colors.black),
+                                        )),
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text(
+                                          "OK",
+                                          style: GoogleFonts.spaceMono(
+                                              fontSize: 16,
+                                              color: Colors.black),
+                                        ))
+                                  ],
+                                );
+                              });
+                        },
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Nathan John",
+                        style: GoogleFonts.spaceMono(fontSize: 16),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      InkWell(
+                        child: Icon(
+                          Icons.arrow_drop_down,
+                          size: 30,
+                          color: Colors.green,
+                        ),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "User Manager  ",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 16, color: Colors.black),
+                                  ),
+                                  content: Row(
+                                    children: [
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          SizedBox(
+                                            width: 100,
+                                            child: FloatingActionButton(
+                                              backgroundColor: Colors.green,
+                                              child: Text(
+                                                "Log Out",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        width: 26,
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          SizedBox(
+                                            width: 100,
+                                            child: FloatingActionButton(
+                                              backgroundColor: Colors.green,
+                                              child: Text(
+                                                "Profile",
+                                                style: GoogleFonts.spaceMono(
+                                                    fontSize: 16),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                        },
+                      )
+                    ],
                   ),
                   SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    "Nathan John",
-                    style: GoogleFonts.spaceMono(fontSize: 16),
-                  ),
-                  SizedBox(
-                    width: 10,
+                    width: 30,
                   ),
                   InkWell(
-                    child: Icon(
-                      Icons.arrow_drop_down,
-                      size: 30,
-                      color: Colors.green,
+                    child: CircleAvatar(
+                      backgroundColor: Color.fromARGB(255, 221, 206, 206),
+                      child: Icon(
+                        Icons.shopping_cart,
+                        color: Colors.green,
+                      ),
                     ),
                     onTap: () {
-                      showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              title: Text(
-                                "User Manager  ",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 16, color: Colors.black),
-                              ),
-                              content: Row(
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(
-                                        width: 100,
-                                        child: FloatingActionButton(
-                                          backgroundColor: Colors.green,
-                                          child: Text(
-                                            "Log Out",
-                                            style: GoogleFonts.spaceMono(
-                                                fontSize: 16),
-                                          ),
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    width: 26,
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(
-                                        width: 100,
-                                        child: FloatingActionButton(
-                                          backgroundColor: Colors.green,
-                                          child: Text(
-                                            "Profile",
-                                            style: GoogleFonts.spaceMono(
-                                                fontSize: 16),
-                                          ),
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            );
-                          });
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => CartPage()));
                     },
-                  )
+                  ),
                 ],
               ),
-              SizedBox(
-                width: 30,
-              ),
-              InkWell(
-                child: CircleAvatar(
-                  backgroundColor: Color.fromARGB(255, 221, 206, 206),
-                  child: Icon(
-                    Icons.shopping_cart,
-                    color: Colors.green,
+              Column(children: [
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Are you looking for a specific dish? ",
+                  style: GoogleFonts.spaceMono(
+                      fontSize: 15, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Center(
+                  child: Container(
+                    height: 33,
+                    width: 220,
+                    decoration: BoxDecoration(
+                      color: Colors.white24,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10, bottom: 14),
+                      child: TextField(
+                        style: GoogleFonts.spaceMono(fontSize: 14),
+                        onChanged: (value) => updateList(value),
+                        decoration: InputDecoration(
+                            hintText: "E.g Makange Nyama",
+                            hintStyle: GoogleFonts.spaceMono(fontSize: 12),
+                            suffixIcon: Padding(
+                              padding: const EdgeInsets.only(top: 5),
+                              child: Icon(
+                                Icons.search,
+                                color: Colors.green,
+                              ),
+                            ),
+                            border: InputBorder.none),
+                      ),
+                    ),
                   ),
                 ),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CartPage()));
-                },
-              ),
+                SizedBox(
+                  height: 20,
+                )
+              ])
             ],
           ),
         ),
