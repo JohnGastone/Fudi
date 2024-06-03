@@ -416,7 +416,8 @@ class _ExplorePageState extends State<ExplorePage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding:
+                  const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
