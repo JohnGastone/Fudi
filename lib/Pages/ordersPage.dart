@@ -73,7 +73,7 @@ class OrdersPage extends StatelessWidget {
                 height: 10,
               ),
               Container(
-                height: 180,
+                height: 230,
                 width: 310,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -147,7 +147,7 @@ class OrdersPage extends StatelessWidget {
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold)),
                                 SizedBox(
-                                  width: 20,
+                                  width: 30,
                                 ),
                                 Column(
                                   children: [
@@ -176,6 +176,22 @@ class OrdersPage extends StatelessWidget {
                                 )
                               ],
                             )),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          "-> Makange Nyama ",
+                          style: GoogleFonts.spaceMono(fontSize: 18),
+                        ),
+                        Text(
+                          "-> Biryani Kuku ",
+                          style: GoogleFonts.spaceMono(fontSize: 18),
+                        ),
+                        Text(
+                          "-> Makange Samaki ",
+                          style: GoogleFonts.spaceMono(fontSize: 18),
+                        )
                       ],
                     ),
                     Align(
