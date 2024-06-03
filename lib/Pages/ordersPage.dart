@@ -74,15 +74,66 @@ class OrdersPage extends StatelessWidget {
               ),
               Container(
                 height: 120,
-                width: 250,
+                width: 310,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10)),
+                  borderRadius: BorderRadius.circular(10),
                   color: Color.fromARGB(255, 158, 181, 199),
                 ),
                 child: Column(
-                  children: [],
+                  children: [
+                    Row(
+                      children: [
+                        Padding(
+                            padding: const EdgeInsets.all(18.0),
+                            child: Row(
+                              children: [
+                                CircleAvatar(
+                                  child: Image.asset(
+                                    "./assets/food.png",
+                                    height: 20,
+                                    width: 20,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 6,
+                                ),
+                                Text("Seafood Lovers",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 17,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold)),
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          (Icons.electric_bike),
+                                          color: Colors.white,
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          "10-17",
+                                          style: GoogleFonts.spaceMono(
+                                              fontSize: 14,
+                                              color: Colors.white),
+                                        )
+                                      ],
+                                    ),
+                                    Text("mins",
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 14, color: Colors.grey))
+                                  ],
+                                )
+                              ],
+                            )),
+                      ],
+                    )
+                  ],
                 ),
               ),
             ],
