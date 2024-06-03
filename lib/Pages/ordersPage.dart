@@ -73,7 +73,7 @@ class OrdersPage extends StatelessWidget {
                 height: 10,
               ),
               Container(
-                height: 120,
+                height: 180,
                 width: 310,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -156,7 +156,29 @@ class OrdersPage extends StatelessWidget {
                               ],
                             )),
                       ],
-                    )
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 135),
+                        child: Container(
+                          height: 24,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                                bottomRight: Radius.circular(10),
+                                topLeft: Radius.circular(10)),
+                            color: Colors.green,
+                          ),
+                          child: Center(
+                            child: Text(
+                              "Delivered",
+                              style: GoogleFonts.spaceMono(fontSize: 14),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
