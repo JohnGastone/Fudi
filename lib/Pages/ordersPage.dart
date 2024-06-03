@@ -85,19 +85,22 @@ class _OrdersPageState extends State<OrdersPage> {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1, mainAxisSpacing: 15),
+                    crossAxisCount: 1,
+                    mainAxisSpacing: 15,
+                    childAspectRatio: 310 / 211),
                 itemCount: displayFoodOrders.length,
                 itemBuilder: (context, index) => Padding(
                   padding:
                       const EdgeInsets.only(right: 15, left: 15, bottom: 15),
                   child: Container(
-                    height: 230,
+                    height: 211,
                     width: 310,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Color.fromARGB(255, 158, 181, 199),
                     ),
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
