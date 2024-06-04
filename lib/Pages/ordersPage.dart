@@ -228,10 +228,15 @@ class _OrdersPageState extends State<OrdersPage> {
                                   text: "Total Amount: ",
                                   style: GoogleFonts.spaceMono(fontSize: 18)),
                               TextSpan(
-                                  text: "\$ 20",
+                                  text: "\$",
+                                  style: GoogleFonts.spaceMono(
+                                      fontSize: 17, color: Colors.white)),
+                              TextSpan(
+                                  text:
+                                      " ${displayFoodOrders[index].orderPrice}",
                                   style: GoogleFonts.spaceMono(
                                       fontSize: 17, color: Colors.white))
-                            ]))
+                            ])),
                           ],
                         ),
                         SizedBox(
