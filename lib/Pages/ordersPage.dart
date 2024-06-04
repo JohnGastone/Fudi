@@ -87,13 +87,13 @@ class _OrdersPageState extends State<OrdersPage> {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
                     mainAxisSpacing: 15,
-                    childAspectRatio: 310 / 211),
+                    childAspectRatio: 310 / 219),
                 itemCount: displayFoodOrders.length,
                 itemBuilder: (context, index) => Padding(
                   padding:
                       const EdgeInsets.only(right: 15, left: 15, bottom: 15),
                   child: Container(
-                    height: 211,
+                    height: 219,
                     width: 310,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -235,10 +235,10 @@ class _OrdersPageState extends State<OrdersPage> {
                                     TextSpan(
                                         text: "\$",
                                         style: GoogleFonts.spaceMono(
-                                            fontSize: 17, color: Colors.green)),
+                                            fontSize: 23, color: Colors.green)),
                                     TextSpan(
                                         text:
-                                            " ${displayFoodOrders[index].orderPrice}",
+                                            "${displayFoodOrders[index].orderPrice}",
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 17, color: Colors.white))
                                   ])),
