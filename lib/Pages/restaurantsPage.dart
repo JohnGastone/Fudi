@@ -224,7 +224,9 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1, mainAxisSpacing: 1),
+                  crossAxisCount: 1,
+                  mainAxisSpacing: 1,
+                  childAspectRatio: 300 / 250),
               itemCount: displayList.length,
               itemBuilder: (context, index) => InkWell(
                 onTap: () {
