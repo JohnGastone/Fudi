@@ -16,6 +16,15 @@ class _RestaurantPageState extends State<RestaurantPage> {
   List<RestaurantfoodsModel> displayFoods =
       List.from(RestaurantFoodsList.displayRestaurantFoods);
 
+  void updateList(String value) {
+    setState(() {
+      displayFoods = RestaurantFoodsList.displayRestaurantFoods
+          .where((element) =>
+              element.foodName!.toLowerCase().contains(value.toLowerCase()))
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -176,6 +185,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     style: GoogleFonts.spaceMono(
                         fontSize: 15, color: Colors.white),
                     autocorrect: EditableText.debugDeterministicCursor,
+                    onChanged: (value) => updateList(value),
                     decoration: InputDecoration(
                       prefixIcon: Icon(
                         Icons.search,
