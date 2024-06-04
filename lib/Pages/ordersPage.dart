@@ -205,55 +205,58 @@ class _OrdersPageState extends State<OrdersPage> {
                                 )),
                           ],
                         ),
-                        Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "-> Makange Nyama ",
-                                  style: GoogleFonts.spaceMono(fontSize: 18),
-                                ),
-                                Text(
-                                  "-> Biryani Kuku ",
-                                  style: GoogleFonts.spaceMono(fontSize: 18),
-                                ),
-                                Text(
-                                  "-> Makange Samaki ",
-                                  style: GoogleFonts.spaceMono(fontSize: 18),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text.rich(TextSpan(children: <TextSpan>[
-                                  TextSpan(
-                                      text: "Total Amount: ",
-                                      style:
-                                          GoogleFonts.spaceMono(fontSize: 18)),
-                                  TextSpan(
-                                      text: "\$",
-                                      style: GoogleFonts.spaceMono(
-                                          fontSize: 17, color: Colors.white)),
-                                  TextSpan(
-                                      text:
-                                          " ${displayFoodOrders[index].orderPrice}",
-                                      style: GoogleFonts.spaceMono(
-                                          fontSize: 17, color: Colors.white))
-                                ])),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 30,
-                              width: 80,
-                              child: FloatingActionButton(
-                                child: Text(
-                                  "Reorder",
-                                  style: GoogleFonts.spaceMono(fontSize: 18),
-                                ),
-                                onPressed: () => Navigator.pop,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30),
+                          child: Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "-> Makange Nyama ",
+                                    style: GoogleFonts.spaceMono(fontSize: 18),
+                                  ),
+                                  Text(
+                                    "-> Biryani Kuku ",
+                                    style: GoogleFonts.spaceMono(fontSize: 18),
+                                  ),
+                                  Text(
+                                    "-> Makange Samaki ",
+                                    style: GoogleFonts.spaceMono(fontSize: 18),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text.rich(TextSpan(children: <TextSpan>[
+                                    TextSpan(
+                                        text: "Total Amount: ",
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 18)),
+                                    TextSpan(
+                                        text: "\$",
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 17, color: Colors.white)),
+                                    TextSpan(
+                                        text:
+                                            " ${displayFoodOrders[index].orderPrice}",
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 17, color: Colors.white))
+                                  ])),
+                                ],
                               ),
-                            ),
-                          ],
+                              SizedBox(
+                                height: 30,
+                                width: 80,
+                                child: FloatingActionButton(
+                                  child: Text(
+                                    "Reorder",
+                                    style: GoogleFonts.spaceMono(fontSize: 18),
+                                  ),
+                                  onPressed: () => Navigator.pop,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: 7,
