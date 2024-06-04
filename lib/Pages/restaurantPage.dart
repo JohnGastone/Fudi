@@ -246,8 +246,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                 ),
                                 Image.asset(
                                   displayFoods[index].foodImage!,
-                                  height: 50,
-                                  width: 50,
+                                  height: 60,
+                                  width: 60,
                                 ),
                               ],
                             ),
