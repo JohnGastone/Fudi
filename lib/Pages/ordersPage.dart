@@ -244,7 +244,7 @@ class _OrdersPageState extends State<OrdersPage> {
                             ),
                             SizedBox(
                               height: 30,
-                              width: 70,
+                              width: 80,
                               child: FloatingActionButton(
                                 child: Text(
                                   "Reorder",
