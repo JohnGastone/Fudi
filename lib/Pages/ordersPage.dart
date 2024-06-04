@@ -166,7 +166,9 @@ class _OrdersPageState extends State<OrdersPage> {
                                     SizedBox(
                                       width: 6,
                                     ),
-                                    Text("Seafood Lovers",
+                                    Text(
+                                        displayFoodOrders[index]
+                                            .restaurantName!,
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 17,
                                             color: Colors.white,
