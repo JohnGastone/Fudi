@@ -244,11 +244,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                     )
                                   ],
                                 ),
-                                Image.asset(
-                                  "./assets/hamburger.png",
-                                  height: 50,
-                                  width: 50,
-                                ),
+                                Text(displayFoods[index].foodImage!)
                               ],
                             ),
                           ),
