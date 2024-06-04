@@ -236,7 +236,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                       style: GoogleFonts.spaceMono(
                                           fontSize: 16, color: Colors.green)),
                                   SizedBox(
-                                    height: 7,
+                                    height: 10,
                                   ),
                                   Row(
                                     children: [
@@ -245,7 +245,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                         color: Colors.grey,
                                       ),
                                       SizedBox(
-                                        height: 3,
+                                        width: 5,
                                       ),
                                       Text(
                                         "${displayFoods[index].preparationTime} Minutes",
