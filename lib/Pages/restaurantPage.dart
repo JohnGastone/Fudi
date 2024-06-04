@@ -216,6 +216,12 @@ class _RestaurantPageState extends State<RestaurantPage> {
                               SizedBox(
                                 height: 5,
                               ),
+                              Text("5000",
+                                  style: GoogleFonts.spaceMono(
+                                      fontSize: 16, color: Colors.green)),
+                              SizedBox(
+                                height: 5,
+                              ),
                               Row(
                                 children: [
                                   Icon(
