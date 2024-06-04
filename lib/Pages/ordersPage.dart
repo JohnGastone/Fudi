@@ -72,7 +72,7 @@ class _OrdersPageState extends State<OrdersPage> {
                       width: 8,
                     ),
                     Text(
-                      "Current Orders",
+                      "Recent Orders",
                       style: GoogleFonts.spaceMono(fontSize: 20),
                     )
                   ],
