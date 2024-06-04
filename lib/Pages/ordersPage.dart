@@ -22,8 +22,7 @@ class _OrdersPageState extends State<OrdersPage> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
         automaticallyImplyLeading: false,
-        title: Padding(
-          padding: const EdgeInsets.only(),
+        title: Center(
           child: Text.rich(TextSpan(children: <TextSpan>[
             TextSpan(
                 text: "Thank you for trusting ",
