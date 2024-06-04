@@ -247,16 +247,18 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                 )
                               ],
                             ),
-                            Image.asset(
-                              displayFoods[index].foodImage! as String,
-                              height: 50,
-                              width: 50,
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 250),
+                              child: Image.asset(
+                                "./assets/hamburger.png",
+                                height: 50,
+                                width: 50,
+                              ),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(width: 310, child: Divider()),
                   ],
                 ),
               ),
