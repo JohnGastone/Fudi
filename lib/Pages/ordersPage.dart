@@ -87,13 +87,13 @@ class _OrdersPageState extends State<OrdersPage> {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 1,
                     mainAxisSpacing: 15,
-                    childAspectRatio: 310 / 219),
+                    childAspectRatio: 310 / 217),
                 itemCount: displayFoodOrders.length,
                 itemBuilder: (context, index) => Padding(
                   padding:
                       const EdgeInsets.only(right: 15, left: 15, bottom: 15),
                   child: Container(
-                    height: 219,
+                    height: 217,
                     width: 310,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
