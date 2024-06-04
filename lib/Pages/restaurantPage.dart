@@ -205,7 +205,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     itemCount: displayFoods.length,
                     itemBuilder: (context, index) => InkWell(
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 25, right: 15),
+                            padding: const EdgeInsets.only(
+                                left: 25, right: 15, bottom: 40),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
