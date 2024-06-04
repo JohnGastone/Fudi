@@ -11,10 +11,10 @@ class RestaurantfoodsModel {
 
 class RestaurantFoodsList {
   static List<RestaurantfoodsModel> getFoodsList = [
-    RestaurantfoodsModel("Chicken", 100, 10, "assets/pizza.png"),
-    RestaurantfoodsModel("Pizza", 100, 10, "assets/hamburger.png"),
-    RestaurantfoodsModel("Burger", 100, 10, "assets/bugger.png"),
-    RestaurantfoodsModel("Fries", 100, 10, "assets/hamburger.png"),
+    RestaurantfoodsModel("Chicken", 100, 10, "./assets/pizza.png"),
+    RestaurantfoodsModel("Pizza", 100, 10, "./assets/hamburger.png"),
+    RestaurantfoodsModel("Burger", 100, 10, "./assets/bugger.png"),
+    RestaurantfoodsModel("Fries", 100, 10, "./assets/hamburger.png"),
   ];
 
   static List<RestaurantfoodsModel> displayRestaurantFoods =
