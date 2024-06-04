@@ -237,6 +237,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                     padding: const EdgeInsets.all(30),
                     child: Row(children: [
                       Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
                             width: 300,
