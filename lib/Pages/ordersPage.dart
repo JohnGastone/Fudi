@@ -188,7 +188,7 @@ class _OrdersPageState extends State<OrdersPage> {
                                               width: 5,
                                             ),
                                             Text(
-                                              "10-17",
+                                              "${displayFoodOrders[index].orderDeliveryTime}",
                                               style: GoogleFonts.spaceMono(
                                                   fontSize: 14,
                                                   color: Colors.white),

@@ -4,6 +4,7 @@ class FoodOrdersModel {
   String? orderStatus;
   String? restaurantName;
   int? orderPrice;
+  int? orderDeliveryTime;
 
   FoodOrdersModel({
     this.orderDate,
@@ -11,6 +12,7 @@ class FoodOrdersModel {
     this.orderStatus,
     this.restaurantName,
     this.orderPrice,
+    this.orderDeliveryTime,
   });
 }
 
@@ -22,6 +24,7 @@ class FoodOrdersList {
       orderStatus: "Delivered",
       restaurantName: "Seafood Lovers",
       orderPrice: 100,
+      orderDeliveryTime: 10,
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 03),
@@ -29,6 +32,7 @@ class FoodOrdersList {
       orderStatus: "On the way",
       restaurantName: "Shishi Food",
       orderPrice: 200,
+      orderDeliveryTime: 15,
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 02),
@@ -36,6 +40,7 @@ class FoodOrdersList {
       orderStatus: "Delivered",
       restaurantName: "Shangazi Cafe",
       orderPrice: 300,
+      orderDeliveryTime: 20,
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 02),
@@ -43,6 +48,7 @@ class FoodOrdersList {
       orderStatus: "Pending",
       restaurantName: "Shangazi Cafe",
       orderPrice: 400,
+      orderDeliveryTime: 25,
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 01),
@@ -50,13 +56,15 @@ class FoodOrdersList {
       orderStatus: "Delivered",
       restaurantName: "Shangazi Cafe",
       orderPrice: 500,
+      orderDeliveryTime: 30,
     ),
     FoodOrdersModel(
         orderDate: DateTime(2024, 06, 01),
         orderID: "006",
         orderStatus: "Pending",
         restaurantName: "Shangazi Cafe",
-        orderPrice: 350),
+        orderPrice: 350,
+        orderDeliveryTime: 13),
   ];
 
   static List<FoodOrdersModel> displayOrders = List.from(getOrderList);
