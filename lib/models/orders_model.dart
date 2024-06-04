@@ -2,11 +2,13 @@ class FoodOrdersModel {
   DateTime? orderDate;
   String? orderID;
   String? orderStatus;
+  String? restaurantName;
 
   FoodOrdersModel({
     this.orderDate,
     this.orderID,
     this.orderStatus,
+    this.restaurantName,
   });
 }
 
