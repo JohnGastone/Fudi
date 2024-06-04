@@ -198,61 +198,61 @@ class _RestaurantPageState extends State<RestaurantPage> {
                 SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 25, right: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            "Wali kuku",
-                            style: GoogleFonts.spaceMono(
-                                fontSize: 18, color: Colors.white),
+                ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: displayFoods.length,
+                    itemBuilder: (context, index) => InkWell(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 25, right: 15),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Text(
+                                      "Wali kuku",
+                                      style: GoogleFonts.spaceMono(
+                                          fontSize: 18, color: Colors.white),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text("5000",
+                                        style: GoogleFonts.spaceMono(
+                                            fontSize: 16, color: Colors.green)),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.restaurant,
+                                          color: Colors.grey,
+                                        ),
+                                        SizedBox(
+                                          height: 3,
+                                        ),
+                                        Text(
+                                          " 30",
+                                          style: GoogleFonts.spaceMono(
+                                              fontSize: 15,
+                                              color: Colors.greenAccent),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                Image.asset(
+                                  "./assets/hamburger.png",
+                                  height: 50,
+                                  width: 50,
+                                ),
+                              ],
+                            ),
                           ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("5000",
-                              style: GoogleFonts.spaceMono(
-                                  fontSize: 16, color: Colors.green)),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.restaurant,
-                                color: Colors.grey,
-                              ),
-                              SizedBox(
-                                height: 3,
-                              ),
-                              Text(
-                                " 30",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 15, color: Colors.greenAccent),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      Image.asset(
-                        "./assets/hamburger.png",
-                        height: 50,
-                        width: 50,
-                      ),
-                    ],
-                  ),
-                ),
-                // GridView.builder(
-                //   shrinkWrap: true,
-                //   physics: NeverScrollableScrollPhysics(),
-                //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                //       crossAxisCount: 1, mainAxisSpacing: 1),
-                //   itemCount: displayFoods.length,
-                //   itemBuilder: (context, index) => (){}
-                // ),
+                        )),
                 SizedBox(width: 310, child: Divider()),
               ],
             ),
