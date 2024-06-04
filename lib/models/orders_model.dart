@@ -18,16 +18,19 @@ class FoodOrdersList {
       orderDate: DateTime(2024, 06, 03),
       orderID: "001",
       orderStatus: "Delivered",
+      restaurantName: "Seafood Lovers",
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 03),
       orderID: "002",
       orderStatus: "On the way",
+      restaurantName: "Shishi Food",
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 02),
       orderID: "003",
-      orderStatus: "Deliverd",
+      orderStatus: "Delivered",
+      restaurantName: "Shangazi Cafe",
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 02),
