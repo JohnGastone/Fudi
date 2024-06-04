@@ -248,7 +248,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                         height: 3,
                                       ),
                                       Text(
-                                        "${displayFoods[index].preparationTime}",
+                                        "${displayFoods[index].preparationTime} Minutes",
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 15,
                                             color: Colors.greenAccent),
