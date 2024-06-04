@@ -238,7 +238,7 @@ class _OrdersPageState extends State<OrdersPage> {
                                             fontSize: 23, color: Colors.green)),
                                     TextSpan(
                                         text:
-                                            "${displayFoodOrders[index].orderPrice}",
+                                            " ${displayFoodOrders[index].orderPrice}",
                                         style: GoogleFonts.spaceMono(
                                             fontSize: 17, color: Colors.white))
                                   ])),
