@@ -3,15 +3,11 @@
 class RestaurantfoodsModel {
   String? foodName;
   int? foodPrice;
-  String? preparationTime;
+  int? preparationTime;
   String? foodImage;
 
   RestaurantfoodsModel(
-    this.foodName,
-    this.foodPrice,
-    this.preparationTime,
-    this.foodImage,
-  );
+      this.foodName, this.foodPrice, this.foodImage, this.preparationTime);
 }
 
 class RestaurantFoodlist {
@@ -20,43 +16,43 @@ class RestaurantFoodlist {
       "Kuku robo",
       3500,
       "10-20",
-      "./assets/hamburger.png",
+      20,
     ),
     RestaurantfoodsModel(
       "Kuku nusu",
       3500,
       "10-20",
-      "./assets/pizza.png",
+      25,
     ),
     RestaurantfoodsModel(
       "Kuku robo",
       3500,
       "10-20",
-      "./assets/hamburger.png",
+      20,
     ),
     RestaurantfoodsModel(
       "Kuku robo",
       3500,
       "10-20",
-      "./assets/hamburger.png",
+      15,
     ),
     RestaurantfoodsModel(
       "Kuku robo",
       3500,
       "10-20",
-      "./assets/hamburger.png",
+      15,
     ),
     RestaurantfoodsModel(
       "Kuku robo",
       3500,
       "10-20",
-      "./assets/hamburger.png",
+      15,
     ),
     RestaurantfoodsModel(
       "Kuku robo",
       3500,
       "10-20",
-      "./assets/hamburger.png",
+      15,
     ),
   ];
 
