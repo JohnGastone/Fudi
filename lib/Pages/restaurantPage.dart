@@ -232,11 +232,11 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                   SizedBox(
                                     height: 5,
                                   ),
-                                  Text("${displayFoods[index].foodPrice}",
+                                  Text("Tsh ${displayFoods[index].foodPrice}",
                                       style: GoogleFonts.spaceMono(
                                           fontSize: 16, color: Colors.green)),
                                   SizedBox(
-                                    height: 5,
+                                    height: 7,
                                   ),
                                   Row(
                                     children: [
