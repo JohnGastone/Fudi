@@ -199,61 +199,63 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   height: 20,
                 ),
                 ListView.builder(
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: displayFoods.length,
-                    itemBuilder: (context, index) => InkWell(
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                                left: 25, right: 15, bottom: 40),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      displayFoods[index].foodName!,
-                                      style: GoogleFonts.spaceMono(
-                                          fontSize: 18, color: Colors.white),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Text("${displayFoods[index].foodPrice}",
-                                        style: GoogleFonts.spaceMono(
-                                            fontSize: 16, color: Colors.green)),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Icon(
-                                          Icons.restaurant,
-                                          color: Colors.grey,
-                                        ),
-                                        SizedBox(
-                                          height: 3,
-                                        ),
-                                        Text(
-                                          "${displayFoods[index].preparationTime}",
-                                          style: GoogleFonts.spaceMono(
-                                              fontSize: 15,
-                                              color: Colors.greenAccent),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                Image.asset(
-                                  displayFoods[index].foodImage!,
-                                  height: 60,
-                                  width: 60,
-                                ),
-                              ],
-                            ),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: displayFoods.length,
+                  itemBuilder: (context, index) => InkWell(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 25, right: 15, bottom: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                displayFoods[index].foodName!,
+                                style: GoogleFonts.spaceMono(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text("${displayFoods[index].foodPrice}",
+                                  style: GoogleFonts.spaceMono(
+                                      fontSize: 16, color: Colors.green)),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.restaurant,
+                                    color: Colors.grey,
+                                  ),
+                                  SizedBox(
+                                    height: 3,
+                                  ),
+                                  Text(
+                                    "${displayFoods[index].preparationTime}",
+                                    style: GoogleFonts.spaceMono(
+                                        fontSize: 15,
+                                        color: Colors.greenAccent),
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
-                        )),
+                          Image.asset(
+                            displayFoods[index].foodImage!,
+                            height: 60,
+                            width: 60,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 310, child: Divider()),
               ],
             ),
           ),
