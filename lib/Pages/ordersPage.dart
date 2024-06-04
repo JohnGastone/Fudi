@@ -248,7 +248,7 @@ class _OrdersPageState extends State<OrdersPage> {
                               child: FloatingActionButton(
                                 child: Text(
                                   "Reorder",
-                                  style: GoogleFonts.spaceMono(fontSize: 20),
+                                  style: GoogleFonts.spaceMono(fontSize: 18),
                                 ),
                                 onPressed: () => Navigator.pop,
                               ),
