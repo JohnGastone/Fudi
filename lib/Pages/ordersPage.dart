@@ -32,7 +32,7 @@ class _OrdersPageState extends State<OrdersPage> {
                   "Back",
                   style: GoogleFonts.spaceMono(fontSize: 20),
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.pop,
               ),
             ),
             SizedBox(
