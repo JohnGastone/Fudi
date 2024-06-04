@@ -226,7 +226,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 1,
                   mainAxisSpacing: 1,
-                  childAspectRatio: 300 / 250),
+                  childAspectRatio: 300 / 260),
               itemCount: displayList.length,
               itemBuilder: (context, index) => InkWell(
                 onTap: () {
