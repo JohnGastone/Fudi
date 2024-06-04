@@ -205,12 +205,13 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1, mainAxisSpacing: 1),
+                        crossAxisCount: 1,
+                        mainAxisSpacing: 0.1,
+                      ),
                       itemCount: displayFoods.length,
                       itemBuilder: (context, index) => Padding(
                         padding: const EdgeInsets.only(left: 25, right: 15),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Column(
                               children: [
@@ -244,16 +245,13 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                           color: Colors.greenAccent),
                                     ),
                                   ],
-                                )
+                                ),
                               ],
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 250),
-                              child: Image.asset(
-                                "./assets/hamburger.png",
-                                height: 50,
-                                width: 50,
-                              ),
+                            Image.asset(
+                              "./assets/hamburger.png",
+                              height: 50,
+                              width: 50,
                             ),
                           ],
                         ),
