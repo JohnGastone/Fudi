@@ -57,7 +57,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
             height: 20,
           ),
           Container(
-            height: 1800,
+            height: 1000,
             decoration: BoxDecoration(
                 color: Color.fromARGB(255, 36, 48, 79),
                 borderRadius: BorderRadius.only(
