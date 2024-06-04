@@ -331,7 +331,8 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                               color: Colors.green,
                                             ),
                                             Text(
-                                              "Native",
+                                              displayList[index]
+                                                  .restaurantType!,
                                               style: GoogleFonts.spaceMono(
                                                   fontSize: 15),
                                             )
