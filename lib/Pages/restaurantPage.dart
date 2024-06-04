@@ -255,7 +255,6 @@ class _RestaurantPageState extends State<RestaurantPage> {
                     ),
                   ),
                 ),
-                SizedBox(width: 310, child: Divider()),
               ],
             ),
           ),
