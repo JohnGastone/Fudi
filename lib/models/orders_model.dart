@@ -3,12 +3,14 @@ class FoodOrdersModel {
   String? orderID;
   String? orderStatus;
   String? restaurantName;
+  int? orderPrice;
 
   FoodOrdersModel({
     this.orderDate,
     this.orderID,
     this.orderStatus,
     this.restaurantName,
+    this.orderPrice,
   });
 }
 
