@@ -26,11 +26,11 @@ class _OrdersPageState extends State<OrdersPage> {
           child: Text.rich(TextSpan(children: <TextSpan>[
             TextSpan(
                 text: "Thank you for trusting ",
-                style: GoogleFonts.spaceMono(fontSize: 16)),
+                style: GoogleFonts.spaceMono(fontSize: 18)),
             TextSpan(
                 text: "Fudi ",
                 style:
-                    GoogleFonts.spaceMono(fontSize: 21, color: Colors.green)),
+                    GoogleFonts.spaceMono(fontSize: 22, color: Colors.green)),
           ])),
         ),
       ),
