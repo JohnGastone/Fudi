@@ -304,7 +304,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                       ),
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(right: 50),
+                                            const EdgeInsets.only(right: 0),
                                         child: Row(
                                           children: [
                                             Icon(
@@ -319,7 +319,25 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                             ),
                                           ],
                                         ),
-                                      )
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 2),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Icon(
+                                              Icons.dining_sharp,
+                                              color: Colors.green,
+                                            ),
+                                            Text(
+                                              "Native",
+                                              style: GoogleFonts.spaceMono(
+                                                  fontSize: 15),
+                                            )
+                                          ],
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 )
