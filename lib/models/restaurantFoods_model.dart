@@ -7,7 +7,11 @@ class RestaurantfoodsModel {
   String? foodImage;
 
   RestaurantfoodsModel(
-      this.foodName, this.foodPrice, this.foodImage, this.preparationTime);
+    this.foodName,
+    this.foodPrice,
+    this.preparationTime,
+    this.foodImage,
+  );
 }
 
 class RestaurantFoodlist {
@@ -16,13 +20,13 @@ class RestaurantFoodlist {
       "Kuku robo",
       3500,
       "10-20",
-      "assets/hamburger.png",
+      "./assets/hamburger.png",
     ),
     RestaurantfoodsModel(
       "Kuku nusu",
       3500,
       "10-20",
-      "assets/pizza.png",
+      "./assets/pizza.png",
     ),
     RestaurantfoodsModel(
       "Kuku robo",
