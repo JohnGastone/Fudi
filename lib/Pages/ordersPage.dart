@@ -22,35 +22,17 @@ class _OrdersPageState extends State<OrdersPage> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 221, 206, 206),
         automaticallyImplyLeading: false,
-        title: Row(
-          children: [
-            SizedBox(
-              height: 30,
-              width: 70,
-              child: FloatingActionButton(
-                child: Text(
-                  "Back",
-                  style: GoogleFonts.spaceMono(fontSize: 20),
-                ),
-                onPressed: () => Navigator.pop,
-              ),
-            ),
-            SizedBox(
-              width: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(),
-              child: Text.rich(TextSpan(children: <TextSpan>[
-                TextSpan(
-                    text: "Thank you for trusting ",
-                    style: GoogleFonts.spaceMono(fontSize: 16)),
-                TextSpan(
-                    text: "Fudi ",
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 21, color: Colors.green)),
-              ])),
-            ),
-          ],
+        title: Padding(
+          padding: const EdgeInsets.only(),
+          child: Text.rich(TextSpan(children: <TextSpan>[
+            TextSpan(
+                text: "Thank you for trusting ",
+                style: GoogleFonts.spaceMono(fontSize: 16)),
+            TextSpan(
+                text: "Fudi ",
+                style:
+                    GoogleFonts.spaceMono(fontSize: 21, color: Colors.green)),
+          ])),
         ),
       ),
       body: SingleChildScrollView(
