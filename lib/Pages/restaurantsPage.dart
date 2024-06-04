@@ -220,117 +220,114 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 ),
               ),
             ),
-            SizedBox(
-              child: GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1, mainAxisSpacing: 1),
-                itemCount: displayList.length,
-                itemBuilder: (context, index) => InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RestaurantPage()));
-                  },
-                  child: Padding(
-                      padding: const EdgeInsets.all(30),
-                      child: Row(children: [
-                        Column(
-                          children: [
-                            Container(
-                              width: 300,
-                              height: 250,
-                              decoration: BoxDecoration(
-                                color: Colors.white24,
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(10)),
-                              ),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 150,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                          topRight: Radius.circular(20)),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                            displayList[index].coverImage!,
-                                          ),
-                                          fit: BoxFit.cover),
-                                    ),
+            GridView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1, mainAxisSpacing: 1),
+              itemCount: displayList.length,
+              itemBuilder: (context, index) => InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RestaurantPage()));
+                },
+                child: Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Row(children: [
+                      Column(
+                        children: [
+                          Container(
+                            width: 300,
+                            height: 250,
+                            decoration: BoxDecoration(
+                              color: Colors.white24,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10)),
+                            ),
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 150,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        topRight: Radius.circular(20)),
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                          displayList[index].coverImage!,
+                                        ),
+                                        fit: BoxFit.cover),
                                   ),
-                                  Container(
-                                    height: 100,
-                                    decoration: BoxDecoration(
-                                      color: Color.fromARGB(255, 158, 181, 199),
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(10),
-                                          bottomRight: Radius.circular(10)),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Row(
+                                ),
+                                Container(
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 158, 181, 199),
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(10),
+                                        bottomRight: Radius.circular(10)),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Icon(Icons.food_bank,
+                                              color: Colors.green),
+                                          Text(
+                                            displayList[index].restaurantName!,
+                                            style: GoogleFonts.spaceMono(
+                                                fontSize: 15),
+                                          )
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 90),
+                                        child: Row(
                                           children: [
-                                            Icon(Icons.food_bank,
+                                            Icon(Icons.star_outline,
                                                 color: Colors.green),
                                             Text(
-                                              displayList[index]
-                                                  .restaurantName!,
+                                              "${displayList[index].restaurantRating!}",
                                               style: GoogleFonts.spaceMono(
                                                   fontSize: 15),
                                             )
                                           ],
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 90),
-                                          child: Row(
-                                            children: [
-                                              Icon(Icons.star_outline,
-                                                  color: Colors.green),
-                                              Text(
-                                                "${displayList[index].restaurantRating!}",
-                                                style: GoogleFonts.spaceMono(
-                                                    fontSize: 15),
-                                              )
-                                            ],
-                                          ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 50),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.location_on_outlined,
+                                              color: Colors.green,
+                                            ),
+                                            Text(
+                                              displayList[index]
+                                                  .restaurantLocation!,
+                                              style: GoogleFonts.spaceMono(
+                                                  fontSize: 15),
+                                            ),
+                                          ],
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 50),
-                                          child: Row(
-                                            children: [
-                                              Icon(
-                                                Icons.location_on_outlined,
-                                                color: Colors.green,
-                                              ),
-                                              Text(
-                                                displayList[index]
-                                                    .restaurantLocation!,
-                                                style: GoogleFonts.spaceMono(
-                                                    fontSize: 15),
-                                              ),
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
                             ),
-                          ],
-                        ),
-                      ])),
-                ),
+                          ),
+                        ],
+                      ),
+                    ])),
               ),
-            )
+            ),
           ],
         ),
       ),
