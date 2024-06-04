@@ -36,16 +36,19 @@ class FoodOrdersList {
       orderDate: DateTime(2024, 06, 02),
       orderID: "004",
       orderStatus: "Pending",
+      restaurantName: "Shangazi Cafe",
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 01),
       orderID: "005",
       orderStatus: "Delivered",
+      restaurantName: "Shangazi Cafe",
     ),
     FoodOrdersModel(
       orderDate: DateTime(2024, 06, 01),
       orderID: "006",
       orderStatus: "Pending",
+      restaurantName: "Shangazi Cafe",
     ),
   ];
 
