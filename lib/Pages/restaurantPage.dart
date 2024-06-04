@@ -244,7 +244,11 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                     )
                                   ],
                                 ),
-                                Text(displayFoods[index].foodImage!)
+                                Image.asset(
+                                  displayFoods[index].foodImage!,
+                                  height: 50,
+                                  width: 50,
+                                ),
                               ],
                             ),
                           ),
