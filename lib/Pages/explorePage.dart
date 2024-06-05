@@ -514,6 +514,7 @@ class _ExplorePageState extends State<ExplorePage> {
                 ),
               ),
             ),
+            SizedBox(height: 30)
           ],
         ),
       ),
