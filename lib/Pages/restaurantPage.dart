@@ -25,6 +25,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
     });
   }
 
+  late final RestaurantfoodsModel restaurant;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
