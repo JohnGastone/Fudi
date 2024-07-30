@@ -508,8 +508,10 @@ class _ExplorePageState extends State<ExplorePage> {
                     onTap: () {
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => FudiDescription()));
+                          CupertinoPageRoute(
+                              builder: (context) => FudiDescription(
+                                    popularFood: displayPopularFoods[index],
+                                  )));
                     },
                   ),
                 ),

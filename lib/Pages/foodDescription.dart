@@ -2,10 +2,12 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fudi/models/popularFoods_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FudiDescription extends StatefulWidget {
-  const FudiDescription({super.key});
+  final PopularFoodsModel? popularFood;
+  const FudiDescription({super.key, this.popularFood});
 
   @override
   _FudiDescriptionState createState() => _FudiDescriptionState();
@@ -30,6 +32,8 @@ class _FudiDescriptionState extends State<FudiDescription> {
 
   @override
   Widget build(BuildContext context) {
+    final foodName = widget.popularFood?.foodName;
+    final foodPrice = widget.popularFood?.foodPrice;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
@@ -72,7 +76,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
               children: [
                 RichText(
                     text: TextSpan(
-                        text: "Roasted Biryani",
+                        text: foodName,
                         style: GoogleFonts.spaceMono(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
@@ -84,7 +88,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                       child: Column(
                         children: [
                           Text(
-                            "\$ 12.50",
+                            "\$ $foodPrice",
                             style: GoogleFonts.spaceMono(
                                 fontSize: 35, color: Colors.green),
                           ),
