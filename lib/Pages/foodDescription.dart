@@ -253,8 +253,8 @@ class _FudiDescriptionState extends State<FudiDescription> {
                       ),
                     ])),
                 Padding(
-                  padding: const EdgeInsets.only(right: 180),
-                  child: Text("Details",
+                  padding: const EdgeInsets.only(right: 120),
+                  child: Text("Description",
                       style: GoogleFonts.spaceMono(
                           fontSize: 35, fontWeight: FontWeight.bold)),
                 ),
