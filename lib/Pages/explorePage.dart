@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
@@ -216,20 +217,20 @@ class _MyHomePageState extends State<MyHomePage> {
             _pages[_selectedIndex],
             Positioned(
               bottom: 20,
-              left: 10,
-              right: 10,
+              left: 8,
+              right: 8,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50),
                 child: BottomNavigationBar(
                   selectedLabelStyle: GoogleFonts.spaceMono(
-                      fontSize: 15, fontWeight: FontWeight.bold),
+                      fontSize: 14, fontWeight: FontWeight.bold),
                   unselectedLabelStyle: GoogleFonts.spaceMono(
-                      fontSize: 15, fontWeight: FontWeight.bold),
+                      fontSize: 14, fontWeight: FontWeight.bold),
                   backgroundColor: Colors.white24,
                   items: const <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.explore),
-                      label: 'Explore',
+                      icon: Icon(CupertinoIcons.search),
+                      label: 'Explore Foods',
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.restaurant),
