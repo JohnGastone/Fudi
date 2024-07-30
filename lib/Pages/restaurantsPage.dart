@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, prefer_final_fields, unused_field, unused_element
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/restaurantPage.dart';
 import 'package:fudi/models/restaurants_model.dart';
@@ -97,7 +98,15 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 scrollDirection: Axis.horizontal,
                 itemCount: displayList.length > 10 ? 10 : displayList.length,
                 itemBuilder: (context, index) => InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                          builder: (context) => RestaurantPage(
+                            restaurant: displayList[index],
+                          ),
+                        ));
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Container(
@@ -232,8 +241,11 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 onTap: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => RestaurantPage()));
+                      CupertinoPageRoute(
+                        builder: (context) => RestaurantPage(
+                          restaurant: displayList[index],
+                        ),
+                      ));
                 },
                 child: Padding(
                     padding: const EdgeInsets.all(30),

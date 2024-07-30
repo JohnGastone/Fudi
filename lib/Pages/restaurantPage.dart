@@ -3,10 +3,12 @@
 import "package:flutter/material.dart";
 import "package:fudi/Pages/restaurantsPage.dart";
 import "package:fudi/models/restaurantFoods_model.dart";
+import "package:fudi/models/restaurants_model.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class RestaurantPage extends StatefulWidget {
-  const RestaurantPage({super.key});
+  final RestaurantModel? restaurant;
+  const RestaurantPage({super.key, this.restaurant});
 
   @override
   State<RestaurantPage> createState() => _RestaurantPageState();
@@ -29,6 +31,9 @@ class _RestaurantPageState extends State<RestaurantPage> {
 
   @override
   Widget build(BuildContext context) {
+    final restaurantName = widget.restaurant?.restaurantName;
+    final restaurantRating = widget.restaurant?.restaurantRating;
+    final restaurantLocation = widget.restaurant?.restaurantLocation;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       body: SingleChildScrollView(
@@ -90,7 +95,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       SizedBox(
                         width: 10,
                       ),
-                      Text("Seafood Lovers",
+                      Text(restaurantName!,
                           style: GoogleFonts.spaceMono(
                               fontSize: 20,
                               color: Colors.white,
@@ -133,7 +138,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         color: Colors.green,
                       ),
                       Text(
-                        "5.0",
+                        " $restaurantRating",
                         style: GoogleFonts.spaceMono(
                             fontSize: 15, color: Colors.white),
                       ),
@@ -172,7 +177,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                 Padding(
                   padding: EdgeInsets.only(right: 225),
                   child: Text(
-                    "Kinondoni B",
+                    restaurantLocation!,
                     style: GoogleFonts.spaceMono(
                         fontSize: 15, color: Colors.white),
                   ),
