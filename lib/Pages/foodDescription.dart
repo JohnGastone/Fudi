@@ -34,6 +34,8 @@ class _FudiDescriptionState extends State<FudiDescription> {
   Widget build(BuildContext context) {
     final foodName = widget.popularFood?.foodName;
     final foodPrice = widget.popularFood?.foodPrice;
+    final foodImage = widget.popularFood?.foodCoverImage;
+    final foodDescription = widget.popularFood?.foodDescription;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
@@ -187,7 +189,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                     ),
                     Column(children: [
                       Image.asset(
-                        "./assets/biryani.png",
+                        foodImage!,
                         height: 350,
                         width: 200,
                       ),
@@ -258,8 +260,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(25.0),
-                  child: Text(
-                      "Roasted Biryani features succulent, marinated meat roasted to perfection, combined with aromatic spices and tender basmati rice. Garnished with crispy fried onions, fresh coriander, and a squeeze of lemon, it offers a delightful culinary experience. Perfectly paired with cooling raita, this dish promises a hearty and satisfying meal.",
+                  child: Text(foodDescription!,
                       style: GoogleFonts.spaceMono(fontSize: 18)),
                 ),
                 SizedBox(
