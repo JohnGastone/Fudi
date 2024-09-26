@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/explorePage.dart';
 import 'package:fudi/Pages/Payments/paymentPage.dart';
@@ -14,6 +12,19 @@ class PlatePage extends StatefulWidget {
 
 class _PlatePageState extends State<PlatePage> {
   final List<int> _counters = [1, 1, 1, 1]; // Initialize counters for each item
+  final List<String> _titles = [
+    "Chicken Bugger",
+    "Latino Pizza",
+    "Pilau Vuruga",
+    "Beef Bugger"
+  ];
+  final List<String> _imagePaths = [
+    "./assets/bugger.png",
+    "./assets/margeritha.png",
+    "./assets/pilau.png",
+    "./assets/hamburger.png"
+  ];
+  final List<double> _prices = [9.5, 10.0, 15.0, 12.5];
 
   void _plateCounter(int index) {
     setState(() {
@@ -33,9 +44,9 @@ class _PlatePageState extends State<PlatePage> {
   Widget build(BuildContext context) {
     return Stack(children: [
       Scaffold(
-        backgroundColor: Color.fromARGB(255, 221, 206, 206),
+        backgroundColor: const Color.fromARGB(255, 221, 206, 206),
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 221, 206, 206),
+          backgroundColor: const Color.fromARGB(255, 221, 206, 206),
           automaticallyImplyLeading: false,
           title: Center(
             child: SizedBox(
@@ -43,8 +54,10 @@ class _PlatePageState extends State<PlatePage> {
               height: 40,
               child: FloatingActionButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ExplorePage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ExplorePage()));
                 },
                 backgroundColor: Colors.green,
                 child: Text(
@@ -63,12 +76,16 @@ class _PlatePageState extends State<PlatePage> {
                 "Swipe an item to the left to delete it",
                 style: GoogleFonts.spaceMono(fontSize: 16),
               ),
-              _buildCartItem(0, "./assets/bugger.png", "Chicken Bugger", 9.5),
-              _buildCartItem(
-                  1, "./assets/margeritha.png", "Latino Pizza", 10.0),
-              _buildCartItem(2, "./assets/pilau.png", "Pilau Vuruga", 15.0),
-              _buildCartItem(3, "./assets/hamburger.png", "Beef Bugger ", 12.5),
-              SizedBox(height: 50)
+              // Display the list of cart items
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: _titles.length,
+                itemBuilder: (context, index) {
+                  return _buildCartItem(index);
+                },
+              ),
+              const SizedBox(height: 50),
             ],
           ),
         ),
@@ -83,7 +100,7 @@ class _PlatePageState extends State<PlatePage> {
             backgroundColor: Colors.green,
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => paymentPage()));
+                  MaterialPageRoute(builder: (context) => const paymentPage()));
             },
             child: Text(
               "Continue to Payment",
@@ -95,84 +112,105 @@ class _PlatePageState extends State<PlatePage> {
     ]);
   }
 
-  Widget _buildCartItem(
-      int index, String imagePath, String title, double price) {
-    return Padding(
-      padding: const EdgeInsets.all(30.0),
-      child: Container(
-        width: 350,
-        height: 130,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: Colors.white54,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Row(
-            children: [
-              Image.asset(
-                imagePath,
-                height: 70,
-                width: 70,
-              ),
-              SizedBox(width: 20),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: GoogleFonts.spaceMono(fontSize: 18),
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "\$ $price",
-                      style: GoogleFonts.spaceMono(
-                          fontSize: 18, color: Colors.green),
-                    ),
-                  ],
+  Widget _buildCartItem(int index) {
+    return Dismissible(
+      key: Key(_titles[index]), // Unique key for each item
+      direction: DismissDirection.endToStart, // Swipe from right to left
+      onDismissed: (direction) {
+        setState(() {
+          _titles.removeAt(index);
+          _imagePaths.removeAt(index);
+          _prices.removeAt(index);
+          _counters.removeAt(index);
+        });
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('${_titles[index]} dismissed')),
+        );
+      },
+      background: Container(
+        color: const Color(0xFF979797).withOpacity(0.1),
+        alignment: Alignment.centerRight,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: const Icon(Icons.delete, color: Colors.white),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Container(
+          width: 350,
+          height: 130,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: Colors.white54,
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Row(
+              children: [
+                Image.asset(
+                  _imagePaths[index],
+                  height: 70,
+                  width: 70,
                 ),
-              ),
-              SizedBox(width: 20),
-              SizedBox(
-                height: 140,
-                width: 30,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 215, 211, 211),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+                const SizedBox(width: 20),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      InkWell(
-                        child: Text(
-                          "+",
-                          style: GoogleFonts.spaceMono(fontSize: 30),
-                        ),
-                        onTap: () {
-                          _plateCounter(index);
-                        },
-                      ),
                       Text(
-                        "${_counters[index]}",
-                        style: GoogleFonts.spaceMono(
-                            fontSize: 20, color: Colors.green),
+                        _titles[index],
+                        style: GoogleFonts.spaceMono(fontSize: 18),
                       ),
-                      InkWell(
-                        child: Text(
-                          "-",
-                          style: GoogleFonts.spaceMono(fontSize: 30),
-                        ),
-                        onTap: () {
-                          _plateDecrement(index);
-                        },
-                      )
+                      const SizedBox(height: 10),
+                      Text(
+                        "\$ ${_prices[index]}",
+                        style: GoogleFonts.spaceMono(
+                            fontSize: 18, color: Colors.green),
+                      ),
                     ],
                   ),
                 ),
-              )
-            ],
+                const SizedBox(width: 20),
+                SizedBox(
+                  height: 140,
+                  width: 30,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 215, 211, 211),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      children: [
+                        InkWell(
+                          child: Text(
+                            "+",
+                            style: GoogleFonts.spaceMono(fontSize: 30),
+                          ),
+                          onTap: () {
+                            _plateCounter(index);
+                          },
+                        ),
+                        Text(
+                          "${_counters[index]}",
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 20, color: Colors.green),
+                        ),
+                        InkWell(
+                          child: Text(
+                            "-",
+                            style: GoogleFonts.spaceMono(fontSize: 30),
+                          ),
+                          onTap: () {
+                            _plateDecrement(index);
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
