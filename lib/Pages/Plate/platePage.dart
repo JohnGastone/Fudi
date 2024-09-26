@@ -1,7 +1,12 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/explorePage.dart';
 import 'package:fudi/Pages/Payments/paymentPage.dart';
+import 'package:fudi/models/plateModel.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PlatePage extends StatefulWidget {
   const PlatePage({super.key});
@@ -11,38 +16,51 @@ class PlatePage extends StatefulWidget {
 }
 
 class _PlatePageState extends State<PlatePage> {
+  String _image = '';
+  double _price = 0.0;
+  String _size = 'M';
+  int _quantity = 1;
   final List<int> _counters = [1, 1, 1, 1]; // Initialize counters for each item
-
-  final List<String> _titles = [
-    "Chicken Bugger",
-    "Latino Pizza",
-    "Pilau Vuruga",
-    "Beef Bugger"
-  ];
-  final List<String> _imagePaths = [
-    "./assets/bugger.png",
-    "./assets/margeritha.png",
-    "./assets/pilau.png",
-    "./assets/hamburger.png"
-  ];
-  final List<double> _prices = [9.5, 10.0, 15.0, 12.5];
 
   void _plateCounter(int index) {
     setState(() {
-      _counters[index]++;
+      Provider.of<CartModel>(context, listen: false).cartItems[index]
+          ['quantity']++;
     });
   }
 
   void _plateDecrement(int index) {
     setState(() {
-      if (_counters[index] > 1) {
-        _counters[index]--;
+      if (Provider.of<CartModel>(context, listen: false).cartItems[index]
+              ['quantity'] >
+          1) {
+        Provider.of<CartModel>(context, listen: false).cartItems[index]
+            ['quantity']--;
       }
     });
   }
 
+  // Retrieve the data from SharedPreferences
+  Future<void> _loadFromSharedPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _image = prefs.getString('image') ?? '';
+      _price = prefs.getDouble('price') ?? 0.0;
+      _size = prefs.getString('size') ?? 'M';
+      _quantity = prefs.getInt('quantity') ?? 1;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadFromSharedPreferences();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final cartItems = Provider.of<CartModel>(context).cartItems;
+
     return Stack(children: [
       Scaffold(
         backgroundColor: const Color.fromARGB(255, 221, 206, 206),
@@ -77,11 +95,10 @@ class _PlatePageState extends State<PlatePage> {
                 "Swipe an item to the left to delete it",
                 style: GoogleFonts.spaceMono(fontSize: 16),
               ),
-              // Display the list of cart items
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: _titles.length,
+                itemCount: cartItems.length,
                 itemBuilder: (context, index) {
                   return _buildCartItem(index);
                 },
@@ -97,7 +114,7 @@ class _PlatePageState extends State<PlatePage> {
         child: SizedBox(
           width: 300,
           child: FloatingActionButton(
-            heroTag: "continue_to_payment", // To avoid conflicting heros
+            heroTag: "continue_to_payment",
             backgroundColor: Colors.green,
             onPressed: () {
               Navigator.push(context,
@@ -114,19 +131,18 @@ class _PlatePageState extends State<PlatePage> {
   }
 
   Widget _buildCartItem(int index) {
+    final cartItems = Provider.of<CartModel>(context).cartItems;
+
     return Dismissible(
-      key: Key(_titles[index]), // Unique key for each item
+      key: Key(cartItems[index]['image']), // Unique key for each item
       direction: DismissDirection.endToStart, // Swipe from right to left
       onDismissed: (direction) {
         setState(() {
-          _titles.removeAt(index);
-          _imagePaths.removeAt(index);
-          _prices.removeAt(index);
-          _counters.removeAt(index);
+          Provider.of<CartModel>(context, listen: false).removeFromCart(index);
         });
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${_titles[index]} dismissed')),
+          SnackBar(content: Text('${cartItems[index]['image']} dismissed')),
         );
       },
       background: Container(
@@ -149,7 +165,7 @@ class _PlatePageState extends State<PlatePage> {
             child: Row(
               children: [
                 Image.asset(
-                  _imagePaths[index],
+                  cartItems[index]['image'],
                   height: 70,
                   width: 70,
                 ),
@@ -160,12 +176,12 @@ class _PlatePageState extends State<PlatePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        _titles[index],
+                        cartItems[index]['size'],
                         style: GoogleFonts.spaceMono(fontSize: 18),
                       ),
                       const SizedBox(height: 10),
                       Text(
-                        "\$ ${_prices[index]}",
+                        "\$ ${cartItems[index]['price']}",
                         style: GoogleFonts.spaceMono(
                             fontSize: 18, color: Colors.green),
                       ),
@@ -193,7 +209,7 @@ class _PlatePageState extends State<PlatePage> {
                           },
                         ),
                         Text(
-                          "${_counters[index]}",
+                          "${cartItems[index]['quantity']}",
                           style: GoogleFonts.spaceMono(
                               fontSize: 20, color: Colors.green),
                         ),

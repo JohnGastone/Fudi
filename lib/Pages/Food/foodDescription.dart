@@ -2,8 +2,12 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/Plate/platePage.dart';
+import 'package:fudi/models/plateModel.dart';
 import 'package:fudi/models/popularFoods_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class FudiDescription extends StatefulWidget {
   final PopularFoodsModel? popularFood;
@@ -47,6 +51,16 @@ class _FudiDescriptionState extends State<FudiDescription> {
         _counter--;
       }
     });
+  }
+
+  // Function to save cart to SharedPreferences
+  Future<void> _saveToSharedPreferences(
+      String image, int price, String size, int quantity) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('image', image);
+    prefs.setInt('price', price);
+    prefs.setString('size', size);
+    prefs.setInt('quantity', quantity);
   }
 
   @override
@@ -127,7 +141,6 @@ class _FudiDescriptionState extends State<FudiDescription> {
                           ),
                           Column(
                             children: [
-                              // For Small size (S)
                               GestureDetector(
                                 onTap: () {
                                   _onSizeSelected("S");
@@ -149,8 +162,6 @@ class _FudiDescriptionState extends State<FudiDescription> {
                                 ),
                               ),
                               SizedBox(height: 10),
-
-                              // For Medium size (M)
                               GestureDetector(
                                 onTap: () {
                                   _onSizeSelected("M");
@@ -178,8 +189,6 @@ class _FudiDescriptionState extends State<FudiDescription> {
                                 ),
                               ),
                               SizedBox(height: 10),
-
-                              // For Large size (L)
                               GestureDetector(
                                 onTap: () {
                                   _onSizeSelected("L");
@@ -341,7 +350,18 @@ class _FudiDescriptionState extends State<FudiDescription> {
               child: FloatingActionButton(
                 heroTag: "add_to_plate", // To avoid conflicting heros
                 backgroundColor: Colors.green,
-                onPressed: () {},
+                onPressed: () {
+                  // Save food details to provider and SharedPreferences
+                  Provider.of<CartModel>(context, listen: false)
+                      .addToCart(foodImage, foodPrice!, selectedSize, _counter);
+
+                  _saveToSharedPreferences(
+                      foodImage, foodPrice, selectedSize, _counter);
+
+                  // Navigate to the plate page
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PlatePage()));
+                },
                 child: Text(
                   "Add to plate",
                   style:
