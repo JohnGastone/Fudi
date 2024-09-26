@@ -61,8 +61,8 @@ class _CartPageState extends State<CartPage> {
           child: Column(
             children: [
               Text(
-                "Swipe an item left to delete it",
-                style: GoogleFonts.spaceMono(fontSize: 18),
+                "Swipe an item to the left to delete it",
+                style: GoogleFonts.spaceMono(fontSize: 16),
               ),
               _buildCartItem(0, "./assets/bugger.png", "Chicken Bugger", 9.5),
               _buildCartItem(

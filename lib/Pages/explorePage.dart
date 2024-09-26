@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/Authentication/loginPage.dart';
 import 'package:fudi/Pages/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
 import 'package:fudi/Pages/restaurantsPage.dart';
@@ -8,7 +9,7 @@ import 'package:fudi/models/categories_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../models/popularFoods_model.dart';
-import 'ordersPage.dart';
+import 'Order/ordersPage.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -157,7 +158,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 fontSize: 16),
                                           ),
                                           onPressed: () {
-                                            Navigator.of(context).pop();
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Loginpage()));
                                           },
                                         ),
                                       )
