@@ -37,10 +37,9 @@ class _PlatePageState extends State<PlatePage> {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 221, 206, 206),
           automaticallyImplyLeading: false,
-          title: Padding(
-            padding: EdgeInsets.only(left: 70),
+          title: Center(
             child: SizedBox(
-              width: 160,
+              width: 300,
               height: 40,
               child: FloatingActionButton(
                 onPressed: () {
@@ -49,7 +48,7 @@ class _PlatePageState extends State<PlatePage> {
                 },
                 backgroundColor: Colors.green,
                 child: Text(
-                  "Add more plates",
+                  "Add more to this plate",
                   style:
                       GoogleFonts.spaceMono(fontSize: 18, color: Colors.white),
                 ),

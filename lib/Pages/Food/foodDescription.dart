@@ -15,6 +15,13 @@ class FudiDescription extends StatefulWidget {
 
 class _FudiDescriptionState extends State<FudiDescription> {
   int _counter = 1;
+  bool isFavorite = false;
+
+  void toggleFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
 
   void _plateCounter() {
     setState((() {
@@ -61,11 +68,16 @@ class _FudiDescriptionState extends State<FudiDescription> {
                     Navigator.pop(context);
                   }),
             ),
-            CircleAvatar(
-              backgroundColor: Colors.green,
-              child: Icon(
-                CupertinoIcons.heart,
-                color: Colors.white,
+            InkWell(
+              onTap: toggleFavorite,
+              child: GestureDetector(
+                onTap: toggleFavorite,
+                child: Icon(
+                  isFavorite
+                      ? CupertinoIcons.heart_fill
+                      : CupertinoIcons.heart_fill,
+                  color: isFavorite ? Colors.green : Colors.white,
+                ),
               ),
             ),
           ]),
@@ -275,11 +287,11 @@ class _FudiDescriptionState extends State<FudiDescription> {
             child: SizedBox(
               width: 300,
               child: FloatingActionButton(
-                heroTag: "add_to_cart", // To avoid conflicting heros
+                heroTag: "add_to_plate", // To avoid conflicting heros
                 backgroundColor: Colors.green,
                 onPressed: () {},
                 child: Text(
-                  "Add to cart",
+                  "Add to plate",
                   style:
                       GoogleFonts.spaceMono(fontSize: 20, color: Colors.white),
                 ),
