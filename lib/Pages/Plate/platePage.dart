@@ -163,6 +163,7 @@ class _PlatePageState extends State<PlatePage> {
           child: Padding(
             padding: const EdgeInsets.all(12.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset(
                   cartItems[index]['image'],
