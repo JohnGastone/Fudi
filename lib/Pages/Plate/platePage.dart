@@ -20,12 +20,15 @@ class _PlatePageState extends State<PlatePage> {
   double _price = 0.0;
   String _size = 'M';
   int _quantity = 1;
+  double total = 0.0; // To store total price
+
   final List<int> _counters = [1, 1, 1, 1]; // Initialize counters for each item
 
   void _plateCounter(int index) {
     setState(() {
       Provider.of<CartModel>(context, listen: false).cartItems[index]
           ['quantity']++;
+      _calculateTotal(); // Recalculate total after increment
     });
   }
 
@@ -36,6 +39,7 @@ class _PlatePageState extends State<PlatePage> {
           1) {
         Provider.of<CartModel>(context, listen: false).cartItems[index]
             ['quantity']--;
+        _calculateTotal(); // Recalculate total after decrement
       }
     });
   }
@@ -55,6 +59,22 @@ class _PlatePageState extends State<PlatePage> {
   void initState() {
     super.initState();
     _loadFromSharedPreferences();
+    _calculateTotal(); // Calculate total on page load
+  }
+
+  // Function to calculate total price
+  void _calculateTotal() {
+    final cartItems = Provider.of<CartModel>(context, listen: false).cartItems;
+    double newTotal = 0.0;
+
+    for (var item in cartItems) {
+      newTotal +=
+          item['price'] * item['quantity']; // Multiply price by quantity
+    }
+
+    setState(() {
+      total = newTotal; // Update total state
+    });
   }
 
   @override
@@ -108,22 +128,48 @@ class _PlatePageState extends State<PlatePage> {
           ),
         ),
       ),
-      Positioned(
-        bottom: 15.0,
-        right: 30.0,
-        child: SizedBox(
-          width: 300,
-          child: FloatingActionButton(
-            heroTag: "continue_to_payment",
-            backgroundColor: Colors.green,
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const paymentPage()));
-            },
-            child: Text(
-              "Continue to Payment",
-              style: GoogleFonts.spaceMono(fontSize: 17, color: Colors.white),
-            ),
+      Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: 135,
+                child: FloatingActionButton(
+                  heroTag: "total",
+                  backgroundColor: Colors.green,
+                  onPressed: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Text(
+                      "Total: \$ ${total.toStringAsFixed(2)}", // Display total price
+                      style: GoogleFonts.spaceMono(
+                          fontSize: 17, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 180,
+                child: FloatingActionButton(
+                  heroTag: "continue_to_payment",
+                  backgroundColor: Colors.green,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const paymentPage()));
+                  },
+                  child: Text(
+                    "Continue to Payment",
+                    style: GoogleFonts.spaceMono(
+                        fontSize: 17, color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       )
@@ -139,6 +185,7 @@ class _PlatePageState extends State<PlatePage> {
       onDismissed: (direction) {
         setState(() {
           Provider.of<CartModel>(context, listen: false).removeFromCart(index);
+          _calculateTotal(); // Recalculate total after item removal
         });
 
         ScaffoldMessenger.of(context).showSnackBar(
@@ -184,7 +231,7 @@ class _PlatePageState extends State<PlatePage> {
                       Text(
                         "\$ ${cartItems[index]['price']}",
                         style: GoogleFonts.spaceMono(
-                            fontSize: 18, color: Colors.green),
+                            fontSize: 25, color: Colors.green),
                       ),
                     ],
                   ),
