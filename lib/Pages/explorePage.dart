@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Authentication/loginPage.dart';
-import 'package:fudi/Pages/Cart/cartPage.dart';
+import 'package:fudi/Pages/Plate/platePage.dart';
 import 'package:fudi/Pages/Food/foodDescription.dart';
 import 'package:fudi/Pages/Profile/profilePage.dart';
 import 'package:fudi/Pages/Restaurants/restaurantsPage.dart';
@@ -37,8 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset:
-            false, // This prevents the BottomNavigationBar from resizing
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Color.fromARGB(255, 221, 206, 206),
@@ -213,16 +212,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 30,
                   ),
                   InkWell(
-                    child: CircleAvatar(
-                      backgroundColor: Color.fromARGB(255, 221, 206, 206),
-                      child: Icon(
-                        Icons.shopping_cart,
-                        color: Colors.green,
-                      ),
+                    child: Image.asset(
+                      "./assets/plate.png",
+                      color: Colors.green,
+                      height: 30,
+                      width: 30,
                     ),
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => CartPage()));
+                          MaterialPageRoute(builder: (context) => PlatePage()));
                     },
                   ),
                 ],

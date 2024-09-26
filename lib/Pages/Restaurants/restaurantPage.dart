@@ -264,6 +264,38 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                   )
                                 ],
                               ),
+                              Container(
+                                height: 35,
+                                width: 115,
+                                decoration: BoxDecoration(
+                                    color: Colors.orangeAccent,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(8))),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 5.0, right: 5),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Add to Plate",
+                                        style:
+                                            GoogleFonts.spaceMono(fontSize: 11),
+                                      ),
+                                      SizedBox(
+                                        width: 3,
+                                      ),
+                                      Image.asset(
+                                        "./assets/plate.png",
+                                        color: Colors.green,
+                                        height: 25,
+                                        width: 25,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                               Image.asset(
                                 displayFoods[index].foodImage!,
                                 height: 60,

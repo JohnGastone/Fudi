@@ -5,14 +5,14 @@ import 'package:fudi/Pages/explorePage.dart';
 import 'package:fudi/Pages/Payments/paymentPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CartPage extends StatefulWidget {
-  const CartPage({super.key});
+class PlatePage extends StatefulWidget {
+  const PlatePage({super.key});
 
   @override
-  State<CartPage> createState() => _CartPageState();
+  State<PlatePage> createState() => _PlatePageState();
 }
 
-class _CartPageState extends State<CartPage> {
+class _PlatePageState extends State<PlatePage> {
   final List<int> _counters = [1, 1, 1, 1]; // Initialize counters for each item
 
   void _plateCounter(int index) {
