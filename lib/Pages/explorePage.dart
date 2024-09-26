@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Authentication/loginPage.dart';
-import 'package:fudi/Pages/cartPage.dart';
+import 'package:fudi/Pages/Cart/cartPage.dart';
 import 'package:fudi/Pages/foodDescription.dart';
 import 'package:fudi/Pages/restaurantsPage.dart';
 import 'package:fudi/models/categories_model.dart';

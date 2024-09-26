@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fudi/Pages/restaurantPage.dart';
+import 'package:fudi/Pages/Restaurants/restaurantPage.dart';
 import 'package:fudi/models/restaurants_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
