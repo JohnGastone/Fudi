@@ -112,7 +112,7 @@ class _PlatePageState extends State<PlatePage> {
           child: Column(
             children: [
               Text(
-                "Swipe an item to the left to delete it",
+                "Swipe an item to the left to remove it",
                 style: GoogleFonts.spaceMono(fontSize: 16),
               ),
               ListView.builder(
@@ -123,7 +123,7 @@ class _PlatePageState extends State<PlatePage> {
                   return _buildCartItem(index);
                 },
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 10),
             ],
           ),
         ),
@@ -199,7 +199,7 @@ class _PlatePageState extends State<PlatePage> {
         child: const Icon(Icons.delete, color: Colors.white),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(25.0),
         child: Container(
           width: 350,
           height: 130,
