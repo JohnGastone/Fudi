@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: Color.fromARGB(255, 221, 206, 206),
+          backgroundColor: const Color.fromARGB(58, 52, 51, 51),
           title: Column(
             children: [
               Row(
@@ -232,17 +232,16 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             _pages[_selectedIndex],
             Positioned(
-              bottom: 20,
-              left: 8,
-              right: 8,
+              bottom: 0,
+              left: 1,
+              right: 1,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(50),
                 child: BottomNavigationBar(
                   selectedLabelStyle: GoogleFonts.spaceMono(
                       fontSize: 14, fontWeight: FontWeight.bold),
                   unselectedLabelStyle: GoogleFonts.spaceMono(
                       fontSize: 14, fontWeight: FontWeight.bold),
-                  backgroundColor: Colors.white24,
+                  backgroundColor: const Color.fromARGB(58, 52, 51, 51),
                   items: const <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
                       icon: Icon(CupertinoIcons.search),
