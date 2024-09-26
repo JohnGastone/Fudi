@@ -12,6 +12,7 @@ class PlatePage extends StatefulWidget {
 
 class _PlatePageState extends State<PlatePage> {
   final List<int> _counters = [1, 1, 1, 1]; // Initialize counters for each item
+
   final List<String> _titles = [
     "Chicken Bugger",
     "Latino Pizza",

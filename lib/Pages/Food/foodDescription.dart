@@ -16,10 +16,22 @@ class FudiDescription extends StatefulWidget {
 class _FudiDescriptionState extends State<FudiDescription> {
   int _counter = 1;
   bool isFavorite = false;
+  // Available plate sizes
+  final List<String> plateSizes = ["S", "M", "L"];
+
+  // Initially selected plate size
+  String selectedSize = "M";
 
   void toggleFavorite() {
     setState(() {
       isFavorite = !isFavorite;
+    });
+  }
+
+  // Function to change the selected size
+  void _onSizeSelected(String size) {
+    setState(() {
+      selectedSize = size;
     });
   }
 
@@ -113,42 +125,82 @@ class _FudiDescriptionState extends State<FudiDescription> {
                               color: const Color.fromARGB(255, 99, 98, 98),
                             ),
                           ),
-                          CircleAvatar(
-                            backgroundColor: Color.fromARGB(255, 209, 204, 204),
-                            child: Text(
-                              "S",
-                              style: GoogleFonts.spaceMono(
-                                  fontSize: 20, fontWeight: FontWeight.w300),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "M",
-                                style: GoogleFonts.spaceMono(
-                                    fontSize: 20, color: Colors.white),
+                          Column(
+                            children: [
+                              // For Small size (S)
+                              GestureDetector(
+                                onTap: () {
+                                  _onSizeSelected("S");
+                                },
+                                child: CircleAvatar(
+                                  backgroundColor: selectedSize == "S"
+                                      ? Colors.green
+                                      : Color.fromARGB(255, 209, 204, 204),
+                                  child: Text(
+                                    "S",
+                                    style: GoogleFonts.spaceMono(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w300,
+                                      color: selectedSize == "S"
+                                          ? Colors.white
+                                          : Colors.black,
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Color.fromARGB(255, 209, 204, 204),
-                            child: Text(
-                              "L",
-                              style: GoogleFonts.spaceMono(
-                                  fontSize: 20, fontWeight: FontWeight.w300),
-                            ),
+                              SizedBox(height: 10),
+
+                              // For Medium size (M)
+                              GestureDetector(
+                                onTap: () {
+                                  _onSizeSelected("M");
+                                },
+                                child: Container(
+                                  height: 30,
+                                  width: 30,
+                                  decoration: BoxDecoration(
+                                    color: selectedSize == "M"
+                                        ? Colors.green
+                                        : Color.fromARGB(255, 209, 204, 204),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      "M",
+                                      style: GoogleFonts.spaceMono(
+                                        fontSize: 20,
+                                        color: selectedSize == "M"
+                                            ? Colors.white
+                                            : Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+
+                              // For Large size (L)
+                              GestureDetector(
+                                onTap: () {
+                                  _onSizeSelected("L");
+                                },
+                                child: CircleAvatar(
+                                  backgroundColor: selectedSize == "L"
+                                      ? Colors.green
+                                      : Color.fromARGB(255, 209, 204, 204),
+                                  child: Text(
+                                    "L",
+                                    style: GoogleFonts.spaceMono(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w300,
+                                      color: selectedSize == "L"
+                                          ? Colors.white
+                                          : Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                           Text(
                             "Quantity",
