@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/explorePage.dart';
-import 'package:fudi/Pages/Order/paymentPage.dart';
+import 'package:fudi/Pages/Payments/paymentPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CartPage extends StatefulWidget {
