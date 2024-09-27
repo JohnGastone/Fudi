@@ -261,15 +261,48 @@ class _MyHomePageState extends State<MyHomePage> {
                       label: 'Explore Foods',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.restaurant),
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                            _selectedIndex == 1
+                                ? Colors.green
+                                : const Color.fromARGB(255, 33, 31, 31),
+                            BlendMode.srcIn),
+                        child: Image.asset(
+                          "./assets/resta.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
                       label: 'Restaurants',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.shopping_basket),
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                            _selectedIndex == 2
+                                ? Colors.green
+                                : const Color.fromARGB(255, 33, 31, 31),
+                            BlendMode.srcIn),
+                        child: Image.asset(
+                          "./assets/orders.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
                       label: 'Orders',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(CupertinoIcons.heart_fill),
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                            _selectedIndex == 3
+                                ? Colors.green
+                                : const Color.fromARGB(255, 33, 31, 31),
+                            BlendMode.srcIn),
+                        child: Image.asset(
+                          "./assets/favdishes.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
                       label: 'Fav Dishes',
                     ),
                   ],
@@ -383,7 +416,7 @@ class _ExplorePageState extends State<ExplorePage> {
                             margin: EdgeInsets.only(
                                 right: 10), // Add space between items
                             decoration: BoxDecoration(
-                                color: Colors.green,
+                                color: Color.fromARGB(255, 230, 221, 221),
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(10),
                                     topRight: Radius.circular(10))),

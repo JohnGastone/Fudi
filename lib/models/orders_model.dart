@@ -23,7 +23,7 @@ class FoodOrdersList {
       orderID: "001",
       orderStatus: "Delivered",
       restaurantName: "Seafood Lovers",
-      orderPrice: 100,
+      orderPrice: 40000,
       orderDeliveryTime: 10,
     ),
     FoodOrdersModel(
@@ -31,7 +31,7 @@ class FoodOrdersList {
       orderID: "002",
       orderStatus: "On the way",
       restaurantName: "Shishi Food",
-      orderPrice: 200,
+      orderPrice: 25000,
       orderDeliveryTime: 15,
     ),
     FoodOrdersModel(
@@ -39,7 +39,7 @@ class FoodOrdersList {
       orderID: "003",
       orderStatus: "Delivered",
       restaurantName: "Shangazi Cafe",
-      orderPrice: 300,
+      orderPrice: 18000,
       orderDeliveryTime: 20,
     ),
     FoodOrdersModel(
@@ -47,7 +47,7 @@ class FoodOrdersList {
       orderID: "004",
       orderStatus: "Pending",
       restaurantName: "Samaki Samaki",
-      orderPrice: 400,
+      orderPrice: 35000,
       orderDeliveryTime: 25,
     ),
     FoodOrdersModel(
@@ -55,7 +55,7 @@ class FoodOrdersList {
       orderID: "005",
       orderStatus: "Delivered",
       restaurantName: "Burger S3",
-      orderPrice: 500,
+      orderPrice: 20000,
       orderDeliveryTime: 30,
     ),
     FoodOrdersModel(
@@ -63,7 +63,7 @@ class FoodOrdersList {
         orderID: "006",
         orderStatus: "Pending",
         restaurantName: "Visinia Spot",
-        orderPrice: 350,
+        orderPrice: 35000,
         orderDeliveryTime: 13),
   ];
 

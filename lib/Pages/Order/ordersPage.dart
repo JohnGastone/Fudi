@@ -77,7 +77,7 @@ class _OrdersPageState extends State<OrdersPage> {
                     width: 310,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(255, 158, 181, 199),
+                      color: Color.fromARGB(255, 230, 221, 221),
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -212,7 +212,7 @@ class _OrdersPageState extends State<OrdersPage> {
                                         style:
                                             GoogleFonts.poppins(fontSize: 18)),
                                     TextSpan(
-                                        text: "\$",
+                                        text: "Tsh ",
                                         style: GoogleFonts.poppins(
                                             fontSize: 23, color: Colors.green)),
                                     TextSpan(
@@ -227,6 +227,8 @@ class _OrdersPageState extends State<OrdersPage> {
                                 height: 30,
                                 width: 80,
                                 child: FloatingActionButton(
+                                  backgroundColor:
+                                      const Color.fromARGB(58, 52, 51, 51),
                                   child: Text(
                                     "Reorder",
                                     style: GoogleFonts.poppins(fontSize: 18),
