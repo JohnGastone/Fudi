@@ -26,11 +26,10 @@ class _OrdersPageState extends State<OrdersPage> {
           child: Text.rich(TextSpan(children: <TextSpan>[
             TextSpan(
                 text: "Thank you for trusting ",
-                style: GoogleFonts.spaceMono(fontSize: 18)),
+                style: GoogleFonts.poppins(fontSize: 18)),
             TextSpan(
                 text: "Fudi ",
-                style:
-                    GoogleFonts.spaceMono(fontSize: 22, color: Colors.green)),
+                style: GoogleFonts.poppins(fontSize: 22, color: Colors.green)),
           ])),
         ),
       ),
@@ -54,7 +53,7 @@ class _OrdersPageState extends State<OrdersPage> {
                     ),
                     Text(
                       "Recent Orders",
-                      style: GoogleFonts.spaceMono(fontSize: 20),
+                      style: GoogleFonts.poppins(fontSize: 20),
                     )
                   ],
                 ),
@@ -102,8 +101,7 @@ class _OrdersPageState extends State<OrdersPage> {
                                     padding: const EdgeInsets.only(left: 7),
                                     child: Text(
                                       "${displayFoodOrders[index].orderDate!}",
-                                      style:
-                                          GoogleFonts.spaceMono(fontSize: 14),
+                                      style: GoogleFonts.poppins(fontSize: 14),
                                     ),
                                   ),
                                 ),
@@ -124,7 +122,7 @@ class _OrdersPageState extends State<OrdersPage> {
                                 child: Center(
                                   child: Text(
                                     "${displayFoodOrders[index].orderID}",
-                                    style: GoogleFonts.spaceMono(fontSize: 14),
+                                    style: GoogleFonts.poppins(fontSize: 14),
                                   ),
                                 ),
                               ),
@@ -150,7 +148,7 @@ class _OrdersPageState extends State<OrdersPage> {
                                     Text(
                                         displayFoodOrders[index]
                                             .restaurantName!,
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 17,
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold)),
@@ -170,14 +168,14 @@ class _OrdersPageState extends State<OrdersPage> {
                                             ),
                                             Text(
                                               "${displayFoodOrders[index].orderDeliveryTime}",
-                                              style: GoogleFonts.spaceMono(
+                                              style: GoogleFonts.poppins(
                                                   fontSize: 14,
                                                   color: Colors.white),
                                             )
                                           ],
                                         ),
                                         Text("mins",
-                                            style: GoogleFonts.spaceMono(
+                                            style: GoogleFonts.poppins(
                                                 fontSize: 14,
                                                 color: Colors.blueGrey))
                                       ],
@@ -195,15 +193,15 @@ class _OrdersPageState extends State<OrdersPage> {
                                 children: [
                                   Text(
                                     "-> Makange Nyama ",
-                                    style: GoogleFonts.spaceMono(fontSize: 18),
+                                    style: GoogleFonts.poppins(fontSize: 18),
                                   ),
                                   Text(
                                     "-> Biryani Kuku ",
-                                    style: GoogleFonts.spaceMono(fontSize: 18),
+                                    style: GoogleFonts.poppins(fontSize: 18),
                                   ),
                                   Text(
                                     "-> Makange Samaki ",
-                                    style: GoogleFonts.spaceMono(fontSize: 18),
+                                    style: GoogleFonts.poppins(fontSize: 18),
                                   ),
                                   SizedBox(
                                     height: 10,
@@ -211,16 +209,16 @@ class _OrdersPageState extends State<OrdersPage> {
                                   Text.rich(TextSpan(children: <TextSpan>[
                                     TextSpan(
                                         text: "Total Amount: ",
-                                        style: GoogleFonts.spaceMono(
-                                            fontSize: 18)),
+                                        style:
+                                            GoogleFonts.poppins(fontSize: 18)),
                                     TextSpan(
                                         text: "\$",
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 23, color: Colors.green)),
                                     TextSpan(
                                         text:
                                             " ${displayFoodOrders[index].orderPrice}",
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 17, color: Colors.white))
                                   ])),
                                 ],
@@ -231,7 +229,7 @@ class _OrdersPageState extends State<OrdersPage> {
                                 child: FloatingActionButton(
                                   child: Text(
                                     "Reorder",
-                                    style: GoogleFonts.spaceMono(fontSize: 18),
+                                    style: GoogleFonts.poppins(fontSize: 18),
                                   ),
                                   onPressed: () => Navigator.pop,
                                 ),
@@ -258,7 +256,7 @@ class _OrdersPageState extends State<OrdersPage> {
                               child: Center(
                                 child: Text(
                                   displayFoodOrders[index].orderStatus!,
-                                  style: GoogleFonts.spaceMono(fontSize: 14),
+                                  style: GoogleFonts.poppins(fontSize: 14),
                                 ),
                               ),
                             ),
