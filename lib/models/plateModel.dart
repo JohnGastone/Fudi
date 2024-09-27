@@ -7,9 +7,11 @@ class CartModel with ChangeNotifier {
   List<Map<String, dynamic>> get cartItems => _cartItems;
 
   // Add food to cart
-  void addToCart(String image, int price, String size, int quantity) {
+  void addToCart(
+      String image, String name, int price, String size, int quantity) {
     _cartItems.add({
       "image": image,
+      "name": name,
       "price": price,
       "size": size,
       "quantity": quantity,

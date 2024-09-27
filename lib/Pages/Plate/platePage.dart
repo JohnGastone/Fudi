@@ -17,6 +17,7 @@ class PlatePage extends StatefulWidget {
 
 class _PlatePageState extends State<PlatePage> {
   String _image = '';
+  String _name = '';
   double _price = 0.0;
   String _size = 'M';
   int _quantity = 1;
@@ -49,6 +50,7 @@ class _PlatePageState extends State<PlatePage> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       _image = prefs.getString('image') ?? '';
+      _name = prefs.getString('name') ?? '';
       _price = prefs.getDouble('price') ?? 0.0;
       _size = prefs.getString('size') ?? 'M';
       _quantity = prefs.getInt('quantity') ?? 1;
@@ -219,20 +221,27 @@ class _PlatePageState extends State<PlatePage> {
                 ),
                 const SizedBox(width: 20),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Text(
+                        "${cartItems[index]['name']}",
+                        style: GoogleFonts.spaceMono(fontSize: 20),
+                      ),
+                      const SizedBox(height: 6),
                       Text.rich(TextSpan(children: <TextSpan>[
                         TextSpan(
                             text: "Size: ",
-                            style: GoogleFonts.poppins(fontSize: 19)),
+                            style: GoogleFonts.poppins(
+                                fontSize: 19, color: Colors.grey)),
                         TextSpan(
                           text: cartItems[index]['size'],
-                          style: GoogleFonts.spaceMono(fontSize: 18),
+                          style: GoogleFonts.spaceMono(
+                              fontSize: 18, color: Colors.grey),
                         ),
                       ])),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 6),
                       Text(
                         "\$ ${cartItems[index]['price']}",
                         style: GoogleFonts.spaceMono(

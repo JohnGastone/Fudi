@@ -55,9 +55,10 @@ class _FudiDescriptionState extends State<FudiDescription> {
 
   // Function to save cart to SharedPreferences
   Future<void> _saveToSharedPreferences(
-      String image, int price, String size, int quantity) async {
+      String image, String name, int price, String size, int quantity) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('image', image);
+    prefs.setString('name', name);
     prefs.setInt('price', price);
     prefs.setString('size', size);
     prefs.setInt('quantity', quantity);
@@ -352,11 +353,11 @@ class _FudiDescriptionState extends State<FudiDescription> {
                 backgroundColor: Colors.green,
                 onPressed: () {
                   // Save food details to provider and SharedPreferences
-                  Provider.of<CartModel>(context, listen: false)
-                      .addToCart(foodImage, foodPrice!, selectedSize, _counter);
+                  Provider.of<CartModel>(context, listen: false).addToCart(
+                      foodImage, foodName!, foodPrice!, selectedSize, _counter);
 
                   _saveToSharedPreferences(
-                      foodImage, foodPrice, selectedSize, _counter);
+                      foodImage, foodName, foodPrice, selectedSize, _counter);
 
                   // Navigate to the plate page
                   Navigator.push(context,
