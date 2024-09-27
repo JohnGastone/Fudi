@@ -30,7 +30,7 @@ class _LoginpageState extends State<Loginpage> {
             Center(
               child: Text(
                 'Welcome Back!',
-                style: GoogleFonts.spaceMono(
+                style: GoogleFonts.poppins(
                     fontSize: 30,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
@@ -43,7 +43,7 @@ class _LoginpageState extends State<Loginpage> {
               padding: const EdgeInsets.only(left: 35, right: 20),
               child: Text(
                 "Please enter your credentials below, there is a dish waiting for you",
-                style: GoogleFonts.spaceMono(fontSize: 18, color: Colors.white),
+                style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
               ),
             ),
             SizedBox(
@@ -71,10 +71,10 @@ class _LoginpageState extends State<Loginpage> {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        style: GoogleFonts.spaceMono(),
+                        style: GoogleFonts.poppins(),
                         decoration: InputDecoration(
                             hintText: "Enter your email address",
-                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            hintStyle: GoogleFonts.poppins(fontSize: 15),
                             border: InputBorder.none),
                       ),
                     ),
@@ -91,10 +91,10 @@ class _LoginpageState extends State<Loginpage> {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        style: GoogleFonts.spaceMono(),
+                        style: GoogleFonts.poppins(),
                         decoration: InputDecoration(
                             hintText: "Enter your password",
-                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            hintStyle: GoogleFonts.poppins(fontSize: 15),
                             border: InputBorder.none),
                       ),
                     ),
@@ -111,7 +111,7 @@ class _LoginpageState extends State<Loginpage> {
                       child: TextButton(
                           child: Text(
                             "Login",
-                            style: GoogleFonts.spaceMono(
+                            style: GoogleFonts.poppins(
                                 fontSize: 18, color: Colors.white),
                           ),
                           onPressed: () {
@@ -129,7 +129,7 @@ class _LoginpageState extends State<Loginpage> {
                       children: [
                         Text(
                           "New User?",
-                          style: GoogleFonts.spaceMono(
+                          style: GoogleFonts.poppins(
                               fontSize: 18, color: Colors.white),
                         ),
                         SizedBox(
@@ -137,7 +137,7 @@ class _LoginpageState extends State<Loginpage> {
                         ),
                         InkWell(
                           child: Text("Register",
-                              style: GoogleFonts.spaceMono(
+                              style: GoogleFonts.poppins(
                                   fontSize: 18,
                                   color: Color.fromARGB(255, 36, 48, 79),
                                   fontWeight: FontWeight.bold)),

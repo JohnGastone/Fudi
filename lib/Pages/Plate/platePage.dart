@@ -103,8 +103,7 @@ class _PlatePageState extends State<PlatePage> {
                 backgroundColor: Colors.green,
                 child: Text(
                   "Add more to this plate",
-                  style:
-                      GoogleFonts.spaceMono(fontSize: 18, color: Colors.white),
+                  style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
                 ),
               ),
             ),
@@ -115,7 +114,7 @@ class _PlatePageState extends State<PlatePage> {
             children: [
               Text(
                 "Swipe an item to the left to remove it",
-                style: GoogleFonts.spaceMono(fontSize: 16),
+                style: GoogleFonts.poppins(fontSize: 16),
               ),
               ListView.builder(
                 shrinkWrap: true,
@@ -147,7 +146,7 @@ class _PlatePageState extends State<PlatePage> {
                     padding: const EdgeInsets.all(2.0),
                     child: Text(
                       "Total: \$ ${total.toStringAsFixed(2)}", // Display total price
-                      style: GoogleFonts.spaceMono(
+                      style: GoogleFonts.poppins(
                           fontSize: 17, color: Colors.white),
                     ),
                   ),
@@ -166,8 +165,8 @@ class _PlatePageState extends State<PlatePage> {
                   },
                   child: Text(
                     "Continue to Payment",
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 17, color: Colors.white),
+                    style:
+                        GoogleFonts.poppins(fontSize: 17, color: Colors.white),
                   ),
                 ),
               ),
@@ -209,86 +208,96 @@ class _PlatePageState extends State<PlatePage> {
             borderRadius: BorderRadius.circular(30),
             color: Colors.white54,
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  cartItems[index]['image'],
-                  height: 70,
-                  width: 70,
-                ),
-                const SizedBox(width: 20),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "${cartItems[index]['name']}",
-                        style: GoogleFonts.spaceMono(fontSize: 20),
-                      ),
-                      const SizedBox(height: 6),
-                      Text.rich(TextSpan(children: <TextSpan>[
-                        TextSpan(
-                            text: "Size: ",
-                            style: GoogleFonts.poppins(
-                                fontSize: 19, color: Colors.grey)),
-                        TextSpan(
-                          text: cartItems[index]['size'],
-                          style: GoogleFonts.spaceMono(
-                              fontSize: 18, color: Colors.grey),
-                        ),
-                      ])),
-                      const SizedBox(height: 6),
-                      Text(
-                        "\$ ${cartItems[index]['price']}",
-                        style: GoogleFonts.spaceMono(
-                            fontSize: 25, color: Colors.green),
-                      ),
-                    ],
+          child: Flexible(
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    cartItems[index]['image'],
+                    height: 70,
+                    width: 70,
                   ),
-                ),
-                const SizedBox(width: 20),
-                SizedBox(
-                  height: 140,
-                  width: 30,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 215, 211, 211),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                  const SizedBox(width: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        InkWell(
-                          child: Text(
-                            "+",
-                            style: GoogleFonts.spaceMono(fontSize: 30),
-                          ),
-                          onTap: () {
-                            _plateCounter(index);
-                          },
-                        ),
                         Text(
-                          "${cartItems[index]['quantity']}",
-                          style: GoogleFonts.spaceMono(
-                              fontSize: 20, color: Colors.green),
+                          "${cartItems[index]['name']}",
+                          style: GoogleFonts.poppins(fontSize: 20),
+                          maxLines: 2, // Restrict to 2 lines
+                          overflow: TextOverflow
+                              .ellipsis, // Add ellipsis for overflow
+                          softWrap: true, // Enable wrapping
                         ),
-                        InkWell(
-                          child: Text(
-                            "-",
-                            style: GoogleFonts.spaceMono(fontSize: 30),
-                          ),
-                          onTap: () {
-                            _plateDecrement(index);
-                          },
-                        )
+                        const SizedBox(height: 6),
+                        Text.rich(TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: "Size: ",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 19, color: Colors.grey)),
+                          TextSpan(
+                            text: cartItems[index]['size'] == 'S'
+                                ? 'Small'
+                                : cartItems[index]['size'] == 'M'
+                                    ? 'Medium'
+                                    : 'Large', // Default case for 'L'
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, color: Colors.grey),
+                          )
+                        ])),
+                        const SizedBox(height: 6),
+                        Text(
+                          "\$ ${cartItems[index]['price']}",
+                          style: GoogleFonts.poppins(
+                              fontSize: 25, color: Colors.green),
+                        ),
                       ],
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 20),
+                  SizedBox(
+                    height: 140,
+                    width: 30,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 215, 211, 211),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        children: [
+                          InkWell(
+                            child: Text(
+                              "+",
+                              style: GoogleFonts.poppins(fontSize: 30),
+                            ),
+                            onTap: () {
+                              _plateCounter(index);
+                            },
+                          ),
+                          Text(
+                            "${cartItems[index]['quantity']}",
+                            style: GoogleFonts.poppins(
+                                fontSize: 20, color: Colors.green),
+                          ),
+                          InkWell(
+                            child: Text(
+                              "-",
+                              style: GoogleFonts.poppins(fontSize: 30),
+                            ),
+                            onTap: () {
+                              _plateDecrement(index);
+                            },
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

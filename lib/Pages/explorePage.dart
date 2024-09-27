@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 return AlertDialog(
                                   title: Text(
                                     "Location",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                         fontSize: 16, color: Colors.black),
                                   ),
                                   content: Column(
@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText: "Enter your location"),
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 16, color: Colors.black),
                                       ),
                                       SizedBox(
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         child: FloatingActionButton(
                                             backgroundColor: Colors.green,
                                             child: Text("Pick from the map",
-                                                style: GoogleFonts.spaceMono(
+                                                style: GoogleFonts.poppins(
                                                     fontSize: 16)),
                                             onPressed: () {
                                               // Integration to google maps
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         },
                                         child: Text(
                                           "Cancel",
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 16,
                                               color: Colors.black),
                                         )),
@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         },
                                         child: Text(
                                           "OK",
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 16,
                                               color: Colors.black),
                                         ))
@@ -128,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Text(
                         "Nathan John",
-                        style: GoogleFonts.spaceMono(fontSize: 16),
+                        style: GoogleFonts.poppins(fontSize: 16),
                       ),
                       SizedBox(
                         width: 10,
@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 return AlertDialog(
                                   title: Text(
                                     "User Manager  ",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                         fontSize: 16, color: Colors.black),
                                   ),
                                   content: Row(
@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               backgroundColor: Colors.green,
                                               child: Text(
                                                 "Log Out",
-                                                style: GoogleFonts.spaceMono(
+                                                style: GoogleFonts.poppins(
                                                     fontSize: 16),
                                               ),
                                               onPressed: () {
@@ -186,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               backgroundColor: Colors.green,
                                               child: Text(
                                                 "Profile",
-                                                style: GoogleFonts.spaceMono(
+                                                style: GoogleFonts.poppins(
                                                     fontSize: 16),
                                               ),
                                               onPressed: () {
@@ -237,9 +237,9 @@ class _MyHomePageState extends State<MyHomePage> {
               right: 1,
               child: ClipRRect(
                 child: BottomNavigationBar(
-                  selectedLabelStyle: GoogleFonts.spaceMono(
+                  selectedLabelStyle: GoogleFonts.poppins(
                       fontSize: 14, fontWeight: FontWeight.bold),
-                  unselectedLabelStyle: GoogleFonts.spaceMono(
+                  unselectedLabelStyle: GoogleFonts.poppins(
                       fontSize: 14, fontWeight: FontWeight.bold),
                   backgroundColor: const Color.fromARGB(58, 52, 51, 51),
                   items: const <BottomNavigationBarItem>[
@@ -305,21 +305,21 @@ class _ExplorePageState extends State<ExplorePage> {
                 child: Text.rich(TextSpan(children: <TextSpan>[
                   TextSpan(
                     text: "Get your food",
-                    style: GoogleFonts.spaceMono(
+                    style: GoogleFonts.poppins(
                       fontSize: 30,
                       color: const Color.fromARGB(255, 99, 98, 98),
                     ),
                   ),
                   TextSpan(
                     text: " Delivered",
-                    style: GoogleFonts.spaceMono(
+                    style: GoogleFonts.poppins(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         color: Colors.black),
                   ),
                   TextSpan(
                       text: " at your doorstep.",
-                      style: GoogleFonts.spaceMono(
+                      style: GoogleFonts.poppins(
                         fontSize: 22,
                         color: const Color.fromARGB(255, 99, 98, 98),
                       ))
@@ -359,7 +359,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                 ),
                                 Text(
                                   displayList[index].categoryName!,
-                                  style: GoogleFonts.spaceMono(
+                                  style: GoogleFonts.poppins(
                                     fontSize: 17,
                                   ),
                                 ),
@@ -401,13 +401,13 @@ class _ExplorePageState extends State<ExplorePage> {
                     Text.rich(TextSpan(children: <TextSpan>[
                       TextSpan(
                           text: "Popular Now",
-                          style: GoogleFonts.spaceMono(
+                          style: GoogleFonts.poppins(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                     ])),
                     Text.rich(TextSpan(children: <TextSpan>[
                       TextSpan(
                           text: "View all",
-                          style: GoogleFonts.spaceMono(
+                          style: GoogleFonts.poppins(
                               fontSize: 20,
                               fontWeight: FontWeight.w100,
                               color: Colors.green))
@@ -442,7 +442,7 @@ class _ExplorePageState extends State<ExplorePage> {
                             ),
                             Text(
                               displayPopularFoods[index].foodName!,
-                              style: GoogleFonts.spaceMono(
+                              style: GoogleFonts.poppins(
                                 fontSize: 19,
                               ),
                             ),
@@ -453,7 +453,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                   Center(
                                     child: Text(
                                         displayPopularFoods[index].foodTag!,
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                           fontSize: 15,
                                           color: const Color.fromARGB(
                                               255, 99, 98, 98),
@@ -471,11 +471,11 @@ class _ExplorePageState extends State<ExplorePage> {
                             Text.rich(TextSpan(children: <TextSpan>[
                               TextSpan(
                                   text: "\$ ",
-                                  style: GoogleFonts.spaceMono(fontSize: 20)),
+                                  style: GoogleFonts.poppins(fontSize: 20)),
                               TextSpan(
                                 text:
                                     "${displayPopularFoods[index].foodPrice} ",
-                                style: GoogleFonts.spaceMono(
+                                style: GoogleFonts.poppins(
                                     fontSize: 20, color: Colors.green),
                               )
                             ]))
@@ -504,8 +504,8 @@ class _ExplorePageState extends State<ExplorePage> {
           ),
           Text(
             "Are you looking for a specific dish? ",
-            style: GoogleFonts.spaceMono(
-                fontSize: 15, fontWeight: FontWeight.bold),
+            style:
+                GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 5,
@@ -521,11 +521,11 @@ class _ExplorePageState extends State<ExplorePage> {
               child: Padding(
                 padding: const EdgeInsets.only(left: 10, bottom: 14),
                 child: TextField(
-                  style: GoogleFonts.spaceMono(fontSize: 14),
+                  style: GoogleFonts.poppins(fontSize: 14),
                   onChanged: (value) => updateList(value),
                   decoration: InputDecoration(
                       hintText: "E.g Makange Nyama",
-                      hintStyle: GoogleFonts.spaceMono(fontSize: 12),
+                      hintStyle: GoogleFonts.poppins(fontSize: 12),
                       suffixIcon: Padding(
                         padding: const EdgeInsets.only(top: 5),
                         child: Icon(

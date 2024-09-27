@@ -88,8 +88,8 @@ class _FudiDescriptionState extends State<FudiDescription> {
                   backgroundColor: Colors.green,
                   child: Text(
                     "Back",
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 16, color: Colors.white),
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: Colors.white),
                   ),
                   onPressed: () {
                     Navigator.pop(context);
@@ -118,7 +118,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                 RichText(
                     text: TextSpan(
                         text: foodName,
-                        style: GoogleFonts.spaceMono(
+                        style: GoogleFonts.poppins(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
                             color: Colors.black))),
@@ -130,12 +130,12 @@ class _FudiDescriptionState extends State<FudiDescription> {
                         children: [
                           Text(
                             "\$ $foodPrice",
-                            style: GoogleFonts.spaceMono(
+                            style: GoogleFonts.poppins(
                                 fontSize: 35, color: Colors.green),
                           ),
                           Text(
                             "Size",
-                            style: GoogleFonts.spaceMono(
+                            style: GoogleFonts.poppins(
                               fontSize: 20,
                               color: const Color.fromARGB(255, 99, 98, 98),
                             ),
@@ -152,7 +152,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                                       : Color.fromARGB(255, 209, 204, 204),
                                   child: Text(
                                     "S",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w300,
                                       color: selectedSize == "S"
@@ -179,7 +179,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                                   child: Center(
                                     child: Text(
                                       "M",
-                                      style: GoogleFonts.spaceMono(
+                                      style: GoogleFonts.poppins(
                                         fontSize: 20,
                                         color: selectedSize == "M"
                                             ? Colors.white
@@ -200,7 +200,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                                       : Color.fromARGB(255, 209, 204, 204),
                                   child: Text(
                                     "L",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w300,
                                       color: selectedSize == "L"
@@ -214,7 +214,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                           ),
                           Text(
                             "Quantity",
-                            style: GoogleFonts.spaceMono(
+                            style: GoogleFonts.poppins(
                               fontSize: 20,
                               color: const Color.fromARGB(255, 99, 98, 98),
                             ),
@@ -241,7 +241,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                               ),
                               Text(
                                 "$_counter",
-                                style: GoogleFonts.spaceMono(fontSize: 15),
+                                style: GoogleFonts.poppins(fontSize: 15),
                               ),
                               SizedBox(
                                 width: 10,
@@ -284,7 +284,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                           ),
                           Text(
                             "4.9",
-                            style: GoogleFonts.spaceMono(fontSize: 15),
+                            style: GoogleFonts.poppins(fontSize: 15),
                           )
                         ],
                       ),
@@ -303,7 +303,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                           ),
                           Text(
                             "145 cal",
-                            style: GoogleFonts.spaceMono(fontSize: 15),
+                            style: GoogleFonts.poppins(fontSize: 15),
                           )
                         ],
                       ),
@@ -321,7 +321,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                           ),
                           Text(
                             "30 minutes",
-                            style: GoogleFonts.spaceMono(fontSize: 15),
+                            style: GoogleFonts.poppins(fontSize: 15),
                           )
                         ],
                       ),
@@ -329,13 +329,13 @@ class _FudiDescriptionState extends State<FudiDescription> {
                 Padding(
                   padding: const EdgeInsets.only(right: 120),
                   child: Text("Description",
-                      style: GoogleFonts.spaceMono(
+                      style: GoogleFonts.poppins(
                           fontSize: 35, fontWeight: FontWeight.bold)),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(25.0),
                   child: Text(foodDescription!,
-                      style: GoogleFonts.spaceMono(fontSize: 18)),
+                      style: GoogleFonts.poppins(fontSize: 18)),
                 ),
                 SizedBox(
                   height: 50,
@@ -365,8 +365,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                 },
                 child: Text(
                   "Add to plate",
-                  style:
-                      GoogleFonts.spaceMono(fontSize: 20, color: Colors.white),
+                  style: GoogleFonts.poppins(fontSize: 20, color: Colors.white),
                 ),
               ),
             ),

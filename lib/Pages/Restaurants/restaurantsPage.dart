@@ -41,7 +41,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
             ),
             Text(
               "Are you looking for a specific dish spot? ",
-              style: GoogleFonts.spaceMono(
+              style: GoogleFonts.poppins(
                   fontSize: 15, fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -58,11 +58,11 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10, bottom: 14),
                   child: TextField(
-                    style: GoogleFonts.spaceMono(fontSize: 14),
+                    style: GoogleFonts.poppins(fontSize: 14),
                     onChanged: (value) => updateList(value),
                     decoration: InputDecoration(
                         hintText: "E.g Unyamani Cafe",
-                        hintStyle: GoogleFonts.spaceMono(fontSize: 12),
+                        hintStyle: GoogleFonts.poppins(fontSize: 12),
                         suffixIcon: Padding(
                           padding: const EdgeInsets.only(top: 5),
                           child: Icon(
@@ -88,7 +88,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
               padding: const EdgeInsets.only(right: 80),
               child: Text(
                 "Trending this week",
-                style: GoogleFonts.spaceMono(
+                style: GoogleFonts.poppins(
                     fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
@@ -144,8 +144,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                   child: Center(
                                     child: Text(
                                       "${displayList[index].restaurantRanking!}",
-                                      style:
-                                          GoogleFonts.spaceMono(fontSize: 14),
+                                      style: GoogleFonts.poppins(fontSize: 14),
                                     ),
                                   ),
                                 ),
@@ -169,7 +168,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                       child: Text(
                                         displayList[index].restaurantName!,
                                         style:
-                                            GoogleFonts.spaceMono(fontSize: 15),
+                                            GoogleFonts.poppins(fontSize: 15),
                                         overflow: TextOverflow
                                             .ellipsis, // Handle long text
                                       ),
@@ -185,7 +184,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                       Text(
                                         "${displayList[index].restaurantRating!}",
                                         style:
-                                            GoogleFonts.spaceMono(fontSize: 15),
+                                            GoogleFonts.poppins(fontSize: 15),
                                       ),
                                     ],
                                   ),
@@ -200,8 +199,8 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                         child: Text(
                                           displayList[index]
                                               .restaurantLocation!,
-                                          style: GoogleFonts.spaceMono(
-                                              fontSize: 15),
+                                          style:
+                                              GoogleFonts.poppins(fontSize: 15),
                                           overflow: TextOverflow
                                               .ellipsis, // Handle long text
                                         ),
@@ -224,7 +223,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 padding: const EdgeInsets.only(right: 25),
                 child: Text(
                   "Popular Restaurants/Cafe",
-                  style: GoogleFonts.spaceMono(
+                  style: GoogleFonts.poppins(
                       fontSize: 22, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -294,7 +293,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                               color: Colors.green),
                                           Text(
                                             displayList[index].restaurantName!,
-                                            style: GoogleFonts.spaceMono(
+                                            style: GoogleFonts.poppins(
                                                 fontSize: 15),
                                           )
                                         ],
@@ -308,7 +307,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                                 color: Colors.green),
                                             Text(
                                               "${displayList[index].restaurantRating!}",
-                                              style: GoogleFonts.spaceMono(
+                                              style: GoogleFonts.poppins(
                                                   fontSize: 15),
                                             )
                                           ],
@@ -326,7 +325,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                             Text(
                                               displayList[index]
                                                   .restaurantLocation!,
-                                              style: GoogleFonts.spaceMono(
+                                              style: GoogleFonts.poppins(
                                                   fontSize: 15),
                                             ),
                                           ],
@@ -345,7 +344,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                                             Text(
                                               displayList[index]
                                                   .restaurantType!,
-                                              style: GoogleFonts.spaceMono(
+                                              style: GoogleFonts.poppins(
                                                   fontSize: 15),
                                             )
                                           ],

@@ -96,7 +96,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         width: 10,
                       ),
                       Text(restaurantName!,
-                          style: GoogleFonts.spaceMono(
+                          style: GoogleFonts.poppins(
                               fontSize: 20,
                               color: Colors.white,
                               fontWeight: FontWeight.bold)),
@@ -116,13 +116,13 @@ class _RestaurantPageState extends State<RestaurantPage> {
                               ),
                               Text(
                                 "10-17",
-                                style: GoogleFonts.spaceMono(
+                                style: GoogleFonts.poppins(
                                     fontSize: 14, color: Colors.white),
                               )
                             ],
                           ),
                           Text("mins",
-                              style: GoogleFonts.spaceMono(
+                              style: GoogleFonts.poppins(
                                   fontSize: 14, color: Colors.grey))
                         ],
                       )
@@ -139,7 +139,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       ),
                       Text(
                         " $restaurantRating",
-                        style: GoogleFonts.spaceMono(
+                        style: GoogleFonts.poppins(
                             fontSize: 15, color: Colors.white),
                       ),
                       SizedBox(
@@ -157,7 +157,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                             children: [
                               Text(
                                 "Map",
-                                style: GoogleFonts.spaceMono(fontSize: 15),
+                                style: GoogleFonts.poppins(fontSize: 15),
                               ),
                               SizedBox(
                                 width: 10,
@@ -178,8 +178,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   padding: EdgeInsets.only(right: 225),
                   child: Text(
                     restaurantLocation!,
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 15, color: Colors.white),
+                    style:
+                        GoogleFonts.poppins(fontSize: 15, color: Colors.white),
                   ),
                 ),
                 SizedBox(
@@ -189,8 +189,8 @@ class _RestaurantPageState extends State<RestaurantPage> {
                   width: 250,
                   height: 50,
                   child: TextField(
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 15, color: Colors.white),
+                    style:
+                        GoogleFonts.poppins(fontSize: 15, color: Colors.white),
                     autocorrect: EditableText.debugDeterministicCursor,
                     onChanged: (value) => updateList(value),
                     decoration: InputDecoration(
@@ -206,7 +206,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       ),
                       label: Text(
                         "Search food ",
-                        style: GoogleFonts.spaceMono(
+                        style: GoogleFonts.poppins(
                             fontSize: 15, color: Colors.white),
                       ),
                     ),
@@ -233,14 +233,14 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                 children: [
                                   Text(
                                     displayFoods[index].foodName!,
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                         fontSize: 18, color: Colors.white),
                                   ),
                                   SizedBox(
                                     height: 5,
                                   ),
                                   Text("Tsh ${displayFoods[index].foodPrice}",
-                                      style: GoogleFonts.spaceMono(
+                                      style: GoogleFonts.poppins(
                                           fontSize: 16, color: Colors.green)),
                                   SizedBox(
                                     height: 10,
@@ -256,7 +256,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                       ),
                                       Text(
                                         "${displayFoods[index].preparationTime} Minutes",
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 15,
                                             color: Colors.greenAccent),
                                       ),
@@ -281,7 +281,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                       Text(
                                         "Add to Plate",
                                         style:
-                                            GoogleFonts.spaceMono(fontSize: 11),
+                                            GoogleFonts.poppins(fontSize: 11),
                                       ),
                                       SizedBox(
                                         width: 3,
@@ -305,7 +305,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                           ),
                           Text(
                             displayFoods[index].itemSeparator!,
-                            style: GoogleFonts.spaceMono(
+                            style: GoogleFonts.poppins(
                                 fontSize: 15, color: Colors.white),
                           )
                         ],

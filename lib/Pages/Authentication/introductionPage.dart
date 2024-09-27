@@ -38,7 +38,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
               ),
               Text(
                 "Hello.",
-                style: GoogleFonts.spaceMono(
+                style: GoogleFonts.poppins(
                     fontSize: 60,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
@@ -50,7 +50,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                   children: [
                     Text(
                       "Let's get you a dish",
-                      style: GoogleFonts.spaceMono(
+                      style: GoogleFonts.poppins(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Colors.white),
@@ -77,7 +77,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                     child: Center(
                       child: Text(
                         "Login",
-                        style: GoogleFonts.spaceMono(fontSize: 30),
+                        style: GoogleFonts.poppins(fontSize: 30),
                       ),
                     ),
                   ),
@@ -99,7 +99,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                         )),
                     Text(
                       "  Or  ",
-                      style: GoogleFonts.spaceMono(
+                      style: GoogleFonts.poppins(
                           fontSize: 20, color: Colors.white),
                     ),
                     SizedBox(
@@ -124,7 +124,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
                   child: Center(
                     child: Text(
                       "Sign Up",
-                      style: GoogleFonts.spaceMono(fontSize: 30),
+                      style: GoogleFonts.poppins(fontSize: 30),
                     ),
                   ),
                 ),
