@@ -31,8 +31,8 @@ class _paymentPageState extends State<paymentPage> {
                   backgroundColor: Colors.green,
                   child: Text(
                     "Back",
-                    style: GoogleFonts.spaceMono(
-                        fontSize: 16, color: Colors.white),
+                    style:
+                        GoogleFonts.poppins(fontSize: 16, color: Colors.white),
                   ),
                   onPressed: () {
                     Navigator.pop(context);
@@ -43,7 +43,7 @@ class _paymentPageState extends State<paymentPage> {
             ),
             Text(
               "Choose a payment method",
-              style: GoogleFonts.spaceMono(fontSize: 20),
+              style: GoogleFonts.poppins(fontSize: 20),
             ),
           ],
         )),
@@ -70,7 +70,7 @@ class _paymentPageState extends State<paymentPage> {
                       ),
                       Text(
                         "Mobile Network Operators",
-                        style: GoogleFonts.spaceMono(fontSize: 17),
+                        style: GoogleFonts.poppins(fontSize: 17),
                       )
                     ],
                   ),
@@ -94,7 +94,7 @@ class _paymentPageState extends State<paymentPage> {
                                 return AlertDialog(
                                   title: Text(
                                     "Pay via Halopesa",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                         fontSize: 16, color: Colors.black),
                                   ),
                                   content: Column(
@@ -111,7 +111,7 @@ class _paymentPageState extends State<paymentPage> {
                                             border: OutlineInputBorder(),
                                             hintText:
                                                 "Enter your Halotel number"),
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 15, color: Colors.black),
                                       ),
                                       SizedBox(
@@ -122,7 +122,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: FloatingActionButton(
                                             backgroundColor: Colors.green,
                                             child: Text("Pay",
-                                                style: GoogleFonts.spaceMono(
+                                                style: GoogleFonts.poppins(
                                                     fontSize: 16)),
                                             onPressed: () {
                                               // Integration to google maps
@@ -138,7 +138,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: Center(
                                           child: Text(
                                             "Cancel",
-                                            style: GoogleFonts.spaceMono(
+                                            style: GoogleFonts.poppins(
                                                 fontSize: 16,
                                                 color: Colors.black),
                                           ),
@@ -160,7 +160,7 @@ class _paymentPageState extends State<paymentPage> {
                                 return AlertDialog(
                                   title: Text(
                                     "Pay via M-pesa",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                         fontSize: 16, color: Colors.black),
                                   ),
                                   content: Column(
@@ -177,7 +177,7 @@ class _paymentPageState extends State<paymentPage> {
                                             border: OutlineInputBorder(),
                                             hintText:
                                                 "Enter your Vodacom number"),
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 15, color: Colors.black),
                                       ),
                                       SizedBox(
@@ -188,7 +188,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: FloatingActionButton(
                                             backgroundColor: Colors.green,
                                             child: Text("Pay",
-                                                style: GoogleFonts.spaceMono(
+                                                style: GoogleFonts.poppins(
                                                     fontSize: 16)),
                                             onPressed: () {
                                               // Integration to google maps
@@ -204,7 +204,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: Center(
                                           child: Text(
                                             "Cancel",
-                                            style: GoogleFonts.spaceMono(
+                                            style: GoogleFonts.poppins(
                                                 fontSize: 16,
                                                 color: Colors.black),
                                           ),
@@ -226,7 +226,7 @@ class _paymentPageState extends State<paymentPage> {
                                 return AlertDialog(
                                   title: Text(
                                     "Pay via Tigopesa",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                         fontSize: 16, color: Colors.black),
                                   ),
                                   content: Column(
@@ -242,7 +242,7 @@ class _paymentPageState extends State<paymentPage> {
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText: "Enter your Tigo number"),
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 15, color: Colors.black),
                                       ),
                                       SizedBox(
@@ -253,7 +253,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: FloatingActionButton(
                                             backgroundColor: Colors.green,
                                             child: Text("Pay",
-                                                style: GoogleFonts.spaceMono(
+                                                style: GoogleFonts.poppins(
                                                     fontSize: 16)),
                                             onPressed: () {
                                               // Integration to google maps
@@ -269,7 +269,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: Center(
                                           child: Text(
                                             "Cancel",
-                                            style: GoogleFonts.spaceMono(
+                                            style: GoogleFonts.poppins(
                                                 fontSize: 16,
                                                 color: Colors.black),
                                           ),
@@ -291,7 +291,7 @@ class _paymentPageState extends State<paymentPage> {
                                 return AlertDialog(
                                   title: Text(
                                     "Pay via Airtel money",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                         fontSize: 16, color: Colors.black),
                                   ),
                                   content: Column(
@@ -308,7 +308,7 @@ class _paymentPageState extends State<paymentPage> {
                                             border: OutlineInputBorder(),
                                             hintText:
                                                 "Enter your Airtel number"),
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 15, color: Colors.black),
                                       ),
                                       SizedBox(
@@ -319,7 +319,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: FloatingActionButton(
                                             backgroundColor: Colors.green,
                                             child: Text("Pay",
-                                                style: GoogleFonts.spaceMono(
+                                                style: GoogleFonts.poppins(
                                                     fontSize: 16)),
                                             onPressed: () {
                                               // Integration to google maps
@@ -335,7 +335,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: Center(
                                           child: Text(
                                             "Cancel",
-                                            style: GoogleFonts.spaceMono(
+                                            style: GoogleFonts.poppins(
                                                 fontSize: 16,
                                                 color: Colors.black),
                                           ),
@@ -365,7 +365,7 @@ class _paymentPageState extends State<paymentPage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "Pay via VISA or MASTERCARD ",
-                          style: GoogleFonts.spaceMono(fontSize: 17),
+                          style: GoogleFonts.poppins(fontSize: 17),
                         ),
                       )
                     ],
@@ -392,7 +392,7 @@ class _paymentPageState extends State<paymentPage> {
                                   return AlertDialog(
                                     title: Text(
                                       "Pay via CRDB Bank",
-                                      style: GoogleFonts.spaceMono(
+                                      style: GoogleFonts.poppins(
                                           fontSize: 16, color: Colors.black),
                                     ),
                                     content: Column(
@@ -409,7 +409,7 @@ class _paymentPageState extends State<paymentPage> {
                                           decoration: InputDecoration(
                                               border: OutlineInputBorder(),
                                               hintText: "Account Number"),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -427,7 +427,7 @@ class _paymentPageState extends State<paymentPage> {
                                               border: OutlineInputBorder(),
                                               hintText:
                                                   "Account expiration date"),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -444,7 +444,7 @@ class _paymentPageState extends State<paymentPage> {
                                           decoration: InputDecoration(
                                               border: OutlineInputBorder(),
                                               hintText: "Account's CVV "),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -456,7 +456,7 @@ class _paymentPageState extends State<paymentPage> {
                                           child: FloatingActionButton(
                                               backgroundColor: Colors.green,
                                               child: Text("Pay",
-                                                  style: GoogleFonts.spaceMono(
+                                                  style: GoogleFonts.poppins(
                                                       fontSize: 16)),
                                               onPressed: () {
                                                 // Integration to CRDB payment API
@@ -472,7 +472,7 @@ class _paymentPageState extends State<paymentPage> {
                                           child: Center(
                                             child: Text(
                                               "Cancel",
-                                              style: GoogleFonts.spaceMono(
+                                              style: GoogleFonts.poppins(
                                                   fontSize: 16,
                                                   color: Colors.black),
                                             ),
@@ -494,7 +494,7 @@ class _paymentPageState extends State<paymentPage> {
                                   return AlertDialog(
                                     title: Text(
                                       "Pay via NMB Bank",
-                                      style: GoogleFonts.spaceMono(
+                                      style: GoogleFonts.poppins(
                                           fontSize: 16, color: Colors.black),
                                     ),
                                     content: Column(
@@ -505,7 +505,7 @@ class _paymentPageState extends State<paymentPage> {
                                           decoration: InputDecoration(
                                               border: OutlineInputBorder(),
                                               hintText: "Account Number"),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -518,7 +518,7 @@ class _paymentPageState extends State<paymentPage> {
                                               border: OutlineInputBorder(),
                                               hintText:
                                                   "Account expiration date"),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -530,7 +530,7 @@ class _paymentPageState extends State<paymentPage> {
                                           decoration: InputDecoration(
                                               border: OutlineInputBorder(),
                                               hintText: "Account's CVV "),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -542,7 +542,7 @@ class _paymentPageState extends State<paymentPage> {
                                           child: FloatingActionButton(
                                               backgroundColor: Colors.green,
                                               child: Text("Pay",
-                                                  style: GoogleFonts.spaceMono(
+                                                  style: GoogleFonts.poppins(
                                                       fontSize: 16)),
                                               onPressed: () {
                                                 // Integration to NMB payment API
@@ -558,7 +558,7 @@ class _paymentPageState extends State<paymentPage> {
                                           child: Center(
                                             child: Text(
                                               "Cancel",
-                                              style: GoogleFonts.spaceMono(
+                                              style: GoogleFonts.poppins(
                                                   fontSize: 16,
                                                   color: Colors.black),
                                             ),
@@ -580,7 +580,7 @@ class _paymentPageState extends State<paymentPage> {
                                   return AlertDialog(
                                     title: Text(
                                       "Pay via NBC Bank",
-                                      style: GoogleFonts.spaceMono(
+                                      style: GoogleFonts.poppins(
                                           fontSize: 16, color: Colors.black),
                                     ),
                                     content: Column(
@@ -591,7 +591,7 @@ class _paymentPageState extends State<paymentPage> {
                                           decoration: InputDecoration(
                                               border: OutlineInputBorder(),
                                               hintText: "Account Number"),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -604,7 +604,7 @@ class _paymentPageState extends State<paymentPage> {
                                               border: OutlineInputBorder(),
                                               hintText:
                                                   "Account expiration date"),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -616,7 +616,7 @@ class _paymentPageState extends State<paymentPage> {
                                           decoration: InputDecoration(
                                               border: OutlineInputBorder(),
                                               hintText: "Account CVV "),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -628,7 +628,7 @@ class _paymentPageState extends State<paymentPage> {
                                           child: FloatingActionButton(
                                               backgroundColor: Colors.green,
                                               child: Text("Pay",
-                                                  style: GoogleFonts.spaceMono(
+                                                  style: GoogleFonts.poppins(
                                                       fontSize: 16)),
                                               onPressed: () {
                                                 // Integration to NBC payment API
@@ -644,7 +644,7 @@ class _paymentPageState extends State<paymentPage> {
                                           child: Center(
                                             child: Text(
                                               "Cancel",
-                                              style: GoogleFonts.spaceMono(
+                                              style: GoogleFonts.poppins(
                                                   fontSize: 16,
                                                   color: Colors.black),
                                             ),
@@ -666,7 +666,7 @@ class _paymentPageState extends State<paymentPage> {
                                   return AlertDialog(
                                     title: Text(
                                       "Pay via Standard Chartered Bank",
-                                      style: GoogleFonts.spaceMono(
+                                      style: GoogleFonts.poppins(
                                           fontSize: 16, color: Colors.black),
                                     ),
                                     content: Column(
@@ -677,7 +677,7 @@ class _paymentPageState extends State<paymentPage> {
                                           decoration: InputDecoration(
                                               border: OutlineInputBorder(),
                                               hintText: "Account Number"),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -690,7 +690,7 @@ class _paymentPageState extends State<paymentPage> {
                                               border: OutlineInputBorder(),
                                               hintText:
                                                   "Account expiration date"),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -702,7 +702,7 @@ class _paymentPageState extends State<paymentPage> {
                                           decoration: InputDecoration(
                                               border: OutlineInputBorder(),
                                               hintText: "Account CVV "),
-                                          style: GoogleFonts.spaceMono(
+                                          style: GoogleFonts.poppins(
                                               fontSize: 15,
                                               color: Colors.black),
                                         ),
@@ -714,7 +714,7 @@ class _paymentPageState extends State<paymentPage> {
                                           child: FloatingActionButton(
                                               backgroundColor: Colors.green,
                                               child: Text("Pay",
-                                                  style: GoogleFonts.spaceMono(
+                                                  style: GoogleFonts.poppins(
                                                       fontSize: 16)),
                                               onPressed: () {
                                                 // Integration to google maps
@@ -730,7 +730,7 @@ class _paymentPageState extends State<paymentPage> {
                                           child: Center(
                                             child: Text(
                                               "Cancel",
-                                              style: GoogleFonts.spaceMono(
+                                              style: GoogleFonts.poppins(
                                                   fontSize: 16,
                                                   color: Colors.black),
                                             ),
@@ -758,7 +758,7 @@ class _paymentPageState extends State<paymentPage> {
                                 return AlertDialog(
                                   title: Text(
                                     "Pay via Equity Bank",
-                                    style: GoogleFonts.spaceMono(
+                                    style: GoogleFonts.poppins(
                                         fontSize: 16, color: Colors.black),
                                   ),
                                   content: Column(
@@ -769,7 +769,7 @@ class _paymentPageState extends State<paymentPage> {
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText: "Account Number"),
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 15, color: Colors.black),
                                       ),
                                       SizedBox(
@@ -781,7 +781,7 @@ class _paymentPageState extends State<paymentPage> {
                                             border: OutlineInputBorder(),
                                             hintText:
                                                 "Account expiration date"),
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 15, color: Colors.black),
                                       ),
                                       SizedBox(
@@ -792,7 +792,7 @@ class _paymentPageState extends State<paymentPage> {
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
                                             hintText: "Account's CVV "),
-                                        style: GoogleFonts.spaceMono(
+                                        style: GoogleFonts.poppins(
                                             fontSize: 15, color: Colors.black),
                                       ),
                                       SizedBox(
@@ -803,7 +803,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: FloatingActionButton(
                                             backgroundColor: Colors.green,
                                             child: Text("Pay",
-                                                style: GoogleFonts.spaceMono(
+                                                style: GoogleFonts.poppins(
                                                     fontSize: 16)),
                                             onPressed: () {
                                               // Integration to CRDB payment API
@@ -819,7 +819,7 @@ class _paymentPageState extends State<paymentPage> {
                                         child: Center(
                                           child: Text(
                                             "Cancel",
-                                            style: GoogleFonts.spaceMono(
+                                            style: GoogleFonts.poppins(
                                                 fontSize: 16,
                                                 color: Colors.black),
                                           ),

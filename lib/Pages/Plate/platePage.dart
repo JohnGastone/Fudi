@@ -5,6 +5,9 @@ import 'package:fudi/Pages/explorePage.dart';
 import 'package:fudi/Pages/Payments/paymentPage.dart';
 import 'package:fudi/models/plateModel.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -79,6 +82,56 @@ class _PlatePageState extends State<PlatePage> {
     });
   }
 
+  // Function to generate PDF invoice
+  Future<void> generateInvoicePdf() async {
+    final cartItems = Provider.of<CartModel>(context, listen: false).cartItems;
+
+    // Create a PDF document
+    final pdf = pw.Document();
+
+    // Add a page with content
+    pdf.addPage(
+      pw.Page(
+        build: (pw.Context context) {
+          return pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            children: [
+              pw.Text('Invoice',
+                  style: pw.TextStyle(
+                      fontSize: 40, fontWeight: pw.FontWeight.bold)),
+              pw.SizedBox(height: 20),
+              pw.Text('Items:', style: const pw.TextStyle(fontSize: 24)),
+              pw.SizedBox(height: 10),
+              pw.TableHelper.fromTextArray(
+                context: context,
+                data: <List<String>>[
+                  <String>['Item', 'Quantity', 'Size', 'Price'],
+                  ...cartItems.map((item) => [
+                        item['name'],
+                        item['quantity'].toString(),
+                        item['size'] == 'S'
+                            ? 'Small'
+                            : item['size'] == 'M'
+                                ? 'Medium'
+                                : 'Large',
+                        '\$ ${item['price'].toStringAsFixed(2)}',
+                      ])
+                ],
+              ),
+              pw.SizedBox(height: 20),
+              pw.Text('Total: \$ ${total.toStringAsFixed(2)}',
+                  style: const pw.TextStyle(fontSize: 24)),
+            ],
+          );
+        },
+      ),
+    );
+
+    // Trigger the download
+    await Printing.layoutPdf(
+        onLayout: (PdfPageFormat format) async => pdf.save());
+  }
+
   @override
   Widget build(BuildContext context) {
     final cartItems = Provider.of<CartModel>(context).cartItems;
@@ -130,44 +183,73 @@ class _PlatePageState extends State<PlatePage> {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding:
+            const EdgeInsets.only(left: 12.0, right: 12, bottom: 12, top: 150),
         child: Align(
           alignment: Alignment.bottomCenter,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                width: 135,
-                child: FloatingActionButton(
-                  heroTag: "total",
-                  backgroundColor: Colors.green,
-                  onPressed: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.all(2.0),
-                    child: Text(
-                      "Total: \$ ${total.toStringAsFixed(2)}", // Display total price
-                      style: GoogleFonts.poppins(
-                          fontSize: 17, color: Colors.white),
+              Padding(
+                padding: const EdgeInsets.only(top: 528.0),
+                child: SizedBox(
+                  width: 135,
+                  child: FloatingActionButton(
+                    heroTag: "total",
+                    backgroundColor: Colors.green,
+                    onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: Text(
+                        "Total: \$ ${total.toStringAsFixed(2)}", // Display total price
+                        style: GoogleFonts.poppins(
+                            fontSize: 17, color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                width: 180,
-                child: FloatingActionButton(
-                  heroTag: "continue_to_payment",
-                  backgroundColor: Colors.green,
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const paymentPage()));
-                  },
-                  child: Text(
-                    "Continue to Payment",
-                    style:
-                        GoogleFonts.poppins(fontSize: 17, color: Colors.white),
-                  ),
+              Padding(
+                padding: const EdgeInsets.only(top: 470.0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: 180,
+                      child: FloatingActionButton(
+                        heroTag: "download_invoice",
+                        backgroundColor: Colors.green,
+                        onPressed: () async {
+                          await generateInvoicePdf(); // Generate PDF when the button is pressed
+                        },
+                        child: Text(
+                          "Download Invoice",
+                          style: GoogleFonts.poppins(
+                              fontSize: 17, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      width: 180,
+                      child: FloatingActionButton(
+                        heroTag: "continue_to_payment",
+                        backgroundColor: Colors.green,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const paymentPage()));
+                        },
+                        child: Text(
+                          "Continue to Payment",
+                          style: GoogleFonts.poppins(
+                              fontSize: 17, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
