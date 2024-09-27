@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Authentication/loginPage.dart';
+import 'package:fudi/Pages/Fav%20Dishes/favDishes.dart';
 import 'package:fudi/Pages/Plate/platePage.dart';
 import 'package:fudi/Pages/Food/foodDescription.dart';
 import 'package:fudi/Pages/Profile/profilePage.dart';
@@ -26,6 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ExplorePage(),
     RestaurantsPage(),
     OrdersPage(),
+    FavdishesPage()
   ];
 
   void _onItemTapped(int index) {
@@ -40,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: const Color.fromARGB(58, 52, 51, 51),
+          backgroundColor: const Color.fromARGB(57, 255, 255, 255),
           title: Column(
             children: [
               Row(
@@ -238,9 +240,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ClipRRect(
                 child: BottomNavigationBar(
                   selectedLabelStyle: GoogleFonts.poppins(
-                      fontSize: 14, fontWeight: FontWeight.bold),
+                      fontSize: 13, fontWeight: FontWeight.bold),
                   unselectedLabelStyle: GoogleFonts.poppins(
-                      fontSize: 14, fontWeight: FontWeight.bold),
+                      fontSize: 13, fontWeight: FontWeight.bold),
                   backgroundColor: const Color.fromARGB(58, 52, 51, 51),
                   items: <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
@@ -266,9 +268,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       icon: Icon(Icons.shopping_basket),
                       label: 'Orders',
                     ),
+                    BottomNavigationBarItem(
+                      icon: Icon(CupertinoIcons.heart_fill),
+                      label: 'Fav Dishes',
+                    ),
                   ],
                   currentIndex: _selectedIndex,
                   selectedItemColor: Colors.green,
+                  unselectedItemColor: const Color.fromARGB(255, 33, 31, 31),
                   onTap: _onItemTapped,
                   elevation: 10,
                 ),
@@ -336,6 +343,29 @@ class _ExplorePageState extends State<ExplorePage> {
                       ))
                 ])),
               ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(left: 25.0, right: 25.0, bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text.rich(TextSpan(children: <TextSpan>[
+                      TextSpan(
+                          text: "Varieties",
+                          style: GoogleFonts.poppins(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                    ])),
+                    Text.rich(TextSpan(children: <TextSpan>[
+                      TextSpan(
+                          text: "View all",
+                          style: GoogleFonts.poppins(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.green))
+                    ]))
+                  ],
+                ),
+              ),
               SizedBox(
                 height: 180,
                 child: ListView.builder(
@@ -354,7 +384,9 @@ class _ExplorePageState extends State<ExplorePage> {
                                 right: 10), // Add space between items
                             decoration: BoxDecoration(
                                 color: Colors.green,
-                                borderRadius: BorderRadius.circular(30)),
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10))),
                             child: Column(
                               children: [
                                 SizedBox(
@@ -414,7 +446,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           text: "View all",
                           style: GoogleFonts.poppins(
                               fontSize: 20,
-                              fontWeight: FontWeight.w100,
+                              fontWeight: FontWeight.w500,
                               color: Colors.green))
                     ]))
                   ],

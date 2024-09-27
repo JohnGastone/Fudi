@@ -37,7 +37,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(
-              height: 10,
+              height: 25,
             ),
             Text(
               "Are you looking for a specific dish spot? ",
@@ -85,7 +85,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(right: 80),
+              padding: const EdgeInsets.only(right: 100),
               child: Text(
                 "Trending this week",
                 style: GoogleFonts.poppins(
