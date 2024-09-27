@@ -223,10 +223,15 @@ class _PlatePageState extends State<PlatePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        cartItems[index]['size'],
-                        style: GoogleFonts.spaceMono(fontSize: 18),
-                      ),
+                      Text.rich(TextSpan(children: <TextSpan>[
+                        TextSpan(
+                            text: "Size: ",
+                            style: GoogleFonts.poppins(fontSize: 19)),
+                        TextSpan(
+                          text: cartItems[index]['size'],
+                          style: GoogleFonts.spaceMono(fontSize: 18),
+                        ),
+                      ])),
                       const SizedBox(height: 10),
                       Text(
                         "\$ ${cartItems[index]['price']}",
