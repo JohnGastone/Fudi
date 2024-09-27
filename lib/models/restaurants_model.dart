@@ -60,7 +60,7 @@ class RestaurantList {
         "Hybrid",
         "A diverse menu featuring a wide range of Tanzanian dishes, with a special emphasis on flavorful spices and herbs."),
     RestaurantModel(
-        "Kazimoto Porks",
+        "Kazimoto Pork",
         4.5,
         "./assets/shishi.png",
         "Segerea",

@@ -128,11 +128,17 @@ class _FudiDescriptionState extends State<FudiDescription> {
                       padding: const EdgeInsets.only(left: 20),
                       child: Column(
                         children: [
-                          Text(
-                            "\$ $foodPrice",
-                            style: GoogleFonts.poppins(
-                                fontSize: 35, color: Colors.green),
-                          ),
+                          Text.rich(TextSpan(children: <TextSpan>[
+                            TextSpan(
+                                text: "Tsh ",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 25, color: Colors.green)),
+                            TextSpan(
+                              text: "$foodPrice", // Default case for 'L'
+                              style: GoogleFonts.poppins(
+                                  fontSize: 20, color: Colors.green),
+                            )
+                          ])),
                           Text(
                             "Size",
                             style: GoogleFonts.poppins(

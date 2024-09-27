@@ -45,7 +45,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
               ),
               SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 50),
                 child: Row(
                   children: [
                     Text(

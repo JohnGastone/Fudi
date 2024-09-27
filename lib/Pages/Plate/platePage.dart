@@ -151,9 +151,9 @@ class _PlatePageState extends State<PlatePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ExplorePage()));
+                          builder: (context) => const MyHomePage()));
                 },
-                backgroundColor: Colors.green,
+                backgroundColor: const Color.fromARGB(58, 52, 51, 51),
                 child: Text(
                   "Add more to this plate",
                   style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
@@ -196,12 +196,12 @@ class _PlatePageState extends State<PlatePage> {
                   width: 135,
                   child: FloatingActionButton(
                     heroTag: "total",
-                    backgroundColor: Colors.green,
+                    backgroundColor: const Color.fromARGB(58, 52, 51, 51),
                     onPressed: () {},
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: Text(
-                        "Total: \$ ${total.toStringAsFixed(2)}", // Display total price
+                        "Total: ${total.toStringAsFixed(2)}", // Display total price
                         style: GoogleFonts.poppins(
                             fontSize: 17, color: Colors.white),
                       ),
@@ -217,7 +217,7 @@ class _PlatePageState extends State<PlatePage> {
                       width: 180,
                       child: FloatingActionButton(
                         heroTag: "download_invoice",
-                        backgroundColor: Colors.green,
+                        backgroundColor: const Color.fromARGB(58, 52, 51, 51),
                         onPressed: () async {
                           await generateInvoicePdf(); // Generate PDF when the button is pressed
                         },
@@ -235,7 +235,7 @@ class _PlatePageState extends State<PlatePage> {
                       width: 180,
                       child: FloatingActionButton(
                         heroTag: "continue_to_payment",
-                        backgroundColor: Colors.green,
+                        backgroundColor: const Color.fromARGB(58, 52, 51, 51),
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -272,7 +272,7 @@ class _PlatePageState extends State<PlatePage> {
         });
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${cartItems[index]['image']} dismissed')),
+          SnackBar(content: Text('${cartItems[index]['name']} dismissed')),
         );
       },
       background: Container(
@@ -332,11 +332,18 @@ class _PlatePageState extends State<PlatePage> {
                           )
                         ])),
                         const SizedBox(height: 6),
-                        Text(
-                          "\$ ${cartItems[index]['price']}",
-                          style: GoogleFonts.poppins(
-                              fontSize: 25, color: Colors.green),
-                        ),
+                        Text.rich(TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: "Tsh ",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 25, color: Colors.green)),
+                          TextSpan(
+                            text:
+                                " ${cartItems[index]['price']}", // Default case for 'L'
+                            style: GoogleFonts.poppins(
+                                fontSize: 20, color: Colors.green),
+                          )
+                        ])),
                       ],
                     ),
                   ),

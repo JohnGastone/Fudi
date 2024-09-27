@@ -13,8 +13,7 @@ class CategoriesList {
     CategoriesModel(categoryName: "Pilau", categoryImage: "assets/pilau.png"),
     CategoriesModel(
         categoryName: "Pizza", categoryImage: "assets/margeritha.png"),
-    CategoriesModel(
-        categoryName: "Dairy", categoryImage: "assets/margeritha.png"),
+    CategoriesModel(categoryName: "Chips", categoryImage: "assets/chips.png"),
   ];
   static List<CategoriesModel> displayList = List.from(foodCategories);
 }

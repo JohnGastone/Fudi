@@ -242,9 +242,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   unselectedLabelStyle: GoogleFonts.poppins(
                       fontSize: 14, fontWeight: FontWeight.bold),
                   backgroundColor: const Color.fromARGB(58, 52, 51, 51),
-                  items: const <BottomNavigationBarItem>[
+                  items: <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
-                      icon: Icon(CupertinoIcons.search),
+                      icon: ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                            _selectedIndex == 0
+                                ? Colors.green
+                                : const Color.fromARGB(255, 33, 31, 31),
+                            BlendMode.srcIn),
+                        child: Image.asset(
+                          "./assets/explore.png",
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
                       label: 'Explore Foods',
                     ),
                     BottomNavigationBarItem(
@@ -375,13 +386,7 @@ class _ExplorePageState extends State<ExplorePage> {
                                       color: Colors.green,
                                     ),
                                   ),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                FudiDescription()));
-                                  },
+                                  onTap: () {},
                                 ),
                               ],
                             ),
@@ -431,7 +436,7 @@ class _ExplorePageState extends State<ExplorePage> {
                         height: 265,
                         width: 100,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 224, 216, 216),
+                            color: Color.fromARGB(255, 230, 221, 221),
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
@@ -470,13 +475,13 @@ class _ExplorePageState extends State<ExplorePage> {
                             ),
                             Text.rich(TextSpan(children: <TextSpan>[
                               TextSpan(
-                                  text: "\$ ",
+                                  text: "Tsh ",
                                   style: GoogleFonts.poppins(fontSize: 20)),
                               TextSpan(
                                 text:
                                     "${displayPopularFoods[index].foodPrice} ",
                                 style: GoogleFonts.poppins(
-                                    fontSize: 20, color: Colors.green),
+                                    fontSize: 15, color: Colors.green),
                               )
                             ]))
                           ],
