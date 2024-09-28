@@ -68,56 +68,58 @@ class FavdishesPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: const Icon(Icons.delete, color: Colors.white),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(25.0),
-        child: Container(
-          width: 250,
-          height: 130,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: Colors.white54,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Image.asset(
-                  favorites[index].foodCoverImage!,
-                  height: 70,
-                  width: 70,
-                ),
-                const SizedBox(width: 20),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        favorites[index].foodName!,
-                        style: GoogleFonts.poppins(fontSize: 20),
-                        maxLines: 2,
-                        overflow:
-                            TextOverflow.ellipsis, // Add ellipsis for overflow
-                        softWrap: true, // Enable wrapping
-                      ),
-                      const SizedBox(height: 6),
-                      const SizedBox(height: 6),
-                      Text.rich(TextSpan(children: <TextSpan>[
-                        TextSpan(
-                            text: "Tsh ",
-                            style: GoogleFonts.poppins(
-                                fontSize: 25, color: Colors.green)),
-                        TextSpan(
-                          text: " ${favorites[index].foodPrice}",
-                          style: GoogleFonts.poppins(
-                              fontSize: 20, color: Colors.green),
-                        )
-                      ])),
-                    ],
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Container(
+            width: 250,
+            height: 130,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: Colors.white54,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset(
+                    favorites[index].foodCoverImage!,
+                    height: 70,
+                    width: 70,
                   ),
-                ),
-              ],
+                  const SizedBox(width: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          favorites[index].foodName!,
+                          style: GoogleFonts.poppins(fontSize: 20),
+                          maxLines: 2,
+                          overflow: TextOverflow
+                              .ellipsis, // Add ellipsis for overflow
+                          softWrap: true, // Enable wrapping
+                        ),
+                        const SizedBox(height: 6),
+                        const SizedBox(height: 6),
+                        Text.rich(TextSpan(children: <TextSpan>[
+                          TextSpan(
+                              text: "Tsh ",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 25, color: Colors.green)),
+                          TextSpan(
+                            text: " ${favorites[index].foodPrice}",
+                            style: GoogleFonts.poppins(
+                                fontSize: 20, color: Colors.green),
+                          )
+                        ])),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

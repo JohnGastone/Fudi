@@ -228,6 +228,9 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 8,
+            ),
             GridView.builder(
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
