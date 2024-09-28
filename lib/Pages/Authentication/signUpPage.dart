@@ -3,11 +3,32 @@
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Authentication/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../explorePage.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
+
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
+  bool _isObscured = true;
+  bool _isObscuredSecond = true;
+
+  // Function to toggle password visibility
+  void _toggleVisibility() {
+    setState(() {
+      _isObscured = !_isObscured;
+    });
+  }
+
+  // Function to toggle password visibility
+  void _toggleVisibilitySecond() {
+    setState(() {
+      _isObscuredSecond = !_isObscuredSecond;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +50,7 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   Text(
                     'Sign',
-                    style: GoogleFonts.spaceMono(
+                    style: GoogleFonts.poppins(
                         fontSize: 50,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
@@ -38,7 +59,7 @@ class SignUpPage extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 105),
                     child: Text(
                       "Up",
-                      style: GoogleFonts.spaceMono(
+                      style: GoogleFonts.poppins(
                           fontSize: 50,
                           color: Colors.white,
                           fontWeight: FontWeight.bold),
@@ -72,10 +93,10 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        style: GoogleFonts.spaceMono(),
+                        style: GoogleFonts.poppins(),
                         decoration: InputDecoration(
                             hintText: "Enter your username i.e. Msambi Nungwa",
-                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            hintStyle: GoogleFonts.poppins(fontSize: 15),
                             border: InputBorder.none),
                       ),
                     ),
@@ -92,11 +113,11 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        style: GoogleFonts.spaceMono(),
+                        style: GoogleFonts.poppins(),
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
                             hintText: "Enter your email address",
-                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            hintStyle: GoogleFonts.poppins(fontSize: 15),
                             border: InputBorder.none),
                       ),
                     ),
@@ -113,11 +134,24 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        style: GoogleFonts.spaceMono(),
+                        style: GoogleFonts.poppins(),
                         decoration: InputDecoration(
                             hintText: "Enter your password",
-                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            hintStyle: GoogleFonts.poppins(fontSize: 15),
+                            suffixIcon: Padding(
+                              padding: const EdgeInsets.only(bottom: 8.0),
+                              child: IconButton(
+                                icon: Icon(
+                                  _isObscured
+                                      ? Icons.visibility_off
+                                      : Icons.visibility,
+                                ),
+                                onPressed:
+                                    _toggleVisibility, // Toggles password visibility
+                              ),
+                            ),
                             border: InputBorder.none),
+                        obscureText: _isObscured,
                       ),
                     ),
                   ),
@@ -133,12 +167,22 @@ class SignUpPage extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
                       child: TextField(
-                        style: GoogleFonts.spaceMono(),
+                        style: GoogleFonts.poppins(),
                         keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                             hintText: "Repeat your pasword",
-                            hintStyle: GoogleFonts.spaceMono(fontSize: 15),
+                            hintStyle: GoogleFonts.poppins(fontSize: 15),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _isObscuredSecond
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                              ),
+                              onPressed:
+                                  _toggleVisibilitySecond, // Toggles password visibility
+                            ),
                             border: InputBorder.none),
+                        obscureText: _isObscuredSecond,
                       ),
                     ),
                   ),
@@ -154,7 +198,7 @@ class SignUpPage extends StatelessWidget {
                       child: TextButton(
                           child: Text(
                             "Create account",
-                            style: GoogleFonts.spaceMono(
+                            style: GoogleFonts.poppins(
                                 fontSize: 18, color: Colors.white),
                           ),
                           onPressed: () {
@@ -172,7 +216,7 @@ class SignUpPage extends StatelessWidget {
                       children: [
                         Text(
                           "Have an account?",
-                          style: GoogleFonts.spaceMono(
+                          style: GoogleFonts.poppins(
                               fontSize: 18, color: Colors.white),
                         ),
                         SizedBox(
@@ -180,7 +224,7 @@ class SignUpPage extends StatelessWidget {
                         ),
                         InkWell(
                           child: Text("Sign In",
-                              style: GoogleFonts.spaceMono(
+                              style: GoogleFonts.poppins(
                                   fontSize: 18,
                                   color: Color.fromARGB(255, 36, 48, 79),
                                   fontWeight: FontWeight.bold)),

@@ -3,6 +3,7 @@
 import "package:flutter/material.dart";
 import "package:fudi/Pages/Authentication/loginPage.dart";
 import "package:fudi/Pages/Authentication/signUpPage.dart";
+import "package:fudi/Pages/explorePage.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class IntroductionPage extends StatefulWidget {
@@ -133,6 +134,21 @@ class _IntroductionPageState extends State<IntroductionPage> {
                       MaterialPageRoute(builder: (context) => SignUpPage()));
                 },
               ),
+              SizedBox(
+                height: 20,
+              ),
+              InkWell(
+                  child: Text(
+                    "Continue as a guest",
+                    style: GoogleFonts.poppins(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyHomePage()));
+                  }),
               SizedBox(
                 height: 80,
               ),

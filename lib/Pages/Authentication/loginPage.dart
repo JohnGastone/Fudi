@@ -13,6 +13,14 @@ class Loginpage extends StatefulWidget {
 }
 
 class _LoginpageState extends State<Loginpage> {
+  bool _isObscured = true;
+  // Function to toggle password visibility
+  void _toggleVisibility() {
+    setState(() {
+      _isObscured = !_isObscured;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,9 +101,20 @@ class _LoginpageState extends State<Loginpage> {
                       child: TextField(
                         style: GoogleFonts.poppins(),
                         decoration: InputDecoration(
-                            hintText: "Enter your password",
-                            hintStyle: GoogleFonts.poppins(fontSize: 15),
-                            border: InputBorder.none),
+                          hintText: "Enter your password",
+                          hintStyle: GoogleFonts.poppins(fontSize: 15),
+                          border: InputBorder.none,
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _isObscured
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                            ),
+                            onPressed:
+                                _toggleVisibility, // Toggles password visibility
+                          ),
+                        ),
+                        obscureText: _isObscured,
                       ),
                     ),
                   ),

@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Plate/platePage.dart';
+import 'package:fudi/models/fav_dishes_model.dart';
 import 'package:fudi/models/plateModel.dart';
 import 'package:fudi/models/popularFoods_model.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,6 +31,15 @@ class _FudiDescriptionState extends State<FudiDescription> {
     setState(() {
       isFavorite = !isFavorite;
     });
+
+    // Access the provider and update the favorite status
+    if (isFavorite) {
+      Provider.of<FavoritesModel>(context, listen: false)
+          .addToFavorites(widget.popularFood!);
+    } else {
+      Provider.of<FavoritesModel>(context, listen: false)
+          .removeFromFavorites(widget.popularFood!);
+    }
   }
 
   // Function to change the selected size
@@ -97,14 +107,9 @@ class _FudiDescriptionState extends State<FudiDescription> {
             ),
             InkWell(
               onTap: toggleFavorite,
-              child: GestureDetector(
-                onTap: toggleFavorite,
-                child: Icon(
-                  isFavorite
-                      ? CupertinoIcons.heart_fill
-                      : CupertinoIcons.heart_fill,
-                  color: isFavorite ? Colors.green : Colors.white,
-                ),
+              child: Icon(
+                isFavorite ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
+                color: isFavorite ? Colors.green : Colors.white,
               ),
             ),
           ]),

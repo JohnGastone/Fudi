@@ -64,32 +64,27 @@ class _PlatePageState extends State<PlatePage> {
   void initState() {
     super.initState();
     _loadFromSharedPreferences();
-    _calculateTotal(); // Calculate total on page load
+    _calculateTotal();
   }
 
-  // Function to calculate total price
   void _calculateTotal() {
     final cartItems = Provider.of<CartModel>(context, listen: false).cartItems;
     double newTotal = 0.0;
 
     for (var item in cartItems) {
-      newTotal +=
-          item['price'] * item['quantity']; // Multiply price by quantity
+      newTotal += item['price'] * item['quantity'];
     }
 
     setState(() {
-      total = newTotal; // Update total state
+      total = newTotal;
     });
   }
 
-  // Function to generate PDF invoice
   Future<void> generateInvoicePdf() async {
     final cartItems = Provider.of<CartModel>(context, listen: false).cartItems;
 
-    // Create a PDF document
     final pdf = pw.Document();
 
-    // Add a page with content
     pdf.addPage(
       pw.Page(
         build: (pw.Context context) {
@@ -127,7 +122,6 @@ class _PlatePageState extends State<PlatePage> {
       ),
     );
 
-    // Trigger the download
     await Printing.layoutPdf(
         onLayout: (PdfPageFormat format) async => pdf.save());
   }
