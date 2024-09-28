@@ -114,12 +114,12 @@ class _PlatePageState extends State<PlatePage> {
                             : item['size'] == 'M'
                                 ? 'Medium'
                                 : 'Large',
-                        '\$ ${item['price'].toStringAsFixed(2)}',
+                        'Tsh ${item['price'].toStringAsFixed(2)}',
                       ])
                 ],
               ),
               pw.SizedBox(height: 20),
-              pw.Text('Total: \$ ${total.toStringAsFixed(2)}',
+              pw.Text('Total: Tsh ${total.toStringAsFixed(2)}',
                   style: const pw.TextStyle(fontSize: 24)),
             ],
           );
