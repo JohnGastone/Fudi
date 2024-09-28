@@ -72,7 +72,7 @@ class FavdishesPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(25.0),
           child: Container(
-            width: 250,
+            width: 350,
             height: 130,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),

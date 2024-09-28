@@ -33,7 +33,7 @@ class PopularFoodsList {
         "A flavorful Indian rice dish made with basmati rice, spices, meat, or vegetables."),
     PopularFoodsModel("./assets/mzuzu.png", "Wali Mzuzu", "Sweet", 15000,
         "A Tanzanian dessert made with coconut milk, rice, and sugar, often served with fruit."),
-    PopularFoodsModel("./assets/margeritha.png", "Nyama Choma", "Spicy", 20000,
+    PopularFoodsModel("./assets/choma.png", "Nyama Choma", "Spicy", 20000,
         "Grilled meat, a popular East African dish seasoned with spices and served with sides like ugali or kachumbari."),
     PopularFoodsModel("./assets/chips.png", "Chips Mayai", "Sweet", 8500,
         "A Tanzanian street food made with french fries (chips) and eggs, often served with ketchup."),
