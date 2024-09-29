@@ -83,7 +83,7 @@ class PopularFoodsList {
         "A fish stew similar to Makange Nyama, but with fish as the main protein source."),
     PopularFoodsModel("./assets/ugali.png", "Ugali", "Shishi Food", 5500,
         "A stiff porridge made from maize flour, a staple food in many parts of East Africa."),
-    PopularFoodsModel("./assets/matoke.png", "Matoke", "Sossie Foods", 10,
+    PopularFoodsModel("./assets/matoke.png", "Matoke", "Sossie Foods", 10000,
         "A traditional East African dish made from mashed plantains, often cooked with meat, tomatoes, and spices."),
   ];
 
