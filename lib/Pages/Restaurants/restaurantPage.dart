@@ -152,7 +152,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                             color: Colors.orangeAccent,
                             borderRadius: BorderRadius.all(Radius.circular(8))),
                         child: Padding(
-                          padding: const EdgeInsets.only(right: 15, left: 25),
+                          padding: const EdgeInsets.only(right: 7, left: 25),
                           child: Row(
                             children: [
                               Text(
@@ -303,11 +303,6 @@ class _RestaurantPageState extends State<RestaurantPage> {
                               ),
                             ],
                           ),
-                          Text(
-                            displayFoods[index].itemSeparator!,
-                            style: GoogleFonts.poppins(
-                                fontSize: 15, color: Colors.white),
-                          )
                         ],
                       ),
                     ),

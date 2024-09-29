@@ -505,50 +505,55 @@ class _ExplorePageState extends State<ExplorePage> {
                             borderRadius: BorderRadius.circular(30)),
                         child: Column(
                           children: [
-                            Image.asset(
-                              displayPopularFoods[index].foodCoverImage!,
-                              height: 90,
-                              width: 90,
-                            ),
-                            Text(
-                              displayPopularFoods[index].foodName!,
-                              style: GoogleFonts.poppins(
-                                fontSize: 19,
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Container(
+                                height: 30,
+                                width: 130,
+                                decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(30),
+                                        bottomRight: Radius.circular(30))),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 12.0),
+                                  child:
+                                      Text(displayPopularFoods[index].foodTag!,
+                                          style: GoogleFonts.poppins(
+                                            fontSize: 15,
+                                            color: const Color.fromARGB(
+                                                255, 99, 98, 98),
+                                          ),
+                                          overflow: TextOverflow.ellipsis),
+                                ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 50),
-                              child: Row(
-                                children: [
-                                  Center(
-                                    child: Text(
-                                        displayPopularFoods[index].foodTag!,
-                                        style: GoogleFonts.poppins(
-                                          fontSize: 15,
-                                          color: const Color.fromARGB(
-                                              255, 99, 98, 98),
-                                        ),
-                                        overflow: TextOverflow.ellipsis),
+                            Column(
+                              children: [
+                                Image.asset(
+                                  displayPopularFoods[index].foodCoverImage!,
+                                  height: 90,
+                                  width: 90,
+                                ),
+                                Text(
+                                  displayPopularFoods[index].foodName!,
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 19,
                                   ),
-                                  Image.asset(
-                                    "./assets/fire.png",
-                                    height: 30,
-                                    width: 30,
+                                ),
+                                Text.rich(TextSpan(children: <TextSpan>[
+                                  TextSpan(
+                                      text: "Tsh ",
+                                      style: GoogleFonts.poppins(fontSize: 20)),
+                                  TextSpan(
+                                    text:
+                                        "${displayPopularFoods[index].foodPrice} ",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 15, color: Colors.green),
                                   )
-                                ],
-                              ),
+                                ]))
+                              ],
                             ),
-                            Text.rich(TextSpan(children: <TextSpan>[
-                              TextSpan(
-                                  text: "Tsh ",
-                                  style: GoogleFonts.poppins(fontSize: 20)),
-                              TextSpan(
-                                text:
-                                    "${displayPopularFoods[index].foodPrice} ",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 15, color: Colors.green),
-                              )
-                            ]))
                           ],
                         ),
                       ),
@@ -564,7 +569,7 @@ class _ExplorePageState extends State<ExplorePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 30)
+              SizedBox(height: 60)
             ],
           ),
         ),
