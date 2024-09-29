@@ -516,15 +516,17 @@ class _ExplorePageState extends State<ExplorePage> {
                                         topLeft: Radius.circular(30),
                                         bottomRight: Radius.circular(30))),
                                 child: Padding(
-                                  padding: const EdgeInsets.only(left: 12.0),
-                                  child:
-                                      Text(displayPopularFoods[index].foodTag!,
-                                          style: GoogleFonts.poppins(
-                                            fontSize: 15,
-                                            color: const Color.fromARGB(
-                                                255, 99, 98, 98),
-                                          ),
-                                          overflow: TextOverflow.ellipsis),
+                                  padding:
+                                      const EdgeInsets.only(left: 12.0, top: 5),
+                                  child: Text(
+                                      displayPopularFoods[index]
+                                          .restaurantName!,
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 15,
+                                        color: const Color.fromARGB(
+                                            255, 99, 98, 98),
+                                      ),
+                                      overflow: TextOverflow.ellipsis),
                                 ),
                               ),
                             ),

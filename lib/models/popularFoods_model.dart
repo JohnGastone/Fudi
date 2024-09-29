@@ -3,11 +3,11 @@
 class PopularFoodsModel {
   String? foodCoverImage;
   String? foodName;
-  String? foodTag;
+  String? restaurantName;
   int? foodPrice;
   String? foodDescription; // Added foodDescription property
 
-  PopularFoodsModel(this.foodCoverImage, this.foodName, this.foodTag,
+  PopularFoodsModel(this.foodCoverImage, this.foodName, this.restaurantName,
       this.foodPrice, this.foodDescription);
 }
 

@@ -64,11 +64,12 @@ class _FudiDescriptionState extends State<FudiDescription> {
   }
 
   // Function to save cart to SharedPreferences
-  Future<void> _saveToSharedPreferences(
-      String image, String name, int price, String size, int quantity) async {
+  Future<void> _saveToSharedPreferences(String image, String name,
+      String restaurant, int price, String size, int quantity) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('image', image);
     prefs.setString('name', name);
+    prefs.setString('restaurant', restaurant);
     prefs.setInt('price', price);
     prefs.setString('size', size);
     prefs.setInt('quantity', quantity);
@@ -77,6 +78,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
   @override
   Widget build(BuildContext context) {
     final foodName = widget.popularFood?.foodName;
+    final restaurantName = widget.popularFood?.restaurantName;
     final foodPrice = widget.popularFood?.foodPrice;
     final foodImage = widget.popularFood?.foodCoverImage;
     final foodDescription = widget.popularFood?.foodDescription;
@@ -132,7 +134,10 @@ class _FudiDescriptionState extends State<FudiDescription> {
                     Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Text("For just ",
+                              style: GoogleFonts.poppins(fontSize: 21)),
                           Text.rich(TextSpan(children: <TextSpan>[
                             TextSpan(
                                 text: "Tsh ",
@@ -142,7 +147,11 @@ class _FudiDescriptionState extends State<FudiDescription> {
                               text: "$foodPrice", // Default case for 'L'
                               style: GoogleFonts.poppins(
                                   fontSize: 20, color: Colors.green),
-                            )
+                            ),
+                            TextSpan(
+                                text:
+                                    " at $restaurantName", // Default case for '",
+                                style: GoogleFonts.poppins(fontSize: 15)),
                           ])),
                           Text(
                             "Size",
@@ -276,7 +285,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                       Image.asset(
                         foodImage!,
                         height: 350,
-                        width: 200,
+                        width: 140,
                       ),
                     ])
                   ],
@@ -365,10 +374,15 @@ class _FudiDescriptionState extends State<FudiDescription> {
                 onPressed: () {
                   // Save food details to provider and SharedPreferences
                   Provider.of<CartModel>(context, listen: false).addToCart(
-                      foodImage, foodName!, foodPrice!, selectedSize, _counter);
+                      foodImage,
+                      foodName!,
+                      restaurantName!,
+                      foodPrice!,
+                      selectedSize,
+                      _counter);
 
-                  _saveToSharedPreferences(
-                      foodImage, foodName, foodPrice, selectedSize, _counter);
+                  _saveToSharedPreferences(foodImage, foodName, restaurantName,
+                      foodPrice, selectedSize, _counter);
 
                   // Navigate to the plate page
                   Navigator.push(context,
