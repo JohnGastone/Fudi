@@ -129,166 +129,169 @@ class _FudiDescriptionState extends State<FudiDescription> {
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
                             color: Colors.black))),
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("For just ",
-                              style: GoogleFonts.poppins(fontSize: 21)),
-                          Text.rich(TextSpan(children: <TextSpan>[
-                            TextSpan(
-                                text: "Tsh ",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 25, color: Colors.green)),
-                            TextSpan(
-                              text: "$foodPrice", // Default case for 'L'
-                              style: GoogleFonts.poppins(
-                                  fontSize: 20, color: Colors.green),
-                            ),
-                            TextSpan(
-                                text:
-                                    " at $restaurantName", // Default case for '",
-                                style: GoogleFonts.poppins(fontSize: 15)),
-                          ])),
-                          Text(
-                            "Size",
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("For just ",
+                          style: GoogleFonts.poppins(fontSize: 21)),
+                      Text.rich(TextSpan(children: <TextSpan>[
+                        TextSpan(
+                            text: "Tsh ",
                             style: GoogleFonts.poppins(
-                              fontSize: 20,
-                              color: const Color.fromARGB(255, 99, 98, 98),
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  _onSizeSelected("S");
-                                },
-                                child: CircleAvatar(
-                                  backgroundColor: selectedSize == "S"
-                                      ? Colors.green
-                                      : Color.fromARGB(255, 209, 204, 204),
-                                  child: Text(
-                                    "S",
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w300,
-                                      color: selectedSize == "S"
-                                          ? Colors.white
-                                          : Colors.black,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              GestureDetector(
-                                onTap: () {
-                                  _onSizeSelected("M");
-                                },
-                                child: Container(
-                                  height: 30,
-                                  width: 30,
-                                  decoration: BoxDecoration(
-                                    color: selectedSize == "M"
+                                fontSize: 25, color: Colors.green)),
+                        TextSpan(
+                          text: "$foodPrice", // Default case for 'L'
+                          style: GoogleFonts.poppins(
+                              fontSize: 20, color: Colors.green),
+                        ),
+                        TextSpan(
+                            text: " at $restaurantName", // Default case for '",
+                            style: GoogleFonts.poppins(fontSize: 15)),
+                      ])),
+                      Text(
+                        "Size",
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          color: const Color.fromARGB(255, 99, 98, 98),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          right: 12.0,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    _onSizeSelected("S");
+                                  },
+                                  child: CircleAvatar(
+                                    backgroundColor: selectedSize == "S"
                                         ? Colors.green
                                         : Color.fromARGB(255, 209, 204, 204),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Center(
                                     child: Text(
-                                      "M",
+                                      "S",
                                       style: GoogleFonts.poppins(
                                         fontSize: 20,
-                                        color: selectedSize == "M"
+                                        fontWeight: FontWeight.w300,
+                                        color: selectedSize == "S"
                                             ? Colors.white
                                             : Colors.black,
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(height: 10),
-                              GestureDetector(
-                                onTap: () {
-                                  _onSizeSelected("L");
-                                },
-                                child: CircleAvatar(
-                                  backgroundColor: selectedSize == "L"
-                                      ? Colors.green
-                                      : Color.fromARGB(255, 209, 204, 204),
-                                  child: Text(
-                                    "L",
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w300,
-                                      color: selectedSize == "L"
-                                          ? Colors.white
-                                          : Colors.black,
+                                SizedBox(height: 10),
+                                GestureDetector(
+                                  onTap: () {
+                                    _onSizeSelected("M");
+                                  },
+                                  child: Container(
+                                    height: 30,
+                                    width: 30,
+                                    decoration: BoxDecoration(
+                                      color: selectedSize == "M"
+                                          ? Colors.green
+                                          : Color.fromARGB(255, 209, 204, 204),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        "M",
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 20,
+                                          color: selectedSize == "M"
+                                              ? Colors.white
+                                              : Colors.black,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
+                                SizedBox(height: 10),
+                                GestureDetector(
+                                  onTap: () {
+                                    _onSizeSelected("L");
+                                  },
+                                  child: CircleAvatar(
+                                    backgroundColor: selectedSize == "L"
+                                        ? Colors.green
+                                        : Color.fromARGB(255, 209, 204, 204),
+                                    child: Text(
+                                      "L",
+                                      style: GoogleFonts.poppins(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w300,
+                                        color: selectedSize == "L"
+                                            ? Colors.white
+                                            : Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Image.asset(
+                              foodImage!,
+                              height: 150,
+                              width: 140,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Text(
+                        "Quantity",
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          color: const Color.fromARGB(255, 99, 98, 98),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: FloatingActionButton(
+                              onPressed: _plateDecrement,
+                              tooltip: "Decrement",
+                              child: Icon(
+                                CupertinoIcons.minus,
+                                size: 20,
                               ),
-                            ],
-                          ),
-                          Text(
-                            "Quantity",
-                            style: GoogleFonts.poppins(
-                              fontSize: 20,
-                              color: const Color.fromARGB(255, 99, 98, 98),
                             ),
                           ),
                           SizedBox(
-                            height: 8,
+                            width: 10,
                           ),
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: 40,
-                                height: 40,
-                                child: FloatingActionButton(
-                                  onPressed: _plateDecrement,
-                                  tooltip: "Decrement",
-                                  child: Icon(
-                                    CupertinoIcons.minus,
-                                    size: 20,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "$_counter",
-                                style: GoogleFonts.poppins(fontSize: 15),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              SizedBox(
-                                height: 40,
-                                width: 40,
-                                child: FloatingActionButton(
-                                  backgroundColor: Colors.green,
-                                  onPressed: _plateCounter,
-                                  tooltip: "Increment",
-                                  child: Icon(Icons.add),
-                                ),
-                              )
-                            ],
+                          Text(
+                            "$_counter",
+                            style: GoogleFonts.poppins(fontSize: 15),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          SizedBox(
+                            height: 40,
+                            width: 40,
+                            child: FloatingActionButton(
+                              backgroundColor: Colors.green,
+                              onPressed: _plateCounter,
+                              tooltip: "Increment",
+                              child: Icon(Icons.add),
+                            ),
                           )
                         ],
-                      ),
-                    ),
-                    Column(children: [
-                      Image.asset(
-                        foodImage!,
-                        height: 350,
-                        width: 140,
-                      ),
-                    ])
-                  ],
+                      )
+                    ],
+                  ),
                 ),
                 Padding(
                     padding: const EdgeInsets.only(left: 25),
