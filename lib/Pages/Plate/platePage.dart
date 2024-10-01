@@ -235,6 +235,8 @@ class _PlatePageState extends State<PlatePage> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const paymentPage()));
+                          Provider.of<CartModel>(context, listen: false)
+                              .clearCart();
                         },
                         child: Text(
                           "Continue to Payment",
