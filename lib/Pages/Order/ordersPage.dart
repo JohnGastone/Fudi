@@ -227,8 +227,7 @@ class _OrdersPageState extends State<OrdersPage> {
                                 height: 30,
                                 width: 80,
                                 child: FloatingActionButton(
-                                  backgroundColor:
-                                      const Color.fromARGB(58, 52, 51, 51),
+                                  backgroundColor: Colors.green,
                                   child: Text(
                                     "Reorder",
                                     style: GoogleFonts.poppins(fontSize: 18),
