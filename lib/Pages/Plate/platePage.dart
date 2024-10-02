@@ -147,7 +147,7 @@ class _PlatePageState extends State<PlatePage> {
                       MaterialPageRoute(
                           builder: (context) => const MyHomePage()));
                 },
-                backgroundColor: const Color.fromARGB(58, 52, 51, 51),
+                backgroundColor: Colors.green,
                 child: Text(
                   "Add more to this plate",
                   style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
@@ -190,7 +190,7 @@ class _PlatePageState extends State<PlatePage> {
                   width: 135,
                   child: FloatingActionButton(
                     heroTag: "total",
-                    backgroundColor: const Color.fromARGB(58, 52, 51, 51),
+                    backgroundColor: Colors.green,
                     onPressed: () {},
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
@@ -211,7 +211,7 @@ class _PlatePageState extends State<PlatePage> {
                       width: 180,
                       child: FloatingActionButton(
                         heroTag: "download_invoice",
-                        backgroundColor: const Color.fromARGB(58, 52, 51, 51),
+                        backgroundColor: Colors.green,
                         onPressed: () async {
                           await generateInvoicePdf(); // Generate PDF when the button is pressed
                         },
@@ -229,7 +229,7 @@ class _PlatePageState extends State<PlatePage> {
                       width: 180,
                       child: FloatingActionButton(
                         heroTag: "continue_to_payment",
-                        backgroundColor: const Color.fromARGB(58, 52, 51, 51),
+                        backgroundColor: Colors.green,
                         onPressed: () {
                           Navigator.push(
                               context,
