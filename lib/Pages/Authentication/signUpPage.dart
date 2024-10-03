@@ -146,8 +146,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                       ? Icons.visibility_off
                                       : Icons.visibility,
                                 ),
-                                onPressed:
-                                    _toggleVisibility, // Toggles password visibility
+                                onPressed: _toggleVisibility,
                               ),
                             ),
                             border: InputBorder.none),
