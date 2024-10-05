@@ -12,17 +12,17 @@ class RestaurantfoodsModel {
 
 class RestaurantFoodsList {
   static List<RestaurantfoodsModel> getFoodsList = [
-    RestaurantfoodsModel("Chicken", 100, 10, "./assets/chicken.png",
+    RestaurantfoodsModel("Chicken", 12000, 10, "./assets/chicken.png",
         ".................................."),
-    RestaurantfoodsModel("Pizza", 100, 10, "./assets/pizza.png",
+    RestaurantfoodsModel("Pizza", 15000, 10, "./assets/pizza.png",
         ".................................."),
-    RestaurantfoodsModel("Burger", 100, 10, "./assets/bugger.png",
+    RestaurantfoodsModel("Burger", 10000, 10, "./assets/bugger.png",
         ".................................."),
-    RestaurantfoodsModel("Fries", 100, 10, "./assets/fries.png",
+    RestaurantfoodsModel("Fries", 12000, 10, "./assets/fries.png",
         ".................................."),
-    RestaurantfoodsModel("Chicken", 100, 10, "./assets/chicken.png",
+    RestaurantfoodsModel("Chicken", 15000, 10, "./assets/chicken.png",
         ".................................."),
-    RestaurantfoodsModel("Burger", 100, 10, "./assets/bugger.png",
+    RestaurantfoodsModel("Burger", 10000, 10, "./assets/bugger.png",
         ".................................."),
   ];
 
