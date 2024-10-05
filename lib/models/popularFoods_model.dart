@@ -5,86 +5,154 @@ class PopularFoodsModel {
   String? foodName;
   String? restaurantName;
   int? foodPrice;
-  String? foodDescription; // Added foodDescription property
+  String? foodDescription;
 
-  PopularFoodsModel(this.foodCoverImage, this.foodName, this.restaurantName,
-      this.foodPrice, this.foodDescription);
+  // Use named parameters in the constructor
+  PopularFoodsModel({
+    this.foodCoverImage,
+    this.foodName,
+    this.restaurantName,
+    this.foodPrice,
+    this.foodDescription,
+  });
+
+  // Convert PopularFoodsModel object to a map (JSON format)
+  Map<String, dynamic> toJson() {
+    return {
+      'foodCoverImage': foodCoverImage,
+      'foodName': foodName,
+      'restaurantName': restaurantName,
+      'foodPrice': foodPrice,
+      'foodDescription': foodDescription,
+    };
+  }
+
+  // Create PopularFoodsModel from a map (JSON)
+  factory PopularFoodsModel.fromJson(Map<String, dynamic> json) {
+    return PopularFoodsModel(
+      foodCoverImage: json['foodCoverImage'],
+      foodName: json['foodName'],
+      restaurantName: json['restaurantName'],
+      foodPrice: json['foodPrice'],
+      foodDescription: json['foodDescription'],
+    );
+  }
 }
 
 class PopularFoodsList {
   static List<PopularFoodsModel> getPopularFoods = [
     PopularFoodsModel(
-        "./assets/hamburger.png",
-        "Hamburger",
-        "Mautamu Spices",
-        10000,
-        "A classic American sandwich made with a ground beef patty, usually grilled and placed inside a sliced hamburger bun."),
+        foodCoverImage: "./assets/hamburger.png",
+        foodName: "Hamburger",
+        restaurantName: "Mautamu Spices",
+        foodPrice: 10000,
+        foodDescription:
+            "A classic American sandwich made with a ground beef patty, usually grilled and placed inside a sliced hamburger bun."),
     PopularFoodsModel(
-        "./assets/bugger.png",
-        "Latino Bugger",
-        "Sossie Foods",
-        10000,
-        "A juicy burger with a Latin twist, featuring flavors like avocado, jalapenos, and cilantro lime sauce."),
+        foodCoverImage: "./assets/bugger.png",
+        foodName: "Latino Bugger",
+        restaurantName: "Sossie Foods",
+        foodPrice: 10000,
+        foodDescription:
+            "A juicy burger with a Latin twist, featuring flavors like avocado, jalapenos, and cilantro lime sauce."),
     PopularFoodsModel(
-        "./assets/pizza.png",
-        "Santorini Pizza",
-        "Giggo Dishes",
-        15000,
-        "A Mediterranean-inspired pizza topped with feta cheese, olives, tomatoes, and fresh herbs."),
+        foodCoverImage: "./assets/pizza.png",
+        foodName: "Santorini Pizza",
+        restaurantName: "Giggo Dishes",
+        foodPrice: 15000,
+        foodDescription:
+            "A Mediterranean-inspired pizza topped with feta cheese, olives, tomatoes, and fresh herbs."),
     PopularFoodsModel(
-        "./assets/pilau.png",
-        "Pilau Vuruga",
-        "Seafood Lovers",
-        8500,
-        "A fragrant Tanzanian rice dish cooked with a blend of spices, meat, and vegetables."),
+        foodCoverImage: "./assets/pilau.png",
+        foodName: "Pilau Vuruga",
+        restaurantName: "Seafood Lovers",
+        foodPrice: 8500,
+        foodDescription:
+            "A fragrant Tanzanian rice dish cooked with a blend of spices, meat, and vegetables."),
     PopularFoodsModel(
-        "./assets/biryani.png",
-        "Biryani",
-        "Seafood Lovers",
-        12000,
-        "A flavorful Indian rice dish made with basmati rice, spices, meat, or vegetables."),
+        foodCoverImage: "./assets/biryani.png",
+        foodName: "Biryani",
+        restaurantName: "Seafood Lovers",
+        foodPrice: 12000,
+        foodDescription:
+            "A flavorful Indian rice dish made with basmati rice, spices, meat, or vegetables."),
     PopularFoodsModel(
-        "./assets/mzuzu.png",
-        "Wali Mzuzu",
-        "Shangazi Chichi",
-        15000,
-        "A Tanzanian dessert made with coconut milk, rice, and sugar, often served with fruit."),
+        foodCoverImage: "./assets/mzuzu.png",
+        foodName: "Wali Mzuzu",
+        restaurantName: "Shangazi Chichi",
+        foodPrice: 15000,
+        foodDescription:
+            "A Tanzanian dessert made with coconut milk, rice, and sugar, often served with fruit."),
     PopularFoodsModel(
-        "./assets/choma.png",
-        "Nyama Choma",
-        "Kazimoto Pork",
-        20000,
-        "Grilled meat, a popular East African dish seasoned with spices and served with sides like ugali or kachumbari."),
-    PopularFoodsModel("./assets/chips.png", "Chips Mayai", "Mr Liverpool", 8500,
-        "A Tanzanian street food made with french fries (chips) and eggs, often served with ketchup."),
-    PopularFoodsModel("./assets/nazi.png", "Wali Nazi", "Shishi Food", 10000,
-        "A coconut rice dish popular in coastal regions of East Africa, often made with fish or seafood."),
+        foodCoverImage: "./assets/choma.png",
+        foodName: "Nyama Choma",
+        restaurantName: "Kazimoto Pork",
+        foodPrice: 20000,
+        foodDescription:
+            "Grilled meat, a popular East African dish seasoned with spices and served with sides like ugali or kachumbari."),
     PopularFoodsModel(
-        "./assets/pilauzanzibar.png",
-        "Zanzibar Pilau",
-        "Shangazi Cafe",
-        10000,
-        "A special pilau variant from Zanzibar, known for its unique blend of spices and rich flavor."),
-    PopularFoodsModel("./assets/matoke.png", "Matoke", "External Cafe", 10000,
-        "A traditional East African dish made from mashed plantains, often cooked with meat, tomatoes, and spices."),
-    PopularFoodsModel("./assets/makande.png", "Makande", "Giggo Dishes", 4500,
-        "A simple and nutritious maize and bean stew, a staple food in many parts of East Africa."),
+        foodCoverImage: "./assets/chips.png",
+        foodName: "Chips Mayai",
+        restaurantName: "Mr Liverpool",
+        foodPrice: 8500,
+        foodDescription:
+            "A Tanzanian street food made with french fries (chips) and eggs, often served with ketchup."),
     PopularFoodsModel(
-        "./assets/makangenyama.png",
-        "Makange Nyama",
-        "Shangazi Cafe",
-        13000,
-        "A rich meat stew cooked with a variety of vegetables and spices, served with rice or ugali."),
+        foodCoverImage: "./assets/nazi.png",
+        foodName: "Wali Nazi",
+        restaurantName: "Shishi Food",
+        foodPrice: 10000,
+        foodDescription:
+            "A coconut rice dish popular in coastal regions of East Africa, often made with fish or seafood."),
     PopularFoodsModel(
-        "./assets/makangesamaki.png",
-        "Makange Samaki",
-        "Mr Liverpool",
-        15000,
-        "A fish stew similar to Makange Nyama, but with fish as the main protein source."),
-    PopularFoodsModel("./assets/ugali.png", "Ugali", "Shishi Food", 5500,
-        "A stiff porridge made from maize flour, a staple food in many parts of East Africa."),
-    PopularFoodsModel("./assets/matoke.png", "Matoke", "Sossie Foods", 10000,
-        "A traditional East African dish made from mashed plantains, often cooked with meat, tomatoes, and spices."),
+        foodCoverImage: "./assets/pilauzanzibar.png",
+        foodName: "Zanzibar Pilau",
+        restaurantName: "Shangazi Cafe",
+        foodPrice: 10000,
+        foodDescription:
+            "A special pilau variant from Zanzibar, known for its unique blend of spices and rich flavor."),
+    PopularFoodsModel(
+        foodCoverImage: "./assets/matoke.png",
+        foodName: "Matoke",
+        restaurantName: "External Cafe",
+        foodPrice: 10000,
+        foodDescription:
+            "A traditional East African dish made from mashed plantains, often cooked with meat, tomatoes, and spices."),
+    PopularFoodsModel(
+        foodCoverImage: "./assets/makande.png",
+        foodName: "Makande",
+        restaurantName: "Giggo Dishes",
+        foodPrice: 4500,
+        foodDescription:
+            "A simple and nutritious maize and bean stew, a staple food in many parts of East Africa."),
+    PopularFoodsModel(
+        foodCoverImage: "./assets/makangenyama.png",
+        foodName: "Makange Nyama",
+        restaurantName: "Shangazi Cafe",
+        foodPrice: 13000,
+        foodDescription:
+            "A rich meat stew cooked with a variety of vegetables and spices, served with rice or ugali."),
+    PopularFoodsModel(
+        foodCoverImage: "./assets/makangesamaki.png",
+        foodName: "Makange Samaki",
+        restaurantName: "Mr Liverpool",
+        foodPrice: 15000,
+        foodDescription:
+            "A fish stew similar to Makange Nyama, but with fish as the main protein source."),
+    PopularFoodsModel(
+        foodCoverImage: "./assets/ugali.png",
+        foodName: "Ugali",
+        restaurantName: "Shishi Food",
+        foodPrice: 5500,
+        foodDescription:
+            "A stiff porridge made from maize flour, a staple food in many parts of East Africa."),
+    PopularFoodsModel(
+        foodCoverImage: "./assets/matoke.png",
+        foodName: "Matoke",
+        restaurantName: "Sossie Foods",
+        foodPrice: 10000,
+        foodDescription:
+            "A traditional East African dish made from mashed plantains, often cooked with meat, tomatoes, and spices."),
   ];
 
   static List<PopularFoodsModel> displayPopularFoods =
