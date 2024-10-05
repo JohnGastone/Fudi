@@ -1,8 +1,8 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/Order/ordersPage.dart';
 import 'package:fudi/Pages/explorePage.dart';
-import 'package:fudi/Pages/Payments/paymentPage.dart';
 import 'package:fudi/models/plateModel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pdf/pdf.dart';
@@ -226,25 +226,34 @@ class _PlatePageState extends State<PlatePage> {
                       height: 10,
                     ),
                     SizedBox(
-                      width: 180,
-                      child: FloatingActionButton(
-                        heroTag: "continue_to_payment",
-                        backgroundColor: Colors.green,
-                        onPressed: () {
-                          Navigator.push(
+                        width: 180,
+                        child: FloatingActionButton(
+                          heroTag: "continue_to_payment",
+                          backgroundColor: const Color.fromARGB(58, 52, 51, 51),
+                          onPressed: () {
+                            final cartModel =
+                                Provider.of<CartModel>(context, listen: false);
+                            final foodNames = cartModel.getFoodNames();
+                            final totalPrice = cartModel.getTotalPrice();
+
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const paymentPage()));
-                          Provider.of<CartModel>(context, listen: false)
-                              .clearCart();
-                        },
-                        child: Text(
-                          "Continue to Payment",
-                          style: GoogleFonts.poppins(
-                              fontSize: 17, color: Colors.white),
-                        ),
-                      ),
-                    ),
+                                builder: (context) => OrdersPage(
+                                  foodNames: foodNames,
+                                  totalPrice: totalPrice,
+                                ),
+                              ),
+                            );
+                            Provider.of<CartModel>(context, listen: false)
+                                .clearCart();
+                          },
+                          child: Text(
+                            "Continue to Payment",
+                            style: GoogleFonts.poppins(
+                                fontSize: 17, color: Colors.white),
+                          ),
+                        )),
                   ],
                 ),
               ),

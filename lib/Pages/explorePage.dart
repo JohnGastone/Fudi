@@ -26,7 +26,10 @@ class _MyHomePageState extends State<MyHomePage> {
   static List<Widget> _pages = <Widget>[
     ExplorePage(),
     RestaurantsPage(),
-    OrdersPage(),
+    OrdersPage(
+      foodNames: const [],
+      totalPrice: 0,
+    ),
     FavdishesPage()
   ];
 

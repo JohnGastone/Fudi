@@ -52,8 +52,8 @@ class FavdishesPage extends StatelessWidget {
     final favorites = Provider.of<FavoritesModel>(context).favoriteFoods;
 
     return Dismissible(
-      key: Key(favorites[index].foodCoverImage!), // Unique key for each item
-      direction: DismissDirection.endToStart, // Swipe from right to left
+      key: Key(favorites[index].foodCoverImage!),
+      direction: DismissDirection.endToStart,
       onDismissed: (direction) {
         Provider.of<FavoritesModel>(context, listen: false)
             .removeFromFavorites(favorites[index]);
@@ -80,30 +80,71 @@ class FavdishesPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Container(
-                    height: 30,
-                    width: 130,
-                    decoration: const BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            bottomRight: Radius.circular(30))),
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 12.0, top: 5),
-                      child: Text(favorites[index].restaurantName!,
-                          style: GoogleFonts.poppins(
-                            fontSize: 15,
-                            color: const Color.fromARGB(255, 99, 98, 98),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Container(
+                          height: 30,
+                          width: 130,
+                          decoration: const BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(30),
+                                  bottomRight: Radius.circular(30))),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 12.0, top: 5),
+                            child: Text(favorites[index].restaurantName!,
+                                style: GoogleFonts.poppins(
+                                  fontSize: 15,
+                                ),
+                                overflow: TextOverflow.ellipsis),
                           ),
-                          overflow: TextOverflow.ellipsis),
-                    ),
-                  ),
-                ),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          height: 30,
+                          width: 115,
+                          decoration: const BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(30),
+                                  bottomLeft: Radius.circular(10))),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 6.0, right: 7),
+                            child: InkWell(
+                              onTap: () {
+                                // Add this food to the plate
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Add to Plate",
+                                    style: GoogleFonts.poppins(fontSize: 11),
+                                  ),
+                                  const SizedBox(
+                                    width: 3,
+                                  ),
+                                  Image.asset(
+                                    "./assets/plate.png",
+                                    color: Colors.white,
+                                    height: 25,
+                                    width: 25,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ]),
                 Padding(
-                  padding:
-                      const EdgeInsets.only(top: 12.0, left: 12, right: 30),
+                  padding: const EdgeInsets.only(left: 12, right: 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

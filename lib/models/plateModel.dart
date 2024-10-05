@@ -20,6 +20,18 @@ class CartModel with ChangeNotifier {
     notifyListeners();
   }
 
+  List<String> getFoodNames() {
+    return cartItems.map((item) => item['name'].toString()).toList();
+  }
+
+  double getTotalPrice() {
+    double total = 0.0;
+    for (var item in cartItems) {
+      total += item['price'] * item['quantity'];
+    }
+    return total;
+  }
+
   // Remove food from cart
   void removeFromCart(int index) {
     _cartItems.removeAt(index);
