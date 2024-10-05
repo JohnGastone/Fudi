@@ -86,6 +86,41 @@ class OrdersPage extends StatelessWidget {
                           title: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: Container(
+                                  height: 35,
+                                  width: 115,
+                                  decoration: const BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(8))),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10.0, right: 10),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          "Reorder",
+                                          style:
+                                              GoogleFonts.poppins(fontSize: 15),
+                                        ),
+                                        const SizedBox(
+                                          width: 3,
+                                        ),
+                                        Image.asset(
+                                          "./assets/order4.png",
+                                          color: Colors.white,
+                                          height: 25,
+                                          width: 25,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
                               Text(
                                 'Order #${index + 1}',
                                 style: GoogleFonts.poppins(),
