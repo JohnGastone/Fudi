@@ -142,12 +142,12 @@ class _FudiDescriptionState extends State<FudiDescription> {
                             style: GoogleFonts.poppins(
                                 fontSize: 25, color: Colors.green)),
                         TextSpan(
-                          text: "$foodPrice", // Default case for 'L'
+                          text: "$foodPrice",
                           style: GoogleFonts.poppins(
                               fontSize: 20, color: Colors.green),
                         ),
                         TextSpan(
-                            text: " at $restaurantName", // Default case for '",
+                            text: " at $restaurantName",
                             style: GoogleFonts.poppins(fontSize: 15)),
                       ])),
                       Text(
