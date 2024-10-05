@@ -74,6 +74,8 @@ class OrdersPage extends StatelessWidget {
               SizedBox(
                 height: double.maxFinite,
                 child: ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: orders.length,
                   itemBuilder: (context, index) {
                     final order = orders[index];
