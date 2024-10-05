@@ -66,7 +66,7 @@ class FavdishesPage extends StatelessWidget {
         color: const Color(0xFF979797).withOpacity(0.1),
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: const Icon(Icons.delete, color: Colors.white),
+        child: const Icon(Icons.delete, color: Colors.green),
       ),
       child: Center(
         child: Padding(

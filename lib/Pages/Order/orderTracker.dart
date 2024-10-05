@@ -12,6 +12,12 @@ class OrderProvider extends ChangeNotifier {
     _loadOrdersFromPreferences(); // Load orders on initialization
   }
 
+  // Add a method to remove an order by index
+  void removeOrder(int index) {
+    _orders.removeAt(index);
+    notifyListeners();
+  }
+
   void addOrder(List<String> foodNames, double totalPrice) async {
     final newOrder = {
       'foodNames': foodNames,

@@ -24,14 +24,13 @@ class OrdersPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Center(
-            child: Row(
-          children: [
-            SizedBox(
-              width: 70,
-              height: 30,
-              child: FloatingActionButton(
+          child: Row(
+            children: [
+              SizedBox(
+                width: 70,
+                height: 30,
+                child: FloatingActionButton(
                   heroTag: "back_to_home_page", // To avoid conflicting heros
-
                   backgroundColor: Colors.green,
                   child: Text(
                     "Back",
@@ -40,61 +39,105 @@ class OrdersPage extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ExplorePage()));
-                  }),
-            ),
-            const SizedBox(
-              width: 50,
-            ),
-            Text(
-              "My Orders",
-              style: GoogleFonts.poppins(fontSize: 20),
-            ),
-          ],
-        )),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 10),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: orders.length,
-              itemBuilder: (context, index) {
-                final order = orders[index];
-                return Card(
-                  child: ListTile(
-                    title: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Order #${index + 1}',
-                          style: GoogleFonts.poppins(),
-                        ),
-                        Text(
-                          'Items: ${order['foodNames'].join(' | ')}',
-                          style: GoogleFonts.poppins(),
-                        ),
-                        Text(
-                          'Total Price: Tsh ${order['totalPrice'].toStringAsFixed(2)}',
-                          style: GoogleFonts.poppins(),
-                        ),
-                        Text(
-                          'Date: ${order['date'].toString()}',
-                          style: GoogleFonts.poppins(),
-                        ),
-                      ],
-                    ),
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ExplorePage(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(width: 10),
+              Column(
+                children: [
+                  Text(
+                    "My Orders",
+                    style: GoogleFonts.poppins(fontSize: 20),
                   ),
-                );
-              },
-            ),
-            const SizedBox(height: 30),
-          ],
+                  Text(
+                    "Swipe an order to the left to remove it",
+                    style: GoogleFonts.poppins(fontSize: 15),
+                  )
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 10),
+              SizedBox(
+                height: double.maxFinite,
+                child: ListView.builder(
+                  itemCount: orders.length,
+                  itemBuilder: (context, index) {
+                    final order = orders[index];
+
+                    return Dismissible(
+                      key:
+                          UniqueKey(), // A unique key is needed for each dismissible item
+                      direction: DismissDirection
+                          .endToStart, // Swipe from right to left
+                      onDismissed: (direction) {
+                        // Remove the item from the list on swipe
+                        orderProvider.removeOrder(index);
+
+                        // Show a snackbar to notify the user
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Order #${index + 1} dismissed',
+                              style: GoogleFonts.poppins(),
+                            ),
+                          ),
+                        );
+                      },
+                      background: Container(
+                        color: const Color(0xFF979797).withOpacity(0.1),
+                        alignment: Alignment.centerRight,
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: const Icon(
+                          Icons.delete,
+                          color: Colors.green,
+                        ),
+                      ),
+                      child: Card(
+                        child: ListTile(
+                          title: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Order #${index + 1}',
+                                style: GoogleFonts.poppins(),
+                              ),
+                              Text(
+                                'Items: ${order['foodNames'].join(' | ')}',
+                                style: GoogleFonts.poppins(),
+                              ),
+                              Text(
+                                'Total Price: Tsh ${order['totalPrice'].toStringAsFixed(2)}',
+                                style: GoogleFonts.poppins(),
+                              ),
+                              Text(
+                                'Date: ${order['date'].toString()}',
+                                style: GoogleFonts.poppins(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(height: 30),
+            ],
+          ),
         ),
       ),
     );
