@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fudi/Pages/Authentication/introductionPage.dart';
+import 'package:fudi/Pages/Order/orderTracker.dart';
 import 'package:fudi/models/fav_dishes_model.dart';
 import 'package:fudi/models/plateModel.dart';
 import 'package:provider/provider.dart';
@@ -16,6 +17,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => CartModel()),
         ChangeNotifierProvider(create: (_) => FavoritesModel()),
+        ChangeNotifierProvider(create: (_) => OrderProvider()),
       ],
       child: MyApp(),
     ),

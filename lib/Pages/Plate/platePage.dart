@@ -1,6 +1,7 @@
 // ignore_for_file: unused_field
 
 import 'package:flutter/material.dart';
+import 'package:fudi/Pages/Order/orderTracker.dart';
 import 'package:fudi/Pages/Order/ordersPage.dart';
 import 'package:fudi/Pages/explorePage.dart';
 import 'package:fudi/models/plateModel.dart';
@@ -229,12 +230,19 @@ class _PlatePageState extends State<PlatePage> {
                         width: 180,
                         child: FloatingActionButton(
                           heroTag: "continue_to_payment",
-                          backgroundColor: const Color.fromARGB(58, 52, 51, 51),
+                          backgroundColor: Colors.green,
                           onPressed: () {
                             final cartModel =
                                 Provider.of<CartModel>(context, listen: false);
+
+                            final orderProvider = Provider.of<OrderProvider>(
+                                context,
+                                listen: false);
+
                             final foodNames = cartModel.getFoodNames();
                             final totalPrice = cartModel.getTotalPrice();
+                            // Add the order to the OrderProvider before navigating
+                            orderProvider.addOrder(foodNames, totalPrice);
 
                             Navigator.push(
                               context,
@@ -249,7 +257,7 @@ class _PlatePageState extends State<PlatePage> {
                                 .clearCart();
                           },
                           child: Text(
-                            "Continue to Payment",
+                            "Place your order",
                             style: GoogleFonts.poppins(
                                 fontSize: 17, color: Colors.white),
                           ),

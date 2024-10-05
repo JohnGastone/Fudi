@@ -149,7 +149,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                         height: 35,
                         width: 100,
                         decoration: BoxDecoration(
-                            color: Colors.orangeAccent,
+                            color: Colors.green,
                             borderRadius: BorderRadius.all(Radius.circular(8))),
                         child: Padding(
                           padding: const EdgeInsets.only(right: 7, left: 25),
@@ -164,7 +164,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                               ),
                               Icon(
                                 Icons.location_on,
-                                color: Colors.green,
+                                color: Colors.white,
                               )
                             ],
                           ),
@@ -268,7 +268,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                 height: 35,
                                 width: 115,
                                 decoration: BoxDecoration(
-                                    color: Colors.orangeAccent,
+                                    color: Colors.green,
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(8))),
                                 child: Padding(
@@ -288,7 +288,7 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                       ),
                                       Image.asset(
                                         "./assets/plate.png",
-                                        color: Colors.green,
+                                        color: Colors.white,
                                         height: 25,
                                         width: 25,
                                       ),
