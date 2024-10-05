@@ -16,6 +16,7 @@ class OrderProvider extends ChangeNotifier {
   void removeOrder(int index) {
     _orders.removeAt(index);
     notifyListeners();
+    _saveOrdersToPreferences();
   }
 
   void addOrder(List<String> foodNames, double totalPrice) async {
