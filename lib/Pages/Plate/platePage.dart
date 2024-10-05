@@ -214,12 +214,30 @@ class _PlatePageState extends State<PlatePage> {
                         heroTag: "download_invoice",
                         backgroundColor: Colors.green,
                         onPressed: () async {
-                          await generateInvoicePdf(); // Generate PDF when the button is pressed
+                          final cartModel =
+                              Provider.of<CartModel>(context, listen: false);
+
+                          if (cartModel.getFoodNames().isNotEmpty) {
+                            // If there are items in the plate, generate the invoice PDF
+                            await generateInvoicePdf();
+                          } else {
+                            // Show a message or alert to the user
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  "Add a food to the plate before downloading the invoice.",
+                                  style: GoogleFonts.poppins(),
+                                ),
+                              ),
+                            );
+                          }
                         },
                         child: Text(
                           "Download Invoice",
                           style: GoogleFonts.poppins(
-                              fontSize: 17, color: Colors.white),
+                            fontSize: 17,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),

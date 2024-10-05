@@ -111,7 +111,6 @@ class FavdishesPage extends StatelessWidget {
                           decoration: const BoxDecoration(
                               color: Colors.green,
                               borderRadius: BorderRadius.only(
-                                  topRight: Radius.circular(30),
                                   bottomLeft: Radius.circular(10))),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 6.0, right: 7),

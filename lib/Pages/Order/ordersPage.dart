@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Order/orderTracker.dart';
-import 'package:fudi/Pages/explorePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -24,42 +23,16 @@ class OrdersPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Center(
-          child: Row(
+          child: Column(
             children: [
-              SizedBox(
-                width: 70,
-                height: 30,
-                child: FloatingActionButton(
-                  heroTag: "back_to_home_page", // To avoid conflicting heros
-                  backgroundColor: Colors.green,
-                  child: Text(
-                    "Back",
-                    style:
-                        GoogleFonts.poppins(fontSize: 16, color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ExplorePage(),
-                      ),
-                    );
-                  },
-                ),
+              Text(
+                "My Orders",
+                style: GoogleFonts.poppins(fontSize: 20),
               ),
-              const SizedBox(width: 10),
-              Column(
-                children: [
-                  Text(
-                    "My Orders",
-                    style: GoogleFonts.poppins(fontSize: 20),
-                  ),
-                  Text(
-                    "Swipe an order to the left to remove it",
-                    style: GoogleFonts.poppins(fontSize: 15),
-                  )
-                ],
-              ),
+              Text(
+                "Swipe an order to the left to remove it",
+                style: GoogleFonts.poppins(fontSize: 17),
+              )
             ],
           ),
         ),
