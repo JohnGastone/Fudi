@@ -78,48 +78,74 @@ class FavdishesPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               color: Colors.white54,
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    favorites[index].foodCoverImage!,
-                    height: 70,
-                    width: 70,
-                  ),
-                  const SizedBox(width: 20),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          favorites[index].foodName!,
-                          style: GoogleFonts.poppins(fontSize: 20),
-                          maxLines: 2,
-                          overflow: TextOverflow
-                              .ellipsis, // Add ellipsis for overflow
-                          softWrap: true, // Enable wrapping
-                        ),
-                        const SizedBox(height: 6),
-                        const SizedBox(height: 6),
-                        Text.rich(TextSpan(children: <TextSpan>[
-                          TextSpan(
-                              text: "Tsh ",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 25, color: Colors.green)),
-                          TextSpan(
-                            text: " ${favorites[index].foodPrice}",
-                            style: GoogleFonts.poppins(
-                                fontSize: 20, color: Colors.green),
-                          )
-                        ])),
-                      ],
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    height: 30,
+                    width: 130,
+                    decoration: const BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(30))),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 12.0, top: 5),
+                      child: Text(favorites[index].restaurantName!,
+                          style: GoogleFonts.poppins(
+                            fontSize: 15,
+                            color: const Color.fromARGB(255, 99, 98, 98),
+                          ),
+                          overflow: TextOverflow.ellipsis),
                     ),
                   ),
-                ],
-              ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 12.0, left: 12, right: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset(
+                        favorites[index].foodCoverImage!,
+                        height: 70,
+                        width: 70,
+                      ),
+                      const SizedBox(width: 20),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              favorites[index].foodName!,
+                              style: GoogleFonts.poppins(fontSize: 20),
+                              maxLines: 2,
+                              overflow: TextOverflow
+                                  .ellipsis, // Add ellipsis for overflow
+                              softWrap: true, // Enable wrapping
+                            ),
+                            const SizedBox(height: 6),
+                            const SizedBox(height: 6),
+                            Text.rich(TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                  text: "Tsh ",
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 25, color: Colors.green)),
+                              TextSpan(
+                                text: " ${favorites[index].foodPrice}",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 20, color: Colors.green),
+                              )
+                            ])),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ),
