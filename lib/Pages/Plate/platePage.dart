@@ -235,26 +235,41 @@ class _PlatePageState extends State<PlatePage> {
                             final cartModel =
                                 Provider.of<CartModel>(context, listen: false);
 
-                            final orderProvider = Provider.of<OrderProvider>(
-                                context,
-                                listen: false);
-
-                            final foodNames = cartModel.getFoodNames();
-                            final totalPrice = cartModel.getTotalPrice();
-                            // Add the order to the OrderProvider before navigating
-                            orderProvider.addOrder(foodNames, totalPrice);
-
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => OrdersPage(
-                                  foodNames: foodNames,
-                                  totalPrice: totalPrice,
+                            if (cartModel.getFoodNames().isEmpty) {
+                              // If the cart is empty, show a message to the user
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    "Add a food to the plate before placing an order",
+                                    style: GoogleFonts.poppins(),
+                                  ),
+                                  backgroundColor: Colors.red,
                                 ),
-                              ),
-                            );
-                            Provider.of<CartModel>(context, listen: false)
-                                .clearCart();
+                              );
+                            } else {
+                              final orderProvider = Provider.of<OrderProvider>(
+                                  context,
+                                  listen: false);
+
+                              final foodNames = cartModel.getFoodNames();
+                              final totalPrice = cartModel.getTotalPrice();
+
+                              // Add the order to the OrderProvider before navigating
+                              orderProvider.addOrder(foodNames, totalPrice);
+
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => OrdersPage(
+                                    foodNames: foodNames,
+                                    totalPrice: totalPrice,
+                                  ),
+                                ),
+                              );
+
+                              // Clear the cart after placing the order
+                              cartModel.clearCart();
+                            }
                           },
                           child: Text(
                             "Place your order",
