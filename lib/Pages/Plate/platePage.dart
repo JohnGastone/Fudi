@@ -1,6 +1,9 @@
 // ignore_for_file: unused_field
 
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fudi/Pages/Order/orderTracker.dart';
 import 'package:fudi/Pages/Order/ordersPage.dart';
 import 'package:fudi/Pages/explorePage.dart';
@@ -85,21 +88,35 @@ class _PlatePageState extends State<PlatePage> {
     final cartItems = Provider.of<CartModel>(context, listen: false).cartItems;
 
     final pdf = pw.Document();
+    // Load image from assets
+    final Uint8List imageData = await rootBundle
+        .load('assets/fudi.png')
+        .then((data) => data.buffer.asUint8List());
+    final watermarkImage = pw.MemoryImage(imageData);
 
     pdf.addPage(
       pw.Page(
         build: (pw.Context context) {
           return pw.Stack(children: [
-            // Watermark here
+            // Watermark Image behind other content
             pw.Positioned(
-              top: 200,
+              top: 150,
+              left: 100,
+              child: pw.Opacity(
+                opacity: 0.1, // Make the watermark semi-transparent
+                child: pw.Image(watermarkImage, width: 300, height: 300),
+              ),
+            ),
+            // Text Watermark here
+            pw.Positioned(
+              top: 300,
               left: 100,
               child: pw.Transform.rotate(
                 angle: -0.4, // Adjust rotation angle for watermark
                 child: pw.Opacity(
-                  opacity: 0.2, // Adjust opacity for the watermark
+                  opacity: 0.4, // Adjust opacity for the watermark
                   child: pw.Text(
-                    'FUDI Watermark', // Watermark text
+                    'FUDI Enterprise', // Watermark text
                     style: const pw.TextStyle(
                       fontSize: 50,
                       color:
