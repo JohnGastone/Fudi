@@ -89,36 +89,76 @@ class _PlatePageState extends State<PlatePage> {
     pdf.addPage(
       pw.Page(
         build: (pw.Context context) {
-          return pw.Column(
-            crossAxisAlignment: pw.CrossAxisAlignment.start,
-            children: [
-              pw.Text('Invoice',
-                  style: pw.TextStyle(
-                      fontSize: 40, fontWeight: pw.FontWeight.bold)),
-              pw.SizedBox(height: 20),
-              pw.Text('Items:', style: const pw.TextStyle(fontSize: 24)),
-              pw.SizedBox(height: 10),
-              pw.TableHelper.fromTextArray(
-                context: context,
-                data: <List<String>>[
-                  <String>['Item', 'Quantity', 'Size', 'Price'],
-                  ...cartItems.map((item) => [
-                        item['name'],
-                        item['quantity'].toString(),
-                        item['size'] == 'S'
-                            ? 'Small'
-                            : item['size'] == 'M'
-                                ? 'Medium'
-                                : 'Large',
-                        'Tsh ${item['price'].toStringAsFixed(2)}',
-                      ])
-                ],
+          return pw.Stack(children: [
+            // Watermark here
+            pw.Positioned(
+              top: 200,
+              left: 100,
+              child: pw.Transform.rotate(
+                angle: -0.4, // Adjust rotation angle for watermark
+                child: pw.Opacity(
+                  opacity: 0.2, // Adjust opacity for the watermark
+                  child: pw.Text(
+                    'FUDI Watermark', // Watermark text
+                    style: const pw.TextStyle(
+                      fontSize: 50,
+                      color:
+                          PdfColor.fromInt(0xFFAAAAAA), // Light gray watermark
+                    ),
+                  ),
+                ),
               ),
-              pw.SizedBox(height: 20),
-              pw.Text('Total: Tsh ${total.toStringAsFixed(2)}',
-                  style: const pw.TextStyle(fontSize: 24)),
-            ],
-          );
+            ),
+
+            pw.Column(
+              crossAxisAlignment: pw.CrossAxisAlignment.start,
+              children: [
+                pw.Text('Invoice',
+                    style: pw.TextStyle(
+                        fontSize: 40, fontWeight: pw.FontWeight.bold)),
+                pw.SizedBox(height: 20),
+                pw.Text('Items:', style: const pw.TextStyle(fontSize: 24)),
+                pw.SizedBox(height: 10),
+                pw.TableHelper.fromTextArray(
+                  context: context,
+                  data: <List<String>>[
+                    <String>['Item', 'Quantity', 'Size', 'Price'],
+                    ...cartItems.map((item) => [
+                          item['name'],
+                          item['quantity'].toString(),
+                          item['size'] == 'S'
+                              ? 'Small'
+                              : item['size'] == 'M'
+                                  ? 'Medium'
+                                  : 'Large',
+                          'Tsh ${item['price'].toStringAsFixed(2)}',
+                        ])
+                  ],
+                ),
+                pw.SizedBox(height: 20),
+                pw.Text('Total: Tsh ${total.toStringAsFixed(2)}',
+                    style: const pw.TextStyle(fontSize: 24)),
+                pw.SizedBox(height: 20),
+                pw.Text(
+                  'Thank you for your purchase!',
+                ),
+                pw.SizedBox(height: 20),
+                pw.Text('This invoice is generated automatically.'),
+                pw.SizedBox(height: 20),
+                pw.Text('Contact us at 0624-839-009 for any questions.'),
+                pw.Spacer(), // This pushes the content below to the bottom
+
+                pw.Align(
+                  alignment: pw.Alignment.center,
+                  child: pw.Text(
+                    'All Rights Reserved under FUDI ownership',
+                    style: pw.TextStyle(
+                        fontSize: 12, fontStyle: pw.FontStyle.italic),
+                  ),
+                ),
+              ],
+            )
+          ]);
         },
       ),
     );
