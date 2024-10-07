@@ -33,7 +33,7 @@ class EditProfileScreen extends StatelessWidget {
                   UserInfoEditField(
                     text: "Name",
                     child: TextFormField(
-                      initialValue: "Annette Black",
+                      initialValue: "Nathan John",
                       style: GoogleFonts.poppins(),
                       decoration: InputDecoration(
                         filled: true,
@@ -51,7 +51,7 @@ class EditProfileScreen extends StatelessWidget {
                     text: "Email",
                     child: TextFormField(
                       style: GoogleFonts.poppins(),
-                      initialValue: "annette@gmail.com",
+                      initialValue: "nathan@mail.me",
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: const Color(0xFF00BF6D).withOpacity(0.05),
@@ -68,7 +68,7 @@ class EditProfileScreen extends StatelessWidget {
                     text: "Phone",
                     child: TextFormField(
                       style: GoogleFonts.poppins(),
-                      initialValue: "(316) 555-0116",
+                      initialValue: "(255) 624-839-009",
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: const Color(0xFF00BF6D).withOpacity(0.05),
@@ -85,7 +85,7 @@ class EditProfileScreen extends StatelessWidget {
                     text: "Address",
                     child: TextFormField(
                       style: GoogleFonts.poppins(),
-                      initialValue: "New York, NVC",
+                      initialValue: "Kibugumo, Ndichi",
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: const Color(0xFF00BF6D).withOpacity(0.05),
@@ -123,9 +123,10 @@ class EditProfileScreen extends StatelessWidget {
                   UserInfoEditField(
                     text: "New Password",
                     child: TextFormField(
+                      obscureText: true,
+                      initialValue: "New Password",
                       style: GoogleFonts.poppins(),
                       decoration: InputDecoration(
-                        hintText: "New Password",
                         filled: true,
                         fillColor: const Color(0xFF00BF6D).withOpacity(0.05),
                         contentPadding: const EdgeInsets.symmetric(
