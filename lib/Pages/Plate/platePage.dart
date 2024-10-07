@@ -224,20 +224,21 @@ class _PlatePageState extends State<PlatePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 528.0),
-                child: SizedBox(
+                padding: const EdgeInsets.only(top: 480.0),
+                child: Container(
                   width: 135,
-                  child: FloatingActionButton(
-                    heroTag: "total",
-                    backgroundColor: Colors.green,
-                    onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Text(
-                        "Total: ${total.toStringAsFixed(2)}", // Display total price
-                        style: GoogleFonts.poppins(
-                            fontSize: 17, color: Colors.white),
-                      ),
+                  height: 40,
+                  decoration: const BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(9.0),
+                    child: Text(
+                      "Total: ${total.toStringAsFixed(2)}", // Display total price
+                      style: GoogleFonts.poppins(
+                          fontSize: 17,
+                          color: Colors.white,
+                          decoration: TextDecoration.none),
                     ),
                   ),
                 ),
@@ -248,6 +249,7 @@ class _PlatePageState extends State<PlatePage> {
                   children: [
                     SizedBox(
                       width: 180,
+                      height: 40,
                       child: FloatingActionButton(
                         heroTag: "download_invoice",
                         backgroundColor: Colors.green,
@@ -266,6 +268,7 @@ class _PlatePageState extends State<PlatePage> {
                                   "Add a food to the plate before downloading the invoice.",
                                   style: GoogleFonts.poppins(),
                                 ),
+                                backgroundColor: Colors.red,
                               ),
                             );
                           }
@@ -284,6 +287,7 @@ class _PlatePageState extends State<PlatePage> {
                     ),
                     SizedBox(
                         width: 180,
+                        height: 40,
                         child: FloatingActionButton(
                           heroTag: "continue_to_payment",
                           backgroundColor: Colors.green,
