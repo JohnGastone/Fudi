@@ -257,7 +257,10 @@ class UserInfoEditField extends StatelessWidget {
         children: [
           Expanded(
             flex: 2,
-            child: Text(text),
+            child: Text(
+              text,
+              style: GoogleFonts.poppins(),
+            ),
           ),
           Expanded(
             flex: 3,

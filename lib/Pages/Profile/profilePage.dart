@@ -32,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 16.0),
             Center(
               child: Text(
-                "Annette Black",
+                "Nathan John",
                 style: GoogleFonts.poppins(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -44,19 +44,19 @@ class ProfileScreen extends StatelessWidget {
             const Divider(),
             const Info(
               infoKey: "User ID",
-              info: "@annette.me",
+              info: "@nathan.me",
             ),
             const Info(
               infoKey: "Location",
-              info: "New York, NYC",
+              info: "Kibugumo, Ndichi",
             ),
             const Info(
               infoKey: "Phone",
-              info: "(239) 555-0108",
+              info: "(255) 624-839-009",
             ),
             const Info(
               infoKey: "Email Address",
-              info: "demo@mail.com",
+              info: "nathan@mail.me",
             ),
             const SizedBox(height: 16.0),
             Align(
