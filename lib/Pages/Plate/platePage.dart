@@ -104,26 +104,7 @@ class _PlatePageState extends State<PlatePage> {
               left: 100,
               child: pw.Opacity(
                 opacity: 0.1, // Make the watermark semi-transparent
-                child: pw.Image(watermarkImage, width: 300, height: 300),
-              ),
-            ),
-            // Text Watermark here
-            pw.Positioned(
-              top: 300,
-              left: 100,
-              child: pw.Transform.rotate(
-                angle: -0.4, // Adjust rotation angle for watermark
-                child: pw.Opacity(
-                  opacity: 0.4, // Adjust opacity for the watermark
-                  child: pw.Text(
-                    'FUDI Enterprise', // Watermark text
-                    style: const pw.TextStyle(
-                      fontSize: 50,
-                      color:
-                          PdfColor.fromInt(0xFFAAAAAA), // Light gray watermark
-                    ),
-                  ),
-                ),
+                child: pw.Image(watermarkImage, width: 400, height: 400),
               ),
             ),
 
