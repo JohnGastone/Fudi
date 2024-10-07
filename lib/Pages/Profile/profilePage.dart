@@ -34,7 +34,9 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const ProfilePic(image: "https://i.postimg.cc/cCsYDjvj/user-2.png"),
+            const Center(
+                child: ProfilePic(
+                    image: "https://i.postimg.cc/cCsYDjvj/user-2.png")),
             const SizedBox(height: 16.0),
             Center(
               child: Text(
