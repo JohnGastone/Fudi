@@ -1,4 +1,4 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, unused_local_variable
 
 import 'dart:typed_data';
 
@@ -143,15 +143,17 @@ class _PlatePageState extends State<PlatePage> {
                 pw.SizedBox(height: 20),
                 pw.Text('This invoice is generated automatically.'),
                 pw.SizedBox(height: 20),
-                pw.Text('Contact us at 0624-839-009 for any questions.'),
+                pw.Text('Contact us at 0624-839-009 for any inquiry.'),
                 pw.Spacer(), // This pushes the content below to the bottom
 
                 pw.Align(
                   alignment: pw.Alignment.center,
                   child: pw.Text(
-                    'All Rights Reserved under FUDI ownership',
+                    '© All Rights Reserved under FUDI ownership',
                     style: pw.TextStyle(
-                        fontSize: 12, fontStyle: pw.FontStyle.italic),
+                      fontSize: 12,
+                      fontStyle: pw.FontStyle.italic,
+                    ),
                   ),
                 ),
               ],
@@ -168,6 +170,8 @@ class _PlatePageState extends State<PlatePage> {
   @override
   Widget build(BuildContext context) {
     final cartItems = Provider.of<CartModel>(context).cartItems;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Stack(children: [
       Scaffold(
@@ -216,132 +220,131 @@ class _PlatePageState extends State<PlatePage> {
         ),
       ),
       Padding(
-        padding:
-            const EdgeInsets.only(left: 12.0, right: 12, bottom: 12, top: 150),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 480.0),
-                child: Container(
-                  width: 135,
-                  height: 40,
-                  decoration: const BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(9.0),
-                    child: Text(
-                      "Total: ${total.toStringAsFixed(2)}", // Display total price
-                      style: GoogleFonts.poppins(
-                          fontSize: 17,
-                          color: Colors.white,
-                          decoration: TextDecoration.none),
-                    ),
+        padding: EdgeInsets.only(
+          left:
+              screenWidth * 0.03, // Dynamic left padding based on screen width
+          right:
+              screenWidth * 0.03, // Dynamic right padding based on screen width
+          bottom: screenHeight *
+              0.02, // Adjust bottom padding based on screen height
+        ),
+        child: Column(
+          mainAxisAlignment:
+              MainAxisAlignment.end, // Align to bottom of the screen
+          children: [
+            // Total Container
+            Container(
+              width: screenWidth * 0.4, // Relative size based on screen width
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Center(
+                child: Text(
+                  "Total: ${total.toStringAsFixed(2)}",
+                  style: GoogleFonts.poppins(
+                    fontSize:
+                        screenWidth * 0.045, // Adjust font size based on width
+                    color: Colors.white,
+                    decoration: TextDecoration.none,
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 470.0),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: 180,
-                      height: 40,
-                      child: FloatingActionButton(
-                        heroTag: "download_invoice",
-                        backgroundColor: Colors.green,
-                        onPressed: () async {
-                          final cartModel =
-                              Provider.of<CartModel>(context, listen: false);
+            ),
+            SizedBox(
+                height:
+                    screenHeight * 0.02), // Spacing between Total and buttons
+            // Download Invoice Button
+            SizedBox(
+              width: screenWidth *
+                  0.5, // Adjust button width based on screen width
+              height: screenHeight * 0.06, // Adjust height relative to screen
+              child: FloatingActionButton(
+                heroTag: "download_invoice",
+                backgroundColor: Colors.green,
+                onPressed: () async {
+                  final cartModel =
+                      Provider.of<CartModel>(context, listen: false);
 
-                          if (cartModel.getFoodNames().isNotEmpty) {
-                            // If there are items in the plate, generate the invoice PDF
-                            await generateInvoicePdf();
-                          } else {
-                            // Show a message or alert to the user
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  "Add a food to the plate before downloading the invoice.",
-                                  style: GoogleFonts.poppins(),
-                                ),
-                                backgroundColor: Colors.red,
-                              ),
-                            );
-                          }
-                        },
-                        child: Text(
-                          "Download Invoice",
-                          style: GoogleFonts.poppins(
-                            fontSize: 17,
-                            color: Colors.white,
-                          ),
+                  if (cartModel.getFoodNames().isNotEmpty) {
+                    await generateInvoicePdf();
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          "Add a food to the plate before downloading the invoice.",
+                          style: GoogleFonts.poppins(),
                         ),
+                        backgroundColor: Colors.red,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                        width: 180,
-                        height: 40,
-                        child: FloatingActionButton(
-                          heroTag: "continue_to_payment",
-                          backgroundColor: Colors.green,
-                          onPressed: () {
-                            final cartModel =
-                                Provider.of<CartModel>(context, listen: false);
-
-                            if (cartModel.getFoodNames().isEmpty) {
-                              // If the cart is empty, show a message to the user
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    "Add a food to the plate before placing an order",
-                                    style: GoogleFonts.poppins(),
-                                  ),
-                                  backgroundColor: Colors.red,
-                                ),
-                              );
-                            } else {
-                              final orderProvider = Provider.of<OrderProvider>(
-                                  context,
-                                  listen: false);
-
-                              final foodNames = cartModel.getFoodNames();
-                              final totalPrice = cartModel.getTotalPrice();
-
-                              // Add the order to the OrderProvider before navigating
-                              orderProvider.addOrder(foodNames, totalPrice);
-
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => OrdersPage(
-                                    foodNames: foodNames,
-                                    totalPrice: totalPrice,
-                                  ),
-                                ),
-                              );
-
-                              // Clear the cart after placing the order
-                              cartModel.clearCart();
-                            }
-                          },
-                          child: Text(
-                            "Place your order",
-                            style: GoogleFonts.poppins(
-                                fontSize: 17, color: Colors.white),
-                          ),
-                        )),
-                  ],
+                    );
+                  }
+                },
+                child: Text(
+                  "Download Invoice",
+                  style: GoogleFonts.poppins(
+                    fontSize: screenWidth * 0.045,
+                    color: Colors.white,
+                  ),
                 ),
               ),
-            ],
-          ),
+            ),
+            SizedBox(height: screenHeight * 0.02), // Spacing between buttons
+            // Place Order Button
+            SizedBox(
+              width: screenWidth *
+                  0.5, // Adjust button width based on screen width
+              height: screenHeight * 0.06, // Adjust height relative to screen
+              child: FloatingActionButton(
+                heroTag: "continue_to_payment",
+                backgroundColor: Colors.green,
+                onPressed: () {
+                  final cartModel =
+                      Provider.of<CartModel>(context, listen: false);
+
+                  if (cartModel.getFoodNames().isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          "Add a food to the plate before placing an order",
+                          style: GoogleFonts.poppins(),
+                        ),
+                        backgroundColor: Colors.red,
+                      ),
+                    );
+                  } else {
+                    final orderProvider =
+                        Provider.of<OrderProvider>(context, listen: false);
+
+                    final foodNames = cartModel.getFoodNames();
+                    final totalPrice = cartModel.getTotalPrice();
+
+                    orderProvider.addOrder(foodNames, totalPrice);
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OrdersPage(
+                          foodNames: foodNames,
+                          totalPrice: totalPrice,
+                        ),
+                      ),
+                    );
+
+                    cartModel.clearCart();
+                  }
+                },
+                child: Text(
+                  "Place your order",
+                  style: GoogleFonts.poppins(
+                    fontSize: screenWidth * 0.045,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       )
     ]);
@@ -349,7 +352,8 @@ class _PlatePageState extends State<PlatePage> {
 
   Widget _buildCartItem(int index) {
     final cartItems = Provider.of<CartModel>(context).cartItems;
-
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Dismissible(
       key: Key(cartItems[index]['image']), // Unique key for each item
       direction: DismissDirection.endToStart, // Swipe from right to left
@@ -372,8 +376,10 @@ class _PlatePageState extends State<PlatePage> {
       child: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Container(
-          width: 350,
-          height: 130,
+          height: screenHeight *
+              0.17, // Example of using a percentage of screen height
+          width: screenWidth *
+              0.8, // Example of using a percentage of screen width
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: Colors.white54,

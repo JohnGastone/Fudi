@@ -1,11 +1,10 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fudi/Pages/Authentication/introductionPage.dart';
 import 'package:fudi/Pages/Order/orderTracker.dart';
 import 'package:fudi/models/fav_dishes_model.dart';
 import 'package:fudi/models/plateModel.dart';
+import 'package:fudi/themeProvider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -13,13 +12,17 @@ void main() {
 
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => CartModel()),
-        ChangeNotifierProvider(create: (_) => FavoritesModel()),
-        ChangeNotifierProvider(create: (_) => OrderProvider()),
-      ],
-      child: MyApp(),
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(), // Initialize with loaded theme
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => CartModel()),
+          ChangeNotifierProvider(create: (_) => FavoritesModel()),
+          ChangeNotifierProvider(create: (_) => OrderProvider()),
+          // No child needed here
+        ],
+        child: const MyApp(),
+      ),
     ),
   );
 }
@@ -29,9 +32,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider =
+        Provider.of<ThemeProvider>(context); // Access ThemeProvider
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
+      themeMode: themeProvider.themeMode, // Apply theme mode based on provider
       home: const IntroductionPage(),
     );
   }
