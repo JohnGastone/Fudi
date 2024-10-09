@@ -26,8 +26,9 @@ class SettingsScreen extends StatelessWidget {
             themeProvider.themeMode, // Get the theme mode from the provider
         theme: ThemeData.light(),
         darkTheme: ThemeData.dark(),
-        home: SafeArea(
-          child: SingleChildScrollView(
+        home: Scaffold(
+          backgroundColor: const Color.fromARGB(255, 221, 206, 206),
+          body: SingleChildScrollView(
             child: Column(
               children: [
                 const SizedBox(height: 16.0),
@@ -38,31 +39,12 @@ class SettingsScreen extends StatelessWidget {
                     // Add your notification logic here
                   },
                 ),
-                Row(
-                  children: [
-                    Text(
-                      themeProvider.themeMode == ThemeMode.dark
-                          ? "Dark Mode"
-                          : "Light Mode",
-                      style:
-                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
-                    ),
-                    const SizedBox(width: 12),
-                    SizedBox(
-                      height: 30,
-                      width: 30,
-                      child: Switch(
-                        value: themeProvider.themeMode ==
-                            ThemeMode
-                                .dark, // Get the theme mode from the provider
-                        activeColor: const Color(0xFFC18553),
-                        onChanged: (bool value) {
-                          themeProvider
-                              .toggleTheme(); // Toggle theme in the provider
-                        },
-                      ),
-                    ),
-                  ],
+                SettingTab(
+                  text: "Change Theme",
+                  value: false,
+                  onChanged: (value) {
+                    // Add your notification logic here
+                  },
                 ),
               ],
             ),
@@ -89,7 +71,9 @@ class SettingTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 1),
-      decoration: const BoxDecoration(color: Colors.white),
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 221, 206, 206),
+      ),
       child: ListTile(
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),

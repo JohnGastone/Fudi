@@ -24,6 +24,10 @@ class CartModel with ChangeNotifier {
     return cartItems.map((item) => item['name'].toString()).toList();
   }
 
+  List<String> getRestaurantNames() {
+    return cartItems.map((item) => item['restaurant'].toString()).toList();
+  }
+
   double getTotalPrice() {
     double total = 0.0;
     for (var item in cartItems) {

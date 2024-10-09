@@ -19,8 +19,10 @@ class OrderProvider extends ChangeNotifier {
     _saveOrdersToPreferences();
   }
 
-  void addOrder(List<String> foodNames, double totalPrice) async {
+  void addOrder(List<String> restaurantNames, List<String> foodNames,
+      double totalPrice) async {
     final newOrder = {
+      'restaurantNames': restaurantNames,
       'foodNames': foodNames,
       'totalPrice': totalPrice,
       'date': DateTime.now().toString(),
@@ -34,6 +36,7 @@ class OrderProvider extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     final orderData = _orders.map((order) {
       return {
+        'restaurantNames': order['restaurantNames'],
         'foodNames': order['foodNames'],
         'totalPrice': order['totalPrice'].toString(),
         'date': order['date'].toString(),
@@ -50,6 +53,7 @@ class OrderProvider extends ChangeNotifier {
       final List<dynamic> decodedData = jsonDecode(orderData);
       _orders = decodedData.map((order) {
         return {
+          'restaurantNames': List<String>.from(order['restaurantNames']),
           'foodNames': List<String>.from(order['foodNames']),
           'totalPrice': double.parse(order['totalPrice']),
           'date': DateTime.parse(order['date']),

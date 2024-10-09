@@ -28,6 +28,9 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
@@ -256,7 +259,7 @@ class _RestaurantsPageState extends State<RestaurantsPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
-                            width: 300,
+                            width: screenWidth * 0.82,
                             height: 250,
                             decoration: BoxDecoration(
                               color: Colors.white24,

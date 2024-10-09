@@ -115,14 +115,15 @@ class _PlatePageState extends State<PlatePage> {
                     style: pw.TextStyle(
                         fontSize: 40, fontWeight: pw.FontWeight.bold)),
                 pw.SizedBox(height: 20),
-                pw.Text('Items:', style: const pw.TextStyle(fontSize: 24)),
+                pw.Text('Bill Items:', style: const pw.TextStyle(fontSize: 24)),
                 pw.SizedBox(height: 10),
                 pw.TableHelper.fromTextArray(
                   context: context,
                   data: <List<String>>[
-                    <String>['Item', 'Quantity', 'Size', 'Price'],
+                    <String>['Item', 'Restaurant', 'Quantity', 'Size', 'Price'],
                     ...cartItems.map((item) => [
                           item['name'],
+                          item['restaurant'],
                           item['quantity'].toString(),
                           item['size'] == 'S'
                               ? 'Small'
@@ -228,123 +229,129 @@ class _PlatePageState extends State<PlatePage> {
           bottom: screenHeight *
               0.02, // Adjust bottom padding based on screen height
         ),
-        child: Column(
-          mainAxisAlignment:
-              MainAxisAlignment.end, // Align to bottom of the screen
-          children: [
-            // Total Container
-            Container(
-              width: screenWidth * 0.4, // Relative size based on screen width
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Center(
-                child: Text(
-                  "Total: ${total.toStringAsFixed(2)}",
-                  style: GoogleFonts.poppins(
-                    fontSize:
-                        screenWidth * 0.045, // Adjust font size based on width
-                    color: Colors.white,
-                    decoration: TextDecoration.none,
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 35.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment:
+                MainAxisAlignment.end, // Align to bottom of the screen
+            children: [
+              // Total Container
+              Container(
+                width: screenWidth * 0.5, // Relative size based on screen width
+                height: screenHeight * 0.06,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Center(
+                  child: Text(
+                    "Total: ${total.toStringAsFixed(2)}",
+                    style: GoogleFonts.poppins(
+                      fontSize: screenWidth *
+                          0.045, // Adjust font size based on width
+                      color: Colors.white,
+                      decoration: TextDecoration.none,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-                height:
-                    screenHeight * 0.02), // Spacing between Total and buttons
-            // Download Invoice Button
-            SizedBox(
-              width: screenWidth *
-                  0.5, // Adjust button width based on screen width
-              height: screenHeight * 0.06, // Adjust height relative to screen
-              child: FloatingActionButton(
-                heroTag: "download_invoice",
-                backgroundColor: Colors.green,
-                onPressed: () async {
-                  final cartModel =
-                      Provider.of<CartModel>(context, listen: false);
+              SizedBox(
+                  height:
+                      screenHeight * 0.02), // Spacing between Total and buttons
+              // Download Invoice Button
+              SizedBox(
+                width: screenWidth *
+                    0.5, // Adjust button width based on screen width
+                height: screenHeight * 0.06, // Adjust height relative to screen
+                child: FloatingActionButton(
+                  heroTag: "download_invoice",
+                  backgroundColor: Colors.green,
+                  onPressed: () async {
+                    final cartModel =
+                        Provider.of<CartModel>(context, listen: false);
 
-                  if (cartModel.getFoodNames().isNotEmpty) {
-                    await generateInvoicePdf();
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          "Add a food to the plate before downloading the invoice.",
-                          style: GoogleFonts.poppins(),
+                    if (cartModel.getFoodNames().isNotEmpty) {
+                      await generateInvoicePdf();
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            "Add a food to the plate before downloading the invoice.",
+                            style: GoogleFonts.poppins(),
+                          ),
+                          backgroundColor: Colors.red,
                         ),
-                        backgroundColor: Colors.red,
-                      ),
-                    );
-                  }
-                },
-                child: Text(
-                  "Download Invoice",
-                  style: GoogleFonts.poppins(
-                    fontSize: screenWidth * 0.045,
-                    color: Colors.white,
+                      );
+                    }
+                  },
+                  child: Text(
+                    "Download Invoice",
+                    style: GoogleFonts.poppins(
+                      fontSize: screenWidth * 0.045,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(height: screenHeight * 0.02), // Spacing between buttons
-            // Place Order Button
-            SizedBox(
-              width: screenWidth *
-                  0.5, // Adjust button width based on screen width
-              height: screenHeight * 0.06, // Adjust height relative to screen
-              child: FloatingActionButton(
-                heroTag: "continue_to_payment",
-                backgroundColor: Colors.green,
-                onPressed: () {
-                  final cartModel =
-                      Provider.of<CartModel>(context, listen: false);
+              SizedBox(height: screenWidth * 0.02), // Spacing between buttons
+              // Place Order Button
+              SizedBox(
+                width: screenWidth *
+                    0.5, // Adjust button width based on screen width
+                height: screenHeight * 0.06, // Adjust height relative to screen
+                child: FloatingActionButton(
+                  heroTag: "continue_to_payment",
+                  backgroundColor: Colors.green,
+                  onPressed: () {
+                    final cartModel =
+                        Provider.of<CartModel>(context, listen: false);
 
-                  if (cartModel.getFoodNames().isEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(
-                          "Add a food to the plate before placing an order",
-                          style: GoogleFonts.poppins(),
+                    if (cartModel.getFoodNames().isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            "Add a food to the plate before placing an order",
+                            style: GoogleFonts.poppins(),
+                          ),
+                          backgroundColor: Colors.red,
                         ),
-                        backgroundColor: Colors.red,
-                      ),
-                    );
-                  } else {
-                    final orderProvider =
-                        Provider.of<OrderProvider>(context, listen: false);
+                      );
+                    } else {
+                      final orderProvider =
+                          Provider.of<OrderProvider>(context, listen: false);
 
-                    final foodNames = cartModel.getFoodNames();
-                    final totalPrice = cartModel.getTotalPrice();
+                      final restaurantNames = cartModel.getRestaurantNames();
+                      final foodNames = cartModel.getFoodNames();
+                      final totalPrice = cartModel.getTotalPrice();
 
-                    orderProvider.addOrder(foodNames, totalPrice);
+                      orderProvider.addOrder(
+                          restaurantNames, foodNames, totalPrice);
 
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => OrdersPage(
-                          foodNames: foodNames,
-                          totalPrice: totalPrice,
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => OrdersPage(
+                            foodNames: foodNames,
+                            totalPrice: totalPrice,
+                          ),
                         ),
-                      ),
-                    );
+                      );
 
-                    cartModel.clearCart();
-                  }
-                },
-                child: Text(
-                  "Place your order",
-                  style: GoogleFonts.poppins(
-                    fontSize: screenWidth * 0.045,
-                    color: Colors.white,
+                      cartModel.clearCart();
+                    }
+                  },
+                  child: Text(
+                    "Place your order",
+                    style: GoogleFonts.poppins(
+                      fontSize: screenWidth * 0.045,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       )
     ]);
@@ -377,7 +384,7 @@ class _PlatePageState extends State<PlatePage> {
         padding: const EdgeInsets.all(25.0),
         child: Container(
           height: screenHeight *
-              0.17, // Example of using a percentage of screen height
+              0.173, // Example of using a percentage of screen height
           width: screenWidth *
               0.8, // Example of using a percentage of screen width
           decoration: BoxDecoration(
@@ -395,7 +402,6 @@ class _PlatePageState extends State<PlatePage> {
                     height: 70,
                     width: 70,
                   ),
-                  const SizedBox(width: 20),
                   Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: Column(
@@ -403,7 +409,17 @@ class _PlatePageState extends State<PlatePage> {
                       children: [
                         Text(
                           "${cartItems[index]['name']}",
-                          style: GoogleFonts.poppins(fontSize: 20),
+                          style: GoogleFonts.poppins(fontSize: 16),
+                          maxLines: 2, // Restrict to 2 lines
+                          overflow: TextOverflow
+                              .ellipsis, // Add ellipsis for overflow
+                          softWrap: true, // Enable wrapping
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          "From ${cartItems[index]['restaurant']}",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15, color: Colors.grey),
                           maxLines: 2, // Restrict to 2 lines
                           overflow: TextOverflow
                               .ellipsis, // Add ellipsis for overflow
@@ -414,7 +430,7 @@ class _PlatePageState extends State<PlatePage> {
                           TextSpan(
                               text: "Size: ",
                               style: GoogleFonts.poppins(
-                                  fontSize: 19, color: Colors.grey)),
+                                  fontSize: 17, color: Colors.grey)),
                           TextSpan(
                             text: cartItems[index]['size'] == 'S'
                                 ? 'Small'
@@ -422,7 +438,7 @@ class _PlatePageState extends State<PlatePage> {
                                     ? 'Medium'
                                     : 'Large', // Default case for 'L'
                             style: GoogleFonts.poppins(
-                                fontSize: 16, color: Colors.grey),
+                                fontSize: 15, color: Colors.grey),
                           )
                         ])),
                         const SizedBox(height: 6),
@@ -430,24 +446,23 @@ class _PlatePageState extends State<PlatePage> {
                           TextSpan(
                               text: "Tsh ",
                               style: GoogleFonts.poppins(
-                                  fontSize: 25, color: Colors.green)),
+                                  fontSize: 18, color: Colors.green)),
                           TextSpan(
                             text:
                                 " ${cartItems[index]['price']}", // Default case for 'L'
                             style: GoogleFonts.poppins(
-                                fontSize: 20, color: Colors.green),
+                                fontSize: 15, color: Colors.green),
                           )
                         ])),
                       ],
                     ),
                   ),
-                  const SizedBox(width: 20),
                   SizedBox(
                     height: 140,
                     width: 30,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 215, 211, 211),
+                        color: const Color.fromARGB(255, 221, 206, 206),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(

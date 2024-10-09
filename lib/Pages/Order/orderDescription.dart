@@ -6,15 +6,33 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Orderdescription extends StatefulWidget {
-  const Orderdescription({super.key});
+  final int orderNumber;
+  final String restaurantNames;
+  final String foodNames;
+  final double totalPrice;
+  final String date;
+
+  const Orderdescription({
+    super.key,
+    required this.orderNumber,
+    required this.restaurantNames,
+    required this.foodNames,
+    required this.totalPrice,
+    required this.date,
+  });
 
   @override
   State<Orderdescription> createState() => _OrderdescriptionState();
 }
 
 class _OrderdescriptionState extends State<Orderdescription> {
+  final double deliveryFee = 2500.00;
+  final double courierTip = 500.00;
+  final double serviceFee = 0.00;
   @override
   Widget build(BuildContext context) {
+    // Calculate grand total by accessing widget.totalPrice
+    final grandTotal = deliveryFee + courierTip + widget.totalPrice;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
@@ -34,20 +52,23 @@ class _OrderdescriptionState extends State<Orderdescription> {
                 ),
                 onTap: () {
                   Navigator.pop(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const OrdersPage(
-                                foodNames: [],
-                                totalPrice: 0,
-                              )));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OrdersPage(
+                        foodNames: [],
+                        totalPrice: 0,
+                      ),
+                    ),
+                  );
                 },
               ),
               Container(
                 height: 30,
                 width: 80,
                 decoration: const BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                  color: Colors.green,
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
                 child: Center(
                   child: Text(
                     "Help",
@@ -67,9 +88,7 @@ class _OrderdescriptionState extends State<Orderdescription> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    const Divider(
-                      color: Colors.black,
-                    ),
+                    const Divider(color: Colors.black),
                     // Order details
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -78,11 +97,11 @@ class _OrderdescriptionState extends State<Orderdescription> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Order #',
+                              'Order #${widget.orderNumber}',
                               style: GoogleFonts.poppins(fontSize: 19),
                             ),
                             Text(
-                              'Monday, October 7 at 08:15 AM',
+                              widget.date,
                               style: GoogleFonts.poppins(
                                   fontSize: 14, color: Colors.grey[600]),
                             )
@@ -100,52 +119,145 @@ class _OrderdescriptionState extends State<Orderdescription> {
                     const SizedBox(height: 15),
                     // Restaurant information
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Text(
-                          'Restaurant',
-                          style: GoogleFonts.poppins(fontSize: 16),
-                        ),
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Mr Liverpool',
-                              style: GoogleFonts.poppins(
-                                fontSize: 14,
-                                color: Colors.grey[600],
-                              ),
+                              'Restaurant(s)',
+                              style: GoogleFonts.poppins(fontSize: 16),
                             ),
-                            const SizedBox(width: 30),
-                            InkWell(
-                              onTap: () async {
-                                final Uri phoneUri = Uri(
-                                  scheme: 'tel',
-                                  path:
-                                      '+255624839009', // Replace with actual number
-                                );
-
-                                try {
-                                  if (await canLaunchUrl(phoneUri)) {
-                                    await launchUrl(
-                                      phoneUri,
-                                      mode: LaunchMode.externalApplication,
-                                    );
-                                  } else {
-                                    throw 'Could not launch $phoneUri';
-                                  }
-                                } catch (e) {
-                                  print('Error launching phone call: $e');
-                                }
-                              },
-                              child: Image.asset(
-                                './assets/phonecall.png',
-                                height: 20,
-                                width: 20,
-                                color: Colors.green[600],
+                            Container(
+                              width: double.infinity,
+                              child: Text(
+                                widget.restaurantNames,
+                                style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  color: Colors.grey[600],
+                                ),
                               ),
                             ),
                           ],
                         ),
+                        const SizedBox(height: 15),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Items in the plate:',
+                              style: GoogleFonts.poppins(fontSize: 16),
+                            ),
+                            SizedBox(
+                              width: double.infinity,
+                              child: Text(
+                                widget.foodNames,
+                                style: GoogleFonts.poppins(
+                                  fontSize: 14,
+                                  color: Colors.grey[600],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+
+                    const Divider(color: Colors.black),
+                    const SizedBox(height: 15),
+                    // Total price
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Total Price:',
+                          style: GoogleFonts.poppins(fontSize: 16),
+                        ),
+                        Text(
+                          'Tsh ${widget.totalPrice.toStringAsFixed(2)}',
+                          style: GoogleFonts.poppins(fontSize: 18),
+                        ),
+                      ],
+                    ),
+                    const Divider(color: Colors.black),
+                    // Subtotal, Delivery Fee, etc.
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Subtotal',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 14, color: Colors.grey[600]),
+                            ),
+                            Text(
+                              'Tsh ${widget.totalPrice.toStringAsFixed(2)}',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16, color: Colors.grey[600]),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Delivery fee',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 14, color: Colors.grey[600]),
+                            ),
+                            Text(
+                              'Tsh ${deliveryFee.toStringAsFixed(2)}',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16, color: Colors.grey[600]),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Courier tip',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 14, color: Colors.grey[600]),
+                            ),
+                            Text(
+                              'Tsh ${courierTip.toStringAsFixed(2)}',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16, color: Colors.grey[600]),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Service fee',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 14, color: Colors.grey[600]),
+                            ),
+                            Text(
+                              'Tsh ${serviceFee.toStringAsFixed(2)}',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16, color: Colors.grey[600]),
+                            )
+                          ],
+                        ),
+                        const SizedBox(height: 15),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Grand Total:',
+                              style: GoogleFonts.poppins(fontSize: 16),
+                            ),
+                            Text(
+                              'Tsh ${grandTotal.toStringAsFixed(2)} ',
+                              style: GoogleFonts.poppins(fontSize: 18),
+                            )
+                          ],
+                        ),
+                        const Divider(color: Colors.black),
                       ],
                     ),
                     const SizedBox(height: 15),
@@ -206,115 +318,6 @@ class _OrderdescriptionState extends State<Orderdescription> {
                       ],
                     ),
                     const Divider(color: Colors.black),
-                    const SizedBox(height: 15),
-                    // Items and Total
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Items in the plate:',
-                              style: GoogleFonts.poppins(fontSize: 16),
-                            ),
-                            Text(
-                              'Tsh 45000',
-                              style: GoogleFonts.poppins(fontSize: 18),
-                            )
-                          ],
-                        ),
-                        Text(
-                          'Chips yai | Ugali kuku choma | Makange Ngisi',
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            color: Colors.grey[600],
-                          ),
-                        ),
-                      ],
-                    ),
-                    const Divider(color: Colors.black),
-                    const SizedBox(height: 15),
-                    // Subtotal, Delivery Fee, etc.
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Subtotal',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 14, color: Colors.grey[600]),
-                            ),
-                            Text(
-                              'Tsh 45000',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16, color: Colors.grey[600]),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Delivery fee',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 14, color: Colors.grey[600]),
-                            ),
-                            Text(
-                              'Tsh 2500',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16, color: Colors.grey[600]),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Courier tip',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 14, color: Colors.grey[600]),
-                            ),
-                            Text(
-                              'Tsh 500',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16, color: Colors.grey[600]),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Service fee',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 14, color: Colors.grey[600]),
-                            ),
-                            Text(
-                              'Tsh 0',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16, color: Colors.grey[600]),
-                            )
-                          ],
-                        ),
-                        const SizedBox(height: 15),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Grand Total',
-                              style: GoogleFonts.poppins(fontSize: 16),
-                            ),
-                            Text(
-                              'Tsh 48000',
-                              style: GoogleFonts.poppins(fontSize: 18),
-                            )
-                          ],
-                        ),
-                        const Divider(color: Colors.black),
-                      ],
-                    ),
                   ],
                 ),
               ),
@@ -329,15 +332,19 @@ class _OrderdescriptionState extends State<Orderdescription> {
                 backgroundColor: Colors.green,
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      CupertinoPageRoute(
-                          builder: (context) => const paymentPage()));
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => const paymentPage(),
+                    ),
+                  );
                 },
                 child: Center(
                   child: Text(
                     'Pay Now',
-                    style:
-                        GoogleFonts.poppins(fontSize: 20, color: Colors.white),
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

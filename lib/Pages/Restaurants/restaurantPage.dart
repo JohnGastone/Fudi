@@ -41,7 +41,6 @@ class _RestaurantPageState extends State<RestaurantPage> {
         children: [
           Container(
             height: 300,
-            width: 360,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),

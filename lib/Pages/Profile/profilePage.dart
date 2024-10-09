@@ -10,12 +10,11 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
         centerTitle: false,
         elevation: 0,
-        backgroundColor: const Color(0xFF00BF6D),
-        foregroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(57, 255, 255, 255),
         title: const Text("Profile"),
         actions: [
           IconButton(
