@@ -174,11 +174,21 @@ class _RestaurantPageState extends State<RestaurantPage> {
                 ),
                 SizedBox(height: 10),
                 Padding(
-                  padding: EdgeInsets.only(right: 225),
-                  child: Text(
-                    restaurantLocation!,
-                    style:
-                        GoogleFonts.poppins(fontSize: 15, color: Colors.white),
+                  padding: const EdgeInsets.only(left: 18.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            restaurantLocation!,
+                            style: GoogleFonts.poppins(
+                                fontSize: 15, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(
@@ -263,35 +273,40 @@ class _RestaurantPageState extends State<RestaurantPage> {
                                   )
                                 ],
                               ),
-                              Container(
-                                height: 35,
-                                width: 115,
-                                decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(8))),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 5.0, right: 5),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Add to Plate",
-                                        style:
-                                            GoogleFonts.poppins(fontSize: 11),
-                                      ),
-                                      SizedBox(
-                                        width: 3,
-                                      ),
-                                      Image.asset(
-                                        "./assets/plate.png",
-                                        color: Colors.white,
-                                        height: 25,
-                                        width: 25,
-                                      ),
-                                    ],
+                              InkWell(
+                                onTap: () {
+                                  // Add this food to plate carrying food name, restaurant name, price, image, and food description
+                                },
+                                child: Container(
+                                  height: 35,
+                                  width: 115,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(8))),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 5.0, right: 5),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          "Add to Plate",
+                                          style:
+                                              GoogleFonts.poppins(fontSize: 11),
+                                        ),
+                                        SizedBox(
+                                          width: 3,
+                                        ),
+                                        Image.asset(
+                                          "./assets/plate.png",
+                                          color: Colors.white,
+                                          height: 25,
+                                          width: 25,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

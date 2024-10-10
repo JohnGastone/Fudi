@@ -128,7 +128,7 @@ class _OrderdescriptionState extends State<Orderdescription> {
                               'Restaurant(s)',
                               style: GoogleFonts.poppins(fontSize: 16),
                             ),
-                            Container(
+                            SizedBox(
                               width: double.infinity,
                               child: Text(
                                 widget.restaurantNames,

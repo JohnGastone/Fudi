@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CartModel with ChangeNotifier {
-  final List<Map<String, dynamic>> _cartItems = [];
+class PlateModel with ChangeNotifier {
+  final List<Map<String, dynamic>> _plateItems = [];
 
-  // Getter for cart items
-  List<Map<String, dynamic>> get cartItems => _cartItems;
+  // Getter for plate items
+  List<Map<String, dynamic>> get plateItems => _plateItems;
 
-  // Add food to cart
-  void addToCart(String image, String name, String restaurant, int price,
+  // Add food to plate
+  void addToPlate(String image, String name, String restaurant, int price,
       String size, int quantity) {
-    _cartItems.add({
+    _plateItems.add({
       "image": image,
       "name": name,
       "restaurant": restaurant,
@@ -21,30 +21,30 @@ class CartModel with ChangeNotifier {
   }
 
   List<String> getFoodNames() {
-    return cartItems.map((item) => item['name'].toString()).toList();
+    return plateItems.map((item) => item['name'].toString()).toList();
   }
 
   List<String> getRestaurantNames() {
-    return cartItems.map((item) => item['restaurant'].toString()).toList();
+    return plateItems.map((item) => item['restaurant'].toString()).toList();
   }
 
   double getTotalPrice() {
     double total = 0.0;
-    for (var item in cartItems) {
+    for (var item in plateItems) {
       total += item['price'] * item['quantity'];
     }
     return total;
   }
 
-  // Remove food from cart
-  void removeFromCart(int index) {
-    _cartItems.removeAt(index);
+  // Remove food from plate
+  void removeFromPlate(int index) {
+    _plateItems.removeAt(index);
     notifyListeners();
   }
 
-  // Clear cart (optional)
-  void clearCart() {
-    _cartItems.clear();
+  // Clear plate (optional)
+  void clearPlate() {
+    _plateItems.clear();
     notifyListeners();
   }
 }

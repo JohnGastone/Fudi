@@ -34,7 +34,7 @@ class _PlatePageState extends State<PlatePage> {
 
   void _plateCounter(int index) {
     setState(() {
-      Provider.of<CartModel>(context, listen: false).cartItems[index]
+      Provider.of<PlateModel>(context, listen: false).plateItems[index]
           ['quantity']++;
       _calculateTotal(); // Recalculate total after increment
     });
@@ -42,10 +42,10 @@ class _PlatePageState extends State<PlatePage> {
 
   void _plateDecrement(int index) {
     setState(() {
-      if (Provider.of<CartModel>(context, listen: false).cartItems[index]
+      if (Provider.of<PlateModel>(context, listen: false).plateItems[index]
               ['quantity'] >
           1) {
-        Provider.of<CartModel>(context, listen: false).cartItems[index]
+        Provider.of<PlateModel>(context, listen: false).plateItems[index]
             ['quantity']--;
         _calculateTotal(); // Recalculate total after decrement
       }
@@ -72,10 +72,11 @@ class _PlatePageState extends State<PlatePage> {
   }
 
   void _calculateTotal() {
-    final cartItems = Provider.of<CartModel>(context, listen: false).cartItems;
+    final plateItems =
+        Provider.of<PlateModel>(context, listen: false).plateItems;
     double newTotal = 0.0;
 
-    for (var item in cartItems) {
+    for (var item in plateItems) {
       newTotal += item['price'] * item['quantity'];
     }
 
@@ -85,7 +86,8 @@ class _PlatePageState extends State<PlatePage> {
   }
 
   Future<void> generateInvoicePdf() async {
-    final cartItems = Provider.of<CartModel>(context, listen: false).cartItems;
+    final cartItems =
+        Provider.of<PlateModel>(context, listen: false).plateItems;
 
     final pdf = pw.Document();
     // Load image from assets
@@ -170,7 +172,7 @@ class _PlatePageState extends State<PlatePage> {
 
   @override
   Widget build(BuildContext context) {
-    final cartItems = Provider.of<CartModel>(context).cartItems;
+    final cartItems = Provider.of<PlateModel>(context).plateItems;
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -268,10 +270,10 @@ class _PlatePageState extends State<PlatePage> {
                   heroTag: "download_invoice",
                   backgroundColor: Colors.green,
                   onPressed: () async {
-                    final cartModel =
-                        Provider.of<CartModel>(context, listen: false);
+                    final plateModel =
+                        Provider.of<PlateModel>(context, listen: false);
 
-                    if (cartModel.getFoodNames().isNotEmpty) {
+                    if (plateModel.getFoodNames().isNotEmpty) {
                       await generateInvoicePdf();
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -304,10 +306,10 @@ class _PlatePageState extends State<PlatePage> {
                   heroTag: "continue_to_payment",
                   backgroundColor: Colors.green,
                   onPressed: () {
-                    final cartModel =
-                        Provider.of<CartModel>(context, listen: false);
+                    final plateModel =
+                        Provider.of<PlateModel>(context, listen: false);
 
-                    if (cartModel.getFoodNames().isEmpty) {
+                    if (plateModel.getFoodNames().isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
@@ -321,9 +323,9 @@ class _PlatePageState extends State<PlatePage> {
                       final orderProvider =
                           Provider.of<OrderProvider>(context, listen: false);
 
-                      final restaurantNames = cartModel.getRestaurantNames();
-                      final foodNames = cartModel.getFoodNames();
-                      final totalPrice = cartModel.getTotalPrice();
+                      final restaurantNames = plateModel.getRestaurantNames();
+                      final foodNames = plateModel.getFoodNames();
+                      final totalPrice = plateModel.getTotalPrice();
 
                       orderProvider.addOrder(
                           restaurantNames, foodNames, totalPrice);
@@ -338,7 +340,7 @@ class _PlatePageState extends State<PlatePage> {
                         ),
                       );
 
-                      cartModel.clearCart();
+                      plateModel.clearPlate();
                     }
                   },
                   child: Text(
@@ -358,7 +360,7 @@ class _PlatePageState extends State<PlatePage> {
   }
 
   Widget _buildCartItem(int index) {
-    final cartItems = Provider.of<CartModel>(context).cartItems;
+    final cartItems = Provider.of<PlateModel>(context).plateItems;
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Dismissible(
@@ -366,7 +368,8 @@ class _PlatePageState extends State<PlatePage> {
       direction: DismissDirection.endToStart, // Swipe from right to left
       onDismissed: (direction) {
         setState(() {
-          Provider.of<CartModel>(context, listen: false).removeFromCart(index);
+          Provider.of<PlateModel>(context, listen: false)
+              .removeFromPlate(index);
           _calculateTotal(); // Recalculate total after item removal
         });
 

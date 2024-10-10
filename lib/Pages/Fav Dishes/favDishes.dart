@@ -59,7 +59,11 @@ class FavdishesPage extends StatelessWidget {
             .removeFromFavorites(favorites[index]);
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${favorites[index].foodName} dismissed')),
+          SnackBar(
+              content: Text(
+            '${favorites[index].foodName} dismissed',
+            style: GoogleFonts.poppins(),
+          )),
         );
       },
       background: Container(

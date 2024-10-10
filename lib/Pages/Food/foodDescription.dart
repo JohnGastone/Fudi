@@ -376,7 +376,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                 backgroundColor: Colors.green,
                 onPressed: () {
                   // Save food details to provider and SharedPreferences
-                  Provider.of<CartModel>(context, listen: false).addToCart(
+                  Provider.of<PlateModel>(context, listen: false).addToPlate(
                       foodImage,
                       foodName!,
                       restaurantName!,

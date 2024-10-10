@@ -16,7 +16,7 @@ void main() {
       create: (context) => ThemeProvider(), // Initialize with loaded theme
       child: MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => CartModel()),
+          ChangeNotifierProvider(create: (_) => PlateModel()),
           ChangeNotifierProvider(create: (_) => FavoritesModel()),
           ChangeNotifierProvider(create: (_) => OrderProvider()),
           // No child needed here
