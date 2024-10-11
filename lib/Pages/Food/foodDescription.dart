@@ -244,7 +244,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                             Image.asset(
                               foodImage!,
                               height: 200,
-                              width: 240,
+                              width: 238,
                             ),
                           ],
                         ),

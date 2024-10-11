@@ -9,6 +9,7 @@ import 'package:fudi/Pages/Profile/profilePage.dart';
 import 'package:fudi/Pages/Restaurants/restaurantsPage.dart';
 import 'package:fudi/models/categories_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/popularFoods_model.dart';
 import 'Order/ordersPage.dart';
@@ -347,6 +348,9 @@ class _ExplorePageState extends State<ExplorePage> {
 
   @override
   Widget build(BuildContext context) {
+    // Get screen dimensions
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       body: Stack(children: [
@@ -619,6 +623,66 @@ class _ExplorePageState extends State<ExplorePage> {
             ),
           ),
         ]),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0, bottom: 85),
+          child: Align(
+            alignment: Alignment.bottomRight,
+            child: SizedBox(
+              width: screenWidth * 0.3,
+              height: screenHeight * 0.099,
+              child: InkWell(
+                onTap: () {
+                  onTap:
+                  () async {
+                    final Uri phoneUri = Uri(
+                      scheme: 'tel',
+                      path: '+255624839009', // Replace with actual number
+                    );
+
+                    try {
+                      if (await canLaunchUrl(phoneUri)) {
+                        await launchUrl(
+                          phoneUri,
+                          mode: LaunchMode.externalApplication,
+                        );
+                      } else {
+                        throw 'Could not launch $phoneUri';
+                      }
+                    } catch (e) {
+                      print('Error launching phone call: $e');
+                    }
+                  };
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 1, color: Colors.green)),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    child: Center(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Text(
+                            "Ask for help",
+                            style: GoogleFonts.poppins(
+                                fontSize: 12.5, color: Colors.green),
+                          ),
+                          Icon(
+                            CupertinoIcons.phone,
+                            color: Colors.green,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
       ]),
     );
   }

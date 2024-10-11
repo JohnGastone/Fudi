@@ -39,6 +39,8 @@ class PickUpEveningTimesList {
     PickUpTimesModel('17:30 PM'),
     PickUpTimesModel('18:00 PM'),
     PickUpTimesModel('18:30 PM'),
+    PickUpTimesModel('19:00 PM'),
+    PickUpTimesModel('19:30 PM'),
   ];
   static List<PickUpTimesModel> displayList =
       List.from(PickUpEveningTimesList.getPickUpTimes);
