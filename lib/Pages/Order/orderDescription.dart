@@ -31,7 +31,6 @@ class _OrderdescriptionState extends State<Orderdescription> {
   final double serviceFee = 0.00;
   @override
   Widget build(BuildContext context) {
-    // Calculate grand total by accessing widget.totalPrice
     final grandTotal = deliveryFee + courierTip + widget.totalPrice;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 221, 206, 206),
@@ -268,21 +267,50 @@ class _OrderdescriptionState extends State<Orderdescription> {
                         SizedBox(
                           width: double
                               .infinity, // Make the column take up the full width
-                          child: Column(
-                            crossAxisAlignment:
-                                CrossAxisAlignment.start, // This will work now
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                'Deliver to:',
-                                style: GoogleFonts.poppins(fontSize: 16),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment
+                                    .start, // This will work now
+                                children: [
+                                  Text(
+                                    'Deliver to:',
+                                    style: GoogleFonts.poppins(fontSize: 16),
+                                  ),
+                                  Text(
+                                    'Mabibo Mwisho',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 14,
+                                      color: Colors.grey[600],
+                                    ),
+                                  ),
+                                ],
                               ),
-                              Text(
-                                'Mabibo Mwisho',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 14,
-                                  color: Colors.grey[600],
+                              SizedBox(
+                                width: 200,
+                                child: FloatingActionButton(
+                                  onPressed: () {},
+                                  backgroundColor: Colors.green,
+                                  child: Text(
+                                    "Change Delivery Location",
+                                    style: GoogleFonts.poppins(
+                                        color: Colors.white),
+                                  ),
                                 ),
                               ),
+                              SizedBox(
+                                width: 70,
+                                child: FloatingActionButton(
+                                  onPressed: () {},
+                                  backgroundColor: Colors.green,
+                                  child: Text(
+                                    "Pick Up",
+                                    style: GoogleFonts.poppins(
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              )
                             ],
                           ),
                         ),

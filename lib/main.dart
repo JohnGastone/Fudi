@@ -19,7 +19,6 @@ void main() {
           ChangeNotifierProvider(create: (_) => PlateModel()),
           ChangeNotifierProvider(create: (_) => FavoritesModel()),
           ChangeNotifierProvider(create: (_) => OrderProvider()),
-          // No child needed here
         ],
         child: const MyApp(),
       ),
