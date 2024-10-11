@@ -82,6 +82,9 @@ class _FudiDescriptionState extends State<FudiDescription> {
     final foodPrice = widget.popularFood?.foodPrice;
     final foodImage = widget.popularFood?.foodCoverImage;
     final foodDescription = widget.popularFood?.foodDescription;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
@@ -162,7 +165,6 @@ class _FudiDescriptionState extends State<FudiDescription> {
                           right: 12.0,
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Column(
                               children: [
@@ -186,7 +188,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                                SizedBox(height: 30),
                                 GestureDetector(
                                   onTap: () {
                                     _onSizeSelected("M");
@@ -213,7 +215,7 @@ class _FudiDescriptionState extends State<FudiDescription> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                                SizedBox(height: 30),
                                 GestureDetector(
                                   onTap: () {
                                     _onSizeSelected("L");
@@ -236,10 +238,13 @@ class _FudiDescriptionState extends State<FudiDescription> {
                                 ),
                               ],
                             ),
+                            SizedBox(
+                              width: 50,
+                            ),
                             Image.asset(
                               foodImage!,
-                              height: 150,
-                              width: 140,
+                              height: 200,
+                              width: 240,
                             ),
                           ],
                         ),

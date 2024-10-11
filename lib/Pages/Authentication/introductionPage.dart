@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import "package:flutter/material.dart";
 import "package:fudi/Pages/Authentication/loginPage.dart";
 import "package:fudi/Pages/Authentication/signUpPage.dart";
@@ -16,58 +14,106 @@ class IntroductionPage extends StatefulWidget {
 class _IntroductionPageState extends State<IntroductionPage> {
   @override
   Widget build(BuildContext context) {
+    // Get screen dimensions
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 87, 145, 21),
+      backgroundColor: const Color.fromARGB(255, 87, 145, 21),
       body: SingleChildScrollView(
         child: Center(
-          child: Column(
-            children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  height: 150,
-                  width: 140,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.only(bottomRight: Radius.circular(100)),
-                    color: Colors.white24,
+          child: Container(
+            height: screenHeight, // Set the height to the screen height
+            width: screenWidth, // Set the width to the screen width
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("./assets/pic.png"),
+                    fit: BoxFit.cover)), // Cover the entire screen
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
+                ),
+                Text(
+                  "Hello.",
+                  style: GoogleFonts.poppins(
+                      fontSize: 60,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Let's get you a dish",
+                        style: GoogleFonts.poppins(
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      Image.asset(
+                        "./assets/blink.png",
+                        height: 40,
+                        width: 40,
+                      )
+                    ],
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 100,
-              ),
-              Text(
-                "Hello.",
-                style: GoogleFonts.poppins(
-                    fontSize: 60,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.only(left: 50),
-                child: Row(
-                  children: [
-                    Text(
-                      "Let's get you a dish",
-                      style: GoogleFonts.poppins(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    Image.asset(
-                      "./assets/blink.png",
-                      height: 40,
-                      width: 40,
-                    )
-                  ],
+                const SizedBox(
+                  height: 20,
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              InkWell(
+                InkWell(
+                    child: Container(
+                      height: 50,
+                      width: 140,
+                      decoration: BoxDecoration(
+                          //boxShadow: ,
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.white),
+                      child: Center(
+                        child: Text(
+                          "Login",
+                          style: GoogleFonts.poppins(fontSize: 30),
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Loginpage()));
+                    }),
+                const SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 48, right: 20),
+                  child: Row(
+                    children: [
+                      const SizedBox(
+                          width: 100,
+                          child: Divider(
+                            color: Colors.white,
+                          )),
+                      Text(
+                        "  Or  ",
+                        style: GoogleFonts.poppins(
+                            fontSize: 20, color: Colors.white),
+                      ),
+                      const SizedBox(
+                          width: 100,
+                          child: Divider(
+                            color: Colors.white,
+                          )),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                InkWell(
                   child: Container(
                     height: 50,
                     width: 140,
@@ -77,94 +123,40 @@ class _IntroductionPageState extends State<IntroductionPage> {
                         color: Colors.white),
                     child: Center(
                       child: Text(
-                        "Login",
+                        "Sign Up",
                         style: GoogleFonts.poppins(fontSize: 30),
                       ),
                     ),
                   ),
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Loginpage()));
-                  }),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 48, right: 20),
-                child: Row(
-                  children: [
-                    SizedBox(
-                        width: 100,
-                        child: Divider(
-                          color: Colors.white,
-                        )),
-                    Text(
-                      "  Or  ",
-                      style: GoogleFonts.poppins(
-                          fontSize: 20, color: Colors.white),
-                    ),
-                    SizedBox(
-                        width: 100,
-                        child: Divider(
-                          color: Colors.white,
-                        )),
-                  ],
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpPage()));
+                  },
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              InkWell(
-                child: Container(
-                  height: 50,
-                  width: 140,
-                  decoration: BoxDecoration(
-                      //boxShadow: ,
-                      borderRadius: BorderRadius.circular(30),
-                      color: Colors.white),
-                  child: Center(
+                const SizedBox(
+                  height: 20,
+                ),
+                InkWell(
                     child: Text(
-                      "Sign Up",
-                      style: GoogleFonts.poppins(fontSize: 30),
+                      "Continue as a guest",
+                      style: GoogleFonts.poppins(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
                     ),
-                  ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MyHomePage()));
+                    }),
+                const SizedBox(
+                  height: 80,
                 ),
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SignUpPage()));
-                },
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              InkWell(
-                  child: Text(
-                    "Continue as a guest",
-                    style: GoogleFonts.poppins(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyHomePage()));
-                  }),
-              SizedBox(
-                height: 80,
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: Container(
-                  height: 150,
-                  width: 140,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(100)),
-                    color: Colors.white24,
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

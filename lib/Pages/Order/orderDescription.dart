@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Order/ordersPage.dart';
 import 'package:fudi/Pages/Payments/paymentPage.dart';
+import 'package:fudi/Pages/Pick%20Up/pickUpPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,8 +30,12 @@ class _OrderdescriptionState extends State<Orderdescription> {
   final double deliveryFee = 2500.00;
   final double courierTip = 500.00;
   final double serviceFee = 0.00;
+
   @override
   Widget build(BuildContext context) {
+    // Get screen dimensions
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     final grandTotal = deliveryFee + courierTip + widget.totalPrice;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 221, 206, 206),
@@ -288,26 +293,34 @@ class _OrderdescriptionState extends State<Orderdescription> {
                                 ],
                               ),
                               SizedBox(
-                                width: 200,
+                                height: screenHeight * 0.05,
+                                width: screenWidth * 0.4,
                                 child: FloatingActionButton(
                                   onPressed: () {},
                                   backgroundColor: Colors.green,
                                   child: Text(
                                     "Change Delivery Location",
                                     style: GoogleFonts.poppins(
-                                        color: Colors.white),
+                                        fontSize: 12, color: Colors.white),
                                   ),
                                 ),
                               ),
                               SizedBox(
-                                width: 70,
+                                height: screenHeight * 0.05,
+                                width: screenWidth * 0.2,
                                 child: FloatingActionButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        CupertinoPageRoute(
+                                            builder: (context) =>
+                                                const PickUpPage()));
+                                  },
                                   backgroundColor: Colors.green,
                                   child: Text(
                                     "Pick Up",
                                     style: GoogleFonts.poppins(
-                                        color: Colors.white),
+                                        fontSize: 12, color: Colors.white),
                                   ),
                                 ),
                               )
