@@ -82,8 +82,6 @@ class _FudiDescriptionState extends State<FudiDescription> {
     final foodPrice = widget.popularFood?.foodPrice;
     final foodImage = widget.popularFood?.foodCoverImage;
     final foodDescription = widget.popularFood?.foodDescription;
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 221, 206, 206),

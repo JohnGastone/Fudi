@@ -201,70 +201,75 @@ class _PickUpPageState extends State<PickUpPage> {
                       style: GoogleFonts.poppins(
                           fontSize: 18, fontWeight: FontWeight.w600),
                     ),
-                    Container(
-                      height: screenHeight * 0.16,
-                      width: screenWidth * 0.859,
-                      decoration: BoxDecoration(
+                    // Dynamically generate restaurant cards
+                    ...restaurants.map((restaurant) {
+                      return Container(
+                        margin: EdgeInsets.only(top: 10),
+                        height: screenHeight * 0.16,
+                        width: screenWidth * 0.859,
+                        decoration: BoxDecoration(
                           border: Border.all(width: 1, color: Colors.grey),
-                          borderRadius: BorderRadius.all(Radius.circular(12))),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      "Restaurant: ",
-                                      style: GoogleFonts.poppins(
-                                          color: Colors.grey),
-                                    ),
-                                    Text(
-                                      " Shishi Food ",
-                                      style: GoogleFonts.poppins(
-                                          color: Colors.grey),
-                                    ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 5, bottom: 5),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
                                     children: [
                                       Text(
-                                        "Location: ",
+                                        "Restaurant: ",
                                         style: GoogleFonts.poppins(
                                             color: Colors.grey),
                                       ),
                                       Text(
-                                        " Kijitonyama ",
+                                        restaurant['name']!,
                                         style: GoogleFonts.poppins(
                                             color: Colors.grey),
                                       ),
-                                      SizedBox(
-                                        width: screenWidth * 0.2999,
-                                        height: screenHeight * 0.035,
-                                        child: InkWell(
-                                          onTap: () {
-                                            // Handle google map launching for live following.
-                                          },
-                                          child: Container(
-                                            decoration: BoxDecoration(
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 5, bottom: 5),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          "Location: ",
+                                          style: GoogleFonts.poppins(
+                                              color: Colors.grey),
+                                        ),
+                                        Text(
+                                          restaurant['location']!,
+                                          style: GoogleFonts.poppins(
+                                              color: Colors.grey),
+                                        ),
+                                        SizedBox(
+                                          width: screenWidth * 0.2999,
+                                          height: screenHeight * 0.035,
+                                          child: InkWell(
+                                            onTap: () {
+                                              // Handle google map launching for live following.
+                                            },
+                                            child: Container(
+                                              decoration: BoxDecoration(
                                                 shape: BoxShape.rectangle,
                                                 borderRadius: BorderRadius.all(
-                                                    Radius.circular(12)),
+                                                  Radius.circular(12),
+                                                ),
                                                 border: Border.all(
                                                     width: 1,
-                                                    color: Colors.green)),
-                                            child: CircleAvatar(
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              child: Center(
+                                                    color: Colors.green),
+                                              ),
+                                              child: CircleAvatar(
+                                                backgroundColor:
+                                                    Colors.transparent,
                                                 child: Center(
                                                   child: Padding(
                                                     padding:
@@ -276,18 +281,16 @@ class _PickUpPageState extends State<PickUpPage> {
                                                           "Follow Map",
                                                           style: GoogleFonts
                                                               .poppins(
-                                                                  fontSize: 11,
-                                                                  color: Colors
-                                                                      .green),
+                                                            fontSize: 11,
+                                                            color: Colors.green,
+                                                          ),
                                                         ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
+                                                        SizedBox(width: 5),
                                                         Icon(
                                                           Icons.location_on,
                                                           color: Colors.green,
                                                           size: 15,
-                                                        )
+                                                        ),
                                                       ],
                                                     ),
                                                   ),
@@ -296,102 +299,102 @@ class _PickUpPageState extends State<PickUpPage> {
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 5.0, bottom: 5.0),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "Phone Number: ",
-                                        style: GoogleFonts.poppins(
-                                            color: Colors.grey),
-                                      ),
-                                      Text(
-                                        " 0624839009 ",
-                                        style: GoogleFonts.poppins(
-                                            color: Colors.grey),
-                                      ),
-                                      SizedBox(
-                                        width: screenWidth * 0.2999,
-                                        height: screenHeight * 0.035,
-                                        child: InkWell(
-                                          onTap: () async {
-                                            final Uri phoneUri = Uri(
-                                              scheme: 'tel',
-                                              path:
-                                                  '+255624839009', // Replace with actual number
-                                            );
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 5.0, bottom: 5.0),
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Phone Number: ",
+                                          style: GoogleFonts.poppins(
+                                              color: Colors.grey),
+                                        ),
+                                        Text(
+                                          restaurant['phone']!,
+                                          style: GoogleFonts.poppins(
+                                              color: Colors.grey),
+                                        ),
+                                        SizedBox(
+                                          width: screenWidth * 0.2999,
+                                          height: screenHeight * 0.035,
+                                          child: InkWell(
+                                            onTap: () async {
+                                              final Uri phoneUri = Uri(
+                                                scheme: 'tel',
+                                                path: restaurant['phone'],
+                                              );
 
-                                            try {
-                                              if (await canLaunchUrl(
-                                                  phoneUri)) {
-                                                await launchUrl(
-                                                  phoneUri,
-                                                  mode: LaunchMode
-                                                      .externalApplication,
-                                                );
-                                              } else {
-                                                throw 'Could not launch $phoneUri';
+                                              try {
+                                                if (await canLaunchUrl(
+                                                    phoneUri)) {
+                                                  await launchUrl(
+                                                    phoneUri,
+                                                    mode: LaunchMode
+                                                        .externalApplication,
+                                                  );
+                                                } else {
+                                                  throw 'Could not launch $phoneUri';
+                                                }
+                                              } catch (e) {
+                                                print(
+                                                    'Error launching phone call: $e');
                                               }
-                                            } catch (e) {
-                                              print(
-                                                  'Error launching phone call: $e');
-                                            }
-                                          },
-                                          child: Container(
-                                            decoration: BoxDecoration(
+                                            },
+                                            child: Container(
+                                              decoration: BoxDecoration(
                                                 shape: BoxShape.rectangle,
                                                 borderRadius: BorderRadius.all(
-                                                    Radius.circular(12)),
+                                                  Radius.circular(12),
+                                                ),
                                                 border: Border.all(
                                                     width: 1,
-                                                    color: Colors.green)),
-                                            child: CircleAvatar(
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              child: Center(
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(2.2),
-                                                  child: Row(
-                                                    children: [
-                                                      Text(
-                                                        "Call them here",
-                                                        style:
-                                                            GoogleFonts.poppins(
-                                                                fontSize: 11,
-                                                                color: Colors
-                                                                    .green),
-                                                      ),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Icon(
-                                                        CupertinoIcons.phone,
-                                                        color: Colors.green,
-                                                        size: 13,
-                                                      )
-                                                    ],
+                                                    color: Colors.green),
+                                              ),
+                                              child: CircleAvatar(
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                child: Center(
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            2.2),
+                                                    child: Row(
+                                                      children: [
+                                                        Text(
+                                                          "Call them here",
+                                                          style: GoogleFonts
+                                                              .poppins(
+                                                            fontSize: 11,
+                                                            color: Colors.green,
+                                                          ),
+                                                        ),
+                                                        SizedBox(width: 5),
+                                                        Icon(
+                                                          CupertinoIcons.phone,
+                                                          color: Colors.green,
+                                                          size: 13,
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                )
-                              ],
-                            ),
-                          ],
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ),
+                      );
+                    }).toList(),
                     Column(
                       children: [
                         SizedBox(

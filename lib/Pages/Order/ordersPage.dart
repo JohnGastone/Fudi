@@ -27,6 +27,8 @@ class _OrdersPageState extends State<OrdersPage> {
   Widget build(BuildContext context) {
     final orderProvider = Provider.of<OrderProvider>(context);
     final orders = orderProvider.orders;
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 221, 206, 206),
@@ -249,20 +251,26 @@ class _OrdersPageState extends State<OrdersPage> {
   // }
 
   Widget _buildTypeButton(String text, bool isSelected) {
-    return ElevatedButton(
-      onPressed: () {
+    return InkWell(
+      onTap: () {
         setState(() {
           _selectedOrderType = text;
         });
       },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: isSelected ? Colors.green : Colors.grey[200],
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      ),
-      child: Text(
-        text,
-        style: GoogleFonts.poppins(
-            color: isSelected ? Colors.white : Colors.black),
+      child: Container(
+        height: 35,
+        width: 100,
+        decoration: BoxDecoration(
+            color: isSelected ? Colors.green : Colors.transparent,
+            border: Border.all(color: Colors.grey),
+            borderRadius: const BorderRadius.all(Radius.circular(12))),
+        child: Center(
+          child: Text(
+            text,
+            style: GoogleFonts.poppins(
+                color: isSelected ? Colors.white : Colors.grey),
+          ),
+        ),
       ),
     );
   }
