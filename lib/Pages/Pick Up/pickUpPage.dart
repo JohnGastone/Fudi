@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -86,63 +86,6 @@ class _PickUpPageState extends State<PickUpPage> {
       ),
       backgroundColor: const Color.fromARGB(255, 221, 206, 206),
       body: Stack(children: [
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0, bottom: 85),
-          child: Align(
-            alignment: Alignment.bottomRight,
-            child: SizedBox(
-              width: screenWidth * 0.3,
-              height: screenHeight * 0.099,
-              child: InkWell(
-                onTap: () async {
-                  final Uri phoneUri = Uri(
-                    scheme: 'tel',
-                    path: '+255624839009', // Replace with actual number
-                  );
-
-                  try {
-                    if (await canLaunchUrl(phoneUri)) {
-                      await launchUrl(
-                        phoneUri,
-                        mode: LaunchMode.externalApplication,
-                      );
-                    } else {
-                      throw 'Could not launch $phoneUri';
-                    }
-                  } catch (e) {
-                    print('Error launching phone call: $e');
-                  }
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(width: 1, color: Colors.green)),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    child: Center(
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Text(
-                            "Ask for help",
-                            style: GoogleFonts.poppins(
-                                fontSize: 12.5, color: Colors.green),
-                          ),
-                          Icon(
-                            CupertinoIcons.phone,
-                            color: Colors.green,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
         SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(5.0),
@@ -251,7 +194,7 @@ class _PickUpPageState extends State<PickUpPage> {
                 Column(
                   children: [
                     SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     Text(
                       "Restaurant(s) Information",
@@ -307,7 +250,9 @@ class _PickUpPageState extends State<PickUpPage> {
                                         width: screenWidth * 0.2999,
                                         height: screenHeight * 0.035,
                                         child: InkWell(
-                                          onTap: () {},
+                                          onTap: () {
+                                            // Handle google map launching for live following.
+                                          },
                                           child: Container(
                                             decoration: BoxDecoration(
                                                 shape: BoxShape.rectangle,
@@ -321,24 +266,30 @@ class _PickUpPageState extends State<PickUpPage> {
                                                   Colors.transparent,
                                               child: Center(
                                                 child: Center(
-                                                  child: Row(
-                                                    children: [
-                                                      Text(
-                                                        "Follow Map",
-                                                        style:
-                                                            GoogleFonts.poppins(
-                                                                fontSize: 11,
-                                                                color: Colors
-                                                                    .green),
-                                                      ),
-                                                      SizedBox(
-                                                        width: 5,
-                                                      ),
-                                                      Icon(
-                                                        Icons.location_on,
-                                                        color: Colors.green,
-                                                      )
-                                                    ],
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            4.0),
+                                                    child: Row(
+                                                      children: [
+                                                        Text(
+                                                          "Follow Map",
+                                                          style: GoogleFonts
+                                                              .poppins(
+                                                                  fontSize: 11,
+                                                                  color: Colors
+                                                                      .green),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 5,
+                                                        ),
+                                                        Icon(
+                                                          Icons.location_on,
+                                                          color: Colors.green,
+                                                          size: 15,
+                                                        )
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -422,7 +373,7 @@ class _PickUpPageState extends State<PickUpPage> {
                                                       Icon(
                                                         CupertinoIcons.phone,
                                                         color: Colors.green,
-                                                        size: 12,
+                                                        size: 13,
                                                       )
                                                     ],
                                                   ),
@@ -440,10 +391,125 @@ class _PickUpPageState extends State<PickUpPage> {
                           ],
                         ),
                       ),
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          "Pick Up Note(Optional)",
+                          style: GoogleFonts.poppins(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                        Container(
+                          height: screenHeight * 0.08,
+                          width: screenWidth * 0.859,
+                          decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
+                              border: Border.all(width: 1, color: Colors.grey),
+                              color: Colors.transparent),
+                          child: Padding(
+                            padding: EdgeInsets.all(8),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  hintMaxLines: 2,
+                                  border: InputBorder.none,
+                                  hintText:
+                                      "Example: My order will be picked up by my friend Omary Bongo, he is a con so be careful with him.",
+                                  hintStyle: GoogleFonts.poppins(
+                                      fontSize: 12, color: Colors.grey)),
+                            ),
+                          ),
+                        )
+                      ],
                     )
                   ],
-                )
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: SizedBox(
+                    width: screenWidth * 0.4,
+                    height: 50,
+                    child: FloatingActionButton(
+                      backgroundColor: Colors.green,
+                      onPressed: () {
+                        //Handle Pick Up confirmation
+                      },
+                      child: Center(
+                        child: Text(
+                          'Confirm Pick Up',
+                          style: GoogleFonts.poppins(
+                            fontSize: 17,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 8.0, bottom: 35),
+          child: Align(
+            alignment: Alignment.bottomRight,
+            child: SizedBox(
+              width: screenWidth * 0.2,
+              height: screenHeight * 0.095,
+              child: InkWell(
+                onTap: () async {
+                  final Uri phoneUri = Uri(
+                    scheme: 'tel',
+                    path: '+255624839009', // FUDI Customer Support Center
+                  );
+
+                  try {
+                    if (await canLaunchUrl(phoneUri)) {
+                      await launchUrl(
+                        phoneUri,
+                        mode: LaunchMode.externalApplication,
+                      );
+                    } else {
+                      throw 'Could not launch $phoneUri';
+                    }
+                  } catch (e) {
+                    print('Error launching phone call: $e');
+                  }
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 1, color: Colors.green)),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    child: Center(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 25,
+                          ),
+                          Text(
+                            "Ask for help",
+                            style: GoogleFonts.poppins(
+                                fontSize: 10, color: Colors.green),
+                          ),
+                          Icon(
+                            CupertinoIcons.phone,
+                            color: Colors.green,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -488,7 +554,7 @@ class _PickUpPageState extends State<PickUpPage> {
   }
 
   // Function to build the time GridView
-  Widget _buildTimeGridView(List<PickUpTimesModel> appointments) {
+  Widget _buildTimeGridView(List<PickUpTimesModel> pickUps) {
     return SizedBox(
       height: 180,
       width: 340,
@@ -499,16 +565,15 @@ class _PickUpPageState extends State<PickUpPage> {
           mainAxisSpacing: 20,
         ),
         scrollDirection: Axis.horizontal,
-        itemCount: appointments.length,
+        itemCount: pickUps.length,
         itemBuilder: (context, index) {
-          final appointment = appointments[index];
-          final isSelected =
-              selectedTime == appointment; // Compare objects directly
+          final pickUp = pickUps[index];
+          final isSelected = selectedTime == pickUp; // Compare objects directly
 
           return GestureDetector(
             onTap: () {
               setState(() {
-                selectedTime = isSelected ? null : appointment;
+                selectedTime = isSelected ? null : pickUp;
               });
             },
             child: Container(
@@ -528,7 +593,7 @@ class _PickUpPageState extends State<PickUpPage> {
               child: Center(
                 child: Text(
                   textAlign: TextAlign.center,
-                  appointment.time!,
+                  pickUp.time!,
                   style: GoogleFonts.poppins(
                     fontSize: 16,
                     color: isSelected ? Colors.white : Colors.grey,

@@ -296,7 +296,9 @@ class _OrderdescriptionState extends State<Orderdescription> {
                                 height: screenHeight * 0.05,
                                 width: screenWidth * 0.4,
                                 child: FloatingActionButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    //Handling google map launching for a location change.
+                                  },
                                   backgroundColor: Colors.green,
                                   child: Text(
                                     "Change Delivery Location",

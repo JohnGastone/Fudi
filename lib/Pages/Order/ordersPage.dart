@@ -73,7 +73,7 @@ class _OrdersPageState extends State<OrdersPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "Your have no orders yet. Please add foods into your plate then place order",
+                      "Your have no orders yet. Please add food into your plate then place order",
                       style: GoogleFonts.poppins(),
                     ),
                   ),
@@ -84,7 +84,7 @@ class _OrdersPageState extends State<OrdersPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 40),
+                        const SizedBox(height: 50),
                         SizedBox(
                           height: double.maxFinite,
                           child: ListView.builder(

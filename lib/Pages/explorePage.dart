@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fudi/Pages/Authentication/loginPage.dart';
 import 'package:fudi/Pages/Fav%20Dishes/favDishes.dart';
 import 'package:fudi/Pages/Plate/platePage.dart';
 import 'package:fudi/Pages/Food/foodDescription.dart';
-import 'package:fudi/Pages/Profile/profilePage.dart';
 import 'package:fudi/Pages/Restaurants/restaurantsPage.dart';
 import 'package:fudi/models/categories_model.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,6 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -50,172 +50,38 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset(
                     "./assets/fudi.png",
                     height: 60,
                     width: 60,
                   ),
-                  SizedBox(
-                    width: 35,
-                  ),
-                  Row(
-                    children: [
-                      InkWell(
-                        child: Icon(
-                          Icons.location_pin,
-                          size: 20,
-                          color: Colors.green,
-                        ),
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: Text(
-                                    "Location",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 16, color: Colors.black),
-                                  ),
-                                  content: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      TextField(
-                                        decoration: InputDecoration(
-                                            border: OutlineInputBorder(),
-                                            hintText: "Enter your location"),
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 16, color: Colors.black),
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      SizedBox(
-                                        width: 200,
-                                        child: FloatingActionButton(
-                                            backgroundColor: Colors.green,
-                                            child: Text("Pick from the map",
-                                                style: GoogleFonts.poppins(
-                                                    fontSize: 16)),
-                                            onPressed: () {
-                                              // Integration to google maps
-                                            }),
-                                      )
-                                    ],
-                                  ),
-                                  actions: [
-                                    TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text(
-                                          "Cancel",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 16,
-                                              color: Colors.black),
-                                        )),
-                                    TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop();
-                                        },
-                                        child: Text(
-                                          "OK",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 16,
-                                              color: Colors.black),
-                                        ))
-                                  ],
-                                );
-                              });
-                        },
+                  Container(
+                    height: screenHeight * 0.05,
+                    width: screenWidth * 0.5,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Colors.green),
+                        borderRadius: BorderRadius.all(Radius.circular(12))),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Row(
+                        children: [
+                          InkWell(
+                            child: Icon(
+                              Icons.location_pin,
+                              size: 20,
+                              color: Colors.green,
+                            ),
+                            onTap: () {},
+                          ),
+                          Text(
+                            "Mabibo Mwisho",
+                            style: GoogleFonts.poppins(fontSize: 16),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "Nathan John",
-                        style: GoogleFonts.poppins(fontSize: 16),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      InkWell(
-                        child: Icon(
-                          Icons.arrow_drop_down,
-                          size: 30,
-                          color: Colors.green,
-                        ),
-                        onTap: () {
-                          showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: Text(
-                                    "User Manager  ",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 16, color: Colors.black),
-                                  ),
-                                  content: Row(
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(
-                                            width: 100,
-                                            child: FloatingActionButton(
-                                              backgroundColor: Colors.green,
-                                              child: Text(
-                                                "Log Out",
-                                                style: GoogleFonts.poppins(
-                                                    fontSize: 16),
-                                              ),
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            Loginpage()));
-                                              },
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 26,
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          SizedBox(
-                                            width: 100,
-                                            child: FloatingActionButton(
-                                              backgroundColor: Colors.green,
-                                              child: Text(
-                                                "Profile",
-                                                style: GoogleFonts.poppins(
-                                                    fontSize: 16),
-                                              ),
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            ProfileScreen()));
-                                              },
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              });
-                        },
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: 30,
+                    ),
                   ),
                   InkWell(
                     child: Image.asset(
@@ -628,30 +494,27 @@ class _ExplorePageState extends State<ExplorePage> {
           child: Align(
             alignment: Alignment.bottomRight,
             child: SizedBox(
-              width: screenWidth * 0.3,
-              height: screenHeight * 0.099,
+              width: screenWidth * 0.2,
+              height: screenHeight * 0.095,
               child: InkWell(
-                onTap: () {
-                  onTap:
-                  () async {
-                    final Uri phoneUri = Uri(
-                      scheme: 'tel',
-                      path: '+255624839009', // Replace with actual number
-                    );
+                onTap: () async {
+                  final Uri phoneUri = Uri(
+                    scheme: 'tel',
+                    path: '+255624839009', // FUDI Customer Support Center
+                  );
 
-                    try {
-                      if (await canLaunchUrl(phoneUri)) {
-                        await launchUrl(
-                          phoneUri,
-                          mode: LaunchMode.externalApplication,
-                        );
-                      } else {
-                        throw 'Could not launch $phoneUri';
-                      }
-                    } catch (e) {
-                      print('Error launching phone call: $e');
+                  try {
+                    if (await canLaunchUrl(phoneUri)) {
+                      await launchUrl(
+                        phoneUri,
+                        mode: LaunchMode.externalApplication,
+                      );
+                    } else {
+                      throw 'Could not launch $phoneUri';
                     }
-                  };
+                  } catch (e) {
+                    print('Error launching phone call: $e');
+                  }
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -668,7 +531,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           Text(
                             "Ask for help",
                             style: GoogleFonts.poppins(
-                                fontSize: 12.5, color: Colors.green),
+                                fontSize: 10, color: Colors.green),
                           ),
                           Icon(
                             CupertinoIcons.phone,

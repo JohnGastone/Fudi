@@ -202,25 +202,53 @@ class _PlatePageState extends State<PlatePage> {
             ),
           ),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Text(
-                "Swipe an item to the left to remove it",
-                style: GoogleFonts.poppins(fontSize: 16),
+        body: cartItems.isEmpty
+            ? Padding(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                  bottom: 100,
+                ),
+                child: Center(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Your",
+                      style: GoogleFonts.poppins(),
+                    ),
+                    Image.asset(
+                      "./assets/plate.png",
+                      color: Colors.green,
+                      height: 30,
+                      width: 30,
+                    ),
+                    Text(
+                      "is empty. Please add some food to it.",
+                      style: GoogleFonts.poppins(),
+                    ),
+                  ],
+                )),
+              )
+            : SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Text(
+                      "Swipe an item to the left to remove it",
+                      style: GoogleFonts.poppins(fontSize: 16),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: cartItems.length,
+                      itemBuilder: (context, index) {
+                        return _buildCartItem(index);
+                      },
+                    ),
+                    const SizedBox(height: 10),
+                  ],
+                ),
               ),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: cartItems.length,
-                itemBuilder: (context, index) {
-                  return _buildCartItem(index);
-                },
-              ),
-              const SizedBox(height: 10),
-            ],
-          ),
-        ),
       ),
       Padding(
         padding: EdgeInsets.only(

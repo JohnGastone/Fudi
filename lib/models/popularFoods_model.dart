@@ -106,7 +106,7 @@ class PopularFoodsList {
             "A coconut rice dish popular in coastal regions of East Africa, often made with fish or seafood."),
     PopularFoodsModel(
         foodCoverImage: "./assets/pilauzanzibar.png",
-        foodName: "Zanzibar Pilau",
+        foodName: "Pilau Zanzibar",
         restaurantName: "Shangazi Cafe",
         foodPrice: 10000,
         foodDescription:
