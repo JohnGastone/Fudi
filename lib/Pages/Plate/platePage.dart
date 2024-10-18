@@ -105,7 +105,7 @@ class _PlatePageState extends State<PlatePage> {
               top: 150,
               left: 100,
               child: pw.Opacity(
-                opacity: 0.1, // Make the watermark semi-transparent
+                opacity: 0.1,
                 child: pw.Image(watermarkImage, width: 400, height: 400),
               ),
             ),
@@ -147,8 +147,7 @@ class _PlatePageState extends State<PlatePage> {
                 pw.Text('This invoice is generated automatically.'),
                 pw.SizedBox(height: 20),
                 pw.Text('Contact us at 0624-839-009 for any inquiry.'),
-                pw.Spacer(), // This pushes the content below to the bottom
-
+                pw.Spacer(),
                 pw.Align(
                   alignment: pw.Alignment.center,
                   child: pw.Text(

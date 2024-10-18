@@ -4,7 +4,6 @@ import 'package:fudi/Pages/Order/ordersPage.dart';
 import 'package:fudi/Pages/Payments/paymentPage.dart';
 import 'package:fudi/Pages/Pick%20Up/pickUpPage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Orderdescription extends StatefulWidget {
   final int orderNumber;
@@ -274,14 +273,12 @@ class _OrderdescriptionState extends State<Orderdescription> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
-                          width: double
-                              .infinity, // Make the column take up the full width
+                          width: double.infinity,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Column(
-                                crossAxisAlignment: CrossAxisAlignment
-                                    .start, // This will work now
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     'Deliver to:',
