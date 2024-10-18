@@ -9,6 +9,8 @@ import 'package:url_launcher/url_launcher.dart';
 class Orderdescription extends StatefulWidget {
   final int orderNumber;
   final String restaurantNames;
+  final String restaurantLocation;
+  final int restaurantPhoneNumber;
   final String foodNames;
   final double totalPrice;
   final String date;
@@ -17,6 +19,8 @@ class Orderdescription extends StatefulWidget {
     super.key,
     required this.orderNumber,
     required this.restaurantNames,
+    required this.restaurantLocation,
+    required this.restaurantPhoneNumber,
     required this.foodNames,
     required this.totalPrice,
     required this.date,
@@ -315,8 +319,15 @@ class _OrderdescriptionState extends State<Orderdescription> {
                                     Navigator.push(
                                         context,
                                         CupertinoPageRoute(
-                                            builder: (context) =>
-                                                const PickUpPage()));
+                                            builder: (context) => PickUpPage(
+                                                  restaurantName:
+                                                      widget.restaurantNames,
+                                                  restaurantLocation:
+                                                      widget.restaurantLocation,
+                                                  restaurantPhoneNumber: widget
+                                                      .restaurantPhoneNumber
+                                                      .toString(),
+                                                )));
                                   },
                                   backgroundColor: Colors.green,
                                   child: Text(

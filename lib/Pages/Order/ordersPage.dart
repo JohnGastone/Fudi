@@ -137,6 +137,8 @@ class _OrdersPageState extends State<OrdersPage> {
                                               order['foodNames'].join(' | '),
                                           totalPrice: order['totalPrice'],
                                           date: order['date'].toString(),
+                                          restaurantLocation: '',
+                                          restaurantPhoneNumber: 0,
                                         ),
                                       ),
                                     );
