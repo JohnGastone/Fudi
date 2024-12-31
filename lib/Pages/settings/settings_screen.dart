@@ -15,6 +15,8 @@ class SettingsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFF00BF6D),
+        foregroundColor: Colors.white,
         title: Text(
           "Settings",
           style: GoogleFonts.poppins(fontSize: 20),

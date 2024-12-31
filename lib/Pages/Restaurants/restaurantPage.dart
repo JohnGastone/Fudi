@@ -144,28 +144,34 @@ class _RestaurantPageState extends State<RestaurantPage> {
                       SizedBox(
                         width: 10,
                       ),
-                      Container(
-                        height: 35,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.all(Radius.circular(8))),
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 7, left: 25),
-                          child: Row(
-                            children: [
-                              Text(
-                                "Map",
-                                style: GoogleFonts.poppins(fontSize: 15),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Icon(
-                                Icons.location_on,
-                                color: Colors.white,
-                              )
-                            ],
+                      InkWell(
+                        onTap: () {
+                          // Handle Google Map fetching location of the restaurant
+                        },
+                        child: Container(
+                          height: 35,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(8))),
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 7, left: 25),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "Map",
+                                  style: GoogleFonts.poppins(fontSize: 15),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Icon(
+                                  Icons.location_on,
+                                  color: Colors.white,
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       )

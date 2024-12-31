@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -8,17 +7,19 @@ class OrderProvider extends ChangeNotifier {
 
   List<Map<String, dynamic>> get orders => _orders;
 
+  // Load orders on initialization
   OrderProvider() {
-    _loadOrdersFromPreferences(); // Load orders on initialization
+    _loadOrdersFromPreferences();
   }
 
-  // Add a method to remove an order by index
+  // A method to remove an order by index
   void removeOrder(int index) {
     _orders.removeAt(index);
     notifyListeners();
     _saveOrdersToPreferences();
   }
 
+  // A method to remove an order by index
   void addOrder(List<String> restaurantNames, List<String> foodNames,
       double totalPrice) async {
     final newOrder = {
@@ -46,6 +47,7 @@ class OrderProvider extends ChangeNotifier {
     await prefs.setString('orders', jsonEncode(orderData));
   }
 
+  // A method to load orders from device's local storage
   Future<void> _loadOrdersFromPreferences() async {
     final prefs = await SharedPreferences.getInstance();
     final orderData = prefs.getString('orders');

@@ -14,8 +14,12 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: false,
         elevation: 0,
-        backgroundColor: const Color.fromARGB(57, 255, 255, 255),
-        title: const Text("Profile"),
+        backgroundColor: const Color(0xFF00BF6D),
+        foregroundColor: Colors.white,
+        title: Text(
+          "Profile",
+          style: GoogleFonts.poppins(),
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings_outlined),

@@ -1,9 +1,11 @@
-// ignore_for_file: prefer_const_constructors, prefer_final_fields
+// ignore_for_file: prefer_const_constructors, prefer_final_fields, unused_local_variable
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Fav%20Dishes/favDishes.dart';
 import 'package:fudi/Pages/Plate/platePage.dart';
 import 'package:fudi/Pages/Food/foodDescription.dart';
+import 'package:fudi/Pages/Profile/profilePage.dart';
 import 'package:fudi/Pages/Restaurants/restaurantsPage.dart';
 import 'package:fudi/models/categories_model.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,8 +66,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         border: Border.all(width: 1, color: Colors.green),
                         borderRadius: BorderRadius.all(Radius.circular(12))),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: const EdgeInsets.only(left: 10.0, right: 10),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           InkWell(
                             child: Icon(
@@ -365,69 +368,86 @@ class _ExplorePageState extends State<ExplorePage> {
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 20,
-                        crossAxisSpacing: 10),
+                      crossAxisCount: 2,
+                    ),
                     itemCount: displayPopularFoods.length,
                     itemBuilder: (context, index) => InkWell(
                       child: Container(
                         height: 265,
                         width: 100,
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 230, 221, 221),
-                            borderRadius: BorderRadius.circular(30)),
+                          image: DecorationImage(
+                            fit: BoxFit.contain,
+                            image: AssetImage(
+                              displayPopularFoods[index].foodCoverImage!,
+                            ),
+                          ),
+                          color: index % 2 == 0
+                              ? Colors
+                                  .white // Even indices (0, 2, 4...) will be white
+                              : Color.fromARGB(255, 230, 221, 221),
+                        ),
                         child: Column(
                           children: [
                             Align(
-                              alignment: Alignment.topLeft,
+                              alignment: Alignment.topCenter,
                               child: Container(
                                 height: 30,
-                                width: 130,
+                                width: double.maxFinite,
                                 decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(30),
-                                        bottomRight: Radius.circular(30))),
+                                  color: Colors.green.withOpacity(0.15),
+                                ),
                                 child: Padding(
                                   padding:
                                       const EdgeInsets.only(left: 12.0, top: 5),
-                                  child: Text(
-                                      displayPopularFoods[index]
-                                          .restaurantName!,
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 15,
-                                        color: const Color.fromARGB(
-                                            255, 99, 98, 98),
-                                      ),
-                                      overflow: TextOverflow.ellipsis),
+                                  child: Center(
+                                    child: Text(
+                                        displayPopularFoods[index]
+                                            .restaurantName!,
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 15,
+                                          color: const Color.fromARGB(
+                                              255, 99, 98, 98),
+                                        ),
+                                        overflow: TextOverflow.ellipsis),
+                                  ),
                                 ),
                               ),
                             ),
-                            Column(
-                              children: [
-                                Image.asset(
-                                  displayPopularFoods[index].foodCoverImage!,
-                                  height: 90,
-                                  width: 90,
-                                ),
-                                Text(
-                                  displayPopularFoods[index].foodName!,
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 19,
+                            Padding(
+                              padding: const EdgeInsets.only(top: 95.0),
+                              child: Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Container(
+                                  width: 200,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.3),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        displayPopularFoods[index].foodName!,
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 19,
+                                        ),
+                                      ),
+                                      Text.rich(TextSpan(children: <TextSpan>[
+                                        TextSpan(
+                                            text: "Tsh ",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 20)),
+                                        TextSpan(
+                                          text:
+                                              "${displayPopularFoods[index].foodPrice} ",
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 15,
+                                              color: Colors.green),
+                                        )
+                                      ]))
+                                    ],
                                   ),
                                 ),
-                                Text.rich(TextSpan(children: <TextSpan>[
-                                  TextSpan(
-                                      text: "Tsh ",
-                                      style: GoogleFonts.poppins(fontSize: 20)),
-                                  TextSpan(
-                                    text:
-                                        "${displayPopularFoods[index].foodPrice} ",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 15, color: Colors.green),
-                                  )
-                                ]))
-                              ],
+                              ),
                             ),
                           ],
                         ),
@@ -490,11 +510,11 @@ class _ExplorePageState extends State<ExplorePage> {
           ),
         ]),
         Padding(
-          padding: const EdgeInsets.only(right: 8.0, bottom: 85),
+          padding: const EdgeInsets.only(right: 8.0, bottom: 60),
           child: Align(
             alignment: Alignment.bottomRight,
             child: SizedBox(
-              width: screenWidth * 0.2,
+              width: screenWidth * 0.158,
               height: screenHeight * 0.095,
               child: InkWell(
                 onTap: () async {
@@ -513,7 +533,9 @@ class _ExplorePageState extends State<ExplorePage> {
                       throw 'Could not launch $phoneUri';
                     }
                   } catch (e) {
-                    print('Error launching phone call: $e');
+                    if (kDebugMode) {
+                      print('Error launching phone call: $e');
+                    }
                   }
                 },
                 child: Container(
@@ -526,16 +548,19 @@ class _ExplorePageState extends State<ExplorePage> {
                       child: Column(
                         children: [
                           SizedBox(
-                            height: 25,
+                            height: 16,
                           ),
-                          Text(
-                            "Ask for help",
-                            style: GoogleFonts.poppins(
-                                fontSize: 10, color: Colors.green),
+                          Center(
+                            child: Text(
+                              "Help",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 10, color: Colors.green),
+                            ),
                           ),
                           Icon(
                             CupertinoIcons.phone,
                             color: Colors.green,
+                            size: 20,
                           )
                         ],
                       ),

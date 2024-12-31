@@ -86,7 +86,7 @@ class _PlatePageState extends State<PlatePage> {
   }
 
   Future<void> generateInvoicePdf() async {
-    final cartItems =
+    final plateItems =
         Provider.of<PlateModel>(context, listen: false).plateItems;
 
     final pdf = pw.Document();
@@ -123,7 +123,7 @@ class _PlatePageState extends State<PlatePage> {
                   context: context,
                   data: <List<String>>[
                     <String>['Item', 'Restaurant', 'Quantity', 'Size', 'Price'],
-                    ...cartItems.map((item) => [
+                    ...plateItems.map((item) => [
                           item['name'],
                           item['restaurant'],
                           item['quantity'].toString(),
@@ -171,7 +171,7 @@ class _PlatePageState extends State<PlatePage> {
 
   @override
   Widget build(BuildContext context) {
-    final cartItems = Provider.of<PlateModel>(context).plateItems;
+    final plateItems = Provider.of<PlateModel>(context).plateItems;
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -194,14 +194,14 @@ class _PlatePageState extends State<PlatePage> {
                 },
                 backgroundColor: Colors.green,
                 child: Text(
-                  "Add more to this plate",
+                  "Add more food to this plate",
                   style: GoogleFonts.poppins(fontSize: 18, color: Colors.white),
                 ),
               ),
             ),
           ),
         ),
-        body: cartItems.isEmpty
+        body: plateItems.isEmpty
             ? Padding(
                 padding: const EdgeInsets.only(
                   left: 20,
@@ -236,12 +236,15 @@ class _PlatePageState extends State<PlatePage> {
                       "Swipe an item to the left to remove it",
                       style: GoogleFonts.poppins(fontSize: 16),
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     ListView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      itemCount: cartItems.length,
+                      itemCount: plateItems.length,
                       itemBuilder: (context, index) {
-                        return _buildCartItem(index);
+                        return _buildPlateItem(index);
                       },
                     ),
                     const SizedBox(height: 10),
@@ -251,23 +254,18 @@ class _PlatePageState extends State<PlatePage> {
       ),
       Padding(
         padding: EdgeInsets.only(
-          left:
-              screenWidth * 0.03, // Dynamic left padding based on screen width
-          right:
-              screenWidth * 0.03, // Dynamic right padding based on screen width
-          bottom: screenHeight *
-              0.02, // Adjust bottom padding based on screen height
+          left: screenWidth * 0.03,
+          right: screenWidth * 0.03,
+          bottom: screenHeight * 0.02,
         ),
         child: Padding(
           padding: const EdgeInsets.only(bottom: 35.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment:
-                MainAxisAlignment.end, // Align to bottom of the screen
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              // Total Container
               Container(
-                width: screenWidth * 0.5, // Relative size based on screen width
+                width: screenWidth * 0.5,
                 height: screenHeight * 0.06,
                 decoration: BoxDecoration(
                   color: Colors.green,
@@ -275,24 +273,19 @@ class _PlatePageState extends State<PlatePage> {
                 ),
                 child: Center(
                   child: Text(
-                    "Total: ${total.toStringAsFixed(2)}",
+                    "Total: ${total.toStringAsFixed(2)} Tsh",
                     style: GoogleFonts.poppins(
-                      fontSize: screenWidth *
-                          0.045, // Adjust font size based on width
+                      fontSize: screenWidth * 0.045,
                       color: Colors.white,
                       decoration: TextDecoration.none,
                     ),
                   ),
                 ),
               ),
+              SizedBox(height: screenHeight * 0.02),
               SizedBox(
-                  height:
-                      screenHeight * 0.02), // Spacing between Total and buttons
-              // Download Invoice Button
-              SizedBox(
-                width: screenWidth *
-                    0.5, // Adjust button width based on screen width
-                height: screenHeight * 0.06, // Adjust height relative to screen
+                width: screenWidth * 0.5,
+                height: screenHeight * 0.06,
                 child: FloatingActionButton(
                   heroTag: "download_invoice",
                   backgroundColor: Colors.green,
@@ -323,12 +316,10 @@ class _PlatePageState extends State<PlatePage> {
                   ),
                 ),
               ),
-              SizedBox(height: screenWidth * 0.02), // Spacing between buttons
-              // Place Order Button
+              SizedBox(height: screenWidth * 0.02),
               SizedBox(
-                width: screenWidth *
-                    0.5, // Adjust button width based on screen width
-                height: screenHeight * 0.06, // Adjust height relative to screen
+                width: screenWidth * 0.5,
+                height: screenHeight * 0.06,
                 child: FloatingActionButton(
                   heroTag: "continue_to_payment",
                   backgroundColor: Colors.green,
@@ -386,13 +377,13 @@ class _PlatePageState extends State<PlatePage> {
     ]);
   }
 
-  Widget _buildCartItem(int index) {
-    final cartItems = Provider.of<PlateModel>(context).plateItems;
+  Widget _buildPlateItem(int index) {
+    final plateItems = Provider.of<PlateModel>(context).plateItems;
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Dismissible(
-      key: Key(cartItems[index]['image']), // Unique key for each item
-      direction: DismissDirection.endToStart, // Swipe from right to left
+      key: Key(plateItems[index]['image']),
+      direction: DismissDirection.endToStart,
       onDismissed: (direction) {
         setState(() {
           Provider.of<PlateModel>(context, listen: false)
@@ -401,7 +392,7 @@ class _PlatePageState extends State<PlatePage> {
         });
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('${cartItems[index]['name']} dismissed')),
+          SnackBar(content: Text('${plateItems[index]['name']} dismissed')),
         );
       },
       background: Container(
@@ -411,14 +402,11 @@ class _PlatePageState extends State<PlatePage> {
         child: const Icon(Icons.delete, color: Colors.green),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: const EdgeInsets.only(left: 35.0, bottom: 10),
         child: Container(
-          height: screenHeight *
-              0.173, // Example of using a percentage of screen height
-          width: screenWidth *
-              0.8, // Example of using a percentage of screen width
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
+          height: screenHeight * 0.173,
+          width: screenWidth * 0.8,
+          decoration: const BoxDecoration(
             color: Colors.white54,
           ),
           child: Flexible(
@@ -428,45 +416,43 @@ class _PlatePageState extends State<PlatePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset(
-                    cartItems[index]['image'],
+                    plateItems[index]['image'],
                     height: 70,
                     width: 70,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 3),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "${cartItems[index]['name']}",
+                          "${plateItems[index]['name']}",
                           style: GoogleFonts.poppins(fontSize: 16),
-                          maxLines: 2, // Restrict to 2 lines
-                          overflow: TextOverflow
-                              .ellipsis, // Add ellipsis for overflow
-                          softWrap: true, // Enable wrapping
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: true,
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          "From ${cartItems[index]['restaurant']}",
+                          "From ${plateItems[index]['restaurant']}",
                           style: GoogleFonts.poppins(
                               fontSize: 15, color: Colors.grey),
-                          maxLines: 2, // Restrict to 2 lines
-                          overflow: TextOverflow
-                              .ellipsis, // Add ellipsis for overflow
-                          softWrap: true, // Enable wrapping
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          softWrap: true,
                         ),
                         const SizedBox(height: 6),
                         Text.rich(TextSpan(children: <TextSpan>[
                           TextSpan(
                               text: "Size: ",
                               style: GoogleFonts.poppins(
-                                  fontSize: 17, color: Colors.grey)),
+                                  fontSize: 15, color: Colors.grey)),
                           TextSpan(
-                            text: cartItems[index]['size'] == 'S'
+                            text: plateItems[index]['size'] == 'S'
                                 ? 'Small'
-                                : cartItems[index]['size'] == 'M'
+                                : plateItems[index]['size'] == 'M'
                                     ? 'Medium'
-                                    : 'Large', // Default case for 'L'
+                                    : 'Large',
                             style: GoogleFonts.poppins(
                                 fontSize: 15, color: Colors.grey),
                           )
@@ -478,8 +464,7 @@ class _PlatePageState extends State<PlatePage> {
                               style: GoogleFonts.poppins(
                                   fontSize: 18, color: Colors.green)),
                           TextSpan(
-                            text:
-                                " ${cartItems[index]['price']}", // Default case for 'L'
+                            text: " ${plateItems[index]['price']}",
                             style: GoogleFonts.poppins(
                                 fontSize: 15, color: Colors.green),
                           )
@@ -507,7 +492,7 @@ class _PlatePageState extends State<PlatePage> {
                             },
                           ),
                           Text(
-                            "${cartItems[index]['quantity']}",
+                            "${plateItems[index]['quantity']}",
                             style: GoogleFonts.poppins(
                                 fontSize: 20, color: Colors.green),
                           ),

@@ -189,17 +189,29 @@ class _OrdersPageState extends State<OrdersPage> {
                                             'Order #${index + 1}',
                                             style: GoogleFonts.poppins(),
                                           ),
+                                          const SizedBox(
+                                            height: 7,
+                                          ),
                                           Text(
                                             'Restaurant(s): ${order['restaurantNames'].join(' | ')}',
                                             style: GoogleFonts.poppins(),
+                                          ),
+                                          const SizedBox(
+                                            height: 7,
                                           ),
                                           Text(
                                             'Item(s): ${order['foodNames'].join(' | ')}',
                                             style: GoogleFonts.poppins(),
                                           ),
+                                          const SizedBox(
+                                            height: 7,
+                                          ),
                                           Text(
                                             'Total Price: Tsh ${order['totalPrice'].toStringAsFixed(2)}',
                                             style: GoogleFonts.poppins(),
+                                          ),
+                                          const SizedBox(
+                                            height: 7,
                                           ),
                                           Text(
                                             'Date: ${order['date'].toString()}',

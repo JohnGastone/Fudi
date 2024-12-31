@@ -148,7 +148,9 @@ class EditProfileScreen extends StatelessWidget {
                 SizedBox(
                   width: 120,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context)
                           .textTheme
@@ -224,10 +226,10 @@ class ProfilePic extends StatelessWidget {
           ),
           InkWell(
             onTap: imageUploadBtnPress,
-            child: CircleAvatar(
+            child: const CircleAvatar(
               radius: 13,
-              backgroundColor: Theme.of(context).primaryColor,
-              child: const Icon(
+              backgroundColor: Colors.green,
+              child: Icon(
                 Icons.add,
                 color: Colors.white,
                 size: 20,
@@ -260,7 +262,11 @@ class UserInfoEditField extends StatelessWidget {
             flex: 2,
             child: Text(
               text,
-              style: GoogleFonts.poppins(),
+              style: GoogleFonts.poppins(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                color: Colors.black54,
+              ),
             ),
           ),
           Expanded(

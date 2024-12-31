@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Order/ordersPage.dart';
 import 'package:fudi/Pages/Payments/paymentPage.dart';
 import 'package:fudi/Pages/Pick%20Up/pickUpPage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Orderdescription extends StatefulWidget {
   final int orderNumber;
@@ -72,14 +74,38 @@ class _OrderdescriptionState extends State<Orderdescription> {
               Container(
                 height: 30,
                 width: 80,
-                decoration: const BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  border: Border.all(width: 1, color: Colors.green),
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
                 ),
-                child: Center(
-                  child: Text(
-                    "Help",
-                    style: GoogleFonts.poppins(color: Colors.white),
+                child: InkWell(
+                  onTap: () async {
+                    final Uri phoneUri = Uri(
+                      scheme: 'tel',
+                      path: '+255624839009', // FUDI Customer Support Center
+                    );
+
+                    try {
+                      if (await canLaunchUrl(phoneUri)) {
+                        await launchUrl(
+                          phoneUri,
+                          mode: LaunchMode.externalApplication,
+                        );
+                      } else {
+                        throw 'Could not launch $phoneUri';
+                      }
+                    } catch (e) {
+                      if (kDebugMode) {
+                        print('Error launching phone call: $e');
+                      }
+                    }
+                  },
+                  child: Center(
+                    child: Text(
+                      "Help",
+                      style: GoogleFonts.poppins(color: Colors.green),
+                    ),
                   ),
                 ),
               )

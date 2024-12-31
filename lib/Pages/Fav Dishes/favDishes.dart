@@ -23,7 +23,7 @@ class FavdishesPage extends StatelessWidget {
               height: 8,
             ),
             Text(
-              "Swipe item to the left to mark it unfavorite",
+              "Swipe a dish to the left to mark it unfavorite",
               style: GoogleFonts.poppins(fontSize: 16),
             )
           ],
@@ -33,16 +33,45 @@ class FavdishesPage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 221, 206, 206),
         body: favorites.isEmpty
             ? Center(
-                child: Text(
-                  "No favorite dishes added",
-                  style: GoogleFonts.poppins(),
+                child: Padding(
+                padding: const EdgeInsets.only(left: 22, right: 22),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      "No",
+                      style: GoogleFonts.poppins(),
+                    ),
+                    Image.asset(
+                      "./assets/favdishes.png",
+                      color: Colors.green,
+                      height: 30,
+                      width: 30,
+                    ),
+                    Text(
+                      "dishes added. Mark dishes favorite first.",
+                      style: GoogleFonts.poppins(),
+                    ),
+                  ],
                 ),
-              )
-            : ListView.builder(
-                itemCount: favorites.length,
-                itemBuilder: (context, index) {
-                  return _buildFavItem(context, index);
-                },
+              ))
+            : SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    ListView.builder(
+                      itemCount: favorites.length,
+                      itemBuilder: (context, index) {
+                        return _buildFavItem(context, index);
+                      },
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
               ),
       ),
     );
@@ -74,12 +103,11 @@ class FavdishesPage extends StatelessWidget {
       ),
       child: Center(
         child: Padding(
-          padding: const EdgeInsets.all(25.0),
+          padding: const EdgeInsets.only(bottom: 10),
           child: Container(
             width: 350,
             height: 130,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+            decoration: const BoxDecoration(
               color: Colors.white54,
             ),
             child: Column(
@@ -91,12 +119,10 @@ class FavdishesPage extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         child: Container(
                           height: 30,
-                          width: 130,
-                          decoration: const BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(30),
-                                  bottomRight: Radius.circular(30))),
+                          width: 140,
+                          decoration: BoxDecoration(
+                            color: Colors.green.withOpacity(0.15),
+                          ),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 12.0, top: 5),
                             child: Text(favorites[index].restaurantName!,

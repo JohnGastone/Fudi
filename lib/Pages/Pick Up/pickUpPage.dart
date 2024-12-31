@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Pick%20Up/pickUpTimesModel.dart';
 import 'package:fudi/models/popularFoods_model.dart';
@@ -483,11 +484,11 @@ class _PickUpPageState extends State<PickUpPage> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(right: 8.0, bottom: 35),
+          padding: const EdgeInsets.only(right: 8.0, bottom: 60),
           child: Align(
             alignment: Alignment.bottomRight,
             child: SizedBox(
-              width: screenWidth * 0.2,
+              width: screenWidth * 0.158,
               height: screenHeight * 0.095,
               child: InkWell(
                 onTap: () async {
@@ -506,7 +507,9 @@ class _PickUpPageState extends State<PickUpPage> {
                       throw 'Could not launch $phoneUri';
                     }
                   } catch (e) {
-                    print('Error launching phone call: $e');
+                    if (kDebugMode) {
+                      print('Error launching phone call: $e');
+                    }
                   }
                 },
                 child: Container(
@@ -519,16 +522,19 @@ class _PickUpPageState extends State<PickUpPage> {
                       child: Column(
                         children: [
                           SizedBox(
-                            height: 25,
+                            height: 16,
                           ),
-                          Text(
-                            "Ask for help",
-                            style: GoogleFonts.poppins(
-                                fontSize: 10, color: Colors.green),
+                          Center(
+                            child: Text(
+                              "Help",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 10, color: Colors.green),
+                            ),
                           ),
                           Icon(
                             CupertinoIcons.phone,
                             color: Colors.green,
+                            size: 20,
                           )
                         ],
                       ),

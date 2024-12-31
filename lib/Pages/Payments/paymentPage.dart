@@ -14,6 +14,9 @@ class paymentPage extends StatefulWidget {
 class _paymentPageState extends State<paymentPage> {
   @override
   Widget build(BuildContext context) {
+    // Get screen dimensions
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 221, 206, 206),
       appBar: AppBar(
@@ -69,7 +72,78 @@ class _paymentPageState extends State<paymentPage> {
                         width: 5,
                       ),
                       Text(
-                        "Mobile Network Operators",
+                        "Pay via a promocode",
+                        style: GoogleFonts.poppins(fontSize: 17),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 33,
+                        width: 220,
+                        decoration: BoxDecoration(
+                          color: Colors.white24,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, bottom: 14),
+                          child: TextField(
+                            style: GoogleFonts.poppins(fontSize: 14),
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "Enter a promocode",
+                                hintStyle: GoogleFonts.poppins(fontSize: 15),
+                                suffixIcon: Icon(Icons.done_all_rounded)),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: screenWidth * 0.2,
+                        height: 30,
+                        child: FloatingActionButton(
+                          backgroundColor: Colors.green,
+                          onPressed: () {
+                            //Handle promocode payment
+                          },
+                          child: Center(
+                            child: Text(
+                              'Redeem',
+                              style: GoogleFonts.poppins(
+                                fontSize: 15,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 50),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        "./assets/smartphone.png",
+                        width: 30,
+                        height: 30,
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "Pay via Mobile Network Operators",
                         style: GoogleFonts.poppins(fontSize: 17),
                       )
                     ],
