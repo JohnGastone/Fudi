@@ -84,7 +84,7 @@ class SettingTab extends StatelessWidget {
           style: GoogleFonts.poppins(),
         ),
         trailing: CupertinoSwitch(
-          activeColor: Colors.green,
+          activeTrackColor: Colors.green,
           value: value,
           onChanged: onChanged,
         ),

@@ -1,6 +1,5 @@
 // ignore_for_file: unused_field, unused_local_variable
 
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

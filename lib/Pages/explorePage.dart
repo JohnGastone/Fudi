@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:fudi/Pages/Fav%20Dishes/favDishes.dart';
 import 'package:fudi/Pages/Plate/platePage.dart';
 import 'package:fudi/Pages/Food/foodDescription.dart';
-import 'package:fudi/Pages/Profile/profilePage.dart';
 import 'package:fudi/Pages/Restaurants/restaurantsPage.dart';
 import 'package:fudi/models/categories_model.dart';
 import 'package:google_fonts/google_fonts.dart';
